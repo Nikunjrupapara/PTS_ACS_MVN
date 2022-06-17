@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,400i,700,700i');
+ @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700');
+h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 30px;
+    line-height: 35px;
+    text-align: center;
+}
+h2 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+}
+h3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: left;
+}
+.button {
+    background-color: #000049;
+    ;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+}
+.category {
+    font-family: Georgia, Times New Roman, Serif;
+    font-size: 12px;
+}
+/**
+ * Checkbox Five
+ */
+.checkboxFive {
+    width: 25px;
+    margin: 0px 20px 0px 10px;
+    position: relative;
+    display: inline-block;
+    float: left;
+}
+/**
+ * Create the box for the checkbox
+ */
+.checkboxFive label {
+    cursor: pointer;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 0;
+    left: 0;
+    background: #eee;
+    border: 1px solid #ddd;
+}
+/**
+ * Display the tick inside the checkbox
+ */
+.checkboxFive label:after {
+    opacity: 0.2;
+    content: '';
+    position: absolute;
+    width: 9px;
+    height: 5px;
+    background: transparent;
+    top: 6px;
+    left: 7px;
+    border: 3px solid #000049;
+    border-top: none;
+    border-right: none;
+    transform: rotate(-45deg);
+}
+/**
+ * Create the hover event of the tick
+ */
+.checkboxFive label:hover::after {
+    opacity: 0.5;
+}
+/**
+ * Create the checkbox state for the tick
+ */
+.checkboxFive input[type=checkbox]:checked + label:after {
+    opacity: 1;
+}
+.checkboxtext {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    margin: 0;
+    display: inline;
+    vertical-align: middle;
+    position: relative;
+    top: 2px;
+    overflow: hidden;
+}
+img {
+    width: 350px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.content {
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 10px;
+}
+#sciencebox {
+    background-color: #f0a818;
+    ;
+    padding: 5px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    line-height: 35px;
+    text-align: center;
+    color: #ffffff;
+    font-weight: 700;
+}
+#teacherbox {
+    background-color: #f0a818;
+    ;
+    padding: 5px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    line-height: 35px;
+    text-align: center;
+    color: #ffffff;
+    font-weight: 700;
+}
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    font-family: Georgia, Times New Roman, Serif;
+}
+span {
+    display: block;
+    overflow: hidden;
+}
+
+@media (max-width: 400px) {
+}
+
+@media (max-width: 300px) {
+}

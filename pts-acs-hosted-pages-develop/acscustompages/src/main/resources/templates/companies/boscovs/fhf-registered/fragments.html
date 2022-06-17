@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<th:block th:fragment="head">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" >
+    <link rel="stylesheet" type="text/css" th:href="@{/companies-static/boscovs/fhf-registered/css/fhf-registered.css}" />
+    <script type="text/javascript">
+		   var utag_data={
+		   page_name      : "FHF",
+		   page_type      : "PromoContent"
+		   };
+	</script>
+</th:block>
+<th:block th:fragment="logo">
+    <!--FHF Logo-->
+    <div style="padding-top: 30px">
+        <a href="https://www.boscovs.com/" title="Boscovs" target="_blank">
+            <img class="logo" th:src="@{/companies-static/boscovs/fhf-registered/images/FHF_LOGO_2022.jpg}" border="0"
+                 alt="Boscovs Friends Helping Friends Logo 2022" width="350">
+        </a>
+    </div>
+    <!--END FHF Logo-->
+</th:block>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<th:block th:replace="~{/companies/dollartree/contest/fragments :: head }">
+		<meta charset="utf-8" />
+    	<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" th:href="@{/companies-static/dollartree/css/normalize.css}">
+		<link rel="stylesheet" th:href="@{/companies-static/dollartree/css/custom-2022.css}">
+	</th:block>
+	<title>Dollar Tree Email Contest - Privacy</title>
+</head>
+<body>
+<div class="container">
+	<header>
+		<th:block th:replace="~{/companies/dollartree/contest/fragments :: header }">
+			<a th:href="@{'/p/profile/search/contest/signup'}">
+				<img th:src="@{/companies-static/dollartree/images/envelope.png}" width="330" alt="email sign-up contest" class="logo"/>
+			</a>
+			<nav class="shadow">
+				<ul class="nav">
+					<li><a th:href="@{'/p/profile/search/contest/signup'}">Entry Form</a></li>
+					<li><a th:href="@{'/p/page/display/contest/rules'}">Rules</a></li>
+					<li><a th:href="@{'/p/page/display/contest/privacy'}">Privacy</a></li>
+					<li class="lastFloat"><a th:href="@{'/p/page/display/contest/winners'}">Winners</a></li>
+				</ul>
+			</nav>
+			<div class="bannerText shadow">
+				<h1 style="margin-bottom: 0; font-family: 'Arial Black', sans-serif;">Sign Up for Dollar Tree Emails</h1>
+				<p style="font-size: 16px;" class="mb-2">and be entered for a chance to win<sup>&dagger;</sup> a $100 Dollar Tree gift card!</p>
+			</div>
+		</th:block>		
+	</header>
+
+	<div class="main" role="main">		
+		<div class="mobile-nav">
+			<th:block th:replace="~{/companies/dollartree/contest/fragments :: navSide }">
+				<a th:href="@{'/p/profile/search/contest/signup'}" class="button-bar">Entry Form</a>
+				<a th:href="@{'/p/page/display/contest/rules'}" class="button-bar">Rules</a>
+				<a th:href="@{'/p/page/display/contest/privacy'}" class="button-bar">Privacy</a>
+				<a th:href="@{'/p/page/display/contest/winners'}" class="button-bar">Winners</a>
+			</th:block>
+		</div>
+		
+		<div class="form-cont">
+			<div class="rules pt-6">
+				<th:block th:replace="~{/companies/dollartree/contest/fragments :: signupNow }">
+					<img src="images/gift-card.png" width="146" alt="$100 gift card" />
+					<h2 style="margin-bottom: 0;">Ready to Enter?</h2>
+					<p>We are giving away ten $100 Dollar Tree gift cards!</p>
+					<p class="mt-2"><a class="signUpBtn" th:href="@{'/p/profile/search/contest/signup'}">Sign Up Now</a></p>
+				</th:block>
+			</div>
+			<div class="entry-form legal">
+                <h2>Privacy Policy</h2>
+				<p><strong>USE OF PERSONALLY IDENTIFIABLE INFORMATION</strong><br />
+					Information submitted to Dollar Tree through forms on the website is governed according to the following terms of the Dollar Tree Electronic Personal Information Privacy Policy:</p>
+				<p><strong>General</strong><br />
+					To protect your privacy when visiting our website, we have adopted the following policies to safeguard any personal information you may voluntarily submit. Any information collected will be used for the purposes of responding to inquiries, orders, and for the general improvement of our Internet services.</p>
+				<p>Any personal information collected from visitors to our site is done on a voluntary basis. Information such as names, addresses, phone numbers, e-mail addresses, etc. will be used only by Dollar Tree to respond to inquiries, for specific Dollar Tree marketing activities, events, services, or to facilitate fulfillment of orders.</p>
+				<p><strong>User Submissions</strong><br />
+					Information supplied to Dollar Tree through our site, including but not limited to feedback, data, answers, questions, comments, suggestions, plans, ideas or the like, will not be treated as proprietary or as confidential and we assume no obligation to protect such information from disclosure. Further, the submission of such information to Dollar Tree shall not restrict the use of such information by Dollar Tree for any commercial or non-commercial purpose whatsoever and Dollar Tree shall be free to reproduce, use, disclose, and distribute the information to others without restriction. You are prohibited from posting or transmitting to or from this site any unlawful, threatening, libelous, defamatory, obscene, pornographic, or other material that would violate any law.</p>
+				<p><strong>Information Collection</strong><br />
+					Our web service tracks visitors to the site and collects generalized information on the number of visits, most popular page views, domain names, geographic information, downloads, site search terms, etc. Additionally, some pages throughout the site may request specific information submitted by a form or e-mail. Dollar Tree may also retain electronic communications sent by visitors. This information will only be used by Dollar Tree as a means of continuously improving our services or in the placement of orders as indicated above.</p>
+				<p>Dollar Tree uses an SMTP gateway to forward e-mail and to log e-mail transactions. Logs of e-mail transactions include:</p>
+				<ul style="list-style-type: disc; padding-left: 26px; padding-bottom:10px;">
+					<li>Date and time of message</li>
+					<li>Name and IP address of connecting host</li>
+					<li>E-mail address of message originator</li>
+					<li>Dollar Tree address of recipient</li>
+				</ul>
+				<p><strong>Children's Privacy</strong><br />
+					We do not knowingly solicit or collect personally identifiable information online from children under the age of 13 and we do not ask for age-identifying information from our visitors. If you have reason to believe that a child under the age of 13 has submitted personally identifiable information online which would be against our policy, then we ask you to notify us immediately and we will take all reasonable measures to delete such information and not use such information for any purpose (except where necessary to protect the safety of the child or others as required by law).</p>
+				<p><strong>Cookies</strong><br />
+					Some sections of the Dollar Tree website may deposit pieces of information called "cookies" on your computer.  A cookie is a small piece of information stored by a browser on your computer's hard drive.  Cookie technology does not collect personally identifiable information. If a cookie is sent to your computer, your browser only permits that website to access the cookie it sent. It does not allow access to cookies sent by other websites.</p>
+				<p>If you choose to do so, you can change your browser's cookie configuration. Check the "Help" section of your browser for more information. Dollar Tree does not endorse, nor does it participate in the practice of &quot;spamming&quot; (sending of unsolicited promotional e-mail). We comply with the provisions of the CAN-SPAM Act of 2003, as amended. If you believe you have received such a message, click here to be removed from our database.</p>
+				<p><strong>Notice to California and Vermont Residents</strong><br />
+					We do not disclose personal information about you to nonaffiliated third parties unless you authorize online payment or as permitted under applicable law. No further action is required on your part.  If our policy should change, we will obtain your consent before any information is shared as provided under your state laws.  For California residents we will also provide you with a California Privacy Notice before doing so.</p>
+				<p><strong>Terms of Usage</strong><br />
+					By your use of this website, you agree to the terms of our Legal Information, our use of information and this privacy policy.  From time to time we may make changes to our policies so we recommend that you visit this page often to review the information contained herein. </p>
+
+			</div>
+		</div>
+	</div>
+
+</div>
+</body>
+</html>

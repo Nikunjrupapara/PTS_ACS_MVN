@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <title>Observing Essentials</title>
+    <meta name="viewport" content="width=320, initial-scale=.53;minimum-scale=.53, user-scalable=yes" />
+</head>
+
+<!-- BODY -->
+<body th:object="${dynamicFormBean}" th:with="email=*{items['email']},brand=*{brand}"
+      bgcolor="#ffffff" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+
+<!-- Save for Web Slices (22008-MMP.psd)  border:solid 1px #24508b;" <span style="color:#0033CC;">  -->
+<table width="600" border="0" align="center" cellpadding="0" cellspacing="0" style="font-family:Arial, Helvetica, sans-serif; font-size:18px;" id="Table_01">
+    <tbody>
+    <tr>
+        <td colspan="3"><img style="display:block;" border="0" th:src="@{/companies-static/kalmbachmedia/images/ASY/P22767-CPT_01.jpg}" width="600" height="111" alt="Observing Essentials" xt="SPIMAGE" contentid="7956721" spname="P22767-CPT_01.jpg" /></td>
+    </tr>
+    <tr>
+        <td style="padding:0px 20px 20px 20px;" colspan="3">
+            <p>
+                Get more from every minute under the stars! <em>Astronomy</em> magazine's Observing Essentials email series will help you get started in this rewarding, lifelong hobby.
+            </p>
+            <img th:src="@{/companies-static/kalmbachmedia/images/ASY/Observe_shots.jpg}" alt="Tank" width="225" height="244" style="display:block; float:right;" border="0" xt="SPIMAGE" contentid="7956728" spname="Observe_shots.jpg" /> <strong>This series of five emails includes:</strong>
+            <ul>
+                <li>An A-Z list of helpful observing tips.</li>
+                <li>A glossary of common astronomical terms.</li>
+                <li>A guide to choosing and buying your first telescope.</li>
+                <li>Tips for finding the right star atlas.</li>
+                <li>An overview of observing the planets in our solar system.</li>
+            </ul>
+            <p>
+                Signing up is quick, easy, and <strong>FREE!</strong> Use the form below to enter your email, then click &quot;Sign up.&quot;
+            </p>
+
+            <!-- FORM -->
+            <form style="margin:0 0 0 20px;" method="post" th:action="@{'/p/profile/search/' + *{contextPath}}">
+                <label>
+                    <input id="email" type="email" maxlength="256" th:field="*{items['email']}"
+                           style="width:400px; margin:5px 0;" oninput="lowercase()" onkeyup="lowercase()">
+                </label><br />
+                <label>
+                    <input style="margin:5px 0 0 0;" type="image" name="submit" id="imageField" th:src="@{/companies-static/kalmbachmedia/images/ASY/button.jpg}" border="0" xt="SPIMAGE" contentid="7956716" spname="button.jpg" />
+                </label>
+
+                <input type="hidden" th:field="*{brand}" />
+                <input type="hidden" th:field="*{items['cusCustomerIdHash']}" />
+            </form>
+
+            <div data-abide-error>
+            <span class="pure-form-message" style="color:red;">
+                <div th:if="${dynamicFormBean.isError('email')} == true">
+                    Invalid email address format. Please enter a valid email address.
+                </div>
+                <p class="error" th:text="${errorMsg}"></p>
+            </span> <br>
+            </div>
+            <!-- <p style="font-size:10px;">By signing up you may also receive reader surveys and occasional special offers from CabinLife.com.<br /><a href="http://corporate.kalmbach.com/privacy">View our privacy policy.</a> </p>   -->
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3"><img style="display:block;" border="0" th:src="@{/companies-static/kalmbachmedia/images/ASY/P22767-CPT_06.jpg}" width="600" height="28" alt="" xt="SPIMAGE" contentid="7956720" spname="P22767-CPT_06.jpg" /></td>
+    </tr>
+    </tbody>
+</table>
+<!-- End Save for Web Slices -->
+<table width="600" border="0" align="center" cellpadding="15" cellspacing="0" style=" font-size:11px; color:#666666; font-family:Arial, Helvetica, sans-serif;">
+    <tbody>
+    <tr>
+        <td align="left" valign="top">Please note: <em>Astronomy</em> will never share your information with any other companies. Upon completion of the series, you will begin receiving the weekly <em>Astronomy</em> newsletter, special offers, and surveys. You also have the ability to unsubscribe from these newsletters at any time by following the unsubscribe link located at the bottom of each email. <a href="https://www.kalmbach.com/privacy/" target="_blank" name="Privacy Policy" xt="SPCLICK" xthyperlink="735092">View our privacy policy.</a></td>
+    </tr>
+    </tbody>
+</table>
+<script type="text/javascript">
+    function lowercase() {
+        var fld = document.getElementById("email");
+        fld.value = fld.value.toLowerCase();
+    }
+</script>
+</body>
+</html>

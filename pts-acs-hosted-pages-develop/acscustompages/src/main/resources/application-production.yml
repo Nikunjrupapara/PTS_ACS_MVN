@@ -1,0 +1,384 @@
+barcode:
+  baseUrl: https://barcode.data-axle.com
+config:
+  domains:
+    # Boscov's
+    -
+      name: boscovsemail.com
+      company: boscovs
+      brand: boscovs
+    -
+      name: boscovsemail.net
+      company: boscovs
+      brand: boscovs
+    -
+      name: em.boscovs.com
+      company: boscovs
+      brand: boscovs
+    -
+      name: web.boscovsemail.com
+      company: boscovs
+      brand: boscovs
+    -
+      name: boscovs.daet0.com
+      company: boscovs
+      brand: boscovs
+
+    # CFNA
+    -
+      name: alerts.cfna.com
+      company: cfna
+      brand: cfna
+    -
+      name: e.cfna.com
+      company: cfna
+      brand: cfna
+    -
+      name: cfna.daet0.com
+      company: cfna
+      brand: cfna
+
+    # Dillards
+    -
+      name: web.mktgdillards.com
+      company: dillards
+      brand: dillards
+    -
+      name: mktgdillards.daet0.com
+      company: dillards
+      brand: dillards
+
+    # Dollar Tree
+    -
+      name: mailing.dollartree.com
+      company: dollartree
+      brand: dollartree
+    -
+      name: dollartree.daet0.com
+      company: dollartree
+      brand: dollartree
+
+    # Kalmbach Media
+    -
+      name: kalmbachmail.daet0.com
+      company: kalmbachmedia
+      brand: kalmbachmedia
+    -
+      name: mail.kalmbachmail.com
+      company: kalmbachmedia
+      brand: kalmbachmedia
+    -
+      name: mail.astronomymail.com
+      company: kalmbachmedia
+      brand: kalmbachmedia
+    -
+      name: mail.trainsmail.com
+      company: kalmbachmedia
+      brand: kalmbachmedia
+
+    # Kodak Moments
+    -
+      name: email.kodakmoments.com
+      company: kodakmoments
+      brand: kodakmoments
+    -
+      name: kodakmoments.daet0.com
+      company: kodakmoments
+      brand: kodakmoments
+
+    # Mastercard Rewards
+    # Brazil
+    -
+      name: mastercard-email.com.br
+      company: mcrewardsbrazil
+      brand: mcrewardsbrazil
+    -
+      name: mcrewardsbrazil.daet0.com
+      company: mcrewardsbrazil
+      brand: mcrewardsbrazil
+
+    # Poland
+    -
+      name: email-mastercard.pl
+      company: mcrewardspoland
+      brand: mcrewardspoland
+    -
+      name: mcrewardspoland.daet0.com
+      company: mcrewardspoland
+      brand: mcrewardspoland
+
+    # Resideo
+    -
+      name: honeywellhome.daet0.com
+      company: resideo
+      brand: honeywellhome
+    -
+      name: email.honeywellhome.com
+      company: resideo
+      brand: honeywellhome
+    -
+      name: resideo.daet0.com
+      company: resideo
+      brand: resideo
+    -
+      name: email.resideo.com
+      company: resideo
+      brand: resideo
+
+    # US Bank
+    -
+      name: email.creditcard.acg.aaa.com
+      company: usbank
+      brand: ACG
+    -
+      name: usb-acg.daet0.com
+      company: usbank
+      brand: ACG
+    -
+      name: email.ameriprisecreditcard.com
+      company: usbank
+      brand: AMP
+    -
+      name: usb-amp.daet0.com
+      company: usbank
+      brand: AMP
+    -
+      name: email.associatedbankcreditcard.com
+      company: usbank
+      brand: ASB
+    -
+      name: usb-asb.daet0.com
+      company: usbank
+      brand: ASB
+    -
+      name: email.mybmwcreditcard.com
+      company: usbank
+      brand: BMW
+    -
+      name: usb-bmw.daet0.com
+      company: usbank
+      brand: BMW
+    -
+      name: email.edwardjonescreditcard.com
+      company: usbank
+      brand: EJ
+    -
+      name: usb-ej.daet0.com
+      company: usbank
+      brand: EJ
+    -
+      name: email.myaccountaccess.com
+      company: usbank
+      brand: ELA
+    -
+      name: usb-ela.daet0.com
+      company: usbank
+      brand: ELA
+    -
+      name: email.elalflycardpreferred.com
+      company: usbank
+      brand: ELL
+    -
+      name: usb-ell.daet0.com
+      company: usbank
+      brand: ELL
+    -
+      name: email.fidelityrewards.com
+      company: usbank
+      brand: FID
+    -
+      name: usb-fid.daet0.com
+      company: usbank
+      brand: FID
+    -
+      name: email.myminicreditcard.com
+      company: usbank
+      brand: MNI
+    -
+      name: usb-mni.daet0.com
+      company: usbank
+      brand: MNI
+    -
+      name: email.quickencard.com
+      company: usbank
+      brand: QKN
+    -
+      name: usb-qkn.daet0.com
+      company: usbank
+      brand: QKN
+    -
+      name: email.mybmwmotorradcard.com
+      company: usbank
+      brand: RAD
+    -
+      name: usb-rad.daet0.com
+      company: usbank
+      brand: RAD
+
+    # Yes Marketing Stage 3
+    -
+      name: ymnewsolutions.daet0.com
+      company: ymnewsolutions
+      brand: ymnewsolutions
+    -
+      name: ymnewsolutions.p0.com
+      company: ymnewsolutions
+      brand: ymnewsolutions
+jwts:
+  # Boscov's
+  -
+    company: boscovs
+    context-path: coupon
+    token: eyJhbGciOiJIUzUxMiJ9.eyJmb3JtIjp7ImNvbXBhbnkiOiJib3Njb3ZzIiwidXVpZCI6ImI5MTg2YzYxLTk2ODEtNGFmMS05NDk1LTc0OGIzZWJjOWEzZiJ9LCJuYmYiOjE2MzQxNjYwMDAsImV4cCI6NDEwMjM1ODQwMCwiaWF0IjoxNjQyMTc2NTE1LCJqdGkiOiJmNWI5MDJiOS04ZjA5LTQ5NDQtOTllNi1lM2FlODk0ODRiMmYifQ.1kab6FhBR7tPfP9zoX0kOQA-fquD9bp9tjCs_DlT5rB73lAU2Q0ymaedeS5IOYNt9DXeG60f64CuSeA_Ep-ycw
+  -
+    company: boscovs
+    context-path: fhf-registered
+    token: eyJhbGciOiJIUzUxMiJ9.eyJmb3JtIjp7ImNvbXBhbnkiOiJib3Njb3ZzIiwidXVpZCI6ImI2YjVjMmRiLTM3M2EtNGRjNi04ODFjLTg5YjY2YmExODRjYiJ9LCJuYmYiOjE2NDQ5Njk2MDAsImV4cCI6NDEwMjM1ODQwMCwiaWF0IjoxNjUyNzEwNDg0LCJqdGkiOiJkMDM0YzRkNy0zMThhLTRjODUtYTA4NC0yYzNkZDY0OTVmZDMifQ.zSbDYYiwQLQoCDADcAYlU9YLdxMo3AftO2qewvB3T-M-xL0Jfq2gUk3jwEvJa9_NkmDfr3XzDN_74g8Q5Iu9MQ
+  -
+    company: boscovs
+    context-path: fhf-registration
+    token: eyJhbGciOiJIUzUxMiJ9.eyJmb3JtIjp7ImNvbXBhbnkiOiJib3Njb3ZzIiwidXVpZCI6IjJiNzFkMDViLThlZDctNGY5OC1iMjUzLTliM2I4YTViY2Q3ZiJ9LCJuYmYiOjE2NDEyNTQ0MDAsImV4cCI6NDEwMjM1ODQwMCwiaWF0IjoxNjQ5MDYwMjcyLCJqdGkiOiJmZTBkZTg5NC1jYWViLTQ1ZmItODFiZS1mNWNhNDc0ZDk4YTgifQ.3lXxpRHSXRIqBOX7f_Sfd-CuIa07kvFnPuJAtTLlDazf-SvfVm9dxZVWoPqx4cB3hhLfPRtHNKzjsBhrWB4A8w
+  -
+    company: boscovs
+    context-path: unsubscribe
+    token: eyJhbGciOiJIUzUxMiJ9.eyJmb3JtIjp7ImNvbXBhbnkiOiJib3Njb3ZzIiwidXVpZCI6IjViNmMzYTcwLTlhODItNDI3MC1iYjQ4LTVkNGY0MzEzNDRkMiJ9LCJuYmYiOjE2MzQxNjYwMDAsImV4cCI6NDEwMjM1ODQwMCwiaWF0IjoxNjQyMTc2NTk2LCJqdGkiOiI4YjMwODQ5Zi1jMGQwLTQ2ODItOTMxNS04OGU4ZDhhZTk0YjUifQ.r1KHYtr5iJlH3FYLucQ_BwkuJbJwZ3ePsJNB-4EnoO-uTh4vb5txmDGa-vkYqc7JonKrtwhEIqJOkTZi4A9b_Q
+
+  # CFNA
+  -
+    company: cfna
+    context-path: unsubscribe
+    token: eyJhbGciOiJIUzUxMiJ9.eyJmb3JtIjp7ImNvbXBhbnkiOiJjZm5hIiwidXVpZCI6IjYxZDE4NDFkLTZlN2MtNDUxMS04NmQwLWFkZmJmNDk3Mjg0YyJ9LCJuYmYiOjE2MzQxNjYwMDAsImV4cCI6NDEwMjM1ODQwMCwiaWF0IjoxNjQyMTc5NTQzLCJqdGkiOiJjOTgwOWUxNy1mZDExLTQzMGUtYjI2My1mZDczNWQyZjFlOWQifQ.v2jFCPIQg6lCd9qcXMzGJy4a_rp8xtxI09GPKB6tDH0TzGMLFAQxGiuD3gmtNF1LM9OS4VsggMJAxZyGd-U9nw
+
+  # Dillards
+  -
+    company: dillards
+    context-path: unsubscribe
+    token: eyJhbGciOiJIUzUxMiJ9.eyJmb3JtIjp7ImNvbXBhbnkiOiJkaWxsYXJkcyIsInV1aWQiOiI0ZjA4OTY5Ni0xNDZkLTQwYTgtODIzMi00MDllNjZiNGQ4NDAifSwibmJmIjoxNjE1NzgwODAwLCJleHAiOjQxMDIzNzY0MDAsImlhdCI6MTYyMzc3NDE3NywianRpIjoiYzAxMDY1NDEtZTNiZC00N2JmLTg3MGEtZTQ5ZTQzMWVkZTc0In0.xpBM8PxvrcEad07Q-o86SmUZJ-49C4Ulya85tB-1k8mOc3yYtHZsVbGd9aWmeo-B5Va75AJEUDMWNi5xvP7uwA
+  -
+    company: dillards
+    context-path: unsubadhoc
+    token: eyJhbGciOiJIUzUxMiJ9.eyJmb3JtIjp7ImNvbXBhbnkiOiJkaWxsYXJkcyIsInV1aWQiOiJhY2JhZjQ1Mi0wZTc4LTQyOGItOGY5ZC01M2M2NGExMTA4NGEifSwibmJmIjoxNjE1NzgwODAwLCJleHAiOjQxMDIzNzY0MDAsImlhdCI6MTYyMzc3NTEyOCwianRpIjoiYmRmMTI0ZjAtOWRkMi00MzA1LTkwMWMtMjdiMjI3NWM0NTE0In0.vzW4qOABqO1kV1gNFeJq98leJzTTGXQIs4DBt-J1Gc0qoEDQ12iNZLqJUZoCKyi1Kp1kmPQyiuuOeDSqJWNptg
+
+  # Dollar Tree
+  -
+    company: dollartree
+    context-path: signup
+    token: eyJhbGciOiJIUzUxMiJ9.eyJmb3JtIjp7ImNvbXBhbnkiOiJkb2xsYXJ0cmVlIiwidXVpZCI6ImIzNjBlYjYzLTNjNzEtNGViZS05MzdmLWU3ZDU5NmM1OTk0ZCJ9LCJuYmYiOjE2MTIzOTY4MDAsImV4cCI6NDEwMjM1ODQwMCwiaWF0IjoxNjIwMTQ5NTY5LCJqdGkiOiIwZjA3YmEyYS1iM2ViLTQwODMtOTEyNi1iNjEwZmUzMzIwYWUifQ.ZU1__zf26U7smEUDdnQJ4EMKSrEaEV8hM5wpyU1MIbXDMftlCUzIFUn9T5Eb1LTTYedAab5OEwqqh84PHaVIVA
+  -
+    company: dollartree
+    context-path: contest
+    token: eyJhbGciOiJIUzUxMiJ9.eyJmb3JtIjp7ImNvbXBhbnkiOiJkb2xsYXJ0cmVlIiwidXVpZCI6IjM1ZTQ5YWMwLTI4ZWItNDM1ZC1iMWRlLWUwNzc2MzBhYTRmYiJ9LCJuYmYiOjE2MTIzOTY4MDAsImV4cCI6NDEwMjM1ODQwMCwiaWF0IjoxNjIwMTQ5NzU2LCJqdGkiOiJiNjAzNzJjYy0wY2I1LTQ0ZDItYjBlNi0xNTg5MmQwMjg5YzMifQ.UZhhBdKkHZAZoYBU4t9TAoJgA6s_qAI01-DH7dhEmqcxxkRZoO9pMUBmBMtD5OHVCVP1tXx2hM_SVUHO_MR5Xw
+  -
+    company: dollartree
+    context-path: preferences
+    token: eyJhbGciOiJIUzUxMiJ9.eyJmb3JtIjp7ImNvbXBhbnkiOiJkb2xsYXJ0cmVlIiwidXVpZCI6IjRkNDA5ODZhLWJjM2YtNDJlMC05NjBiLWM3Y2EzYzQ0NjA5MSJ9LCJuYmYiOjE2MTIzOTY4MDAsImV4cCI6NDEwMjM1ODQwMCwiaWF0IjoxNjIwMTQ5NDgwLCJqdGkiOiI4MTcxNTUyYi0wNmI4LTRhMTctOGM1Ny01MTNhODJmYTY3MjMifQ.b4qlepPMgabNgYa2-QR2GJiHdB7XrXU2X5PVJ0xBLsU76t7c6DV9aTkWQ4pmnsTBUHyLcJj1EOiFoYVWOA_iLA
+  -
+    company: dollartree
+    context-path: unsubscribe
+    token: eyJhbGciOiJIUzUxMiJ9.eyJmb3JtIjp7ImNvbXBhbnkiOiJkb2xsYXJ0cmVlIiwidXVpZCI6ImI3MjhjOWMzLTE0N2MtNDEzMi1iMTlhLWE2MjJlYzYzZDdkOSJ9LCJuYmYiOjE2MTIzOTY4MDAsImV4cCI6NDEwMjM1ODQwMCwiaWF0IjoxNjIwMTQ5NjUxLCJqdGkiOiJlMzFhMjRlMi1hMzYwLTQ0MmMtOWUxYy00MTcxMWE3ZWVhZjAifQ.0Ogm3XIekMe3duAOzMoM13pNlsFagGI8yWxBhLURDBTQcvUCkuBLg8omnoiT5iCMTCNAcsLDdszjcptRQJQwqA
+
+  # Kalmbach Media
+  -
+    company: kalmbachmedia
+    context-path: beginner/asy
+    token: eyJhbGciOiJIUzUxMiJ9.eyJmb3JtIjp7ImNvbXBhbnkiOiJrYWxtYmFjaG1lZGlhIiwidXVpZCI6ImQ3Y2U3NDBjLTJmNzgtNGMzOC05NzkxLWI5OTQzNTI1Mzc0NiJ9LCJuYmYiOjE2MjA2MDEyMDAsImV4cCI6NDEwMjM1ODQwMCwiaWF0IjoxNjI4NjE1MTAwLCJqdGkiOiJlNjc2YmU4OS00NjIyLTQyOTMtYTY3My1lYjk5NzMwZWE3OGMifQ.XipQ9n-61i8HaWKBj95xTGGBDbibujllPhZ_bT4OqouVZxA9YN5K7DNAKTH6nEODV0DkKPGNOwR0IDjpN8LO-A
+  -
+    company: kalmbachmedia
+    context-path: beginner/ctt
+    token: eyJhbGciOiJIUzUxMiJ9.eyJmb3JtIjp7ImNvbXBhbnkiOiJrYWxtYmFjaG1lZGlhIiwidXVpZCI6IjZlNjUxYzMzLTQwYzYtNDI3MS04NTFlLWVhZWFkZGQ3ZmI3MiJ9LCJuYmYiOjE2MjA2MDEyMDAsImV4cCI6NDEwMjM1ODQwMCwiaWF0IjoxNjI4NjE1MzMxLCJqdGkiOiJlOGZiNDdjNi1hM2RjLTQwYTQtOWNlYi01YjVkYTM0ZTUyYjMifQ.csmcgLmoz9bTn6YE-aKEobP0QFZHJOPaJi9E9w0zpYOc6e2Kyo6plFHHMoVo8NAn7vw7JZNDcywpIe5cqG6LEw
+  -
+    company: kalmbachmedia
+    context-path: beginner/fsm
+    token: eyJhbGciOiJIUzUxMiJ9.eyJmb3JtIjp7ImNvbXBhbnkiOiJrYWxtYmFjaG1lZGlhIiwidXVpZCI6IjIwMDA4YmExLWMwMjYtNDk0YS04YzRjLTZlYmY2ZjM2YjA3ZSJ9LCJuYmYiOjE2MjA2MDEyMDAsImV4cCI6NDEwMjM1ODQwMCwiaWF0IjoxNjI4NjE1NDMxLCJqdGkiOiI0ZGJkOTc0Yi03Zjc1LTQ5NDMtOWViZi1iYWUzMzJlZGZkMWMifQ.Ys40Xmxii78yvfXrmZC-FajrIbVMNT6SxEBcda7Y6aisNUm-jRUDSfrWRwIHbytOdmVklNBmA88wLRuxztsSfg
+  -
+    company: kalmbachmedia
+    context-path: beginner/mrr
+    token: eyJhbGciOiJIUzUxMiJ9.eyJmb3JtIjp7ImNvbXBhbnkiOiJrYWxtYmFjaG1lZGlhIiwidXVpZCI6ImVhNWU0YjJlLTlmNjYtNDA2OC1hMmQ2LWRmNjhjMDdmYTNiMSJ9LCJuYmYiOjE2MjA2MDEyMDAsImV4cCI6NDEwMjM1ODQwMCwiaWF0IjoxNjI4NjE1NTg3LCJqdGkiOiIxM2NhMzViZS0wZjUwLTQ0OGYtYmRhMy0wYmM0ZWMwMDk1ZGEifQ.AvJBFRQZ4fqoMEm89Z340ohB8rmzMjpJQ-QcHabwH_altKLvRUEJ60N1IYGuSBz6JYoZiEkUqx7CNkygjF2lTQ
+  -
+    company: kalmbachmedia
+    context-path: category/discovery
+    token: eyJhbGciOiJIUzUxMiJ9.eyJmb3JtIjp7ImNvbXBhbnkiOiJrYWxtYmFjaG1lZGlhIiwidXVpZCI6ImNkYTA5N2RhLTExZDktNGVmMy1iZjUzLWRlYzEyOTZlYWZkNyJ9LCJuYmYiOjE2MjA2MDEyMDAsImV4cCI6NDEwMjM1ODQwMCwiaWF0IjoxNjI4NjEzNTIxLCJqdGkiOiJkOTFlMWMxZS0xMTYzLTQ0ZGUtODdmZC0yOWM2ZThhMDgwOTQifQ._dqlyDfDT2MW_yv7J8vlzLctXjEZEfcvxTfA-5lav9_jHwBFlIQ_RjtBpUiusPfIXlQwAhmqAsHs9FZDa0D7og
+  -
+    company: kalmbachmedia
+    context-path: category/science
+    token: eyJhbGciOiJIUzUxMiJ9.eyJmb3JtIjp7ImNvbXBhbnkiOiJrYWxtYmFjaG1lZGlhIiwidXVpZCI6IjM0ZWQ1OTUxLWU2ZTYtNGRjYy05ODEwLWZlYjliYzg4YzU0MCJ9LCJuYmYiOjE2MjA2MDEyMDAsImV4cCI6NDEwMjM1ODQwMCwiaWF0IjoxNjI4NjEzNjA0LCJqdGkiOiJmOGY4YzJiMS05MmMyLTRkOTUtYjRlZC0xMzcxNDg0ODM5MDUifQ.uaI8cPQUFQKoikiecMQE98e1CZntj0c3ZBmhrJ4rDe61AIBI4FIj1u5LwzgKmak65D2ziaZGTkoe_lZuM7hW4A
+  -
+    company: kalmbachmedia
+    context-path: discoverblog/optin
+    token: eyJhbGciOiJIUzUxMiJ9.eyJmb3JtIjp7ImNvbXBhbnkiOiJrYWxtYmFjaG1lZGlhIiwidXVpZCI6IjU1OGQyYjg2LTAzYmQtNGU0MS1hMDYwLTc5NDQzYzBiZGI3NyJ9LCJuYmYiOjE2MjA2MDEyMDAsImV4cCI6NDEwMjM1ODQwMCwiaWF0IjoxNjI4NjEzNDA1LCJqdGkiOiI2MmE0NjI4My00ZTlkLTRhNjAtYjc4NS0yNGI0MDE2N2MwMGIifQ.kkZmVlcyGJWkxjAbG5bjP_A6mfmk-KWsy6aidCQq7RFl80MHiytkHwQY6FlzDaVsMdFWKx5J6x7ERNjGAI7VXg
+  -
+    company: kalmbachmedia
+    context-path: preferences
+    token: eyJhbGciOiJIUzUxMiJ9.eyJmb3JtIjp7ImNvbXBhbnkiOiJrYWxtYmFjaG1lZGlhIiwidXVpZCI6ImM5YjE0MjE5LTM3YjMtNDc5NS1hZWE0LTU0YTMzMzkxZDZiNyJ9LCJuYmYiOjE2MjA2MDEyMDAsImV4cCI6NDEwMjM1ODQwMCwiaWF0IjoxNjI4NjE0MTI5LCJqdGkiOiIzZWNlMmFiMy0xYzg5LTRjNDktODUxYS0wMGRiMjAxYmU5MDAifQ.A618SwM_ZJcQ2dJnOj-c9znzhpAPwPM_4R4emzWLNs1jeg-h-bpJg9C7uIwr7j3aCgzDVPDRepFY0qXffPq7IA
+
+  # Kodak Moments
+  -
+    company: kodakmoments
+    context-path: member-unsub
+    token: eyJhbGciOiJIUzUxMiJ9.eyJmb3JtIjp7ImNvbXBhbnkiOiJrb2Rha21vbWVudHMiLCJ1dWlkIjoiMjVmNjUwMDItNDAxZS00ZWE1LWJiOWUtODZjYmY3OGM1ZWE2In0sIm5iZiI6MTYyMDYwMTIwMCwiZXhwIjo0MTAyMzU4NDAwLCJpYXQiOjE2Mjg2MTczMjksImp0aSI6IjA2ZGJjZWY5LWNkZTQtNDVmYS1iNDA1LTBlNDlkOWIwY2NiYyJ9.27u8c_Ks17utMGq-7Usy-_8wTVLobsJVDiEM49y3FRnPFIghRALvSf9rOTm1U3qhisYzk2fRX5SteilG9Kcy_A
+
+  # Mastercard Rewards
+  -
+    company: mcrewardsbrazil
+    context-path: unsubscribe
+    token: eyJhbGciOiJIUzUxMiJ9.eyJmb3JtIjp7ImNvbXBhbnkiOiJtY3Jld2FyZHNicmF6aWwiLCJ1dWlkIjoiODcxYTY4NDItMWEzNS00MGI3LTljMGQtMjM5ZWM2ZWZiOTg5In0sIm5iZiI6MTYzNDE4NDAwMCwiZXhwIjo0MTAyMzc2NDAwLCJpYXQiOjE2NDIxODExMzAsImp0aSI6ImNiYmRhY2MyLWM2MWQtNGM1NS05MmQ4LWQ4YTIyZWRhZGY2ZiJ9.ZKIwj37R-AVgvaWx4kS9fDjEh1Mu27wyggZziEqWcNVRWYYZYnIwfl3B9KMB5aa2TXeyrhNX3yIOUCOaVRf5zg
+  -
+    company: mcrewardspoland
+    context-path: unsubscribe
+    token: eyJhbGciOiJIUzUxMiJ9.eyJmb3JtIjp7ImNvbXBhbnkiOiJtY3Jld2FyZHNwb2xhbmQiLCJ1dWlkIjoiMWU3ZDgxOTItMWQ4My00YjdlLTg3MWQtYmY3NDI4MmVlMGNjIn0sIm5iZiI6MTYzNDE4NDAwMCwiZXhwIjo0MTAyMzc2NDAwLCJpYXQiOjE2NDIxODE0NTEsImp0aSI6ImEyMTE5NzBmLWRmZDgtNGQ2NS1hOTM2LWU5MDA4ODdiZTI3NyJ9.R8rtvQnN9twEYjD4wgu4sXYJJJ5hONwLN0mndHEDKumNQQNOgbDGcQn6Awwv7_b1z7jSBI8Lufsl-htb3Oj1zA
+
+  # Resideo
+  -
+    company: resideo
+    context-path: emailCheck
+    token: eyJhbGciOiJIUzUxMiJ9.eyJmb3JtIjp7ImNvbXBhbnkiOiJyZXNpZGVvIiwidXVpZCI6IjU0ZTU4M2IwLTcyMjAtNDEzYi04NDk1LThhMmQ3NjBlNzFkOCJ9LCJuYmYiOjE2MTI4OTIwNzEsImV4cCI6NDEwMjM1ODQwMCwiaWF0IjoxNjEyODkyMDgyLCJqdGkiOiIyZWRkNGQwMS0wOGVlLTRkNGItYjgwOC01MTI3YWI2NjdhODYifQ.Zxnpsgjh-Gmbo3AMamuE4S7y5i0z1Baic2sdl40EPGbD7FqoIeZ3Ka830LZnhT6mZEEZXU7Tl2oKViTJvn7gyg
+  -
+    company: resideo
+    context-path: energyReport
+    token: eyJhbGciOiJIUzUxMiJ9.eyJmb3JtIjp7ImNvbXBhbnkiOiJyZXNpZGVvIiwidXVpZCI6IjQ4YjU4MzU4LTA4Y2UtNGZlYi1iODBmLTY0Nzk3ZWRhMjg1NiJ9LCJuYmYiOjE2MTI4OTIxMTMsImV4cCI6NDEwMjM1ODQwMCwiaWF0IjoxNjEyODkyMTIyLCJqdGkiOiI1OTkxNjcxNC0xNTJjLTQ2YjUtOTViMS1mODBmYTlhZjYxNzQifQ.uEoHzMC7voUMwi-UZO804vHQR_0W43C6RRcwZx9UTPMv-OkyMn_qqzRvlqd1Pczm16oQnfUYVh1lKntpRY00sg
+  -
+    company: resideo
+    context-path: freeFilter
+    token: eyJhbGciOiJIUzUxMiJ9.eyJmb3JtIjp7ImNvbXBhbnkiOiJyZXNpZGVvIiwidXVpZCI6IjdjNTNmODY5LWY2MmQtNGNkOC04YWFlLWY2NmY4MTUzZTM2YSJ9LCJuYmYiOjE2MTU3NjY0MDAsImV4cCI6NDEwMjM1ODQwMCwiaWF0IjoxNjIzNzQ0ODk3LCJqdGkiOiI5NzJhNDcxNy1kZDNiLTQ2Y2UtOWQxZS0yOTM4NjMzMzlhMjAifQ.i4XgBigSv-t3MVrwIVvcvIO661X61c0xsMci0Yj5qfRHLYDCF0u6t3o3bMuh0gF9jaUvKZB7q9jJTU2uRI7u-A
+  -
+    company: resideo
+    context-path: preferences
+    token: eyJhbGciOiJIUzUxMiJ9.eyJmb3JtIjp7ImNvbXBhbnkiOiJyZXNpZGVvIiwidXVpZCI6IjFiMzVkYWIwLTE0ODctNDJjMC1iMmI1LWZkNTg0ZTVkOTFlMSJ9LCJuYmYiOjE2MTI4OTIxNDgsImV4cCI6NDEwMjM1ODQwMCwiaWF0IjoxNjEyODkyMTU1LCJqdGkiOiI0ZGFkNzRjNC1hZjQ3LTQ2YjctYmU4ZC1iNDk1NjA1ODY1YjIifQ.hrZaEloSGjr3RHWFZe7FSv5wFhTkj45Fe5XI53-p_ucNcg3kevb5qd7Q7NSaOm52ob9gSK9nvbaSi22Kc5uTww
+  -
+    company: resideo
+    context-path: productRegistration
+    token: eyJhbGciOiJIUzUxMiJ9.eyJmb3JtIjp7ImNvbXBhbnkiOiJyZXNpZGVvIiwidXVpZCI6ImFmNmMwMTMwLWY5ZjEtNGU5Zi1hZjg3LTUxYWMxNDg1NDk3MCJ9LCJuYmYiOjE2MTI4OTIxODYsImV4cCI6NDEwMjM1ODQwMCwiaWF0IjoxNjEyODkyMTkzLCJqdGkiOiJmZTIxMTU0OC0zMDMwLTQ1NjYtYjE5NC0zYzAzNDM2NGYzMDIifQ.AXvqA_-CmXhnzfBFR3fhBU__2LWSMaDm_TZIZTUUarNWigIgVlbMWOmYPgVsHgYrnLW5PI3RzQ6IhwV0F880Fg
+
+  # US Bank
+  -
+    company: usbank
+    context-path: fidelity
+    token: eyJhbGciOiJIUzUxMiJ9.eyJmb3JtIjp7ImNvbXBhbnkiOiJ1c2JhbmsiLCJ1dWlkIjoiOTFiODk2MGYtMDc3My00Y2NhLTk3YWYtZmQ1NDhjODRkMzk2In0sIm5iZiI6MTYwODY5OTYwMCwiZXhwIjo0MTAyMzc2NDAwLCJpYXQiOjE2MTY1MjQxNzEsImp0aSI6ImJmZTY3ZmFhLWM1MjUtNDExZS05Zjk0LWYwMTQwOGUzZDNjZCJ9.tHlF1PG5pFsuroGb_EZ9wNxUrn_8suZ-SV-eWkBgkYg22kq0RR1C9dqN1sucaDdfSDO-TMSwFnl83Jv5TsgL_A
+  -
+    company: usbank
+    context-path: preferences
+    :token: eyJhbGciOiJIUzUxMiJ9.eyJmb3JtIjp7ImNvbXBhbnkiOiJ1c2JhbmsiLCJ1dWlkIjoiY2U2ZGNjMzAtNmQxMC00NzI5LWJkN2QtN2ExYWI2OTNlM2M4In0sIm5iZiI6MTYwODY5OTYwMCwiZXhwIjo0MTAyMzc2NDAwLCJpYXQiOjE2MTY1MjM4NTgsImp0aSI6ImRkYmQ0NWQ0LWI0N2ItNGRmNi1hMzlmLWJlOGY2NjlmZWNmYSJ9.n5NzZO2HwjMLvtsqS422_VrC2H4mc9IroEpO2qU_fOQSku27ZmtAjAkHksWgjnHZ_yDnoukTHSkH7oC25heaeA
+  # Yesmarketing test page
+  -
+    company: ymnewsolutions
+    context-path: marketing/preferences
+    token: eyJhbGciOiJIUzUxMiJ9.eyJmb3JtIjp7ImNvbXBhbnkiOiJ5bW5ld3NvbHV0aW9ucyIsInV1aWQiOiI3NjgxMzAxYi0wNTVlLTRmMzktYjQ4OS05OTAyOGY4YzVlM2MifSwibmJmIjoxNjQ1NTc0NDAwLCJleHAiOjQxMDIzNTg0MDAsImlhdCI6MTY1MzMxMzg3NiwianRpIjoiZGNkMjA0YzUtMDBmMS00NjRhLTlkNTUtZWYzYjE5YmY0NTU2In0.emOzzPVKjqFu-mNcwjmZV-QImXoBebUW39OdUecCm8M7_gzWiFklY3NAF_JDYnb7LbgZ5QzZal_4m2s8Ht08PQ
+  #  -
+  #    company: ymnewsolutions
+  #    context-path: marketing/signup
+  #    token: eyJhbGciOiJIUzUxMiJ9.eyJmb3JtIjp7ImNvbXBhbnkiOiJ5bW5ld3NvbHV0aW9ucyIsInV1aWQiOiI3YmE5ODY1Ni1iZjhkLTRhZDEtYTVhYy0zYzg1MjVkN2YxODMifSwibmJmIjoxNTkxODMwMDAwLCJleHAiOjQxMDIzNTg0MDAsImlhdCI6MTU5OTg0NDE0MCwianRpIjoiOTBkYjNlZDctZjNhMC00ZTI4LTliZGMtM2JkMmEwNGQzMWIzIn0.oHcv6LLKBnMwVENu4boPKtkMTSMk-RD5uc7i5VbW27O5Bg1gP2Rft01A3AiXIpeQn692So8Lh8SDijfNyJvPIw
+microservices:
+  base-url: https://amsapi.data-axle.com/v1/services
+  useStubbedServices:
+    appDetails: true
+    createProfile: false
+    domains: true
+    getProfileCustomerId: false
+    getProfileSecure: false
+    profileComposite: false
+    triggerEmail: false
+    updateServices: false
+    recaptchaService: false
+# Mongo configuration was defined here but it causes issues when running tests
+# so it should be configured through command line arguments instead, which is
+# probably more secure anyway.

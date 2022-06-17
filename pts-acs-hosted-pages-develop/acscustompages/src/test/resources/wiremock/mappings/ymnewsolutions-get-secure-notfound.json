@@ -1,0 +1,17 @@
+{
+	"request": {
+		"method": "GET",
+		"url": "/v1/services/profiles?l=XXXc74c1f1a03f4b095dc7703e5bbd1096af6b624eac91592008f35c263db46aef59eb6e1ffdd1b94dd9977a2218932225edcde7aa6357bec88ccf2f795be372&s=bdb64076-2052-4762-90da-8ab56c35c30c&view=services"
+	},
+	"response": {
+		"status": 404,
+		"headers": {
+			"Content-Type": "application/json"
+		},
+		"jsonBody": {
+			"status": 404,
+			"message": "No profile was found with the supplied parameters.",
+			"moreInfo": "Check the parameters and try again."
+		}
+	}
+}

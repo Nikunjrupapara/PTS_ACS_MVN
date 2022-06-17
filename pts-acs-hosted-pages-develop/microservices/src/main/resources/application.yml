@@ -1,0 +1,73 @@
+# Default property values
+# All properties used in the application should be defined in this file
+# Environment specific values can be set using config/application.yml or using system properties set from the command line
+# Please try to keep property names in alphabetic order.
+# List Spring defined properties here...
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    ROOT: INFO
+    com.yesmarketing.ptsacs: DEBUG
+    com.yesmarketing.acsapi: DEBUG
+    com.github.zg2pro: DEBUG
+    org.springframework.security: INFO
+management:
+  endpoints:
+    health:
+      show-components: always
+      show-details: always
+    web:
+      exposure:
+        include: '*'
+  security:
+    enabled: true
+  trace:
+    http:
+      enabled: true
+spring:
+  application:
+    name: PTS ACS Microservices API
+  cache:
+    # Please keep cache names in alphabetic order.
+    # When adding a new cache don't forget to set its timeout period (caching.specs.{cacheName}.timeout) in the custom properties below.
+    cacheNames: accessToken,credential,customerIdDefinition,profileMetadata,subscriptions, unassociatedList,associatedList
+  data:
+    mongodb:
+      database: pts-adobe
+      host: localhost
+      port: 27017
+
+  jackson:
+    mapper:
+      accept_case_insensitive_properties: true
+# Custom properties go here...
+app:
+  jwtSecret: JWTSuperSecretKey
+  jwtExpirationInMs: 604800000
+caching:
+  specs:
+    accessToken:
+      timeout: 86400
+    credential:
+      timeout: 86400
+    customerIdDefinition:
+      timeout: 900
+    profileMetadata:
+      timeout: 900
+    subscriptions:
+      timeout: 86400
+    associatedList:
+      timeout: 86400
+    unassociatedList:
+      timeout: 86400
+jwt:
+  # Secret keys should be defined per environment and injected via the command line
+  # rather than stored in source code controlled files!
+  secretKey:
+    form: A dummy value that should be overridden for each environment and needs to be at least 512 bytes long
+message-source:
+  names:
+    - common_messages
+    - errormessage
+    - sagasmessages
+    - messages

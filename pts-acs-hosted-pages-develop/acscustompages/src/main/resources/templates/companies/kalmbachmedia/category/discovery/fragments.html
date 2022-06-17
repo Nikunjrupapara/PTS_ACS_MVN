@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<th:block th:fragment="header">
+    <meta charset="UTF-8">
+    <title>Discovery</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/companies-static/kalmbachmedia/category/discovery/discovery.css}" />
+</th:block>
+
+<th:block th:fragment="footer">
+  <div class="footer">
+    &copy; <span id='year' style='display:inline'>2021</span> Kalmbach Media Co.
+    <a href="//www.kalmbach.com/privacy/">View our Privacy Policy</a>
+  </div>
+  <script>
+  try{
+      document.getElementById("year").textContent=(new Date()).getFullYear();
+  } catch(e) {
+      document.getElementById("year").innerHTML=(new Date()).getFullYear();
+  }
+  </script>
+
+</th:block>
+</body>
+</html>

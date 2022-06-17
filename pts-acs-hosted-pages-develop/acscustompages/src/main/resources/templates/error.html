@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Error!</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/companies-static/css/pages.css}" />
+</head>
+<body>
+<img class="logo" src="https://www.data-axle.com/wp-content/uploads/2020/09/data_axle_horizontal_black_blue_crop.svg" />
+<h3>Something went wrong!</h3>
+<p>We&apos;re sorry that an error occurred whilst processing your request.</p>
+<th:block th:with="customPagesRequest=${customPagesRequest}">
+    <th:block th:if="${customPagesRequest != null}">
+        <p>Request URL: <span th:text="${customPagesRequest.getRequestUrl()}"></span></p>
+        <p>Request Id: <span th:text="${customPagesRequest.requestId}"></span></p>
+    </th:block>
+    <div>
+        <input th:if="${exMsg != null}" type="hidden" name="msg" th:value="${exMsg}"/><br />
+        <input th:if="${exTrace != null}" type="hidden" name="trace" th:value="${exTrace}" />
+    </div>
+</th:block>
+</body>
+</html>

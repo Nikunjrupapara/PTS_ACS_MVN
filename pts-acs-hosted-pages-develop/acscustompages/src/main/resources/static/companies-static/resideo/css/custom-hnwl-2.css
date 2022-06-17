@@ -1,0 +1,91 @@
+body { font-family: roboto, Arial, sans-serif; }
+header { height: 108px; border-bottom: 3px ridge #e8e8e8; }
+header img { vertical-align: middle; margin: 40px 0 0 28px; }
+
+.main { max-width: 900px; margin: 40px auto; }
+.main-header { border-bottom: 4px solid #d0d0d0; margin-bottom: 0; }
+.main-header h1 { font-family: din-condensed, Arial, sans-serif; font-weight: 400; font-size: 2.4em; }
+.email { text-align: right; }
+.email img { vertical-align: middle; }
+.email-tooltip { visibility: hidden; width: 425px; height: 0;
+    background-color: #efefef; color: #464646; font-style: italic; 
+    text-align: center; 
+    /*padding: 12px;*/ 
+    border-radius: 2px;
+    position: relative; 
+    z-index: 1; 
+    /*top: -50px;*/ 
+    left: 0;
+    font-size: 12px;
+}
+.email:hover .email-tooltip { visibility: visible; height: auto; }
+a { color: #166A96; text-decoration: none; }
+
+#status-banner { color: #ffffff; font-size: 0.9em; visibility: hidden; height: 0; padding: 9px }
+#status-banner-vis { color: #ffffff; font-size: 0.9em; padding: 9px; background-color: #166A96; }
+.large { font-size: 1.5em; }
+
+.tickBox { margin-left: 32px; padding: 6px; }
+.tickBox label { text-align: left; }
+.tickBox:hover { background-color: #ffefef; border-radius: 3px; }
+.subtitle { font-style: italic; color: #bbbbbb; font-size: 14px; padding: 6px; } /*#808080*/
+#check-errors, #feed-errors, #noselection-errors { color: red; }
+
+#usub-questions { visibility: hidden; height: 0; }
+.indent { margin-left: 32px; }
+
+.x-space { margin-top: 30px; }
+.infoicon { display: inline-block; width: 5%; vertical-align: top; }
+.operational { display: inline-block; width: 94%;  }
+.operational p { font-style: italic; color: #808080; font-size: 0.9em; }
+
+.in-text label { display: block; margin-left: 0; margin-top: 20px; }
+#subForm .tickBox { margin-left: 0; margin-top: 20px;}
+#subForm .tickBox label { font-style: italic; color: #808080; font-size: 0.9em; }
+#subForm input[type=text] {width: 100%;}
+.small-text { font-size: 0.9em; }
+.big-text { font-size: 18px; margin-bottom: 1.5em; }
+.error-text { color: red; }
+.text-wrap { white-space: normal; }
+/*input[type=checkbox] {vertical-align: top; }*/
+
+footer { background-color: #707070; }
+footer .container { max-width: 1120px; }
+footer h2 { color: #ffffff; font-weight: bold; margin-top: 50px; font-size: 0.9em; }
+footer ul { list-style: none; }
+footer ul li { font-size: 0.75em; }
+footer ul li a { color: #ffffff; text-decoration: none; }
+.social-icon { display: inline-block; width: 35px; }
+.legal { color: #cbcbcb; font-size: 11px; margin-top: 40px }
+.legal a { color: #cbcbcb; text-decoration: none; }
+.text-right { text-align: right; }
+
+/*Shweta - Error messages for input fields on jsp*/
+.form-error {
+  	display: none;
+ 	/* margin-top: -0.33333rem;
+  	margin-bottom: 0.66667rem;*/
+  	font-weight: bold;
+  	font-size: small;
+  	color: #ec5840; }
+  	.form-error.is-visible {
+    	display: block; }
+    	
+p.error{
+	/*margin-top: -0.33333rem;
+	margin-bottom: 0.66667rem;*/
+	font-size: small;
+	font-weight: bold;
+	color: #ec5840;
+	text-transform: none;
+}
+.is-visible {
+    display: block !important;
+}
+.button,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  background-color: #166A96;
+}

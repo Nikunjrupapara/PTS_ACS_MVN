@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<!--
+   <th:block th:with="brand=${dynamicFormBean.getBrand()}" th:include="~{/companies/resideo/freeFilter/fragments :: getHead()}" />
+-->
+<th:block th:fragment="getHead()" >
+    <th:block>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Resideo | Free Filter Registration</title>
+
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MKTDG93');</script>
+        <!-- End Google Tag Manager -->
+
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" th:href="@{/companies-static/resideo/css/FreeFilter.css}" />
+        <link rel="icon" href="https://www.resideo.com/Areas/Resideo/favicon.ico?v=637431969355206534" type="image/x-icon">
+
+        <link rel="stylesheet" type="text/css" th:href="@{/companies-static/resideo/css/waitMe.min.css}" />
+    </th:block>
+</th:block>
+
+<th:block th:fragment="getGoogleTag()" >
+    <th:block>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MKTDG93"
+                          height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+    </th:block>
+</th:block>
+
+<th:block th:fragment="getLogo()">
+    <div id="Resideo_logo">
+        <a href="https://www.resideo.com/us/en" target="_blank">
+            <img th:src="@{/companies-static/resideo/images/ResideoLogo2x.png}" width="57" height="57" alt="Resideo" border="0" />
+        </a>
+    </div>
+</th:block>
+
+<!--
+   <th:block th:replace="~{/companies/resideo/freeFilter/fragments :: getConfirmationMsg('__${state}__'})}" />
+-->
+<th:block th:fragment="getConfirmationMsg(state)" >
+    <th:block th:with="ineligible=${state == 'AK' or state == 'HI'}">
+        <th:block th:if="${ineligible}">
+            <div class="error-ak-hi">
+                <div>
+                    <h1 class="center-text">THANK YOU!</h1>
+                    <p class="center-text">
+                        Unfortunately, this offer is not valid for Alaska and Hawaii residents. However, please note
+                        that your registration and consent to receive marketing from Resideo has been confirmed.
+                        <br /><br />
+                        We are excited to welcome you to our family of comfort products!
+                    </p>
+                </div>
+            </div>
+        </th:block>
+        <th:block th:if="${!ineligible}">
+            <div class="success">
+                <div class="img-container">
+                    <img th:src="@{/companies-static/resideo/images/checkcircle.png}" alt="checkmark" width="74" />
+                </div>
+                <div>
+                    <h1>SUCCESS</h1>
+                    <p>
+                        Your request has been processed and approved.
+                        <br /><br />
+                        Please check your email for next steps.  Thank you again for choosing a Honeywell Home product
+                        by Resideo!
+                    </p>
+                </div>
+            </div>
+        </th:block>
+    </th:block>
+</th:block>
+
+<!--
+   <th:block th:replace="~{/companies/resideo/freeFilter/fragments :: tryAgain()}" />
+-->
+<th:block th:fragment="tryAgain()">
+    <a th:href="@{/p/profile/search/freeFilter/index}">
+        <input type="submit" id="submit" name="submit" value="TRY AGAIN" />
+    </a>
+</th:block>
+
+<!--
+   <th:block th:replace="~{/companies/resideo/freeFilter/fragments :: warning()}" />
+-->
+<th:block th:fragment="warning()">
+    <p><img th:src="@{/companies-static/resideo/images/warning.png}" alt="warning icon" width="65"></p>
+</th:block>
+
+</body>
+</html>

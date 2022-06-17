@@ -1,0 +1,170 @@
+{
+	"request": {
+		"method": "GET",
+		"url": "/v1/services/profiles?l=1FAC74C1F1A03F4B095DC7703E5BBD1096AF6B624EAC91592008F35C263DB46AEF59EB6E1FFDD1B94DD9977A2218932225EDCDE7AA6357BEC88CCF2F795BE372&s=be643fa5-6459-4771-8569-f3cebdd76187&view=services"
+	},
+	"response": {
+		"status": 200,
+		"headers": {
+			"Content-Type": "application/json"
+		},
+		"jsonBody": {
+			"profile": {
+				"PKey": "@BDzdYCvKKe8k2sI4lX1xqmKeLDClKjDnhHU12bzlDrJXsr5ah0mOof77TSw7aMXY3cjN2JPQXq04oqH4IQvOgUD9uYM",
+				"acsId": "bdb64076-2052-4762-90da-8ab56c35c30c",
+				"age": 0,
+				"birthDate": "",
+				"blackList": false,
+				"blackListAllLastModified": "",
+				"blackListEmail": false,
+				"blackListEmailLastModified": "",
+				"blackListFax": false,
+				"blackListFaxLastModified": "",
+				"blackListLastModified": "",
+				"blackListMobile": false,
+				"blackListMobileLastModified": "",
+				"blackListPhone": false,
+				"blackListPhoneLastModified": "",
+				"blackListPostalMail": false,
+				"blackListPostalMailLastModified": "",
+				"blackListPushnotification": false,
+				"blackListPushnotificationLastModified": null,
+				"ccpaOptOut": false,
+				"ccpaOptOutLastModified": "",
+				"created": "2020-06-17 11:41:11.516Z",
+				"cryptedId": "aeHQeyeO8EXY70CrT5kGiXEGxpJgVw3MZmTSH+YRXhvYALbDK6QHt+RgAzgCItuR0WrbBg==",
+				"customFields": {
+					"cusPreferncesLastUpdated": "",
+					"cusFloatNumber": 0.0,
+					"cusRewardsType": "",
+					"cusPrimaryStorelink": {
+						"href": ""
+					},
+					"cusLatitude": 0.0,
+					"cusCbParentprofileLink": {
+						"href": "https://mc.adobe.io/yesmarketing-mkt-stage3/campaign/profileAndServicesExt/profile/@BDzdYCvKKe8k2sI4lX1xqmKeLDClKjDnhHU12bzlDrIaUmn_x_NkP_TJhnJj6z6R_A38TusTuOTA0SvuWV5ofDMqjM2svIu61JnZfYtrWtjU3dZa/cusCbParentprofileLink/"
+					},
+					"cusCustomerId": "charlesb11",
+					"cusCustomerUUID": "be643fa5-6459-4771-8569-f3cebdd76187",
+					"cusTransactionProfilelink": {
+						"href": "https://mc.adobe.io/yesmarketing-mkt-stage3/campaign/profileAndServicesExt/profile/@BDzdYCvKKe8k2sI4lX1xqmKeLDClKjDnhHU12bzlDrIaUmn_x_NkP_TJhnJj6z6R_A38TusTuOTA0SvuWV5ofDMqjM2svIu61JnZfYtrWtjU3dZa/cusTransactionProfilelink/"
+					},
+					"cusPurchaseOrderFlag": false,
+					"cusCustomer_UUID_": "",
+					"cusShortNumber": 0,
+					"cusListLoadProfilelink": {
+						"href": "https://mc.adobe.io/yesmarketing-mkt-stage3/campaign/profileAndServicesExt/profile/@BDzdYCvKKe8k2sI4lX1xqmKeLDClKjDnhHU12bzlDrIaUmn_x_NkP_TJhnJj6z6R_A38TusTuOTA0SvuWV5ofDMqjM2svIu61JnZfYtrWtjU3dZa/cusListLoadProfilelink/"
+					},
+					"cusRewardsPoints": "",
+					"cusEncryptedId": "d4e47993904271effc8cfb8bfc8ac2be",
+					"cusDoubleNumber": 123.45,
+					"cusSecondaryStorelink": {
+						"href": ""
+					},
+					"cusTransactionDetailProfilelink": {
+						"href": "https://mc.adobe.io/yesmarketing-mkt-stage3/campaign/profileAndServicesExt/profile/@BDzdYCvKKe8k2sI4lX1xqmKeLDClKjDnhHU12bzlDrIaUmn_x_NkP_TJhnJj6z6R_A38TusTuOTA0SvuWV5ofDMqjM2svIu61JnZfYtrWtjU3dZa/cusTransactionDetailProfilelink/"
+					},
+					"cusCorporateInfo": "test1",
+					"cusHomePhone": "",
+					"cusCbTransactionsProfileLink": {
+						"href": "https://mc.adobe.io/yesmarketing-mkt-stage3/campaign/profileAndServicesExt/profile/@BDzdYCvKKe8k2sI4lX1xqmKeLDClKjDnhHU12bzlDrIaUmn_x_NkP_TJhnJj6z6R_A38TusTuOTA0SvuWV5ofDMqjM2svIu61JnZfYtrWtjU3dZa/cusCbTransactionsProfileLink/"
+					},
+					"cusHasRewards": false,
+					"cusSuppressedDomain": false,
+					"cusCbMappingTestProfileLink": {
+						"href": "https://mc.adobe.io/yesmarketing-mkt-stage3/campaign/profileAndServicesExt/profile/@BDzdYCvKKe8k2sI4lX1xqmKeLDClKjDnhHU12bzlDrIaUmn_x_NkP_TJhnJj6z6R_A38TusTuOTA0SvuWV5ofDMqjM2svIu61JnZfYtrWtjU3dZa/cusCbMappingTestProfileLink/"
+					},
+					"cusRewardsId": "",
+					"cusEmailSha": "06699fa26cd3a69589c537c63d6e0f706c73453fb3c021199a9e2b6d8f359f58dab2ab7aae148a8b9cc02954deb3f8a8c5851dc98b7847483b27b9efe25eea9c",
+					"cusSecondaryStore": "",
+					"cusByteNumber": 0,
+					"cusRewardsExpiration": "",
+					"cusCbMappingSKProfileLink": {
+						"href": "https://mc.adobe.io/yesmarketing-mkt-stage3/campaign/profileAndServicesExt/profile/@BDzdYCvKKe8k2sI4lX1xqmKeLDClKjDnhHU12bzlDrIaUmn_x_NkP_TJhnJj6z6R_A38TusTuOTA0SvuWV5ofDMqjM2svIu61JnZfYtrWtjU3dZa/cusCbMappingSKProfileLink/"
+					},
+					"cusPrimaryStore": "",
+					"cusMemo": "",
+					"cusAlternateEmail": "",
+					"cusInteger32Bit": 0,
+					"cusLongNumber": 0,
+					"cusPromotionprofilelink": {
+						"href": "https://mc.adobe.io/yesmarketing-mkt-stage3/campaign/profileAndServicesExt/profile/@BDzdYCvKKe8k2sI4lX1xqmKeLDClKjDnhHU12bzlDrIaUmn_x_NkP_TJhnJj6z6R_A38TusTuOTA0SvuWV5ofDMqjM2svIu61JnZfYtrWtjU3dZa/cusPromotionprofilelink/"
+					},
+					"cusLongitude": 0.0,
+					"cusCbCustomerProfileLink": {
+						"href": "https://mc.adobe.io/yesmarketing-mkt-stage3/campaign/profileAndServicesExt/profile/@BDzdYCvKKe8k2sI4lX1xqmKeLDClKjDnhHU12bzlDrIaUmn_x_NkP_TJhnJj6z6R_A38TusTuOTA0SvuWV5ofDMqjM2svIu61JnZfYtrWtjU3dZa/cusCbCustomerProfileLink/"
+					},
+					"cusRewardsActive": "Y",
+					"cusCustomerIdSHA": "1fac74c1f1a03f4b095dc7703e5bbd1096af6b624eac91592008f35c263db46aef59eb6e1ffdd1b94dd9977a2218932225edcde7aa6357bec88ccf2f795be372",
+					"cusCustomerIdHash": "1fac74c1f1a03f4b095dc7703e5bbd1096af6b624eac91592008f35c263db46aef59eb6e1ffdd1b94dd9977a2218932225edcde7aa6357bec88ccf2f795be372",
+					"cusRfcProfilelink": {
+						"href": "https://mc.adobe.io/yesmarketing-mkt-stage3/campaign/profileAndServicesExt/profile/@BDzdYCvKKe8k2sI4lX1xqmKeLDClKjDnhHU12bzlDrIaUmn_x_NkP_TJhnJj6z6R_A38TusTuOTA0SvuWV5ofDMqjM2svIu61JnZfYtrWtjU3dZa/cusRfcProfilelink/"
+					}
+				},
+				"customerId": "charlesb11",
+				"domain": "yesmail.com",
+				"email": "charlesb+11@yesmail.com",
+				"emailFormat": "unknown",
+				"externalId": "",
+				"fax": "",
+				"firstName": "Charles",
+				"gender": "unknown",
+				"geoUnit": {
+					"href": "https://mc.adobe.io/yesmarketing-mkt-stage3/campaign/profileAndServicesExt/geoUnitBase/@YZzzuch1JK5Zj-fNf1SnP1G5XobfqULPSJEv1b45KGleqfW4kHjO1nQYo3FeDezK59zUDsA4bvxigEHGaBC2dtJ5P_E",
+					"title": "All (all)",
+					"pkey": "@YZzzuch1JK5Zj-fNf1SnP1G5XobfqULPSJEv1b45KGleqfW4kHjO1nQYo3FeDezK59zUDsA4bvxigEHGaBC2dtJ5P_E"
+				},
+				"href": "https://mc.adobe.io/yesmarketing-mkt-stage3/campaign/profileAndServicesExt/profile/@BDzdYCvKKe8k2sI4lX1xqmKeLDClKjDnhHU12bzlDrJXsr5ah0mOof77TSw7aMXY3cjN2JPQXq04oqH4IQvOgUD9uYM",
+				"isExternal": false,
+				"lastModified": "2020-08-04 16:12:35.779Z",
+				"lastName": "Berger",
+				"location": {
+					"address1": null,
+					"address2": null,
+					"address3": null,
+					"address4": null,
+					"city": null,
+					"countryCode": null,
+					"stateCode": null,
+					"zipCode": null
+				},
+				"middleName": "",
+				"mobilePhone": "",
+				"orgUnit": {
+					"href": "https://mc.adobe.io/yesmarketing-mkt-stage3/campaign/profileAndServicesExt/orgUnitBase/@6pKu78FAsqsPi8U2qt7EKQ7gg76f5Kw-VNuqXLrIv0_b5xpR-Yl7SBOggdZpZdwCUrzEFAulyqzOnWnndmzitgKBxLY",
+					"title": "All (all)",
+					"pkey": "@6pKu78FAsqsPi8U2qt7EKQ7gg76f5Kw-VNuqXLrIv0_b5xpR-Yl7SBOggdZpZdwCUrzEFAulyqzOnWnndmzitgKBxLY"
+				},
+				"phone": "",
+				"postalAddress": {
+					"addrDefined": null,
+					"addrErrorCount": null,
+					"addrLastCheck": null,
+					"addrQuality": null,
+					"line1": null,
+					"line2": null,
+					"line3": null,
+					"line4": null,
+					"line5": null,
+					"line6": null,
+					"serialized": null
+				},
+				"preferredLanguage": "none",
+				"salutation": "",
+				"subscriptions": {
+					"href": "https://mc.adobe.io/yesmarketing-mkt-stage3/campaign/profileAndServicesExt/profile/@BDzdYCvKKe8k2sI4lX1xqmKeLDClKjDnhHU12bzlDrIbVRxWjLnUjmWq6831vZiNJiwq0_tD_7QVOPUHDBrTrNKKr6yvWxOweNUHOoGtYIbGw1BO/subscriptions/"
+				},
+				"thumbnail": "/nl/img/thumbnails/defaultProfil.png",
+				"timeZone": "none",
+				"title": "Charles Berger (charlesb+11@yesmail.com)"
+			},
+			"currentServices": [
+				{
+					"name": "yesMarketingAService",
+					"label": "Marketing A",
+					"created": "2020-06-17 11:41:15.026Z"
+				}
+			]
+		}
+	}
+}

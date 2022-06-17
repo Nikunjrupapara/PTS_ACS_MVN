@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:fragment="backLinkError">
+    <p>
+        Please click
+        <a th:href="@{'/p/profile/secure/' + *{appPath} + '/lookup?l=' + ${searchFields['l']} + '&s=' + ${searchFields['s']} + '&view=services' + '&deliveryId=' + ${deliveryId}}">
+                here
+        </a>
+        to try again.
+    </p>
+</div>
+<div th:fragment="tryAgainAfterSave">
+    <p>
+        <a class="reload_prefs"
+                th:href="@{'/p/profile/secure/' + *{appPath} + '/lookup?l=' + *{items['cusCustomerIdHash']} + '&s=' + *{items['cusCustomerUUID']} + '&view=services' + '&deliveryId=' + ${deliveryId}}"
+        >Please click here to make additional changes.</a>
+    </p>
+</div>
+</body>
+</html>

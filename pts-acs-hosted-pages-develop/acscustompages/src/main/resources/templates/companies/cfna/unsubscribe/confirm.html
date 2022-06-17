@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Unsubscribe Success</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/companies-static/cfna/unsubscribe/css/unsubscribe.css}" />
+</head>
+<body th:object="${dynamicFormBean}"
+      th:with="brand=${#strings.defaultString(#strings.toUpperCase(dynamicFormBean.getQueryParamFirstValue('brand')),'DEFAULT')},
+      brandUrl='https://www.cfna.com'">
+    <div id="container">
+        <th:block th:replace="~{/companies/cfna/unsubscribe/logo :: getLogo('__${brand}__') }" />
+        <p class="mrgntoptall">
+            You are now unsubscribed from
+            <th:block th:insert="~{/companies/cfna/unsubscribe/fragments :: brandName('__${brand}__')}" />Credit Card email
+            marketing. Please click <a th:href="${brandUrl}" target="_blank">here</a> to visit Credit First National Association.
+        </p>
+    </div>
+</body>
+</html>

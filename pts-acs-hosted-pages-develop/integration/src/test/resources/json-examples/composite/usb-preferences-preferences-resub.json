@@ -1,0 +1,25 @@
+{
+	"hasProfile": false,
+	"hasServices": true,
+	"hasCustomResources": false,
+	"hasEmails": true,
+	"services": {
+		"add": [
+			"marketing"
+		],
+		"remove": [
+		]
+	},
+	"emails": [
+		{
+			"eventId": "EVTsign_uppageconfirmation_bmw",
+			"email": "charlesb@yesmail.com",
+			"ctx": {
+				"acctL4": "9876",
+				"lastName": "Berger",
+				"firstName": "Charles",
+				"customerIDHash": "CusrtomerIdHash will be here"
+			}
+		}
+	]
+}

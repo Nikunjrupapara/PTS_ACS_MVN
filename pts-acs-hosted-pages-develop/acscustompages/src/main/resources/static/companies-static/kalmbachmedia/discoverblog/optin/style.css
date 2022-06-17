@@ -1,0 +1,47 @@
+*{margin:0; padding:0;}
+
+#wrapper{width:100%;}
+
+.description{width:100%;float:left;}
+
+h1 {font-family: 'Yanone Kaffeesatz', sans-serif;font-size: 40px; line-height:60px;font-weight:700;}
+
+h2 {font-family: 'PT Sans', sans-serif;font-size: 18px; font-weight:700;margin:0;letter-spacing:0.02em;}
+
+h3 {font-family: Arial, Helvetica, sans-serif;font-size: 13px;font-weight:normal;}
+
+p {font-family: Arial, Helvetica, sans-serif;font-size: 15px; line-height:18px;margin:5px 0 20px 0;font-weight:normal;color:#333333;letter-spacing:0.01em;}
+
+a:link, a:visited {color: #c4161c;text-decoration: none;
+}
+
+a:hover {color: #F00;
+}
+
+.fine{float:left;clear:both;padding:0;}
+
+.fine p{font-family:Georgia,Times New Roman,serif;; font-size:10px;line-height:12px; color:#333333;padding:0;}
+
+.sled{width:38%;float:left;}
+
+.sled img{max-width:100%;}
+
+/* Buttons */
+.buttons {display:inline-block;border-radius:3px;font:15px 'PT Sans';}
+.buttons a:link, .buttons a:visited {color:#fff;text-decoration:none;display:block;padding:6px 20px;font-weight:normal;}
+
+
+#submit {
+	display:inline-block;
+	font-size:16px;
+	font-family: 'PT Sans', sans-serif;
+	background-color:#F00;
+	color:#fff;
+	text-decoration:none;
+	display:block;
+	padding:6px 10px;
+	font-weight:normal;
+    cursor: pointer;
+    border:none;
+	letter-spacing:0.03em;
+}

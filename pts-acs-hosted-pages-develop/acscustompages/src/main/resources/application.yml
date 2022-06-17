@@ -1,0 +1,71 @@
+app:
+  tomcat-base: http://localhost
+barcode:
+  baseUrl: http://localhost:8083/barcode-google
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    ROOT: INFO
+    com.dataaxle.pts.acscustompages: DEBUG
+    org.springframework.security: INFO
+    org.springframework.web: INFO
+    org.springframework.boot: INFO
+    org.thymeleaf: INFO
+management:
+  endpoints:
+    health:
+      show-components: always
+      show-details: always
+    web:
+      exposure:
+        include: '*'
+  security:
+    enabled: true
+microservices:
+  base-url: http://localhost:8080/v1/services
+  useStubbedServices:
+    appDetails: true
+    createProfile: false
+    customResource: false
+    domains: true
+    getCustomResourceId: false
+    getCustomResourceSecure: false
+    getProfileCustomerId: false
+    getProfileFilter: false
+    getProfileSecure: false
+    jwtService: true
+    listCustomResource: false
+    profileComposite: false
+    triggerEmail: false
+    updateServices: false
+    recaptchaService: false
+server:
+  error:
+    include-exception: true
+    path: /error
+    whitelabel:
+      enabled: false
+  servlet:
+    context-path: /acscustompages
+  port: 8080
+spring:
+  application:
+    name: PTS ACS Custom Hosted Pages
+  boot:
+    admin:
+      client:
+        instance:
+          service-url: ${app.tomcat-base}:${server.port}${server.servlet.context-path}
+  data:
+    mongodb:
+      database: pts-adobe
+      host: localhost
+      port: 27017
+  mvc:
+    log-request-details: false
+    static-path-pattern: /static
+    throw-exception-if-no-handler-found: true
+  resources:
+    add-mappings: false
+  session:
+    store-type: mongodb

@@ -1,0 +1,220 @@
+dl.form dd.section-end{border-bottom:1px solid #666;margin:.83em 0}
+/*img{vertical-align:middle}*/
+#content-area{width:940px;height:100%;margin:0 10px 20px;min-height:400px}
+#icon{float:left;margin:0 .5em 0 0;width:3em;}
+.my-account-block{width:33em;height:7.7em;float:left;display:block}
+.my-account-blockright{width:33em;height:7.7em;float:right}
+#account{width:90%;float:left}
+a h2{color:#003e93}
+.links{text-transform:uppercase;color:#003e93}
+span.strong{color:#090;}
+span.medium{color:#C60;}
+span.weak{color:#C00}
+#strength{margin:-.75em 0 0}
+#create-account p { margin-bottom:0; }
+.instruction{font-size:11px;color:#505050;vertical-align:middle;padding:0 0 0 .5em}
+.logon-block{float:left;width:55%}
+#login-form-main{width:50%}
+.logon-block-new{float:left;width:45%}
+.logon-block-new .primary {margin:15px 0 20px 0;display:block;width:160px;/*lovely fix for dillard's card logon screen*/}
+.logon-block-a{float:left;width:30%}
+.logon-block-b{float:left;width:85%}
+.logon-block-b #acc-register ul li{list-style:inside disc;padding:.5em 0 0}
+.logon-block-c{float:left;width:40%}
+.logon-block-c a{font-size:12px;color:#003e93;text-transform:uppercase}
+#acc-logon .genericESpot{float:right;width:50%;margin:1em 0 0}
+#view-ge-logon-modal #acc-logon .genericESpot{width:100%}
+#acc-logon .genericESpot a{vertical-align:baseline}
+.login-button{background:url(/images/buttons/blue-btn-63.gif) no-repeat scroll 0 0;width:63px;height:22px;font-size:12px;font-weight:400;text-align:center;color:#fff;text-transform:uppercase;clear:left;padding:.16em 0 .32em}
+#registrytitle{background:#6B9ECD;height:4.5em;width:961px;margin:0;padding:0 0 1em 1.6em}
+#registrytitle h1{color:#fff;vertical-align:middle;margin:0}
+#registryNav-6{background:#88b6da;height:3.1em;width:980px}
+#registryNav-6 a{color:#fff;font-size:14px}
+#registryNav-6 li{float:left;display:inline;padding:.75em 2em 0 1.6em}
+#search-image{height:10.83em;padding:0 0 1.6em}
+div.button137{
+	background:#257CB5;
+	text-transform:uppercase;
+	color:#fff;
+	text-align:center;
+	width:134px;
+	margin:0;
+	padding:0;
+	font-size: 14px;
+	display: inline-block;
+	border: none; 
+}
+div.button137 a {
+	padding: 8px 32px;
+	display:inline-block;
+}
+#resetPasswordForm input{float:left;}
+.forgot-form ul {margin-top:20px;}
+arey /**Add Address**/
+.content{width:940px;margin:0 20px 20px}
+.content dd dt input{vertical-align:middle;display:inline}
+.formfield{width:16.6em}
+#otheradd{width:15em;height:1.25em;display:block;float:left}
+.address-area{vertical-align:top;height:9em;line-height:1.5em}
+.address-area a{text-transform:uppercase}
+.address-spot{width:240px;margin:0}
+#address-spot-name{width:240px;height:1.25em}
+.address-spot-multi{width:233px;display:block;margin:.75em 0 0}
+.addressWrap{width:61.6em;float:left;clear:both}
+#shipping{height:7.5em}
+#address{width:12em;float:left;display:block;margin:.2em 0 0}
+#address a{text-transform:capitalize}
+.event th{font-family:"Century Gothic", Verdana;font-size:100%;height:1.1em}
+.event table td{vertical-align:top;padding:.5em .5em 0 0}
+.event table td a{float:left;clear:both}
+.event table td.delete-all{float:right;clear:both}
+.event-space{margin-bottom:.5em}
+.edit-address{width:7em;padding:.5em 0 0}
+.delete-address{width:6em;padding:.5em 0 0 .5em}
+.event table td.break{white-space:inherit;width:100px;overflow:hidden}
+.ebpp h3{font-family:"century gothic", verdana;font-size:150%;font-weight:700;color:#000;text-transform:none;margin:0 0 .35em}
+.ebpp{margin:1.2em 0 0}
+#ebpp-input{margin:.40em 0 .50em}
+.saved{width:50%;float:left;display:block;margin:2em 0 0}
+.payment-info{width:50%;float:left;display:block;margin:2em 0 1em}
+.strongtext{font-weight:700}
+#divide{margin:.5em 0 1.5em;}
+#btn-placement{margin:0 0 0 11.5em}
+#btn-left-placement{float:left;clear:both;width:137px;margin:-3.45em 0 0;padding:0}
+#btn-left-placement a{padding:.5em 0 0}
+.btn-left-width{width:163px}
+table.shipping-method-opts td{vertical-align:top;line-height:1.25em;padding:.6em .5em 0 0}
+table.shipping-method-opts td span label{vertical-align:top;margin:0}
+table.shipping-method-opts td p{clear:both}
+table.shipping-method-opts input{vertical-align:top;height:12px;margin:0;padding:0}
+#wish-area{float:left;margin:0 0 20px 1em}
+#wish-area h2{margin:.5em 0 0}
+#wish-table{border-bottom:1px solid #666;margin:.5em 0 1.5em}
+#wish-table th{border-bottom:1px solid #666;padding:.25em .83em}
+td.item-desc{width:35em;font-size:100%}
+td.item-desc img{min-height:111px; min-width:90px; display:block; float:left; margin:0 .83em}
+a.item-desc-name{font-size:14px;}
+span.item-desc-secondary{display:block;margin-left:104px}
+#wishListInShoppingBag span.item-desc-secondary{display:block;margin-left:121px}
+span.item-desc-secondary p{line-height:normal;margin:0;padding:0}
+.item-hdr{width:35em;text-align:left;margin:0;padding:.83em}
+.avail-hdr{width:13em}
+.price-hdr{width:5em;text-align:center;margin:0;padding:0 .75em}
+.date-hdr{width:10em;text-align:center;margin:0;padding:0 .83em 0 .75em}
+#wish-table td.avail{width:11em;vertical-align:top;margin: 0;padding-left:35px; font-weight:700}
+.move-bag,.delete{color:#003e93;display:block;width:100%;clear:both;white-space:nowrap;text-transform:uppercase}
+.delete a {font-weight:400}
+.move-bag img,.delete img{vertical-align:middle;margin:0 .5em .25em 0}
+#wish-table td.qty{width:4em;text-align:center;vertical-align:top;margin:0;padding:.5em .75em}
+#wish-table td.qty select{height:1.5em}
+#wish-table td.price{width:5em;text-align:center;vertical-align:top;margin:0;}
+#wish-table td.date{width:9em;text-align:center;vertical-align:top;margin:0;}
+#wish-table span.error-msg{float:none;display:block;width:95%;text-align:left;margin:.5em 0 .5em .83em;padding:0}
+.cart-buttons{clear:both;float:right;margin:1em}
+#rr-wrapper{background:none;width:100%;clear:both}
+#rr-container{width:940px;margin:4em auto 0}
+#rr-container .rr_h{background:transparent;width:100%;margin:0 0 15px}
+#rr-container .rr_stratmsg_h{position:absolute;font:13px "Century Gothic", Verdana;font-weight:700;color:#505050;background:transparent;text-transform:uppercase;padding:1em 0}
+#rr-container .rr_itemLoop_h{width:100%;padding:42px 0 0}
+#rr-container .rr_item_h{margin-right:25px;text-align:left}
+#rr-container .rr_item_h img,#rr-container .rr_item_h{width:140px;border:0}
+#rr-container .rr_itemPrice_h a{font-weight:400;font:10px "Century Gothic", Verdana;color:#505050}
+#rr-container .rr_itemPrice_h a:hover{text-decoration:none;color:#003E93}
+#rr-container .rr_itemPrice_h b{color:#000}
+#rr-container .rr_itemPrice_h a:hover,#rr-container .rr_item_h:hover a{color:#003E93;text-decoration:none}
+#print-share{float:right;width:300px;margin:.83em 0 0}
+#print-share a,#print{float:right;display:block;font-size:11px;text-transform:uppercase;padding:0 12px 0 3px}
+a#print{position:absolute;top:8px;right:24px;padding:2px 0 5px 20px}
+#print-share a.twitter{background-position:0 -23px}
+#print-share a.email{background-position:0 -44px;padding-left:24px}
+#print-share a.print,a#print{background-position:0 -68px}
+#footer-recs-container{background:#333;width:100%;display:block;float:left;margin:0}
+#footer-recs{width:798px;display:block;float:left;margin:0 18.8em;padding:0 0 0 1.75em}
+#footer-recs img{width:9em;height:10.2em;background:blue;display:block;float:left;margin:0 1em}
+#banner{margin:20px auto;}
+table.innertable{text-align:center;color:#c00;border:1px solid #c00;background:#fff;font-family:"Century Gothic", Helvetica, Arial, sans-serif;margin:2px 0 20px;padding:10px 30px}
+table.innertable tr{height:20px}
+table.innertable td{vertical-align:bottom;margin:0;padding:.83em 0}
+table.innertable td.red a{vertical-align:baseline;text-decoration:underline;padding:1em 0 0}
+#preferences{width:400px;background-color:#eee;float:right;margin:0 0 3em;padding:1em 1em 0;border:3px solid #FCA59E}
+#preferences p{margin:0 0 1.5em}
+#preferences h1, #preferences_update h2{font-size:24px;color:#c00;font-weight:400;padding:0 0 .5em}
+#preferences ul{list-style:none;margin-left:0;padding-left:0}
+#preferences li{height:26px;width:155px;float:left;margin:0 40px 8px 0}
+#preferences label{float:left;padding-top:10px;text-align:left;margin-left:5px;line-height:12px;width:120px;clear:none}
+#signup{float:left;width:500px;margin:0}
+#signup label{width:140px;float:left;display:inline;white-space:nowrap;margin-right:6px}
+#emailsignup{clear:both;display:block;padding-top:25px}
+#emailsignup label{text-align:left;float:left;clear:none;vertical-align:top}
+#emailsignup p{clear:both;float:left;margin:.83em 0 .83em -.5em}
+#emailsignup a{margin:0 0 0 5px}
+#emailsignup input{clear:both;float:left;margin:-.15em 0 .5em}
+#buttons{clear:both;float:left}
+form.cmxform fieldset ol{margin:0;padding:0}
+form.cmxform em{font-weight:700;font-style:normal}
+form.cmxform #state {width:181px;}
+form.cmxform input[type=checkbox] { margin-left:0; }
+form.cmxform .actions { padding:17px 0 0; clear:left; }
+#preferences_update{height:auto;background-color:#eee;float:left;padding:1em;border:3px solid #FCA59E;width:100%}
+#preferences_update h1 {padding:0 0 10px;}
+#preferences_update ul{list-style:none;margin:.83em 0 0;padding:0}
+#preferences_update li{height:26px;width:155px;float:left;margin-bottom:8px}
+#preferences_update label{float:left;text-align:left;margin-left:5px;padding:9px 0 0; width:108px;clear:none}
+#preferences_update #iwantitall {height:30px; border-bottom:1px solid #000;}
+#welcome{}
+#preferences_update .buttons {clear: left;}
+.buttons{padding-top:2em;text-align:center}
+div.buttons input,div.buttons a{border:none;height:22px;width:81px}
+div.buttons a img{vertical-align:top;margin:.25em 0 0}
+#terms{clear:both;float:left;margin-top:-500px;margin-left:-999px;height:0;width:500px}
+#terms h1{font-size:14px}
+#disclaim{font-family:arial;font-size:10px;color:#fff;background-color:#000;width:805px;padding:5px}
+#info{margin:.83em auto}
+#orderCustomer{margin:0 1em 0 0;padding:0 .83em 0 0}
+#qc-shipping-method input[type="checkbox"],#qc-shipping-method input[type="radio"] {margin-left:0;}
+/*#orderCustomer h2{margin:0 0 .57em}*/
+#orderCustomer p{margin:.83em 0 0}
+#detailsBilling input{margin:0 .5em 0 0}
+#detailsBilling input.button{border:none;width:82px;height:22px;margin:.83em 0;padding:0}
+.textonly center a{background:url(/images/buttons/blue-btn-200.gif) no-repeat scroll 0 0;width:200px;height:22px;font-size:12px;font-weight:400;text-align:center;color:#fff;text-transform:uppercase;float:left;clear:both;margin:1.66em 0;padding:.2em 0}
+.email-opt label{float:none}
+.opt-check{margin:0 0 0 2em}
+.opt-radio{vertical-align:text-bottom;padding:.5em 0 .3em}
+.email-label{font-size:18px;margin:0 .25em 0 0}
+#content-area img,.content img,form.cmxform fieldset{border:none}
+.my-account-block p,.my-account-blockright p{margin:0.25em 0 0 3.5em}
+a.btn-b-63:hover,div.button137 a,#btn-left-placement a:hover{color:#fff}
+.bottom-space,#p-space{margin:0 0 1em}
+#event,#event-date{margin:0 .25em 0 0}
+.eventRow,#wish-table td{border-top:1px solid #CCC;padding:.5em 0}
+#register,.opt-check label{vertical-align:text-top}
+.saved h5,.payment-info h5{margin:1em 0 .5em;padding:0}
+td.innertable span.headlinetwo{font-size:16px}
+#preferences input,#preferences_update input{float:left;margin-bottom:8px; margin-left:0;}
+#detailsOrder label,#detailsBilling label{line-height:1.25em;width:100%;padding:0 0 .25em}
+#detailsOrder input{margin:0 0 .83em}
+#orderCustomer p{clear:both}
+#orderCustomer button#logonButton{margin:0 0 0 170px}
+/* Email Unsub Page */
+.emailPage { margin: 20px auto; width: 600px; }
+.emailPage input, .emailPage label { float: left; }
+.emailPage label { clear: none; line-height: normal; }
+.emailPage input { margin: 0; }
+.emailPage input[type="text"] {clear: left; height:25px; padding: 3px; font-size: 100%; }
+.emailPage input[type="radio"] {margin: 2px 5px 0 0; }
+.emailPage .selectionRow.radio { height: 20px; margin-bottom: 5px; }
+.emailPage .selectionRow.radio label { font-size: 130%; text-transform: uppercase; }
+.emailPage .selectionRow.textbox { margin-left: 18px; }
+.emailPage .selectionRow.textbox label { font-weight: bold; font-size: 120%; }
+.emailPage .selectionRow, .emailPage p { clear: both; font-family: inherit; }
+.emailPage .selectionRow p { font-size: 110%; }
+.emailPage p.privacy {font-family: inherit; font-size: 11px; line-height: 1.1; text-align: justify; font-style: italic; }
+.emailPage p.verify { font-size: 125%; margin: 0; }
+.button {display: inline-block;outline: none;text-align: center;text-decoration: none;text-transform: uppercase;padding: .5em 2em .55em; margin: 10px 0; text-shadow: 0 1px 1px rgba(0,0,0,.3);-webkit-border-radius: .5em; -moz-border-radius: .5em;border-radius: .5em;-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);box-shadow: 0 1px 2px rgba(0,0,0,.2);}
+.button:hover {text-decoration: none;}
+.button:active {position: relative;top: 1px;}
+.blue {color: #fff;background: #003580;background: -webkit-gradient(linear, left top, left bottom, from(#006AFF), to(#003580));background: -moz-linear-gradient(top,  #006AFF,  #003580);filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#006AFF', endColorstr='#003580');}
+.blue:hover {color: #fff;background: #002D62;background: -webkit-gradient(linear, left top, left bottom, from(#0069E0), to(#002D62));background: -moz-linear-gradient(top,  #0069E0,  #002D62);filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0069E0', endColorstr='#002D62');}
+.gray {color: #fff;background: #666;background: -webkit-gradient(linear, left top, left bottom, from(#999), to(#777));background: -moz-linear-gradient(top,  #999,  #777);filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#999', endColorstr='#777');}
+.gray:hover {color: #fff;background: #888;background: -webkit-gradient(linear, left top, left bottom, from(#777), to(#888));background: -moz-linear-gradient(top,  #777,  #888);filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#777', endColorstr='#888');}
+/**/

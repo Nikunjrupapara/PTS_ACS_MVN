@@ -1,0 +1,559 @@
+
+@font-face {
+  font-family: "Honeywell Sans";
+  src: url("../fonts/HoneywellSans-Book.eot");
+  src: url("../fonts/HoneywellSans-Book.eot.eot?#iefix") format('embedded-opentype'),
+    url("../fonts/HoneywellSans-Book.woff") format("woff"),
+    url("../fonts/HoneywellSans-Book.woff2") format("woff2"),
+    url("../fonts/HoneywellSans-Book.ttf") format("truetype"),
+    url("../fonts/HoneywellSans-Book.svg") format("svg");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Honeywell Sans";
+  src: url("../fonts/HoneywellSans-Bold.eot");
+  src: url("../fonts/HoneywellSans-Bold.eot.eot?#iefix") format('embedded-opentype'),
+    url("../fonts/HoneywellSans-Bold.woff") format("woff"),
+    url("../fonts/HoneywellSans-Bold.woff2") format("woff2"),
+    url("../fonts/HoneywellSans-Bold.ttf") format("truetype"),
+    url("../fonts/HoneywellSans-Bold.svg") format("svg");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Honeywell Condensed";
+  src: url("../fonts/HoneywellCond-Bold.eot");
+  src: url("../fonts/HoneywellCond-Bold.eot.eot?#iefix") format('embedded-opentype'),
+    url("../fonts/HoneywellCond-Bold.woff") format("woff"),
+    url("../fonts/HoneywellCond-Bold.woff2") format("woff2"),
+    url("../fonts/HoneywellCond-Bold.ttf") format("truetype"),
+    url("../fonts/HoneywellCond-Bold.svg") format("svg");
+  font-weight: bold;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+}
+#container {
+  width: 100%;
+  background-color: #FFFFFF;
+  margin: auto;
+}
+#innerContainer {
+  max-width: 980px;
+  padding: 0px 40px 40px;
+  margin: auto;
+}
+#Honeywell_logo {
+  padding-top: 45px;
+  text-align: left;
+}
+#Honeywell_logo {
+  padding-top: 45px;
+  text-align: left;
+}
+#form_area {
+  width: 100%;
+  background-color: #ededed;
+  position: relative;
+}
+.form-top {
+  padding: 0px 60px;
+}
+.form-bottom {
+  padding: 0px 60px 60px;
+}
+#headline {
+  font-family: 'Honeywell Sans', sans-serif;
+  font-weight: bold;
+  color: #333333;
+  text-align: center;
+  font-size: 2.8125em;
+  line-height: 1.2;
+  padding: 70px 0px 70px 0px;
+  text-transform: uppercase;
+}
+#rollover {
+  margin-top: 45px;
+  width: 100%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+#rollover_question {
+  text-align: right;
+  vertical-align: top;
+  padding: 5px 0 0 15px;
+}
+#rollover_question_h2, #form_area h2 {
+  font-family: 'Honeywell Sans', sans-serif;
+  color: #000000;
+  font-size: 1.875em;
+  padding-bottom: 0;
+  margin-bottom: 1em;
+  vertical-align: top;
+}
+
+/* TOOLTIP */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 264px;
+  background-color: #FFFFFF;
+  color: #333333;
+  font-size: 1em;
+  line-height: 1.4em;
+  font-family: 'Honeywell Sans', sans-serif;
+  text-align: left;
+  border: 1px solid #333;
+  padding: 20px 30px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -234px;
+}
+.tooltip .tooltiptext a {
+  color: #4076B8;
+  font-size: .875em;
+  font-weight: bold;
+  text-decoration: none;
+}
+.tooltip .tooltiptext:before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #333;
+  border-bottom: 10px solid transparent;
+  right: 7%;
+  bottom: -20px;
+}
+.tooltip .tooltiptext:after {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #fff;
+  border-bottom: 10px solid transparent;
+  right: 7%;
+  bottom: -19px;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+.form-section {
+  padding: 60px 0px;
+}
+#form_area h2 {
+  text-transform: uppercase;
+}
+.form-section p {
+  font-family: 'Honeywell Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 1.2em;
+}
+.form-section p a {
+  text-decoration:none;
+  color: #4076B8;
+  font-size: 0.875em;
+  font-weight: bold;
+}
+.form-row {
+  display: flex;
+  align-items: center;
+}
+#form_area h2:first-of-type {
+  margin-top: 0px;
+}
+#bodyCopy {
+  margin-bottom: 70px;
+}
+#bodyCopy p {
+  font-family: 'Honeywell Sans', sans-serif;
+  font-weight: 400;
+  color: #333;
+  font-size: 1.1875em;
+  line-height: 1.78125em;
+  margin-bottom: 1em;
+}
+#bodyCopy .smalltype {
+  font-size: 1em;
+  line-height: 1.375em;
+  padding-top: 6px;
+}
+label {
+  font-family: 'Honeywell Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+hr {
+  border-top: 2px solid #fff;
+}
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+/* Customize the label (the container) */
+.radio-label {
+  width: 155px;
+  height: 225px;
+/*  background-color: #fff;*/
+  display: inline-block;
+  text-align: center;
+  padding: 40px 20px;
+}
+.radio-label img {
+  height: 70px;
+  width: auto;
+}
+.radio-label p {
+  font-family: 'Honeywell Condensed', sans-serif;
+  color: #000;
+  font-size: 1.25em;
+  padding-top: 30px;
+}
+.radio-img-1, .radio-img-2, .radio-img-3, .radio-img-4, .radio-img-5 {
+  margin: 0 auto;
+  width: 70px;
+  height: 70px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.radio-img-1 {
+  background-image: url("../images/icon_1b.gif");
+}
+.radio-img-2 {
+  background-image: url("../images/icon_2b.gif");
+}
+.radio-img-3 {
+  background-image: url("../images/icon_3b.gif");
+}
+.radio-img-4 {
+  background-image: url("../images/icon_4b.gif");
+}
+.radio-img-5 {
+  background-image: url("../images/icon_5b.gif");
+}
+[type=radio]:checked + label {
+  background-color: #166994;
+}
+[type=radio]:checked + label p {
+  color: #fff;
+}
+[type=radio]:checked + label .radio-img-1 {
+  background-image: url("../images/icon_1w.gif");
+}
+[type=radio]:checked + label .radio-img-2 {
+  background-image: url("../images/icon_2w.gif");
+}
+[type=radio]:checked + label .radio-img-3 {
+  background-image: url("../images/icon_3w.gif");
+}
+[type=radio]:checked + label .radio-img-4 {
+  background-image: url("../images/icon_4w.gif");
+}
+[type=radio]:checked + label .radio-img-5 {
+  background-image: url("../images/icon_5w.gif");
+}
+input[type=text] {
+  font-family: 'Honeywell Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.125em;
+  line-height: 1.625em;
+  border: 1px solid #d7d7d7;
+  padding: .75em 1em;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+input[type=email] {
+  font-family: 'Honeywell Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.125em;
+  line-height: 1.625em;
+  border: 1px solid #d7d7d7;
+  padding: .75em 1em;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+.checkbox-label {
+  display: block;
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* Hide the browser's default checkbox */
+.radio-group input {
+  display: none;
+}
+.checkbox-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  background-color: #eee;
+  outline: 1px solid #999;
+  border: 4px solid #fff;
+}
+/* On mouse-over, add a grey background color */
+.checkbox-label:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+/* When the checkbox is checked, add a blue background */
+.checkbox-label input:checked ~ .checkmark {
+  background-color: #337ab7;
+}
+select {
+  font-family: 'Honeywell Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.125em;
+  padding: .9em 4em .9em .8em;
+  border-radius: 0;
+  border: 1px solid #d7d7d7;
+  background: #fff;
+  width: 100%;
+  max-width: 600px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+select::ms-expand {
+  display: none;
+}
+.custom-select {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+.custom-arrow {
+  position: absolute;
+  top: 4px;
+  right: 2px;
+  display: block;
+  background: #fff;
+  height: calc(100% - 6px);
+  width: 2rem;
+  pointer-events: none;
+}
+.custom-arrow:before {
+  border-style: solid;
+  border-color: #898989;
+  border-width: 0.125em 0.125em 0 0;
+  content: '';
+  display: inline-block;
+  width: 0.5em;
+  height: 0.5em;
+  top: 1em;
+  left: 0.15em;
+  position: relative;
+  vertical-align: top;
+  transform: rotate(135deg);
+}
+select:invalid {
+  color: #777;
+}
+.submit-button {
+  text-align: right
+}
+.hr {
+  padding-left: 42px;
+  padding-right: 42px;
+  border-bottom: 2px solid white;
+  margin: 40px 0 0px;
+}
+.topMargin0 {
+  margin-top: 0;
+}
+.top60 {
+  margin-top: 120px;
+}
+input[type=submit] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #166a96;
+  border: none;
+  color: #FFFFFF;
+  width: 170px;
+  height: 50px;
+  margin-bottom: 20px;
+  border-radius: 0;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'Honeywell Sans', sans-serif;
+  font-size: .875em;
+  font-weight: bold;
+}
+#footer {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: -webkit-flex;
+  display: flex;
+}
+#footer_question {
+  padding-right: 15px;
+}
+#footer_question_p {
+  font-family: 'Honeywell Sans', sans-serif;
+  font-size: 1em;
+  line-height: 1.5em;
+  color: #333333;
+  vertical-align: top;
+}
+#bodyCopy a, #footer_question_p a {
+  text-decoration:none;
+  color: #4076B8;
+  font-size: 0.875em;
+  font-weight: bold;
+}
+.success {
+  background-color: #166a96;
+  padding: 50px;
+}
+.error {
+  background-color: #ee3124;
+  padding: 50px;
+}
+.success p, .error p {
+  font-family: 'Honeywell Sans', sans-serif;
+  color: #fff;
+  font-size: 1.1875em;
+  line-height: 1.5em;
+  text-align: center;
+}
+.success p {
+  text-align: left;
+}
+.success p a {
+  color: #fff;
+  font-size: 0.9375em;
+  font-weight: bold;
+  text-decoration: none;
+}
+.error p {
+  text-align: center;
+}
+.error h2 {
+  font-family: 'Honeywell Sans', sans-serif;
+  color: #fff;
+  font-size: 1.875em;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.error img {
+  width: 50px;
+  height: 50px;
+}
+.success h2 {
+  font-family: 'Honeywell Sans', sans-serif;
+  color: #fff;
+  font-size: 1.875em;
+}
+.success h2.bt30 {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.row {
+  display: flex;
+  padding-top: 30px;
+}
+.success-row {
+  display: flex;
+}
+.success-row img {
+  margin-right: 20px;
+}
+.success-row .ios-link {
+  margin-right: 30px;
+}
+input[type=text].half-width, .custom-select.half-width {
+  max-width: 290px;
+  margin-right: 20px;
+}
+
+input[type=email].half-width{
+  max-width: 290px;
+  margin-right: 20px;
+}
+
+
+@media only screen and (max-width: 900px) {
+  #header, #footer {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+@media only screen and (max-width: 414px) {
+  #innerContainer {
+    padding: 0;
+  }
+  .form-top {
+    padding: 30px 30px 20px;
+  }
+  .form-bottom {
+    padding: 0px 30px 30px;
+  }
+  .checkbox-label {
+    margin-left: 0px;
+  }
+  input[type=submit] {
+    margin-top: 30px;
+  }
+  .success, .error {
+    padding: 30px;
+  }
+  .form-row, .row {
+    flex-direction: column;
+  }
+  input[type=text].half-width, .custom-select.half-width {
+    max-width: none;
+    margin-right: 0;
+  }
+   input[type=email].half-width {
+      max-width: none;
+      margin-right: 0;
+    }
+  .ios-link {
+    margin-top: 10px;
+  }
+  .top60 {
+    margin-top: 40px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  #headline {
+    font-size: 2.2em;
+  }
+}

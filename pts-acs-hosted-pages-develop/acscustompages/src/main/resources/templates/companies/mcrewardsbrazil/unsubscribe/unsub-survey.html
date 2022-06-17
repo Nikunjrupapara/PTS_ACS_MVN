@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+				
+			<title>Unsubscribe Brazil</title>
+			<meta http-equiv="X-UA-COMPATIBLE" content="IE-edge" />
+	        <meta charset="utf-8" />
+			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=yes" />
+
+			<link rel="stylesheet" type="text/css" th:href="@{/companies-static/mcrewards/css/webform/pure.css}" />
+			<link rel="stylesheet" type="text/css" th:href="@{/companies-static/mcrewards/css/webform/grids-responsive1.css}" />
+			<link rel="stylesheet" type="text/css" th:href="@{/companies-static/mcrewards/css/webform/unsubscribe.css}" />
+
+
+			<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+			<style>
+				.custom-button {background:#FF8F00 !important;}
+				ol {
+
+				}	
+				li {
+					
+				}
+				input[type='radio']{
+					width:20px;
+				}			
+			</style>
+		</head>
+		<body th:object="${dynamicFormBean}">
+			<p>&nbsp;</p>
+
+			<div class="wrapper">
+				<a href="https://surpreenda.naotempreco.com.br/rewards/vouchers/surpreenda"><img alt="Logo" th:src="@{/companies-static/mcrewards/images/mclogo.png}" /></a>
+			</div>
+
+			<p>&nbsp;</p>
+
+			<div id="main">
+			<div>&nbsp;</div>
+			
+				Voc&#234; foi descadastrado dos e-mails da Mastercard&#174;. Se quiser voltar a receber nossas comunica&#231;&#245;es, <a href="https://surpreenda.naotempreco.com.br/rewards/vouchers/surpreenda/optinemail">clique aqui</a> &#10;para acessar sua conta no Mastercard Surpreenda, em gerencie seu perfil, e forne&#231;a novamente a permiss&#227;o.
+				<br><br>
+
+				Por favor, nos informe o motivo do cancelamento da sua inscri&#231;&#227;o.
+
+				<form method="post" th:action="@{'/p/profile/update/' + *{contextPath}}" class="pure-form pure-form-aligned" accept-charset="utf-8">
+
+					<ol>
+						<li><input type="radio" name="reason" th:field="*{items['cusUnsubReason']}" value="Considero a frequência de envio muito alta"> Considero a frequência de envio muito alta</li>
+						<li><input type="radio" name="reason" th:field="*{items['cusUnsubReason']}" value="O conteúdo dos e-mails não me interessa"> O conteúdo dos e-mails não me interessa</li>
+						<li><input type="radio" name="reason" th:field="*{items['cusUnsubReason']}" value="Não autorizei ou não me recordo de ter autorizado o envio de mensagens para o meu e-mail"> Não autorizei ou não me recordo de ter autorizado o envio de mensagens para o meu e-mail</li>
+						<li><input type="radio" name="reason" th:field="*{items['cusUnsubReason']}" value="Não tenho tempo para ler os e-mails diariamente"> Não tenho tempo para ler os e-mails diariamente</li>
+						<li><input type="radio" name="reason" th:field="*{items['cusUnsubReason']}" value="Outro"> Outro</li>
+					</ol>
+
+					<fieldset>
+						<div class="pure-controls">	
+							<button class="button-go pure-button custom-button" type="submit">Confirmar</button>
+						</div>
+					</fieldset>
+
+					<input type="hidden" th:field="*{brand}" />
+					<input type="hidden" th:field="*{items['cusCustomerIdHash']}" />
+
+				</form>
+			
+			</div>		
+			<!--v1 M102018-->
+		</body>
+	</html>
+	

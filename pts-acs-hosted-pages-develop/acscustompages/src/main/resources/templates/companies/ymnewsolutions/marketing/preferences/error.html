@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Error!</title>
+</head>
+<body>
+    <img src="https://www.data-axle.com/wp-content/uploads/2020/09/data_axle_horizontal_black_blue_crop.svg" />
+    <p>Sorry, an error occurred that prevented us from fulfilling this request.</p>
+    <p>Please try again later and, if teh problem persists, please contact your Account Manager.</p>
+    <th:block th:with="requestId=${requestId}">
+        <p th:if="${requestId != null}">
+            RequestId: <span th:text="${requestId}"></span>
+        </p>
+    </th:block>
+    <div th:if="${e != null}" th:with="ex=${e}">
+        <input type="hidden" name="msg" th:value="${ex.getMessage()}"/><br />
+    </div>
+</body>
+</html>

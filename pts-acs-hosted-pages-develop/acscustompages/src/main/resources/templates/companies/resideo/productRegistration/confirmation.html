@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:with="brand=${dynamicFormBean.getBrand()}">
+    <th:block th:replace="~{/companies/resideo/productRegistration/fragments :: getHead('__${dynamicFormBean.getBrand()}__')}" />
+</head>
+<body bgcolor="#FFFFFF"><th:block th:replace="~{/companies/resideo/ga :: getBodyGATag('__${dynamicFormBean.getBrand()}__')}" />
+    <div id="container" th:with="brand=${dynamicFormBean.getBrand()}">
+        <div id="innerContainer">
+            <div id="header" th:include="~{/companies/resideo/productRegistration/fragments :: getLogoHeader('__${brand}__')}">
+                <div id="Honeywell_logo">
+                    <a href="https://www.resideo.com/us/en" target="_blank"><img th:src="@{/companies-static/resideo/images/HoneywellHomeLogo.png}" height="28" alt="Honeywell Home" border="0" /></a>
+                </div>
+            </div>
+            <div class="success top60">
+                <h2 class="bt30">KEEPING YOU IN THE KNOW.</h2>
+                <div class="success-row">
+                    <img th:src="@{/companies-static/resideo/images/icon_checkw.png}" width="50" height="50" alt="">
+                    <p th:replace="~{/companies/resideo/productRegistration/fragments :: getConfirmationMsg('__${brand}__')}">Thank you for registering your Resideo product with us. You will receive an email shortly confirming your registration.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

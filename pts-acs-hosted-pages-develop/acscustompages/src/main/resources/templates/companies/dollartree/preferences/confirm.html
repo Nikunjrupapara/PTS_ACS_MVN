@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<th:block th:include="~{/companies/dollartree/fragments :: head }" />
+</head>
+<body>
+
+
+
+  <div class="container gray dt-margin" role="main">
+    <div class="col-md-6"> 
+      <div class="container gutters items-start">
+        <div class="col-12">
+        		<p class="huge green text-center padding-pref">Thanks for <br>
+					updating your email <br>
+					preferences!</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="container gutters">
+        <div class="col-12 text-center">
+          <img th:src="@{/companies-static/dollartree/images/ty.png}" width="100%" class="feature-img">
+
+        </div>
+      </div>
+   
+    </div>
+  </div>
+  
+  <div class="container gutters-sm-all dt-margin">
+
+     <th:block th:include="~{/companies/dollartree/fragments :: privacyBlockConfirm }" />
+  	
+  </div>
+  
+
+  
+<!--track bgn-->
+<script type="text/javascript">
+var triggermail=triggermail||[];triggermail.load=function(a){
+var b=document.createElement("script");b.type="text/javascript";
+b.async=!0;b.src="https://api.bluecore.com/triggermail.js/"+a+".js";
+a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a)};
+triggermail.load("dollar_tree");window.triggermail=triggermail;
+</script>
+<!--track end-->
+
+</body>
+</html>

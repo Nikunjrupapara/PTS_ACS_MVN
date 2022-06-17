@@ -1,0 +1,149 @@
+/*-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~
+	
+	Dollar Tree Styles - 1/29/15
+
+-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~ */
+
+/* Larry */
+/* end Larry */
+
+
+.left{display:block; float:left;}
+.right{display:block; float:right;}
+.clearfix{clear:both; margin:0px; padding:0px;}
+
+#wrapper{width:1034px; background:url("../images/dollar-tree-wrapper-bkg_rules_Apr19.jpg") repeat #a1f4dc; margin:0 auto;}
+#container{width:890px; margin:0 auto; padding:60px 0;}
+
+#header{position:relative; width:710px; height:164px; background:url("../images/dollar-tree-header-bkg_Dec12.jpg") repeat-x; z-index:8;}
+#logo{position:absolute; top:-45px; left:-214px; z-index:8;}
+
+#nav{margin-left:75px;}
+#nav li{display:inline; font-size:18px; line-height:50px; color:#fff; text-shadow:1px 2px #000; padding:8px 22px 6px 22px; margin-right:0px; text-transform:uppercase;}
+#nav li a{color:#fff; font-weight:400;}
+#nav li a:hover{color:#6dbe4b;}
+.lastFloat{border:none !important;}
+
+#bannerText{font-family: 'Montserrat', sans-serif; padding:10px 0 0 100px;}
+#bannerText h1{color:#cc6196; font-size:35px; font-weight: 700;}
+#bannerText h2{color:#000; font-size:26px;}
+#bannerText h2 span{color:#38649c;}
+
+#bodyContent{background:#fff; width:850px; height:auto; position:relative; top:-20px; padding:40px 20px 20px 20px; z-index:1;}
+#leftSideBar{width:180px; padding:0px 20px 0 0; margin:0 20px 0 0; border-right:1px solid #bfbfbf; text-align:left; line-height:16px;}
+#leftSideBar h3{font-size:12px; color:#000; font-weight:500;}
+#leftGiftCard img{padding:0 0 10px 0;}
+#leftGiftCard h2{font-size:16px; font-weight:500; color:#6dbe4b; padding:0 0 2px 10px;}
+#leftGiftCard p{padding:0 0 0 10px;}
+
+
+#leftGiftCard a {
+    display: block;
+    font-weight: 300;
+    font-size: 18px;
+    color: #fff;
+    border: 2px solid #00954c;
+    background-color: #00954c;
+    padding: 10px 5px;
+    margin: 10px 0 60px 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#leftGiftCard a:hover{color:#38649c; border-color:#38649c;}
+
+#rightMainContent{width:600px; min-height:600px; text-align:left;}
+#topGiftCard{padding:0px 0 0 10px;
+margin:0px auto;
+}
+#topGiftCard img{}
+#topGiftCard p{padding:20px 0 0 10px; font-size:18px;}
+
+table#albums 
+{
+	border-collapse:separate;
+	border-spacing:0 5px;
+	font-size:14px;
+	
+	
+}
+table#albums td{padding: 3px;}
+
+
+.signUpBtn{
+	display:block; 
+	width:200px; 
+	height:46px; 
+	border:1px solid #75be48;
+	
+	background: #00954c;
+	padding:0px !important;
+	color: #ffffff;
+	font-size:20px;
+	text-transform: uppercase;
+}
+.signUpBtn:hover{
+	background-position:0 -46px !important;
+}
+
+
+.restrictiveText {
+	font-size:12px;
+}
+
+.desktopHeadlineSecondary {
+	font-family: 'Montserrat', sans-serif;
+	font-size:17px;
+	font-weight: 700;
+	font-family: Arial;
+	color: #000000;
+}
+
+.win100 {
+	color: #000000;
+}
+
+.checkText {
+	font-size:12px;
+	text-indent: 0px;
+	margin:4px 0px;
+	font-weight: normal;
+	padding-left:20px
+}
+
+.sideLabel {
+	font-weight: 700;
+	
+}
+
+#leftSideBar_inner {
+	width: 180px;
+    padding: 60px 20px 0 0;
+    margin: 0 20px 0 0;
+    border-right: 1px solid #bfbfbf;
+    text-align: left;
+    line-height: 16px;
+}
+
+
+#leftSideBar_winner {
+	width: 180px;
+    padding: 60px 20px 0 0;
+    margin: 0 20px 0 0;
+    border-right: 0px solid #bfbfbf;
+    text-align: left;
+    line-height: 16px;
+}
+
+.form-field-container .left, .form-field-container .right{
+	width:40%; 
+	padding: 5px 20px 0px 0px;
+}
+
+.btn-signUp{
+	display: inline-block;
+	margin: 20px 0px;
+	}
+.topPad10 {
+	padding-top: 10px;
+}

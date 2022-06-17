@@ -1,0 +1,33 @@
+# This file defines the correct line endings for each type of file
+# https://docs.github.com/en/github/using-git/configuring-git-to-handle-line-endings
+
+# Set the default behaviour, in case people do not have core.autocrlf set
+* text=auto
+
+# Files that will always be normalized & converted to native line endings on checkout
+*.css text
+*.html text
+*.java text
+*.js text
+*.json text
+*.properties text
+*.template text
+*.yml text
+
+# Files that should always have LF line endings on checkout
+# *.{ext} text eol=lf
+
+# Files that will always have CRLF line endings on checkout
+# *.{ext} text eol=crlf
+
+# Files that are truly binary and should not be modified
+*.eot binary
+*.gif binary
+*.jpg binary
+*.otf binary
+*.png binary
+*.svg binary
+*.ttf binary
+*.woff binary
+*.woff2 binary
+

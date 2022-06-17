@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Not Found</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/companies-static/css/pages.css}" />
+</head>
+<body>
+<img class="logo" src="https://www.data-axle.com/wp-content/uploads/2020/09/data_axle_horizontal_black_blue_crop.svg" />
+    <h3>Sorry, the requested resource was not found.</h3>
+    <p>We weren't able to find any content at the requested URL.  Please check the link and try again.</p>
+    <div th:if="${e != null}" th:with="ex=${e}">
+        <input type="hidden" name="msg" th:value="${ex.getMessage()}"/><br />
+        <input type="hidden" name="reason" th:value="${ex.getCustomPagesRequest().getAuthenticationStatus()}" />
+    </div>
+</body>
+</html>

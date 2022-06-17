@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<th:block th:replace="~{/companies/dollartree/contest/fragments :: head }">
+		<meta charset="utf-8" />
+    	<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" th:href="@{/companies-static/dollartree/css/normalize.css}">
+		<link rel="stylesheet" th:href="@{/companies-static/dollartree/css/custom-2022.css}">
+	</th:block>
+	<title>Dollar Tree Email Contest - Confirmation</title>
+</head>
+<body>
+<div class="container">
+	<header>
+		<th:block th:replace="~{/companies/dollartree/contest/fragments :: header }">
+			<a th:href="@{'/p/profile/search/contest/signup'}">
+				<img th:src="@{/companies-static/dollartree/images/envelope.png}" width="330" alt="email sign-up contest" class="logo"/>
+			</a>
+			<nav class="shadow">
+				<ul class="nav">
+					<li><a th:href="@{'/p/profile/search/contest/signup'}">Entry Form</a></li>
+					<li><a th:href="@{'/p/page/display/contest/rules'}">Rules</a></li>
+					<li><a th:href="@{'/p/page/display/contest/privacy'}">Privacy</a></li>
+					<li class="lastFloat"><a th:href="@{'/p/page/display/contest/winners'}">Winners</a></li>
+				</ul>
+			</nav>
+			<div class="bannerText shadow">
+				<h1 style="margin-bottom: 0; font-family: 'Arial Black', sans-serif;">Sign Up for Dollar Tree Emails</h1>
+				<p style="font-size: 16px;" class="mb-2">and be entered for a chance to win<sup>&dagger;</sup> a $100 Dollar Tree gift card!</p>
+			</div>
+		</th:block>		
+	</header>
+
+	<div class="main" role="main">
+		<div class="confirm text-left">
+				<p class="big"><strong>Thank you for signing up!</strong></p>
+				<p class="mt-1">You have been entered for a chance to win a $100 Dollar Tree gift card. We&rsquo;ll email you if you&rsquo;re one of the 10 lucky winners!</p>
+				<p class="small mt-1"><sup>&#0134;</sup>Restrictions apply. See Rules for details.</p>
+		</div>
+		
+		<div class="mobile-nav">
+			<th:block th:replace="~{/companies/dollartree/contest/fragments :: navSide }" >
+				<a th:href="@{'/p/profile/search/contest/signup'}" class="button-bar">Entry Form</a>
+				<a th:href="@{'/p/page/display/contest/rules'}" class="button-bar">Rules</a>
+				<a th:href="@{'/p/page/display/contest/privacy'}" class="button-bar">Privacy</a>
+				<a th:href="@{'/p/page/display/contest/winners'}" class="button-bar">Winners</a>
+			</th:block>
+		</div>
+		
+	</div>
+
+</div>
+</body>
+</html>

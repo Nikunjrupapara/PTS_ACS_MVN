@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FHF Registered - Step 2</title>
+    <th:block th:include="~{/companies/boscovs/fhf-registered/fragments :: head}" />
+</head>
+<body th:object="${dynamicFormBean}" th:with="hasResult=${!dynamicFormBean.hasErrors() && dynamicFormBean.hasRequestResult()}">
+<th:block th:include="~{/companies/boscovs/fhf-registered/fragments :: logo}" />
+
+<!--Content-->
+
+    <!--Form-->
+    <div style="padding-top: 30px; position: relative; left: 100px;">
+        <h1>
+            Requesting Additional Passes ~ Already Registered<br />
+        </h1>
+        <p>If your Organization is not listed below,
+            <a id="clickHere"
+               th:href="@{'/p/customResource/list/fhf-registration/step2?zipcode=' + *{items['zipcode']}} + '&page=1'">
+                <span style="font-family: Roboto, sans-serif; font-size:20px; font-weight: 600; color: #d2232a; text-decoration: none;">
+                    CLICK HERE
+                </span>
+            </a> to search for your Organization.
+        </p>
+    </div>
+
+    <div style="padding-top: 20px;" class="zipcode">
+        <form action="" method="get">
+            <th:block th:with="name='zipcode'">
+                <p th:if="${dynamicFormBean.hasErrors()}">
+                    <span th:class="error">Please enter a valid 5 digit Zip Code</span>
+                </p>
+                <label style="padding-bottom: 5px;" class="labeltxt" for="zipcode">
+                    Please Enter Your Zip Code
+                </label>
+                <input style="font-size: 20px; padding-top: 4px;" type="text" id="zipcode" name="zipcode" maxlength=5 th:value="*{items['zipcode']}"
+                       pattern="^[0-9]{5}$" onkeypress='validate(event)'/>
+                <input style="font-size: 20px;" type="submit" value="Next">
+                <input type="hidden" name="page" th:value="1" />
+            </th:block>
+        </form>
+    </div>
+    <!--End Form-->
+
+    <!--Orgs-->
+    <div style="position: relative; left: 100px; padding-top: 30px; width: 900px;"
+         th:with="listDetails=${dynamicFormBean.getListDetails()},data=${listDetails.getData()}">
+        <table id="organizations" width="900" border="1" cellspacing="0" cellpadding="4" align="left">
+            <tr style="background-color: #ffde00; font-family: Roboto, sans-serif; font-size: 20px; font-weight: 700; color: #322384">
+                <th>
+                    Organization Name
+                </th>
+                <th>
+                    Address
+                </th>
+                <th>
+                    City
+                </th>
+                <th>
+                    State
+                </th>
+                <th>
+                    Zip
+                </th>
+            </tr>
+            <tr th:each="rec,iterStat : ${data}" class="orgRow" th:classappend="${iterStat.odd}? 'odd'">
+                <td th:with="npId=${rec.getValueAsString('NP_ID')},orgName=${rec.getValueAsString('NP_ORG_NM')},searchZip=${rec.getValueAsString('NP_ZIP_CD')}">
+                    <a th:href="@{'/p/customResource/secure/fhf-registered/lookup?zip=' + ${searchZip} + '&id=' + ${npId}}">
+                        <span th:text="${orgName}">Org Name</span>
+                    </a>
+                </td>
+                <td th:text="${rec.getValueAsString('NP_ADDR1')}">Address 1</td>
+                <td th:text="${rec.getValueAsString('NP_CITY_NM')}">City</td>
+                <td th:text="${rec.getValueAsString('NP_STATE_CD')}">State</td>
+                <td th:text="${rec.getValueAsString('NP_ZIP_CD')}">Zip Code</td>
+            </tr>
+        </table>
+        <div th:if="${listDetails.isDisplayPaging()}"
+           th:with="currentPage=${listDetails.getCurrentPage()},
+           totalPages=${listDetails.getTotalPages()},
+           zipcode=*{items['NP_ZIP_CD']}">
+            <th:block th:if="${totalPages > 1}">
+                <a id="prev" th:if="${currentPage > 1}" th:with="page=${currentPage - 1}"
+                   th:href="@{${dynamicFormBean.buildSubmitUrl(false)} + '?zipcode=' + ${zipcode} + '&page=' + ${page}}">Previous</a>
+                <span class="paging-control" th:text="'Page ' + ${currentPage} + ' of ' + ${totalPages} + '.'">Page x of y.</span>
+                <a id="next" th:if="${currentPage < totalPages}" th:with="page=${currentPage + 1}"
+                   th:href="@{${dynamicFormBean.buildSubmitUrl(false)} + '?zipcode=' + ${zipcode} + '&page=' + ${page}}">Next</a>
+            </th:block>
+        </div>
+        <br /><br />
+        <!-- Add some whitespace to bottom of page -->
+        <p>&nbsp;</p>
+    </div>
+    <!--End Orgs-->
+
+<script th:src="@{/companies-static/boscovs/fhf-registered/js/fhf_registration.js}"></script>
+
+</body>
+</html>

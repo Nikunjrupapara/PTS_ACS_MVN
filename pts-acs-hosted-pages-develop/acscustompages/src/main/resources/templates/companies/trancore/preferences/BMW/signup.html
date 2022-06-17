@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Your Credit Card Email Preferences</title>
+    <link th:href="@{/companies-static/trancore/preferences/BMW/css/styles.css}" rel="stylesheet" type="text/css" />
+</head>
+<body bgcolor="#FFFFFF">
+<!--
+<table>
+    <tr th:each="var : ${#vars.getVariableNames()}">
+        <td th:text="${var}"></td>
+        <td th:text="${#vars.getVariable(var)}"></td>
+    </tr>
+    < !--
+        Adding these manually because they are considered special.
+        see https://github.com/thymeleaf/thymeleaf/blob/thymeleaf-3.0.3.RELEASE/src/main/java/org/thymeleaf/context/WebEngineContext.java#L199
+    -- >
+    <tr>
+        <td>param</td>
+        <td th:text="${#vars.getVariable('param')}"></td>
+    </tr>
+    <tr>
+        <td>session</td>
+        <td th:text="${#vars.getVariable('session')}"></td>
+    </tr>
+    <tr>
+        <td>application</td>
+        <td th:text="${#vars.getVariable('application')}"></td>
+    </tr>
+</table>
+-->
+<div class="inner-div">
+    <div th:insert="~{/companies/trancore/preferences/BMW/includes/header :: header}"></div>
+    <div th:object="${dynamicFormBean}">
+        <form name="signup" method="post" th:action="@{'/p/profile/search/' + *{contextPath}}">
+            <!-- Optional display message -->
+            <table th:if="${dynamicFormBean.hasErrors()} == true" width="750" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td class="message" th:if="${dynamicFormBean.isError('global')}">Please correct the highlighted errors</td>
+                </tr>
+            </table>
+            <table class="bodyTable">
+                <tr><td>&nbsp;</td></tr>
+                <tr>
+                    <td><p>To sign up for emails or change your preferences, please enter your email address in the fields below along with the last four digits of your credit card, then select "Next". Emails may include special offers and information about your credit card.</p></td>
+                </tr>
+                <tr><td>&nbsp;</td></tr>
+                <tr>
+                    <td align="left" valign="top"><label><b>Enter your email address.</b></label></td>
+                </tr>
+                <!--
+                if(errorFlag){
+                if(!haveEmail){%><tr><td class="message">Required</td></tr><%}
+                if(badEmail){%><tr><td class="message">Please enter a valid email address.</td></tr><%}
+                if(badCEmail){%><tr><td class="message">Email address and confirmation email address should be the same.</td></tr><%}
+                }
+                -->
+                <tr th:if="${dynamicFormBean.isError('email')} == true">
+                    <td class="message" th:with="errorCode=${dynamicFormBean.errorCode('email')}">
+                        <span th:if="${errorCode == 'required'}">Required</span>
+                        <span th:if="${errorCode == 'invalid'}">Please enter a valid email address.</span>
+                        <span th:if="${errorCode == 'nomatch'}">Email address and confirmation email address should be the same.</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="27" align="left" valign="middle">
+                        <input name="email" type="text" size="40" th:field="*{items['email']}"/>
+                    </td>
+                </tr>
+                <tr><td>&nbsp;</td></tr>
+                <tr>
+                    <td align="left" valign="top"><label><b>Re-enter your email address.</b></label></td>
+                </tr>
+                <!--
+                if(errorFlag){
+                if(!haveCEmail){%><tr><td class="message">Required</td></tr><%}
+                if(badCEmail){%><tr><td class="message">Email address and confirmation email address should be the same.</td></tr><%}
+                }
+                -->
+                <tr th:if="${dynamicFormBean.isError('confirmEmail') == true}">
+                    <td class="message" th:with="errorCode=${dynamicFormBean.errorCode('confirmEmail')}">
+                        <span th:if="${errorCode == 'required'}">Required</span>
+                        <span th:if="${errorCode == 'nomatch'}">Email address and confirmation email address should be the same.</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td height="27" align="left" valign="middle">
+                        <input name="confirmEmail" type="text" size="40" th:field="*{items['confirmEmail']}"/>
+                    </td>
+                </tr>
+                <tr><td>&nbsp;</td></tr>
+                <tr>
+                    <td align="left" valign="top">
+                        <label><b>Last 4 digits of your credit card account number.</b></label>
+                        <br>
+                        <img th:src="@{/companies-static/trancore/preferences/BMW/images/spacer.gif}" height="4px"></td>
+                </tr>
+                <!--
+                Display error messages
+                if(errorFlag){
+                if(!haveL4){%><tr><td class="message">Required</td></tr><%}
+                if(badL4){%><tr><td class="message">Please enter last 4 digits of account number.</td></tr><%}
+                }
+                -->
+                <tr th:if="${dynamicFormBean.isError('cusAcctL4') == true}">
+                    <td class="message" th:with="errorCode=${dynamicFormBean.errorCode('cusAcctL4')}">
+                        <span
+                            th:text="${errorCode == 'required'} ? 'Required' : 'Please enter last 4 digits of account number.'"
+                        >Error message</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" valign="bottom">
+                        <input type="text" name="acctL4" size="40" maxlength="4" th:field="*{items['cusAcctL4']}" />
+                    </td>
+                </tr>
+                <tr><td>&nbsp;</td></tr>
+                <tr>
+                    <td height="27" align="left" valign="middle">
+                        <input class="buttons" th:src="@{/companies-static/trancore/preferences/BMW/images/Next.jpg}" type="image" />
+                    </td>
+                </tr>
+                <tr><td>&nbsp;</td></tr>
+            </table>
+            <!-- Partner ID is a hidden field -->
+            <input type="hidden" th:field="*{items['cusPartner']}" />
+        </form>
+    </div>
+    <div th:insert="~{/companies/trancore/preferences/BMW/includes/footer :: footer}"></div>
+    <!--
+    <table>
+        <tr th:each="var : ${param.keySet()}">
+            <td th:text="${var}"></td>
+            <td th:text="${param.get(var)}"></td>
+        </tr>
+    </table>
+    -->
+</div>
+</body>
+</html>

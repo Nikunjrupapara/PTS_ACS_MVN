@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Your Credit Card Email Preferences: Confirmation</title>
+    <th:block th:with="brand=${dynamicFormBean.getBrand()}">
+        <link th:href="@{/companies-static/usbank/preferences/__${brand}__/css/styles.css}" rel="stylesheet" type="text/css" />
+    </th:block>
+</head>
+<body bgcolor="#FFFFFF">
+<center>
+    <div class="inner-div">
+        <div id="vexp">
+            <th:block th:object="${dynamicFormBean}" th:with="brand=${dynamicFormBean.getBrand()}">
+                <header th:replace="~{/companies/usbank/preferences/includes/headers :: __${brand}__ }"></header>
+                <table width="750" border="0" align="center" cellpadding="0" cellspacing="0"
+                       th:with="result=${dynamicFormBean.profileRequestResult}"
+                >
+                    <tr><td>&nbsp;</td></tr>
+                    <!-- Display this section if adding a new user -->
+                    <!-- <%if(addUserFlag){%> -->
+                    <th:block th:if="${result.isCreateProfile()}">
+                        <!-- <%if(!user.isSent()){%> -->
+                        <th:block th:with="emailNotSent=${result.isEmailTriggered() && !result.isEmailSuccess()}">
+                            <th:block th:if="${emailNotSent}">
+                                <tr>
+                                    <td class="message">There was an error signing up your user. Please click on the back button below and try again </td>
+                                </tr>
+                                <tr><td>&nbsp;</td></tr>
+                                <tr><td>
+                                    <th:block th:insert="~{/companies/usbank/preferences/includes/fragments :: backLink('__${brand}__') }" />
+                                </td></tr>
+                            </th:block>
+                        <!-- <%}else{
+                        showBackForm = true;
+                        %> -->
+                            <th:block th:unless="${emailNotSent}">
+                                <tr>
+                                    <td><p>
+                                        Thank you signing up to receive special offers and information about your credit card account at
+                                        <strong>`<span th:text="*{items['email']}">email</span>`</strong> for card ending in <span th:text="*{items['cusAcctL4']}">cusAcctL4</span>.
+
+                                        <br /><br /><span th:insert="~{/companies/usbank/preferences/includes/fragments :: thankYouMsgOnly('__${brand}__')}" />
+
+                                </p></td>
+                                </tr>
+                                <tr><td>&nbsp;</td></tr>
+                                <tr>
+                                    <td>
+                                        <th:block th:insert="~{/companies/usbank/preferences/includes/fragments :: backForm('__${brand}__') }"/>
+                                    </td>
+                                </tr>
+                            </th:block>
+                        </th:block>
+                    </th:block>
+                    <!--<%}}%>
+                    Display this section if the user has resubscribed to marketing emails
+                    <%if(updateUserFlag){
+                    showBackForm = true;
+                    %> -->
+                    <th:block th:if="${!result.isProfileIncluded() && result.getServiceAction('marketing') == 'ADD'}">
+                    <!--<%if(!user.isSent()){%> -->
+                        <th:block th:with="emailNotSent=${result.isEmailTriggered() && !result.isEmailSuccess()}">
+                            <th:block th:if="${emailNotSent}">
+                                <tr>
+                                    <td class="message">There was an error signing up your user. Please click on the back button below and try again.</td>
+                                </tr>
+                            </th:block>
+                    <!--<%}else{%> -->
+                            <th:block th:unless="${emailNotSent}">
+
+                                <tr>
+                                    <td><p>
+                                        Thank you for updating your preferences. You are now signed up to receive special offers from your credit
+                                        card at: <strong> <span th:text="*{items['email']}">email</span> </strong> for card ending in <span th:text="*{items['cusAcctL4']}">cusAcctL4</span>.
+                                        <br /><br /><span th:insert="~{/companies/usbank/preferences/includes/fragments :: thankYouMsgOnly('__${brand}__')}" />
+
+                                </p></td>
+                                </tr>
+                            </th:block>
+                        </th:block>
+                        <tr><td>&nbsp;</td></tr>
+                        <tr>
+                            <td>
+                                <th:block th:insert="~{/companies/usbank/preferences/includes/fragments :: backForm('__${brand}__') }"/>
+                            </td>
+                        </tr>
+                    </th:block>
+                    <!-- <%}}%> -->
+                    <!--
+                    Display this section if the user has come from the Unsubscribe Survey page
+                    <% if(unsubUserFlag){%> -->
+                    <th:block th:if="${result.isUpdateProfile() && !dynamicFormBean.isSubscribedToService('marketing')}">
+                    <!--<% if(!user.isUpdated()){%> -->
+                        <th:block th:with="updateFailed=${!result.isProfileSuccess()}">
+                            <th:block th:if="${updateFailed}">
+                                <tr>
+                                    <td class="message">There was an error saving your survey results. We have logged the issue.</td>
+                                </tr>
+                                <tr><td>&nbsp;</td></tr>
+                            </th:block>
+                    <!-- <%}else{%> -->
+                            <th:block th:unless="${updateFailed}">
+                                <tr>
+                                    <td><p th:insert="~{/companies/usbank/preferences/includes/fragments :: thankYouMsg('__${brand}__')}">
+                                        Thank you for submitting your survey results. Please click on the back button if you wish
+                                        to resign up to receive special offers.
+                                        <br /><br />
+                                        <th:block th:insert="~{/companies/usbank/preferences/includes/fragments :: backLink('__${brand}__') }" />
+                                        <br />
+                                    </p></td>
+                                </tr>
+                                <tr><td>&nbsp;</td></tr>
+                            </th:block>
+                        </th:block>
+                    <!-- <%}}%> -->
+                    </th:block>
+                </table>
+                <footer th:replace="~{/companies/usbank/preferences/includes/footers :: __${brand}__ }"></footer>
+            </th:block>
+        </div>
+    </div>
+</center>
+</body>
+</html>

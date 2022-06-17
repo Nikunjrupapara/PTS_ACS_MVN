@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<th:block th:include="~{/companies/dollartree/fragments :: head }" />
+</head>
+<body th:object="${dynamicFormBean}" th:with="email=*{items['email']},brand=*{brand}">
+
+
+<form method="post" name="form" id="form" th:action="@{'/p/services/update/' + *{contextPath}}">
+
+  <div class="container gray dt-margin" role="main">
+    <div class="col-md-6"> 
+      <div class="container gutters items-start">
+        <div class="col-12 padding-top mobile-center">
+        	<p class="green large">Unsubscribe from Emails</p>
+        	
+        	<p><strong class="bigger">We miss you already....</strong> <br>
+				If you would like to unsubscribe from all <br class="hide">
+				future Dollar Tree emails informing you <br class="hide">
+				about awesome savings, click <br class="hide">
+				&ldquo;Unsubscribe&rdquo; below:</p>
+			
+			<p>
+				<strong>[[${email}]]</strong>
+			</p>
+  			<p><button type="submit" class="btn radius background-color-primary color-auto cursor-pointer hover-background-color-darker btn-subscribe">UNSUBSCRIBE</button>
+  			</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="container gutters">
+        <div class="col-12 text-center">
+          <img th:src="@{/companies-static/dollartree/images/unsub.png}" width="100%" class="feature-img">
+
+        </div>
+      </div>
+   
+    </div>
+  </div>
+  
+  <div class="container gutters-sm-all dt-margin">
+
+	<th:block th:include="~{/companies/dollartree/fragments :: privacyBlockIndex }" />
+
+  </div>
+
+	<input type="hidden" th:field="*{brand}" />
+	<input type="hidden" th:field="*{items['cusCustomerIdHash']}" />
+</form>
+
+</body>
+</html>

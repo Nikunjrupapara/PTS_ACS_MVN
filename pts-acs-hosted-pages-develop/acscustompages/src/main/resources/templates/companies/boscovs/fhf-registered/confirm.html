@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>FHF - Confirmation</title>
+    <th:block th:include="~{/companies/boscovs/fhf-registered/fragments :: head}" />
+    <style>
+        p {font-family: Roboto, sans-serif; font-size:20px; font-weight: 400; color: black; line-height: 40px;}
+        a {text-decoration: none}
+        .lbltext {font-family: Roboto, sans-serif; font-size:20px; font-weight: 700; color: #322384; line-height: 40px;}
+        .logo_bak {display: inline; vertical-align:text-bottom; margin-left: auto; margin-right: auto;}
+        .logo {vertical-align:text-bottom; }
+
+        .footer {font-family: Roboto, sans-serif; font-size: 14px; font-weight: 700; color: darkred;}
+        .boldheadertxt {font-family: Roboto, sans-serif; font-size: 30px; font-weight: 700; color: #C0504D;}
+        .headertxt {font-family: Roboto, sans-serif; font-size:20px; font-weight: 700;  color: #5F497A;}
+
+        .aligned {display: flex;align-items: flex-end;padding-top: 30px; position: relative; left: 100px}
+    </style>
+</head>
+<body th:object="${dynamicFormBean}">
+
+<div class="aligned">
+	<span class="boldheadertxt">Your request for additional passes has been received!<br></span>
+    <a href="https://www.boscovs.com/" title="Boscovs" target="_blank">
+        <img class="logo" th:src="@{/companies-static/boscovs/fhf-registered/images/FHF_LOGO_2022.jpg}" border="0"
+             alt="Boscovs Friends Helping Friends Logo 2022" width="350" />
+    </a>
+</div>
+
+<div style="padding-top: 30px; position: relative; left: 100px">
+
+    <p>
+        <span class="lbltext">Organization Name:</span> <span th:text="*{items['NP_ORG_NM']}">Org Name</span><br />
+        <span class="lbltext">Address:</span> <span th:text="*{items['NP_ADDR1']}">Address</span><br />
+        <span class="lbltext">City, State, Zip:</span>
+        <span th:text="*{items['NP_CITY_NM']} + ', ' + *{items['NP_STATE_CD']} + ' ' + *{items['NP_ZIP_CD']}">
+            City, State Zipcode
+        </span><br /><br />
+        <span class="lbltext">Contact Name:</span>
+        <span th:text="*{items['FIRST_NAME']} + ' ' + *{items['LAST_NAME']}">Contact Name</span><br />
+        <span class="lbltext">Contact Email:</span> <span th:text="*{items['EMAIL']}">Email</span><br />
+        <span class="lbltext">Contact Phone #:</span> <span th:text="*{items['PHONE']}">Phone</span><br />
+        <span class="lbltext">Pick-up Store Name:</span> <span th:text="*{items['storeName']}">Store Name</span><br />
+        <span class="lbltext"># of Passes Requested:</span> <span th:text="*{items['PASS_COUNT']}">100</span><br />
+    </p>
+</div>
+
+
+</body>
+</html>

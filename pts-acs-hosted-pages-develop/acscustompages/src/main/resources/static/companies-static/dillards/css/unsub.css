@@ -1,0 +1,28 @@
+/*Body defaults*/
+html, body {
+	/*font-family: Verdana, Arial, Helvetica, sans-serif;*/
+	background-color: #fff;
+}
+form {
+	background: #eee; 
+	padding: 15px;
+}
+a {
+	font-family: Century Gothic, Verdana, sans-serif; 
+	font-size: 12px; 
+	color: #505050; 
+	text-decoration: none;
+}
+#status-banner { 
+	color: #ffffff; 
+	font-size: 0.9em; 
+	visibility: hidden; 
+	height: 0; 
+	padding: 9px;
+}
+#status-banner-vis { 
+	color: #ffffff; 
+	font-size: 0.9em; 
+	padding: 9px; 
+	background-color: #1792e5; 
+}

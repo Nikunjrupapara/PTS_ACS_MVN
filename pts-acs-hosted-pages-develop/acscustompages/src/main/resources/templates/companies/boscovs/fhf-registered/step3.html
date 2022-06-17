@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>FHF Registered - Step 3</title>
+    <th:block th:include="~{/companies/boscovs/fhf-registered/fragments :: head}" />
+    <style>
+        p {font-family: Roboto, sans-serif; font-size:20px; font-weight: 400; color: #322384;}
+        a {text-decoration: none}
+        form {position: relative; left: 100px; width: 900px; border-radius: 5px; background-color: #e6e6ff; padding: 10px 20px; overflow: hidden;}
+        input[type=text], select {width: 600px; display: block; border: 1px solid #ccc; border border-radius: 4px; box-sizing: border-box; font-family: Roboto, sans-serif; font-size: 20px;}
+        input[type=submit] {width: 100px; padding: 14px, 20px; background-color: #d2232a; color: white; margin: 8px 0px; display: block; border: none; border-radius: 4px; cursor: pointer; font-family: Roboto, sans-serif; font-size: 20px;}
+        label{display: block; font-family: Roboto, sans-serif; font-size:20px; font-weight: 400; color: #322384; padding: 20px 10px 4px 2px;}
+        .StDrop { width: 100px; }
+        .error { margin: 5px; font-size: 1em; color: red; }
+    </style>
+</head>
+<body th:object="${dynamicFormBean}" th:with="orgId=*{items['NP_ID']}">
+<th:block th:include="~{/companies/boscovs/fhf-registered/fragments :: logo}" />
+
+<div>
+    <div style="padding-top: 30px; position: relative; left: 100px;">
+        <h1>
+            Requesting Additional Passes ~ Already Registered<br />
+        </h1>
+        <p>
+            <span th:text="*{items['NP_ORG_NM']}">Org Name</span><br />
+            <span th:text="*{items['NP_ADDR1']}">Address 1</span><br />
+            <span th:text="*{items['NP_CITY_NM']}">City</span>,
+            <span th:text="*{items['NP_STATE_CD']}">State</span>
+            <!--<span th:text="*{items['NP_ZIP_CD']}">Zipcode</span>-->
+            <span th:text="${param.zip}">Zipcode</span>
+        </p>
+    </div>
+</div>
+<div style="padding-bottom: 200px;">
+    <form th:object="${dynamicFormBean}" method="post"
+          th:action="@{${dynamicFormBean.buildSubmitUrl()}}">
+        <p th:if="${dynamicFormBean.hasErrors()}" id="globalError" class="error">
+            Please correct the errors highlighted below
+        </p>
+        <th:block th:include="~{/companies/boscovs/fhf-registration/fragments :: passes}" />
+        <th:block th:include="~{/companies/boscovs/fhf-registration/fragments :: stores('PICKUP_STOREID')}" />
+        <th:block>
+            <input id="submit" type="submit" th:value="Update">
+        </th:block>
+        <input type="hidden" th:field="*{items['NP_ID']}" />
+        <input type="hidden" th:field="*{items['NP_ORG_NM']}" />
+        <input type="hidden" th:field="*{items['NP_ADDR1']}" />
+        <input type="hidden" th:field="*{items['NP_ADDR2']}" />
+        <input type="hidden" th:field="*{items['NP_CITY_NM']}" />
+        <input type="hidden" th:field="*{items['NP_STATE_CD']}" />
+        <!--<input type="hidden" th:field="*{items['NP_ZIP_CD']}" />-->
+        <input type="hidden" id="items'NP_ZIP_CD'" name="items['NP_ZIP_CD']" th:value="${param.zip}" />
+        <input type="hidden" th:field="*{items['FIRST_NAME']}" />
+        <input type="hidden" th:field="*{items['LAST_NAME']}" />
+        <input type="hidden" th:field="*{items['EMAIL']}" />
+        <input type="hidden" th:field="*{items['PHONE']}" />
+        <input type="hidden" id="storeName" th:field="*{items['storeName']}" />
+
+    </form>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script th:src="@{/companies-static/boscovs/fhf-registered/js/fhf_registration.js}" type="text/javascript"></script>
+</body>
+</html>

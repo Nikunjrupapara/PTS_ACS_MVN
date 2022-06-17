@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<th:block th:include="~{/companies/dollartree/fragments :: head }" />
+</head>
+<body th:object="${dynamicFormBean}" th:with="email=*{items['email']},brand=*{brand}">
+
+
+<form onsubmit="return validPrefForm();" method="post" th:action="@{'/p/services/update/' + *{contextPath}}" th:object="${dynamicFormBean}" name="form1" id="form1">
+
+  
+  <div class="container gray dt-margin" role="main">
+    <div class="col-md-6"> 
+      <div class="container gutters items-start">
+        <div class="col-12 padding-top">
+        	<p class="green huge preftop mobile-center">Sign up for emails or update your preferences</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="container gutters">
+        <div class="col-12 text-center">
+          <img th:src="@{/companies-static/dollartree/images/prefs.png}" width="100%" class="feature-img">
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container gutters-sm-all dt-margin">
+  	<div class="col-12">
+	  	<p>Receiving too many emails or not the &ldquo;right&rdquo; emails? Change your email preferences below. You may also
+			<a th:href="@{'/p/profile/secure/unsubscribe/lookup?l=' + *{items['cusCustomerIdHash']} + '&s='+ *{items['cusCustomerUUID']}}" class="unsub">unsubscribe</a>.</p>
+
+		<div class="container">
+			<div class="col-12 col-md-7">
+				<div class="container gutters-sm-all items-center more-space">
+				  <div class="col-5 col-sm-4 text-left">
+						<label for="email"><span class="required">*</span> Email:</label>
+				  </div>
+				  <div class="col-7 col-sm-8">
+						<input id="email" placeholder="Email Address" th:field="*{items['email']}" type="hidden">
+						<strong>[[${email}]]</strong>
+				  </div>
+				  <div class="col-5 col-sm-4 text-left">
+					   <label for="cusZipCode"><span class="required">*</span> Zip Code:</label>
+				  </div>
+				  <div class="col-7 col-sm-8">
+					   <input id="cusZipCode" placeholder="Zip Code" th:field="*{items['location.zipCode']}" pattern="(\d{5}([\-]\d{4})?)" type="text" class="form-control radius">
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<p class="large green">Emails tailored to your interests or business:</p>
+
+
+			<input type="hidden" name="c1" id="offers" value="Y"  />
+
+			<div class="col-12 col-md-6 half-space indent-30">
+				<label for="crafts" class="custom-checkbox">Crafts &amp; DIY
+					<input type="checkbox" id="crafts" value="Y" th:field="*{items['cusCraftOrg']}"   />
+					<span class="checkmark"></span>
+				</label>
+			</div>
+			<div class="col-12 col-md-6 half-space indent-30">
+				<label for="floral" class="custom-checkbox">Floral & Centerpiece Supplies
+					<input type="checkbox" id="floral" value="Y" th:field="*{items['cusFloristOrg']}" th:checked="${floristOrgCheck}"  />
+					<span class="checkmark"></span>
+				</label>
+			</div>
+			<div class="col-12 col-md-6 half-space indent-30">
+				<label for="edu" class="custom-checkbox">Educational &amp; Classroom Supplies
+					<input type="checkbox" id="edu" value="Y"  th:field="*{items['cusEducationOrg']}" th:checked="${educationOrgCheck}" />
+					<span class="checkmark"></span>
+				</label>
+			</div>
+			<div class="col-12 col-md-6 half-space indent-30">
+				<label for="nonprofit" class="custom-checkbox">Nonprofit &amp; Charitable Supplies
+					<input type="checkbox" id="nonprofit" value="Y" th:field="*{items['cusNonprofitOrg']}" th:checked="${nonprofitOrgCheck}" />
+					<span class="checkmark"></span>
+				</label>
+			</div>
+			<div class="col-12 col-md-6 half-space indent-30">
+				<label for="dining" class="custom-checkbox">Dining, Restaurant &amp; Catering Supplies
+					<input type="checkbox" id="dining" value="Y" th:field="*{items['cusRestaurantOrg']}" th:checked="${restaurantOrgCheck}" />
+					<span class="checkmark"></span>
+				</label>
+			</div>
+			<div class="col-12 col-md-6 half-space indent-30">
+				<label for="party" class="custom-checkbox">Party Planning &amp; Special Events
+					<input type="checkbox" id="party" value="Y" th:field="*{items['cusCateringOrg']}" th:checked="${cateringOrgCheck}" />
+					<span class="checkmark"></span>
+				</label>
+			</div>
+
+
+  	<div class="col-12 more-space">
+  		<button type="submit" class="btn radius background-color-primary color-auto cursor-pointer hover-background-color-darker btn-subscribe">UPDATE NOW</button>
+  	</div>
+  	<div class="col-12 half-space hidden">
+  		<p class="required hidden" id="errorText">Please select and enter the required information.</p>
+  	</div>
+
+<!--  	<div class="col-12 half-space">-->
+<!--  		<p class="green no-margin">We Respect Your Privacy</p>-->
+<!--  		<p class="small">For more details on how we use your information,-->
+<!--			please see our <a target="_parent" href="https://www.dollartree.com/custserv/custserv.jsp?pageName=Privacy"><strong>Privacy and-->
+<!--			Security page</strong></a>.</p>-->
+<!--		<p class="small"><a target="_parent" href="https://www.dollartree.com/terms">Terms &amp; Conditions</a></p>-->
+<!--  	</div>-->
+
+	<th:block th:include="~{/companies/dollartree/fragments :: privacyBlockIndex }" />
+
+  </div>
+
+	<input type="hidden" th:field="*{brand}" />
+	<input type="hidden" th:field="*{items['cusCustomerIdHash']}" />
+	<input type="hidden" th:field="*{items['cusCustomerUUID']}" />
+
+
+</form>
+<script th:src="@{/companies-static/resideo/js/jquery.min.js}"></script>
+<script th:src="@{/companies-static/resideo/js/waitMe.min.js}"></script>
+<script>
+
+	document.getElementById("form1").addEventListener("submit", function(event){
+	  	event.preventDefault()
+	});
+	//Pref page validations
+	document.getElementById("zip").addEventListener("change", function(event){
+		var isValid = true;
+		document.getElementById("errorText").style.visibility = "hidden";
+
+		// Check zip code
+		var zip_pattern = /^\d{5}([\-]\d{4})?$/;
+		var zipEl = document.getElementById("cusZipCode");
+		if (zipEl.value.match(zip_pattern)) {
+			zipEl.classList.remove("input-error");
+		} else {
+			zipEl.classList.add("input-error");
+			isValid = false;
+		}
+
+		if (!isValid) {
+			document.getElementById("errorText").style.visibility = "visible";
+		}
+	});
+
+	function validPrefForm() {
+		var isValid = true;
+		document.getElementById("errorText").style.visibility = "hidden";
+		$("body").waitMe({});
+
+		// Check zip code
+		var zip_pattern = /^\d{5}([\-]\d{4})?$/;
+		var zipEl = document.getElementById("cusZipCode");
+		if (zipEl.value.match(zip_pattern)) {
+			zipEl.classList.remove("input-error");
+		} else {
+			zipEl.classList.add("input-error");
+			isValid = false;
+		}
+		
+		if (isValid) {
+			// submit
+			document.form1.submit();
+			//return true;
+		} else {
+			document.getElementById("errorText").style.visibility = "visible";
+			$("body").waitMe('hide');
+			return false;
+		}
+	}
+</script>
+
+
+</body>
+</html>

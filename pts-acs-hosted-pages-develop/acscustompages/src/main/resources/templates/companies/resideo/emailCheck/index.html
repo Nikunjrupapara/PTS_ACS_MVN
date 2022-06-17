@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <th:block th:if="${dynamicFormBean.getBrand()} == 'honeywellhome'">
+        <title>Honeywell Email Check</title>
+        <link rel="stylesheet" type="text/css" th:href="@{/companies-static/resideo/css/HoneywellHome.css}">
+        <link rel="icon" href="https://www.honeywellhome.com/Areas/HoneywellHome/favicon.ico?v=637341191467108241" type="image/x-icon" />
+    </th:block>
+    <th:block th:if="${dynamicFormBean.getBrand()} == 'resideo'">
+        <title>Resideo Email Check</title>
+        <link rel="stylesheet" type="text/css" th:href="@{/companies-static/resideo/css/Resideo.css}">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+        <link rel="icon" href="//www.resideo.com/Areas/Resideo/favicon.ico?v=637431969355206534" type="image/x-icon">
+    </th:block>
+    <th:block th:replace="~{/companies/resideo/ga :: getHeadGATag('__${dynamicFormBean.getBrand()}__')}" />
+</head>
+<body bgcolor="#FFFFFF"><th:block th:replace="~{/companies/resideo/ga :: getBodyGATag('__${dynamicFormBean.getBrand()}__')}" />
+<div id="container">
+    <div id="innerContainer" th:object="${dynamicFormBean}" th:with="email=*{items['email']},brand=*{brand}">
+        <div id="header">
+            <div id="Honeywell_logo" th:if="${brand} == 'honeywellhome'">
+                <a href="https://www.honeywellhome.com/us/en" target="_blank">
+                    <img th:src="@{/companies-static/resideo/images/HoneywellHomeLogo.png}"
+                         height="36" alt="Honeywell Home" border="0" style="display:block;" />
+                </a>
+            </div>
+            <div id="Resideo_logo" th:if="${brand} == 'resideo'">
+                <a href="https://www.resideo.com/us/en" target="_blank">
+                    <img th:src="@{/companies-static/resideo/images/ResideoLogo.png}"
+                         width="50" height="50" alt="Resideo" border="0" style="display:block;" />
+                </a>
+            </div>
+        </div>
+        <div id="headline" th:if="${brand} == 'honeywellhome'">
+            <h1>LET&rsquo;S STAY IN TOUCH</h1>
+        </div>
+        <div id="headline" th:if="${brand} == 'resideo'">
+            LET&rsquo;S STAY IN TOUCH
+        </div>
+        <div id="bodyCopy">
+            <p>Want to change your current email subscription settings for our North American consumer emails?</p>
+            <p>Enter your email address below to verify that it is part of our email list. If it is, you will be sent an email that includes a link to access your preferences.</p>
+            <p>Why do we send you an email? For security reasons we want to make sure only the email subscriber can update his or her preferences.</p>
+        </div>
+        <!--<% if(failure) { %>
+        <div id="error_form_area">
+            <div class="form-top_error">
+                <img src="images/error.png" width="50" height="50" alt="!" border="0" />
+                <h1>AN ERROR HAS OCCURRED</h1>
+                <p>Please refresh the page and try again.</p>
+            </div>
+        </div>
+        <% } else { %>-->
+        <form id="form_area" onsubmit="return validateEmail();" th:action="@{'/p/profile/search/' + *{contextPath}}" method="post" th:object="${dynamicFormBean}">
+            <div class="form-top">
+                <p>ENTER EMAIL ADDRESS</p>
+                <th:block th:if="${dynamicFormBean.isError('email')} == true">
+                    <span class="error">Please enter a valid email address</span>
+                </th:block>
+                <input type="email" th:field="*{items['email']}" onkeyup="this.value = this.value.toLowerCase();" >
+                <input type="submit" name="submit" id="verify" value="VERIFY">
+            </div>
+            <input type="hidden" th:field="*{brand}" />
+        </form>
+        <!--<% } %> -->
+
+        <div id="footer">
+            <div id="footer_question">
+                <p>
+                    <img th:src="@{/companies-static/resideo/images/info.png}" width="24" height="24" alt="?" />
+                </p>
+            </div>
+            <div id="footer_question_p">
+                <p>
+                    Please enter your email address associated with your account or opted into emails to verify that it is in our system.
+                </p>
+                <p>
+                    <br>Have a connected device? Please update your email address in your mobile app or on your <a href="https://www.mytotalconnectcomfort.com" target="_blank">MYTOTALCONNECTCOMFORT.COM</a> profile.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--
+TODO: Fix Javascript code
+-->
+<script th:inline="javascript">
+function validateEmail() {
+	 var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	 var email_val = document.getElementById("items'email'").value;
+	 if( !re.test(email_val)){
+		 alert("Email is not valid");
+		 return false;
+	}
+	document.getElementById("verify").disabled = true;
+    return true;
+ }
+
+
+ function continueOrNot() {
+
+ }
+</script>
+
+</body>
+</html>

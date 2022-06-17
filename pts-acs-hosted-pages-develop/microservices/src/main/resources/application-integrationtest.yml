@@ -1,0 +1,6 @@
+spring:
+  data:
+    mongodb:
+      database: pts-adobe-inttest
+      host: localhost
+      port: 27017

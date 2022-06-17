@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<th:block th:fragment="head">
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://use.typekit.net/ebw8srh.css" />
+    <link rel="stylesheet" th:href="@{/companies-static/resideo/css/jquery-ui.min.css}" type="text/css" />
+    <link rel="stylesheet" th:href="@{/companies-static/resideo/css/normalize.css}" />
+    <link rel="stylesheet" th:href="@{/companies-static/resideo/css/skeleton.css}" />
+    <link rel="stylesheet" th:href="@{/companies-static/resideo/css/custom-hnwl-2.css}" />
+    <script src="https://use.fontawesome.com/8edb1ff8d3.js"></script>
+</th:block>
+
+<th:block th:fragment="notYou">
+    <div class="six columns email">
+        <th:block th:with="email=*{items['email']},displayEmail=${#strings.isEmpty(email) ? false : true}" >
+            <th:block th:if="${displayEmail}">
+                <img th:src="@{/companies-static/resideo/images/icircle.png}" alt="i" />
+                <span th:text="${email}">x@y.com</span>
+                <div class="email-tooltip">
+                    Not you? Click
+                    <a th:href="@{'/p/profile/search/' + *{appPath} + '/signup'}">here</a> to manage a different account.
+                </div>
+            </th:block>
+        </th:block>
+    </div>
+</th:block>
+
+
+
+</body>
+</html>

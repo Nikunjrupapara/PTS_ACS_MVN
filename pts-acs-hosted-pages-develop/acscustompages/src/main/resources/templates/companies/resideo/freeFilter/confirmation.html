@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:with="brand=${dynamicFormBean.getBrand()}">
+    <th:block th:replace="~{/companies/resideo/freeFilter/fragments :: getHead()}" />
+</head>
+<body bgcolor="#FFFFFF">
+    <div id="container" th:with="brand=${dynamicFormBean.getBrand()},state=${dynamicFormBean.getItem('state')}">
+        <div id="innerContainer">
+            <div id="header">
+                <div id="Resideo_logo" th:replace="~{/companies/resideo/freeFilter/fragments :: getLogo()}"/>
+            </div>
+            <div th:replace="~{/companies/resideo/freeFilter/fragments :: getConfirmationMsg('__${state}__')}" />
+            <div id="footer"></div>
+        </div>
+    </div>
+</body>
+</html>

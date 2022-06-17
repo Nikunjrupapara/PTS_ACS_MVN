@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Your Credit Card Email Preferences</title>
+    <th:block th:with="brand=${dynamicFormBean.getBrand()}">
+        <link th:href="@{/companies-static/usbank/preferences/__${brand}__/css/styles.css}" rel="stylesheet" type="text/css" />
+    </th:block>
+</head>
+<body bgcolor="#FFFFFF">
+<center>
+    <div class="inner-div">
+        <div id="vexp">
+            <th:block th:object="${dynamicFormBean}" th:with="brand=${dynamicFormBean.getBrand()}">
+                <header th:replace="~{/companies/usbank/preferences/includes/headers :: __${brand}__ }"></header>
+                <form name="submitForm" id="preferencesForm" method="post" th:action="@{'/p/services/update/' + *{contextPath}}">
+                    <table width="750" border="0" align="center" cellpadding="0" cellspacing="0"
+                           th:with="marketingSub=${dynamicFormBean.isSubscribedToService('marketing')}"
+                    >
+                        <tr><td>&nbsp;</td></tr>
+                        <tr>
+                            <td><p>
+                                You are currently <span th:if="${marketingSub} == false">not </span>receiving special offers from your credit card at:
+                                <strong> <span th:text="*{items['email']}">email@domain.com</span> </strong> for card ending in
+                                <span th:text="*{items['cusAcctL4']}">1234</span>. You can change this preference at any time below.
+
+                                <th:block th:insert="~{/companies/usbank/preferences/includes/fragments :: chooseAppropriateButton('__${brand}__')}" />
+
+                            </p></td>
+                        </tr>
+                        <tr><td>&nbsp;</td></tr>
+                        <th:block th:with="name='radios',subscribedMarketing=${dynamicFormBean.isSubscribedToService('marketing')}">
+                            <!--
+                            We don't use th:field for these radio buttons as the checked attribute is set to the opposite of the
+                            service subscription, e.g. when subscribed to the marketing service the No radio button is checked,
+                            and vice versa.
+                            -->
+                            <tr>
+                                <td align="left" valign="middle">
+                                    <input type="radio" th:id="optin" th:name="items[__${name}__]" th:value="Y"
+                                           th:checked="${not subscribedMarketing}"
+                                    />
+                                    <!--label th:for="optin">Yes, I want to receive special offer emails and promotional emails for my credit card account.</label-->
+                                    <th:block th:insert="~{/companies/usbank/preferences/includes/fragments :: yesReceive('__${brand}__')}" />
+
+                                </td>
+                            </tr>
+                            <tr><td>&nbsp;</td></tr>
+                            <tr>
+                                <td align="left" valign="middle">
+                                    <input type="radio" th:id="optout" th:name="items[__${name}__]" th:value="N"
+                                           th:checked="${subscribedMarketing}"
+                                    />
+                                    <label th:for="optout">No, I only want to receive information about my credit card account.</label>
+                                </td>
+                            </tr>
+                        </th:block>
+                        <tr><td>&nbsp;</td></tr>
+                        <tr>
+                            <td>
+                                <!--<input class="buttons" th:src="@{/companies-static/trancore/preferences/BMW/images/Submit.jpg}" type="image" />-->
+                                <th:block th:insert="~{/companies/usbank/preferences/includes/fragments :: submitButton('__${brand}__')}" />
+                            </td>
+                        </tr>
+                        <tr><td>&nbsp;</td></tr>
+                    </table>
+                    <input type="hidden" th:field="*{brand}" />
+                    <input type="hidden" th:field="*{items['email']}" />
+                    <!--
+                    <input type="hidden" th:field="*{items['newUser']}" />
+                    <input type="hidden" th:field="*{items['subscribed']}" />
+                    -->
+                    <input type="hidden" th:field="*{items['cusAcctL4']}" />
+                    <th:block th:with="name='cusPartner'">
+                        <input type="hidden" th:name="items[__${name}__]" th:value="${brand}" />
+                    </th:block>
+                    <input type="hidden" th:field="*{items['cusCustomerIdHash']}" />
+                </form>
+                <footer th:replace="~{/companies/usbank/preferences/includes/footers :: __${brand}__ }"></footer>
+            </th:block>
+        </div>
+    </div>
+</center>
+</body>
+</html>

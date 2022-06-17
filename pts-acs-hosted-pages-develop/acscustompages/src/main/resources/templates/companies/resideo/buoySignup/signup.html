@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:include="~{/companies/resideo/buoySignup/fragments :: head }" />
+    <th:block th:include="~{/companies/resideo/buoySignup/fragments :: tag }" />
+</head>
+<body>
+
+<!-- ATC Pixel -->
+<img src="https://link.p0.com/1x1c.dyn?p=CNJPQA50" width=0 height=0>
+
+
+<th:block th:insert="~{/companies/resideo/buoySignup/fragments :: tagNoScript }" />
+
+<div class="container" th:object="${dynamicFormBean}" th:with="brand=${dynamicFormBean.getBrand()}">
+    <!--  <header role="banner">
+        <img src="images/HoneywellHomeLogo.png" alt="Honeywell Home" />
+    </header>  -->
+
+    <form id="subForm" data-abide novalidate
+          method="post" th:action="@{'/p/profile/search/' + *{contextPath}}"
+          onsubmit="return checkUSCitizen();">
+        <input type="hidden" name="action" id="action" />
+        <div class="main" role="main">
+            <div class="row main-header">
+                <div class="six columns">
+                    <h1>Email Sign-Up</h1>
+                </div>
+                <div class="six columns email"></div>
+            </div>
+            <!--<% if (pageError) { %> -->
+            <th:block
+                    th:with="result=${dynamicFormBean.profileRequestResult},
+                        profileLookup=${result.isProfileLookup()},
+                        profileLookupError=${profileLookup && result.isProfileLookupError()}">
+                <div th:if="${profileLookupError}" id="status-banner" style="background-color: #f7361a; visibility: visible; height: auto">
+                    <strong>ERROR!</strong> We encountered a problem. Please contact customer care at 1-800-633-3991 or try again.
+                </div>
+            </th:block>
+            <!--<% } %> -->
+            <div id="body-content">
+                <p style="margin-top: 30px;">
+                    Our ground-breaking BUOY<span style="font-size: 10px; line-height: 0; vertical-align: 6px">&reg;</span>
+                    Whole Home Water Controller is on its way. Sign-up to get updates and be the first to know when
+                    it's available.
+                </p>
+                <div class="row">
+                    <div class="five columns">
+                        <fieldset class="in-text" th:with="errorMsg='Please enter a valid Email address'">
+                            <label th:for="email">Email address</label>
+                            <input th:field="*{items['email']}"
+                                   type="text"
+                                   placeholder="Your email address"
+                                   autocomplete="off"
+                                   required
+                                   pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" />
+                            <span class="form-error" role="alert" th:text="${errorMsg}"></span> <!-- Client-side validation -->
+                            <th:block th:if="${dynamicFormBean.isError('email')}">
+                                <!-- Server-side validation -->
+                                <!-- <% if(emailError){%> -->
+                                <div data-abide-error>
+                                    <p class="error" th:text="${errorMsg}"></p>
+                                </div>
+                                <!--<% } %> -->
+                            </th:block>
+                        </fieldset>
+                    </div>
+                    <div class="seven columns"></div>
+                </div>
+                <div class="row">
+                    <div class="six columns">
+                        <fieldset class="in-text" th:with="errorMsg='Please enter your First Name'">
+                            <label th:for="firstName">First name</label>
+                            <input th:field="*{items['firstName']}" type="text" placeholder="Your first name" required />
+                            <span class="form-error" role="alert" th:text="${errorMsg}"></span> <!-- Client-side validation -->
+                            <th:block th:if="${dynamicFormBean.isError('firstName')}">
+                                <!-- Server-side validation -->
+                                <!--<% if(fNameError){%>-->
+                                <div data-abide-error>
+                                    <p class="error" th:text="${errorMsg}"></p>
+                                </div>
+                            <!--<% } %> -->
+                            </th:block>
+                        </fieldset>
+                    </div>
+                    <div class="six columns">
+                        <fieldset class="in-text" th:with="errorMsg='Please enter your Last Name'">
+                            <label th:for="lastName">Last name</label>
+                            <input th:field="*{items['lastName']}" type="text" placeholder="Your last name" required />
+                            <span class="form-error" role="alert" th:text="${errorMsg}"></span> <!-- Client-side validation -->
+                            <th:block th:if="${dynamicFormBean.isError('lastName')}">
+                                <!-- Server-side validation -->
+                                <!--<% if(lNameError){%>-->
+                                <div data-abide-error>
+                                    <p class="error" th:text="${errorMsg}"></p>
+                                </div>
+                                <!--<% } %>-->
+                            </th:block>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="six columns">
+                        <fieldset class="tickBox" th:with="name='usCitizen'">
+                            <input th:id="usCitizen" th:name="items[__${name}__]" th:value="us" type="checkbox" />
+                            <label th:for="usCitizen" class="text-wrap">I am a US citizen, and agree to the Resideo <a href="https://www.resideo.com/privacy" target="_blank">privacy policy</a>.</label>
+                            <span class="form-error" role="alert">We're sorry. Only US citizens are eligible for this product.</span> <!-- Client-side validation -->
+                            <th:block th:if="${dynamicFormBean.isError('usCitizen')}">
+                                <!-- Server-side validation -->
+                                <!--<% if(usCitizenError){%> -->
+                                <div data-abide-error>
+                                    <p class="error">We're sorry. Only US citizens are eligible for this product.</p>
+                                </div>
+                                <!--<% } %>-->
+                            </th:block>
+                        </fieldset>
+                    </div>
+                    <div class="six columns">
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="submit" >Sign up &gt;</button>
+                </div>
+            </div><!-- body-content -->
+        </div><!-- main -->
+        <input type="hidden" th:field="*{brand}" />
+    </form>
+</div>
+
+<script th:src="@{/companies-static/resideo/js/jquery.min.js}"></script>
+<script th:src="@{/companies-static/resideo/js/foundation-sites/foundation.js}"></script>
+<script th:src="@{/companies-static/resideo/js/foundation-sites/plugins/foundation.abide.js}"></script>
+<th:block th:insert="~{/companies/resideo/buoySignup/fragments :: fontawesome }" />
+<script>
+	$(document).foundation();
+</script>
+
+<script type="text/javascript">
+        function checkUSCitizen() {
+            if(!(document.getElementById("usCitizen").checked)){
+	            alert("We’re sorry. Only US citizens are eligible for this product.");
+ 				return false;
+            }
+        }
+    </script>
+
+</body>
+</html>

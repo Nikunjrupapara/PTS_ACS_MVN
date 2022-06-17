@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" type="text/css" th:href="@{/companies-static/boscovs/coupon/css/coupon_styles.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/companies-static/boscovs/coupon/css/coupon_bootstrap.css}" />
+    <title>Boscovs Coupon Page</title>
+</head>
+<body th:object="${dynamicFormBean}">
+    <!--
+    Error handling
+    DynamicFormBean should contain a CustomResourceResult, which could be the result of looking up the
+    requested Coupon Log record, or from updating its accessedCount.  Need to confirm if it could be null
+    if the page is requested with no parameters or session has expired
+    For a resource lookup request we check if the record was found or if there was a lookup error
+    For a resource update request we check if the update was successful or if there was an error
+    -->
+    <th:block th:if="${dynamicFormBean} == null">
+        <div class="fadeMe">
+            <div class="error">
+                <span th:text="'We are experiencing technical difficulties with your request. Error code E0'">E0</span>
+            </div>
+        </div>
+    </th:block>
+    <th:block th:unless="${dynamicFormBean == null}"
+              th:with="
+              result=${dynamicFormBean.getRequestResult()},
+              queryParams=${dynamicFormBean.getQueryParameters()},
+              hasResult=${result} != null">
+        <th:block th:if="${hasResult}"
+                  th:with="
+                  msgBase=${'We are experiencing technical difficulties with your request. Error code '},
+                  lValueMissing=${result.isLookup() && queryParams.getParameterFirstValue('l') == ''},
+                  sValueMissing=${result.isLookup() && queryParams.getParameterFirstValue('s') == ''},
+                  barcodeMissing=${result.isLookup() && queryParams.getParameterFirstValue('barcode') == ''},
+                  recordNotFound=${result.isLookup() && !result.isFound()},
+                  lookupError=${result.isLookup() && result.isLookupError()},
+                  updateError=${result.isUpdate() && !result.isAllSuccess()},
+                  limitVal=*{items['limit']},
+                  limit=${limitVal != null ? #conversions.convert(limitVal, 'Integer') : 0 },
+                  accessedCountVal=*{items['accessedCount']},
+                  accessedCount=${accessedCountVal != null ? #conversions.convert(accessedCountVal, 'Integer') : 0 },
+                  checkLimit=${!updateError},hasLimit=${limit > 0},overLimit=${accessedCount > limit},
+                  limitExceeded=${checkLimit && hasLimit && overLimit},
+                  error=${lValueMissing || sValueMissing || barcodeMissing || recordNotFound || updateError || limitExceeded},
+                  otherError=${!lValueMissing && !sValueMissing && !barcodeMissing && !recordNotFound && !updateError && !limitExceeded}"
+        >
+            <!--div>
+                <p>Debug output</p>
+                <p th:text="'lValueMissing='+${lValueMissing}+',sValueMissing='+${sValueMissing}+',barcodeMissing='+${barcodeMissing}"></p>
+                <p th:text="'recordNotFound='+${recordNotFound}+',lookupError='+${lookupError}+',updateError='+${updateError}"></p>
+                <p th:text="'checkLimit='+${checkLimit}+',hasLimit='+${hasLimit}+',overLimit='+${overLimit}"></p>
+                <p th:text="'limit='+${limit}+',accessedCount='+${accessedCount}+',limitExceeded='+${limitExceeded}"></p>
+                <p th:text="'error='+${error}+',otherError='+${otherError}"></p>
+            </div-->
+            <th:block th:if="${error}">
+                <div class="fadeMe">
+                    <span class="error" th:if="${lValueMissing}" th:text="${msgBase + 'L1'}">L1</span>
+                    <span class="error" th:if="${!lValueMissing && sValueMissing}" th:text="${msgBase + 'S1'}">S1</span>
+                    <span class="error" th:if="${!lValueMissing && !sValueMissing && barcodeMissing}" th:text="${msgBase + 'B1'}">B1</span>
+                    <span class="error" th:if="${!lValueMissing && !sValueMissing && !barcodeMissing && !lookupError && recordNotFound}" th:text="${msgBase + 'C1'}">C1</span>
+                    <span class="error" th:if="${lookupError}" th:text="${msgBase + 'E1'}">E1</span>
+                    <span class="error" th:if="${updateError}" th:text="${msgBase + 'E2'}">E2</span>
+                    <span class="error" th:if="${limitExceeded}" th:text="'You have exceeded the maximum number of views for this coupon'">
+                        You have exceeded the maximum number of views for this coupon
+                    </span>
+                    <span class="error" th:if="${otherError}" th:text="${msgBase + 'E3'}">E3</span>
+                </div>
+            </th:block>
+        </th:block>
+        <th:block th:unless="${hasResult}">
+            <div class="fadeMe">
+                <span class="error"
+                      th:text="'We are experiencing technical difficulties with your request. Error code GE1'">
+                    An error occurred!
+                </span>
+            </div>
+        </th:block>
+        <div id="mainContainer" th:with="displayImages=${hasResult && result.isAllSuccess()}">
+            <div class="row">
+                <div class="col-lg-3">&nbsp;</div>
+                <div class="col-lg-6" id="contentContainer" style="border: 2px dashed #000000">
+                    <div class="row">
+                        <div class="col-lg-12 introText">
+                            Print this savings certificate and visit Boscov&#39;s today!
+                        </div>
+                        <div class="col-lg-12 coupContainer" th:if="${displayImages}">
+                            <!-- Barcode image -->
+                            <img th:src="*{items['image']}" class="img-responsive" alt="Visit Boscov's Today!" />
+                        </div>
+                        <div class="col-lg-12 introText rowPadding">
+                            <strong>Valid now thru <span class="allCaps" th:text="*{items['expireDate']}"></span></strong>
+                        </div>
+                    </div>
+                    <div class="row rowPadding">
+                        <div class="col-lg-12 logoContainer">
+                            <img th:src="@{/companies-static/boscovs/coupon/images/boscovs.jpg}" class="img-responsive" alt="Visit Boscov's" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 centered rowPadding responsiveHide">
+                            <button class="btn-primary" name="printButton" onClick="window.print();">Print</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">&nbsp;</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 introText rowPadding">
+                            <span class="allCaps" th:utext="*{items['onlineCode']}">Online Code</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">&nbsp;</div>
+                    </div>
+                    <div class="row rowPadding">
+                        <div class="col-lg-12 introText">
+                            <span th:utext="*{items['instructions']}">Instructions</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">&nbsp;</div>
+                    </div>
+                    <div class="row rowPadding">
+                        <div class="col-lg-12 legalText">
+                            <span th:utext="*{items['legal']}">Legal Text</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">&nbsp;</div>
+        </div>
+    </th:block>
+    <!--
+    <table>
+        <tr th:each="var : ${#vars.getVariableNames()}">
+            <td th:text="${var}"></td>
+            <td th:text="${#vars.getVariable(var)}"></td>
+        </tr>
+        < !--
+            Adding these manually because they are considered special.
+            see https://github.com/thymeleaf/thymeleaf/blob/thymeleaf-3.0.3.RELEASE/src/main/java/org/thymeleaf/context/WebEngineContext.java#L199
+        -- >
+        <tr>
+            <td>param</td>
+            <td th:text="${#vars.getVariable('param')}"></td>
+        </tr>
+        <tr>
+            <td>session</td>
+            <td th:text="${#vars.getVariable('session')}"></td>
+        </tr>
+        <tr>
+            <td>application</td>
+            <td th:text="${#vars.getVariable('application')}"></td>
+        </tr>
+    </table>
+    -->
+</body>
+</html>

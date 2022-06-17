@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<!--
+   <th:block th:with="brand=${dynamicFormBean.getBrand()}" th:include="~{/companies/resideo/productRegistration/fragments :: getHead('__${brand}__')}" />
+-->
+<th:block th:fragment="getHead(brand)" >
+    <th:block th:switch="${brand}">
+        <th:block th:case="'resideo'">
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>Resideo | Product Registration</title>
+
+            <th:block th:replace="~{/companies/resideo/ga :: getHeadGATag('__${brand}__')}" />
+
+            <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+            <link rel="stylesheet" type="text/css" th:href="@{/companies-static/resideo/css/PreferenceCenterRes.css}" />
+            <link rel="icon" href="https://www.resideo.com/Areas/Resideo/favicon.ico?v=637431969355206534" type="image/x-icon">
+
+            <link rel="stylesheet" type="text/css" th:href="@{/companies-static/resideo/css/waitMe.min.css}" />
+        </th:block>
+        <th:block th:case="'honeywellhome'">
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>Honeywell Home | Product Registration</title>
+
+            <th:block th:replace="~{/companies/resideo/ga :: getHeadGATag('__${brand}__')}" />
+
+            <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+            <link rel="stylesheet" type="text/css" th:href="@{/companies-static/resideo/css/ProdRegHon.css}" />
+            <link rel="icon" href="https://www.honeywellhome.com/Areas/HoneywellHome/favicon.ico?v=637341191467108241" type="image/x-icon" />
+
+            <link rel="stylesheet" type="text/css" th:href="@{/companies-static/resideo/css/waitMe.min.css}" />
+        </th:block>
+    </th:block>
+</th:block>
+
+
+
+
+
+
+
+<!--
+   <th:block th:with="brand=${dynamicFormBean.getBrand()}" th:include="~{/companies/resideo/productRegistration/fragments :: getHeader('__${brand}__')}" />
+-->
+<th:block th:fragment="getHeader(brand)" >
+    <th:block th:switch="${brand}">
+        <th:block th:case="'resideo'">
+                <div id="Resideo_logo">
+                    <a href="https://www.resideo.com/us/en" target="_blank"><img th:src="@{/companies-static/resideo/images/ResideoLogo2x.png}" width="50" height="50" alt="Resideo" border="0" style="display:block;" /></a>
+                </div>
+                <div id="headline">
+                    WELCOME TO THE RESIDEO PRODUCT REGISTRATION PAGE
+                </div>
+                <div id="bodyCopy">
+                    <p>
+                        We hope you&rsquo;re enjoying your Resideo product. Please take a moment to register your product and we&rsquo;ll let you know if there are any product updates you should be aware of along with the latest information to keep your home comfortable and safe.
+                    </p>
+                    <p class="smalltype">
+                        Don&rsquo;t have a Resideo product yet? <a href="https://email.resideo.com/p/profile/search/emailCheck/index" target="_blank">SIGN UP FOR OUR MARKETING EMAILS&nbsp;<img th:src="@{/companies-static/resideo/images/arrow2.png}" width="25" height="12" alt="" /></a>
+                    </p>
+                </div>
+        </th:block>
+        <th:block th:case="'honeywellhome'">
+                <div id="Honeywell_logo">
+                    <a href="https://www.honeywellhome.com/us/en" target="_blank"><img th:src="@{/companies-static/resideo/images/HoneywellHomeLogo.png}" height="28" alt="Honeywell Home" border="0" /></a>
+                </div>
+                <div id="headline">
+                    WELCOME TO THE HONEYWELL HOME PRODUCT REGISTRATION PAGE
+                </div>
+                <div id="bodyCopy">
+                    <p>
+                        We hope you&rsquo;re enjoying your Honeywell Home product. Please take a moment to register your product and we&rsquo;ll let you know if there are any product updates you should be aware of along with the latest information to keep your home comfortable and safe.
+                    </p>
+                    <p class="smalltype">
+                        Don&rsquo;t have a Honeywell Home product yet? <a href="https://email.honeywellhome.com/p/profile/search/emailCheck/index" target="_blank">SIGN UP FOR OUR MARKETING EMAILS&nbsp;<img th:src="@{/companies-static/resideo/images/arrow2.png}" width="25" height="12" alt="" /></a>
+                    </p>
+                </div>
+        </th:block>
+    </th:block>
+</th:block>
+
+<th:block th:fragment="getLogoHeader(brand)" >
+    <th:block th:switch="${brand}">
+        <th:block th:case="'resideo'">
+            <div id="Resideo_logo">
+                <a href="https://www.resideo.com/us/en" target="_blank"><img th:src="@{/companies-static/resideo/images/ResideoLogo2x.png}" width="50" height="50" alt="Resideo" border="0" style="display:block;" /></a>
+            </div>
+        </th:block>
+        <th:block th:case="'honeywellhome'">
+            <div id="Honeywell_logo">
+                <a href="https://www.honeywellhome.com/us/en" target="_blank"><img th:src="@{/companies-static/resideo/images/HoneywellHomeLogo.png}" height="28" alt="Honeywell Home" border="0" /></a>
+            </div>
+        </th:block>
+    </th:block>
+</th:block>
+
+
+<!--
+   <th:block th:include="~{/companies/resideo/productRegistration/fragments :: getTitle('__${brand}__')}" />
+-->
+<th:block th:fragment="getTitle(brand)" >
+    <th:block th:switch="${brand}">
+        <th:block th:case="'resideo'">
+            <h2>
+                <center>FIRST, SELECT WHAT TYPE OF RESIDEO PRODUCT YOU WANT TO REGISTER</center>
+            </h2>
+        </th:block>
+        <th:block th:case="'honeywellhome'">
+            <h2>
+                <center>FIRST, SELECT WHAT TYPE OF HONEYWELL HOME PRODUCT YOU WANT TO REGISTER</center>
+            </h2>
+        </th:block>
+    </th:block>
+</th:block>
+
+
+<!--
+   <th:block th:include="~{/companies/resideo/productRegistration/fragments :: getResidentLable('__${brand}__')}" />
+-->
+<th:block th:fragment="getResidentLable(brand)" >
+    <th:block th:switch="${brand}">
+        <th:block th:case="'resideo'">
+            <p>I am a US or CA resident over 18 years of age and agree to the <a href="https://www.resideo.com/us/en/corporate/legal/privacy/english/" target="_blank">RESIDEO PRIVACY POLICY</a>.*</p>
+            <input type="checkbox" th:field="*{items['resident']}" value="resident" id="resident">
+            <span class="checkmark"></span>
+        </th:block>
+        <th:block th:case="'honeywellhome'">
+            <p>I am a US or CA resident over 18 years of age and agree to the <a href="https://www.resideo.com/us/en/corporate/legal/privacy/english/" target="_blank">HONEYWELL HOME PRIVACY POLICY</a>.*</p>
+            <input type="checkbox" th:field="*{items['resident']}" value="resident" id="resident">
+            <span class="checkmark"></span>
+        </th:block>
+    </th:block>
+</th:block>
+
+
+<!--
+   <th:block th:replace="~{/companies/resideo/productRegistration/fragments :: getVisitCSPageLink('__${brand}__')}" />
+-->
+<th:block th:fragment="getVisitCSPageLink(brand)" >
+    <th:block th:switch="${brand}">
+        <th:block th:case="'resideo'">
+            <a href="https://www.resideo.com/us/en/support/" target="_blank">VISIT OUR CUSTOMER SUPPORT PAGE</a>
+        </th:block>
+        <th:block th:case="'honeywellhome'">
+            <a href="https://www.honeywellhome.com/us/en/support/" target="_blank">VISIT OUR CUSTOMER SUPPORT PAGE</a>
+        </th:block>
+    </th:block>
+</th:block>
+
+
+<!--
+   <p th:replace="~{/companies/resideo/productRegistration/fragments :: getVisitCSPageLink2('__${brand}__')}" />
+-->
+<th:block th:fragment="getVisitCSPageLink2(brand)" >
+    <th:block th:switch="${brand}">
+        <p th:case="'resideo'">
+           Need additional support?  <a href="https://www.resideo.com/us/en/support/" target="_blank">VISIT OUR CUSTOMER SUPPORT PAGE <img th:src="@{/companies-static/resideo/images/arrow2.png}" width="25" height="12" alt="" /></a>
+        </p>
+        <p th:case="'honeywellhome'">
+            Need additional support? <a href="https://www.honeywellhome.com/us/en/support/" target="_blank">VISIT OUR CUSTOMER SUPPORT PAGE <img th:src="@{/companies-static/resideo/images/arrow2.png}" width="25" height="12" alt="" /></a>
+        </p>
+    </th:block>
+</th:block>
+
+
+<!--
+   <th:block th:replace="~{/companies/resideo/productRegistration/fragments :: getSignUpForEmailsLink('__${brand}__')}" />
+-->
+<th:block th:fragment="getSignUpForEmailsLink(brand)" >
+    <th:block th:switch="${brand}">
+        <th:block th:case="'resideo'">
+            Don&rsquo;t have a Resideo product yet? <a href="https://www.resideo.com/us/en/email-signup/" target="_blank">SIGN UP FOR OUR MARKETING EMAILS&nbsp;<img th:src="@{/companies-static/resideo/images/arrow2.png}" width="25" height="12" alt="" /></a>
+        </th:block>
+        <th:block th:case="'honeywellhome'">
+            Don&rsquo;t have a Honeywell Home product yet? <a href="https://www.honeywellhome.com/us/en/email-signup/" target="_blank">SIGN UP FOR OUR MARKETING EMAILS&nbsp;<img th:src="@{/companies-static/resideo/images/arrow2.png}" width="25" height="12" alt="" /></a>
+        </th:block>
+    </th:block>
+</th:block>
+<!--
+<div th:insert="~{companies/resideo/productRegistration/fragments :: jsParameters}"></div>
+-->
+<th:block th:fragment="jsParameters">
+    <div th:with="envName=${dynamicFormBean.getEnvironmentName()}" th:switch="${envName}">
+        <th:block th:case="development">
+            <input type="hidden" id="services" value="http://localhost:8080/v1/services">
+            <input type="hidden" id="jwt" value="Add your local token here">
+        </th:block>
+        <th:block th:case="qa">
+            <input type="hidden" id="services" value="https://qa-ams.ptsacs.data-axle.com/v1/services">
+            <input type="hidden" id="jwt" value="eyJhbGciOiJIUzUxMiJ9.eyJmb3JtIjp7ImNvbXBhbnkiOiJyZXNpZGVvIiwidXVpZCI6Ijg2MTg5YWRmLTFlNWUtNGE2MS04OTg0LTA0YTNhZWRjYWU2MiJ9LCJuYmYiOjE2MDQ1MzQ0MDAsImV4cCI6NDEwMjM1ODQwMCwiaWF0IjoxNjEyNTQ5NjE4LCJqdGkiOiI3YmMyMTYyZi04MmNiLTQzZTYtYTQ5ZC05N2NjODRhNWI4NDUifQ.TyGWQw55uw3JMojdR470L8XmI4D1Ai3kmS9fZwZhibRpDjVkxLqs_MeIrYdyeMdfpxpeAN_lV3SDUvJDp4M8qA">
+        </th:block>
+        <th:block th:case="*">
+            <input type="hidden" id="services" value="https://amsapi.data-axle.com/v1/services">
+            <input type="hidden" id="jwt" value="eyJhbGciOiJIUzUxMiJ9.eyJmb3JtIjp7ImNvbXBhbnkiOiJyZXNpZGVvIiwidXVpZCI6ImRiMmZkNGNhLTJiNjMtNDc4Yi1iZTVmLWRiMjE5ZDg2NWFiMyJ9LCJuYmYiOjE2MDYwMDMyMDAsImV4cCI6NDEwMjM1ODQwMCwiaWF0IjoxNjE0MDExOTc1LCJqdGkiOiI0YTdiNDkzMS02N2Q1LTQzNDktYTk4Mi1lMDFlYzQ0YWNiMjcifQ.VQvwZRt6rqbAFVTHCUTWMqmSe2lpZ9QIuz6Dk6KI93KoDxfhYhAq9jKJylx-R0ALwFcXHZ5Mflgm53If3A1lKw">
+        </th:block>
+    </div>
+</th:block>
+
+<!--
+   <th:block th:replace="~{/companies/resideo/productRegistration/fragments :: getConfirmationMsg('__${brand}__')}" />
+-->
+<th:block th:fragment="getConfirmationMsg(brand)" >
+    <th:block th:switch="${brand}">
+        <th:block th:case="'resideo'">
+            <p>Thank you for registering your <a href="https://www.resideo.com/us/en" target="_blank">Resideo</a> product with us. You will receive an email shortly confirming your registration.</p>
+        </th:block>
+        <th:block th:case="'honeywellhome'">
+            <p>Thank you for registering your <a href="https://www.honeywellhome.com/us/en" target="_blank">Honeywell Home</a> product with us. You will receive an email shortly confirming your registration.</p>
+        </th:block>
+    </th:block>
+</th:block>
+
+</body>
+</html>

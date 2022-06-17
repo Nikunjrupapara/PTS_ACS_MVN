@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Your Credit Card Email Preferences</title>
+    <th:block th:with="brand=${dynamicFormBean.getBrand()}">
+        <link th:href="@{/companies-static/usbank/preferences/__${brand}__/css/styles.css}" rel="stylesheet" type="text/css" />
+    </th:block>
+</head>
+<body bgcolor="#FFFFFF">
+<center>
+    <div class="inner-div">
+        <div id="vexp">
+            <th:block th:object="${dynamicFormBean}" th:with="brand=${dynamicFormBean.getBrand()}">
+                <header th:replace="~{/companies/usbank/preferences/includes/headers :: __${brand}__ }"></header>
+                <form name="submitForm" id="newUserForm" method="post" th:action="@{${dynamicFormBean.buildSubmitUrl()}}">
+                    <table class="bodyTable">
+                        <tr><td>&nbsp;</td></tr>
+                        <tr><td>
+                            <p>Please complete the following required fields to receive special offers and information about your
+                                credit card account at <strong>`<span th:text="*{items['email']}">email</span>`
+                                </strong> for card ending in <span th:text="*{items['cusAcctL4']}">cusAcctL4</span>.
+                                When you click 'Submit' your preferences will be established.</p>
+                        </td></tr>
+                        <tr><td>&nbsp;</td></tr>
+                        <!--%if(checkboxError){%>
+                        <tr><td class="message">To process your request, all applicants must be 18 years or older. Please check this box to indicate you are 18 years or older to proceed.</td></tr>
+                        <%}%-->
+                        <tr th:if="${dynamicFormBean.isError('cusOver18')} == true">
+                            <td class="message" th:text="'To process your request, all applicants must be 18 years or older. Please check this box to indicate you are 18 years or older to proceed.'"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="labelStrong">
+                                    <input type="checkbox"
+                                           name="over18"
+                                           id="over18"
+                                           th:field="*{items['cusOver18']}"
+                                           th:value="*{items['cusOver18']}"
+                                    />
+                                    <label style="font-size: 13px;"><b>&nbsp;Yes, I am at least 18 years old or older.</b></label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr><td>&nbsp;</td></tr>
+                        <!-- %if(firstnameError){%>
+                        <tr><td class="message">First name is required and must be letters only.</td></tr>
+                        <%}else{% -->
+
+                        <th:block th:insert="~{/companies/usbank/preferences/includes/fragments :: enterZipMsg('__${brand}__')}" />
+
+                        <tr th:if="${dynamicFormBean.isError('firstName')} == true">
+                            <td class="message" th:text="'First name is required and must be letters only.'">Error message</td>
+                        </tr>
+                        <tr th:if="${dynamicFormBean.isError('firstName')} != true">
+                            <td align="left" valign="top"><label><b>First name</b></label></td>
+                        </tr>
+                        <!--%}% -->
+                        <tr>
+                            <td height="27" align="left" valign="middle">
+                                <input name="firstname" id="firstname" type="text" size="40" th:field="*{items['firstName']}"/>
+                            </td>
+                        </tr>
+                        <tr><td>&nbsp;</td></tr>
+                        <!--%if(lastnameError){%>
+                        <tr><td class="message">Last name is required and must be letters only.</td></tr>
+                        <%}else{% -->
+                        <tr th:if="${dynamicFormBean.isError('lastName')} == true">
+                            <td class="message" th:text="'Last name is required and must be letters only.'"></td>
+                        </tr>
+                        <tr th:if="${dynamicFormBean.isError('lastName')} != true">
+                            <td align="left" valign="top"><label><b>Last name</b></label></td>
+                        </tr>
+                        <!--%}% -->
+                        <tr>
+                            <td height="27" align="left" valign="middle">
+                                <input name="lastname" id="lastname" type="text" size="40" th:field="*{items['lastName']}"/>
+                            </td>
+                        </tr>
+                        <tr><td>&nbsp;</td></tr>
+                        <!--%if(zipcodeError){%>
+                        <tr><td class="message">Billing address ZIP code is required and must be 5 digits only.</td></tr>
+                        <%}else{%-->
+                        <tr th:if="${dynamicFormBean.isError('cusZipCode')} == true">
+                            <td class="message" th:text="'Billing address ZIP code is required and must be 5 digits only.'">Error message</td>
+                        </tr>
+                        <tr th:if="${dynamicFormBean.isError('cusZipCode')} != true">
+                            <td align="left" valign="top"><label><b>Billing address ZIP code</b></label></td>
+                        </tr>
+                        <!--%}% -->
+                        <tr>
+                            <td height="27" align="left" valign="middle">
+                                <input name="zipcode" id="zipcode" type="text" size="40" th:field="*{items['cusZipCode']}"/>
+                            </td>
+                        </tr>
+                        <tr><td>&nbsp;</td></tr>
+                        <tr><td align="left" valign="top"><label><b>Last 4 digits of your credit card acct number</b></label></td></tr>
+                        <tr>
+                            <td height="27" align="left" valign="middle">
+                                <input name="acctl4" id="acctl4" type="text" size="40" th:field="*{items['cusAcctL4']}" disabled />
+                            </td>
+                        </tr>
+                        <tr><td>&nbsp;</td></tr>
+                        <tr><td>
+                            <p><strong>Please Note:</strong> to process your request, all applicants must be 18 years or older. If you are under the age of 18 we cannot process your request or save the personal information you have supplied.</p>
+                        </td></tr>
+                        <tr><td>&nbsp;</td></tr>
+                        <tr>
+                            <!--
+                            <td>
+                                <a th:href="@{/p/profile/search/preferences/signup}">
+                                    <img th:src="@{/companies-static/usbank/preferences/BMW/images/Back.jpg}" class="buttons">
+                                </a>
+                                &nbsp;&nbsp;
+                                <input class="buttons" th:src="@{/companies-static/trancore/preferences/BMW/images/Submit.jpg}" type="image" />
+                            </td>
+                            -->
+                            <td th:replace="~{/companies/usbank/preferences/includes/fragments :: signupNewButtons('__${brand}__')}"></td>
+                        </tr>
+                    </table>
+                    <input type="hidden" th:field="*{brand}" />
+                    <input type="hidden" th:field="*{items['email']}" />
+                    <!--<input type="hidden" th:field="*{items['newUser']}" />
+                    <input type="hidden" th:field="*{items['subscribed']}" />-->
+                    <input type="hidden" th:field="*{items['cusAcctL4']}" />
+                    <th:block th:with="name='cusPartner'">
+                        <input type="hidden" th:name="items[__${name}__]" th:value="${brand}" />
+                    </th:block>
+                    <th:block th:with="name='cusProfileKey',email=*{items['email']},acctl4=*{items['cusAcctL4']},
+                    partner=*{items['cusPartner']},value=${email} + '|' + ${acctl4} + '|' + ${partner}">
+                        <input type="hidden" th:name="items[__${name}__]" th:value="${value}" />
+                    </th:block>
+
+                </form>
+                <footer th:replace="~{/companies/usbank/preferences/includes/footers :: __${brand}__ }"></footer>
+            </th:block>
+        </div>
+    </div>
+</center>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:insert="~{/companies/kalmbachmedia/category/discovery/fragments.html :: header}" />
+</head>
+<body>
+<div class="content"> <img src="https://myscienceshop.com/~/media/Images/DSCLogo.jpg" alt="Discover">
+    <h1>Customize your email preferences</h1>
+    <h2>We&apos;d like to keep you updated about the latest content, products, and offers that interest you the most.</h2>
+    <section th:object="${dynamicFormBean}">
+        <form method="post" th:action="@{'/p/profile/update/' + *{contextPath}}" th:object="${dynamicFormBean}"
+              style="margin:0px 0;padding-top:10px; font-family: 'Yanone Kaffeesatz', sans-serif; font-size: 22px; font-weight:700;"
+              name="RDG"
+        >
+            <div>
+                <label><!--TRACKING CODE IS BELOW IN "VALUE" FIELD --> Email Address:<br />
+                    <input th:field="*{items['email']}" type="text" disabled
+                           style="width:100%;float:left;margin:0 10px 15px 0;padding:10px 5px;border:1px solid #999;color:#555;" />
+                </label>
+            </div>
+            <!-- Checkbox Five -->
+            <div id="sciencebox" style="margin-top: 80px;">Science categories and topics</div>
+            <h3>Select the categories or topics you are interested in so we can customize emails just for you.</h3>
+            <section th:with="id='INT_DSC_Health',name='cusInt_dsc_health'">
+                <div class="checkboxFive" th:with="checked=(*{items['__${name}__']}=='Yes')">
+                    <input type="checkbox" th:id="${id}" th:name="items[__${name}__]" th:value="Yes" th:checked="${checked}" />
+                    <label th:for="${id}"></label>
+                </div>
+                <h3 class="checkboxtext">Health &amp; Medicine</h3>
+            </section>
+            <section th:with="id='INT_DSC_Mind',name='cusInt_dsc_mind'">
+                <div class="checkboxFive" th:with="checked=(*{items['__${name}__']}=='Yes')">
+                    <input type="checkbox" th:id="${id}" th:name="items[__${name}__]" th:value="Yes" th:checked="${checked}" />
+                    <label th:for="${id}"></label>
+                </div>
+                <h3 class="checkboxtext">Mind &amp; Brain</h3>
+            </section>
+            <section th:with="id='INT_DSC_Tech',name='cusInt_dsc_tech'">
+                <div class="checkboxFive" th:with="checked=(*{items['__${name}__']}=='Yes')">
+                    <input type="checkbox" th:id="${id}" th:name="items[__${name}__]" th:value="Yes" th:checked="${checked}" />
+                    <label th:for="${id}"></label>
+                </div>
+                <h3 class="checkboxtext">Technology</h3>
+            </section>
+            <section th:with="id='INT_DSC_Space',name='cusInt_dsc_space'">
+                <div class="checkboxFive" th:with="checked=(*{items['__${name}__']}=='Yes')">
+                    <input type="checkbox" th:id="${id}" th:name="items[__${name}__]" th:value="Yes" th:checked="${checked}" />
+                    <label th:for="${id}"></label>
+                </div>
+                <h3 class="checkboxtext">Space &amp; Physics</h3>
+            </section>
+            <section th:with="id='INT_DSC_Living',name='cusInt_dsc_living'">
+                <div class="checkboxFive" th:with="checked=(*{items['__${name}__']}=='Yes')">
+                    <input type="checkbox" th:id="${id}" th:name="items[__${name}__]" th:value="Yes" th:checked="${checked}" />
+                    <label th:for="${id}"></label>
+                </div>
+                <h3 class="checkboxtext">Living World</h3>
+            </section>
+            <section th:with="id='INT_DSC_Environment',name='cusInt_dsc_environment'">
+                <div class="checkboxFive" th:with="checked=(*{items['__${name}__']}=='Yes')">
+                    <input type="checkbox" th:id="${id}" th:name="items[__${name}__]" th:value="Yes" th:checked="${checked}" />
+                    <label th:for="${id}"></label>
+                </div>
+                <h3 class="checkboxtext">Environment</h3>
+            </section>
+            <section th:with="id='INT_DSC_Stem',name='cusInt_dsc_stem'">
+                <div class="checkboxFive" th:with="checked=(*{items['__${name}__']}=='Yes')">
+                    <input type="checkbox" th:id="${id}" th:name="items[__${name}__]" th:value="Yes" th:checked="${checked}" />
+                    <label th:for="${id}"></label>
+                </div>
+                <h3 class="checkboxtext">STEM and Educational Resources</h3>
+            </section>
+            <section th:with="id='INT_DSC_SciKids',name='cusInt_dsc_scikids'">
+                <div class="checkboxFive" th:with="checked=(*{items['__${name}__']}=='Yes')">
+                    <input type="checkbox" th:id="${id}" th:name="items[__${name}__]" th:value="Yes" th:checked="${checked}" />
+                    <label th:for="${id}"></label>
+                </div>
+                <h3 class="checkboxtext">Science for Kids</h3>
+            </section>
+            <br>
+            <br>
+            <div id="teacherbox">Are you a teacher or educational professional?</div>
+            <h3>As part of the Teacher's Program, <em>Astronomy</em>&nbsp; and <em>Discover</em>&nbsp; magazines and My Science Shop offer special discounts and offers on products and subscriptions just for teachers and educational professionals.</h3>
+
+            <!-- Checkbox Five -->
+            <section th:with="id='INT_Educator',name='cusInt_educator'">
+                <div class="checkboxFive" th:with="checked=(*{items['__${name}__']}=='Yes')">
+                    <input type="checkbox" th:id="${id}" th:name="items[__${name}__]" th:value="Yes" th:checked="${checked}" />
+                    <label th:for="${id}"></label>
+                </div>
+                <h3 class="checkboxtext">Sign up for notifications about special teacher discounts and offers</h3>
+            </section>
+            <br>
+            <br>
+            <div id="birthdaybox">Tell us your birthday</div>
+            <h3>Provide your birthdate so we can send you special offers to celebrate your special day!</h3>
+            <div class="birthdaywrapper">
+                <input type="date" th:field="*{items['birthDate']}" class="birthdaybox" placeholder="Birthday" />
+            </div>
+            <input name="submit" id="submit" value="Submit" type="submit" />
+            <input type="hidden" th:field="*{items['cusCustomerIdHash']}" />
+
+        </form>
+    </section>
+
+</div>
+<th:block th:insert="~{/companies/kalmbachmedia/category/discovery/fragments.html :: footer}" />
+</body>
+</html>

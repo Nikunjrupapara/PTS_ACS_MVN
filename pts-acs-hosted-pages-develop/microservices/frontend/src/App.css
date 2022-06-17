@@ -1,0 +1,12 @@
+main {
+    margin-top: 110px;
+    display: flex;
+    overflow: auto;
+    flex-direction: column;
+}
+
+.content {
+    flex-grow: 1;
+    height: 100vh;
+    overflow: auto;
+}

@@ -1,0 +1,113 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Dillards - Unsubscribe</title>
+
+	<meta name="robots" content="noindex" />
+	<meta name="googlebot" content="noindex" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<title>Dillard's.com | E-mail Subscription Settings</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/companies-static/dillards/css/waitMe.min.css}" />
+
+	<th:block th:include="~{/companies/dillards/fragments :: head }" />
+
+</head>
+
+<body th:object="${dynamicFormBean}" th:with="email=*{items['email']},brand=*{brand}">
+
+
+<div class="emailPage">
+
+<table width="600" cellpadding="5"><!-- align="center"  cellspacing="0" -->
+<tbody>
+
+	<th:block th:include="~{/companies/dillards/fragments :: navigation }" />
+  
+  	<!-- Begin Content Area-->
+  	<tr>
+  		<td><!--valign="top"-->
+  			<table width="600" border="0"><!-- cellpadding="0" cellspacing="0" -->
+				<tbody>
+					<tr><td>
+
+
+				<th:block th:include="~{/companies/dillards/fragments :: email-change-form }" />
+					
+					
+				<br><div style="text-align: center; font-weight: bold;">OR</div><br>
+
+				
+					
+					<!-- Unsub --->
+    				<form id="unsubForm" name="unsubForm" method="POST" th:action="@{'/p/services/update/' + *{contextPath}}" th:object="${dynamicFormBean}" onsubmit="return validateUnsubForm();" >
+						<table cellpadding="5"><!--border="0" -->
+						<tbody>
+						<tr>
+							<td colspan="2"><!-- valign="top" align="center" -->
+								<p align="left"><font face="Verdana" size="3"><b>Remove me from email list</b></font></p><!-- style="margin:0;"-->
+								<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Please allow up to 10 days for us to process your unsubscribe request.</font></p>
+								<p align="left"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">To unsubscribe, please confirm your email address below and click Submit.</font></p>
+							</td>
+						</tr>
+						<tr>
+							<td align="left" style="width: 25%;"><!--white-space: nowrap; padding:15px 5px;-->
+								<font face="Verdana" size="2">Email Address:</font>
+							</td>
+							<td align="left"><input type="text" size="30" th:field="*{items['email']}" maxlength="255" readonly></td><!-- style="width:100%;padding:15px 5px;" -->
+						</tr>
+						<tr>
+							<td colspan="2" align="left" style="font-size: small;">
+								If email address does not appear above, please type in your email as it currently appears on our list.
+							</td>
+						</tr>
+						<tr>
+							<td align="left" colspan="2"><!--<input type="submit" name="Submit" value="SUBMIT" class="primary" style="line-height: 7px;">-->
+							<input type="submit" name="Submit" value="SUBMIT" class="primary" style="line-height: 7px;"></td> <!--onclick="validateUnsubForm();" -->
+						</tr>
+						</tbody>
+						</table>
+
+						<!--input type="hidden" th:field="*{items['cusUnsubFeedback']}"-->
+						<input type="hidden" th:field="*{items['processUnsub']}" />
+						<input type="hidden" th:field="*{brand}" />
+						<input type="hidden" th:field="*{items['cusCustomerIdHash']}" />
+
+						<input type="hidden" name="items['emailNew']"  th:value="*{items['email']}"  />
+
+					</form>
+	
+					<br><br><br>
+
+        		</td></tr></tbody>
+        	</table>
+        </td>
+  	</tr>
+	<!--End Content Area -->
+
+	<th:block th:include="~{/companies/dillards/fragments :: footer-navigation }" />
+	
+</tbody>
+</table>
+</div><!-- emailPage div-->
+<th:block th:include="~{/companies/dillards/fragments :: script }" />
+<script type="text/javascript">
+
+	function validateUnsubForm()
+		{
+			$("body").waitMe({});
+
+			 	/*var val = confirm("When you receive Dillard's emails, you're the first to know about our clearance events, what's happening at your store and the latest trends and offers. We hope you'll give us another chance - but if you'd rather say goodbye, just click OK.");
+       			if(val) { document.forms['unsubForm'].submit(); }
+       			else {
+       				$("body").waitMe('hide');
+       				return false;
+       			}*/
+       		return true;
+
+		}
+</script>
+
+
+</body>
+</html>

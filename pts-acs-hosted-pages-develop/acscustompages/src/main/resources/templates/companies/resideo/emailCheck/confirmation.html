@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <th:block th:if="${dynamicFormBean.getBrand()} == 'honeywellhome'">
+        <title>Honeywell Email Check</title>
+        <link rel="stylesheet" type="text/css" th:href="@{/companies-static/resideo/css/HoneywellHome.css}">
+        <link rel="icon" href="https://www.honeywellhome.com/Areas/HoneywellHome/favicon.ico?v=637341191467108241" type="image/x-icon" />
+    </th:block>
+    <th:block th:if="${dynamicFormBean.getBrand()} == 'resideo'">
+        <title>Resideo Email Check</title>
+        <link rel="stylesheet" type="text/css" th:href="@{/companies-static/resideo/css/Resideo.css}">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+        <link rel="icon" href="//www.resideo.com/Areas/Resideo/favicon.ico?v=637431969355206534" type="image/x-icon">
+    </th:block>
+    <th:block th:replace="~{/companies/resideo/ga :: getHeadGATag('__${dynamicFormBean.getBrand()}__')}" />
+</head>
+<body bgcolor="#FFFFFF"><th:block th:replace="~{/companies/resideo/ga :: getBodyGATag('__${dynamicFormBean.getBrand()}__')}" />
+<div id="container" th:object="${dynamicFormBean}">
+    <div id="innerContainer"
+         th:with="email=*{items['email']},brand=*{brand},
+            result=${dynamicFormBean.profileRequestResult},
+            profileFound=${result.isEmailTriggered() && result.isEmailSuccess()},
+            profileNotFound=${result.isProfileLookup() && !result.isProfileFound()}"
+    >
+        <div id="header">
+            <div id="Honeywell_logo" th:if="${brand} == 'honeywellhome'">
+                <a href="https://www.honeywellhome.com/us/en" target="_blank">
+                    <img th:src="@{/companies-static/resideo/images/HoneywellHomeLogo.png}"
+                         height="36" alt="Honeywell Home" border="0" style="display:block;" />
+                </a>
+            </div>
+            <div id="Resideo_logo" th:if="${brand} == 'resideo'">
+                <a href="https://www.resideo.com/us/en" target="_blank">
+                    <img th:src="@{/companies-static/resideo/images/ResideoLogo.png}"
+                         width="50" height="50" alt="Resideo" border="0" style="display:block;" />
+                </a>
+            </div>
+        </div>
+        <th:block th:if="${profileFound}">
+        <!--<% if(userFound==1 && success){ %> -->
+            <div id="success_form_area">
+                <th:block th:if="${brand} == 'honeywellhome'">
+                    <div class="form-top">
+                        <h2>LET&rsquo;S KEEP THIS BALL ROLLING</h2>
+                        <div>
+                            <div style="width: 80px; height: 150px; float: left; margin-right: 20px;">
+                                <img th:src="@{/companies-static/resideo/images/checkmark.png}" alt="" width="50" height="50" border="0" />
+                            </div>
+                            <div>
+                                <p><span th:text="${email}">x@y.com</span> is part of our email list for Honeywell Home and an email has been sent to this address.</p>
+                                <p>Please check your email to access and update your email preferences.</p>
+                            </div>
+                        </div>
+                    </div>
+                </th:block>
+                <th:block th:if="${brand} == 'resideo'">
+                    <h2>LET&rsquo;S KEEP THIS BALL ROLLING</h2>
+                    <div class="success_form_body">
+                        <div class="success_form_checkmark">
+                            <img th:src="@{/companies-static/resideo/images/checkmark.png}" alt="" /> <!--width="50" height="50" border="0"-->
+                        </div>
+                        <div>
+                            <p><span th:text="${email}">x@y.com</span> is part of our email list for Resideo and an email has been sent to this address.</p>
+                            <p>Please check your email to access and update your email preferences.</p>
+                        </div>
+                    </div>
+                </th:block>
+            </div>
+        </th:block>
+        <!-- <% } else if (userFound==2) { %> -->
+        <th:block th:if="${profileNotFound}">
+            <div id="no_record_form_area">
+                <div class="form-top">
+                    <h2>NO RECORD</h2>
+                    <div id="no_record_bodyCopy">
+                        <div style="width:50px;float: left; margin-right: 20px;">
+                            <img th:src="@{/companies-static/resideo/images/no.png}" alt="" width="50" height="50" border="0" />
+                        </div>
+                        <div style="margin-left: 70px;">
+                            <p style="font-weight: bold;">
+                                It doesn&rsquo;t look like
+                                <span th:text="${email}">x@y.com</span>
+                                is currently subscribed to receive emails from
+                                <span th:text="(${brand} == 'honeywellhome' ? 'Honeywell Home' : (${brand} == 'resideo' ? 'Resideo' : 'unknown'))">brand</span>.
+                            </p>
+                        </div>
+                        <div style="clear: both">
+                            <ul>
+                                <li>Check the spelling of the email address or try another email address.</li>
+                                <li>
+                                    Do you currently have a smart home device from Honeywell Home or Resideo? Is this the
+                                    email address you used to login to the app, if not try that email. Haven&rsquo;t set
+                                    up your device and app account,
+                                    <a href="https://www.resideo.com/us/en/honeywell-home-app/?_ga=2.262826191.276961519.1596466379-1963820948.1588190318" target="_blank">
+                                        CLICK HERE TO SEE HOW
+                                    </a> &nbsp;
+                                    <img th:src="@{/companies-static/resideo/images/arrow2.png}" alt="" width="25" height="12" class="form-top_arrow" />
+                                </li>
+                                <li>Not receiving emails today, but want to sign up?
+                                    <a href="https://www.honeywellhome.com/us/en/email-signup/" target="_blank">CLICK HERE</a>&nbsp;
+                                    <img th:src="@{/companies-static/resideo/images/arrow2.png}" alt="" width="25" height="12" class="form-top_arrow" />
+                                </li>
+                                <li>Are you a professional?
+                                    <a href="https://login.resideo.com/login?state=g6Fo2SBxeTdlQWdiUGZhRDM2Rk5wcFRCd2tMV3lzS0p5UmktRKN0aWTZIDI4WjZyX2lfYVpTWmR2dWhFUjk2bEItTS1sMHhwLVhGo2NpZNkgZXQ3MURUMk9NMTRNUHMwUHl5YUJmTnk5Z0ZoaWEzOVE&client=et71DT2OM14MPs0PyyaBfNy9gFhia39Q&protocol=oauth2&audience=https%3A%2F%2Fresideo-prod.auth0.com%2Fapi%2Fv2%2F&scope=openid%20profile%20email%20offline_access&redirect_uri=https%3A%2F%2Fpro.resideo.com&response_type=code&response_mode=query&nonce=OEUxMWZobmJ0OUFsQ213b0VWQ0N5VG5ZSXZPRDlvTEp%2BTFhpcTRvc043cA%3D%3D&code_challenge=NQgQ7fDOFC1Tz_8ihg6Gy0HAW8SduFNH_MzMFMmmIAw&code_challenge_method=S256&auth0Client=eyJuYW1lIjoiYXV0aDAtcmVhY3QiLCJ2ZXJzaW9uIjoiMS4wLjAifQ%3D%3D" target="_blank">
+                                        GO HERE TO UPDATE YOUR PRO COMMUNICATIONS</a>&nbsp;
+                                    <img th:src="@{/companies-static/resideo/images/arrow2.png}" alt="" width="25" height="12" class="form-top_arrow" />
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="reenter_email_button">
+                        <a th:href="@{'/p/profile/search/' + *{appPath} + '/index'}">
+                            <input type="button" name="submit" id="reenter_email" value="RE-ENTER EMAIL ADDRESS" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </th:block>
+        <!-- <% } else { %> -->
+
+        <div id="footer">
+            <div id="footer_question">
+                <p>
+                    <img th:src="@{/companies-static/resideo/images/info.png}" width="24" height="24" alt="?" />
+                </p>
+            </div>
+            <div id="footer_question_p">
+                <p>
+                    Please enter your email address associated with your account or opted into emails to verify that it is in our system.
+                </p>
+                <p>
+                    <br>Have a connected device? Please update your email address in your mobile app or on your <a href="https://www.mytotalconnectcomfort.com" target="_blank">MYTOTALCONNECTCOMFORT.COM</a> profile.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--
+<table>
+    <tr th:each="var : ${#vars.getVariableNames()}">
+        <td th:text="${var}"></td>
+        <td th:text="${#vars.getVariable(var)}"></td>
+    </tr>
+    <! --
+        Adding these manually because they are considered special.
+        see https://github.com/thymeleaf/thymeleaf/blob/thymeleaf-3.0.3.RELEASE/src/main/java/org/thymeleaf/context/WebEngineContext.java#L199
+    -- >
+    <tr>
+        <td>param</td>
+        <td th:text="${#vars.getVariable('param')}"></td>
+    </tr>
+    <tr>
+        <td>session</td>
+        <td th:text="${#vars.getVariable('session')}"></td>
+    </tr>
+    <tr>
+        <td>application</td>
+        <td th:text="${#vars.getVariable('application')}"></td>
+    </tr>
+</table>
+-->
+</body>
+</html>

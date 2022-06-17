@@ -1,0 +1,16 @@
+{
+	"request": {
+		"method": "PUT",
+		"url": "/v1/services/profiles/d06f1fc58f71b876c1bc7287499112b1989980024925fe71c9f8522a85e9698e/services"
+ 	},
+	"response": {
+		"status": 400,
+		"headers": {
+			"Content-Type": "application/json"
+		},
+		"jsonBody": {
+			"status": 400,
+			"message": "Invalid service name: invalidServiceName."
+		}
+	}
+}

@@ -1,0 +1,35 @@
+{
+	"hasProfile": false,
+	"hasServices": true,
+	"hasCustomResources": true,
+	"hasEmails": false,
+	"services": {
+		"add": [
+			"honeywellhomeenergyreport"
+		],
+		"remove": [
+			"honeywellhomeasks",
+			"honeywellhomepresentedoffers",
+			"honeywellhomeemails",
+			"connectedhome"
+		]
+	},
+	"customResources": [
+		{
+			"name": "cusHosted_pages_log",
+			"records": [
+				{
+					"email": "charlesb@yesmail.com",
+					"customerId": "charlesb@yesmail.com",
+					"optInAsks": false,
+					"optInEmails": false,
+					"optInEnergy": true,
+					"optInOffers": false,
+					"optInSupport": false,
+					"source": "honeywellPrefCenter",
+					"unsubAll": false
+				}
+			]
+		}
+	]
+}

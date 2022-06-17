@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:with="brand=${dynamicFormBean.getBrand()}">
+    <th:block th:replace="~{/companies/resideo/freeFilter/fragments :: getHead()}" />
+</head>
+<body bgcolor="#FFFFFF"
+      th:object="${dynamicFormBean}"
+      th:with="brand=${dynamicFormBean.getBrand()}"
+>
+<div id="container">
+    <noscript>
+        <h2>Javascript is disabled</h2>
+        <p>Please enable Javascript to allow this page to work correctly.</p>
+        <input type="submit" name="submit" id="submitNoScript" value="SUBMIT" />
+    </noscript>
+    <div id="innerContainer">
+        <div id="header">
+            <div id="Resideo_logo" th:replace="~{/companies/resideo/freeFilter/fragments :: getLogo()}"/>
+            <div class="wait">
+                <div class="headline">
+                    Give us a few moments...
+                </div>
+                <div class="subhead">
+                    We have received your request for your free filter(s).<br />
+                    Please be patient as we confirm your redemption code.
+                </div>
+            </div>
+        </div>
+        <form id="processCode"
+          method="post"
+          th:action="@{'/p/customResource/search/' + *{contextPath}}"
+          th:object="${dynamicFormBean}"
+          onsubmit="return displaySpinner();"
+          accept-charset="utf-8"
+    >
+        <div class="form-section">
+            <input type="text" th:field="*{items['product']}" />
+            <br />
+            <input type="text" th:field="*{items['promo_code']}" />
+            <br />
+            <input type="text" th:field="*{items['firstName']}" />
+            <br />
+            <input type="text" th:field="*{items['lastName']}" />
+            <br />
+            <input type="text" th:field="*{items['email']}" />
+            <br />
+            <input type="text" th:field="*{items['state']}" />
+            <br />
+            <input type="text" th:field="*{items['zip']}" />
+            <br />
+            <input type="text" th:field="*{items['resident']}" />
+            <br />
+            <input type="text" th:field="*{items['cusCustomerIdHash']}" />
+            <br />
+            <input type="hidden" th:field="*{brand}" />
+            <input type="submit" name="submitForm" id="submitForm" value="SUBMIT" />
+        </div>
+    </form>
+    </div>
+</div>
+<script th:src="@{/companies-static/resideo/js/jquery.min.js}"></script>
+<script th:src="@{/companies-static/resideo/dx/ym.js}"></script>
+<script th:src="@{/companies-static/resideo/js/waitMe.min.js}"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#processCode').hide();
+        $('#processCode').submit();
+    });
+</script>
+<script type="text/javascript">
+    function displaySpinner() {
+        $('body').waitMe({});
+        return true;
+    }
+</script>
+</body>
+</html>

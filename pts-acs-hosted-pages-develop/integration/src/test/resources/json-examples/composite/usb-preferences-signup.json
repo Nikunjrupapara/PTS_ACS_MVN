@@ -1,0 +1,37 @@
+{
+	"hasProfile": true,
+	"hasServices": true,
+	"hasCustomResources": false,
+	"hasEmails": true,
+	"profile": {
+		"customFields": {
+			"cusAcctL4": "9876",
+			"cusPartner": "BMW",
+			"cusZipCode": "12345"
+		},
+		"email": "charlesb@yesmail.com",
+		"firstName": "Charles",
+		"lastName": "Berger"
+	},
+	"services": {
+		"add": [
+			"marketing",
+			"service"
+		],
+		"remove": [
+
+		]
+	},
+	"emails": [
+		{
+			"eventId": "EVTsign_uppageconfirmation_bmw",
+			"email": "charlesb@yesmail.com",
+			"ctx": {
+				"acctL4": "9876",
+				"lastName": "Berger",
+				"firstName": "Charles",
+				"customerIDHash": "This is a problem because we won't know this value when assembling the payload on the client side as we are creating a new profile"
+			}
+		}
+	]
+}

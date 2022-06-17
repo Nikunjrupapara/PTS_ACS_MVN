@@ -1,0 +1,87 @@
+/* CHECKBOX CSS */
+.atom-checkbox {
+  display: flex;
+  align-items: center;
+  position: relative;
+  user-select: none;
+  cursor: pointer;
+  clear: both;
+}
+
+.atom-checkbox .checkbox-custom {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 0;
+  position: relative;
+  width: 25px;
+  height: 25px;
+  transition: border 200ms linear;
+  border: 1px solid #9b9b9b;
+}
+
+.atom-checkbox .checkbox-custom-label {
+  display: block;
+  font-size: 16px;
+  padding: 0 0 0 15px;
+  color: #555;
+}
+.atom-checkbox .checkbox-custom-label.no-pad{
+  padding: 0;
+}
+
+.atom-checkbox .checkbox-custom-label a {
+  text-decoration: none;
+  color: #eb000f;
+  transition: color 200ms linear;
+}
+.atom-checkbox .checkbox-custom-label a:hover {
+  text-decoration: underline;
+  color: #333;
+}
+
+.atom-checkbox .checkbox-custom .icon-check-thin {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #eb000f;
+  transform: translate(-8px, -9px);
+  transition: opacity 200ms linear;
+  opacity: 0;
+}
+
+.atom-checkbox-input ~ .checkbox-custom img {
+  width: 16px;
+  height: 16px;
+}
+
+.atom-checkbox .checkbox-text-link {
+  margin-top: 0;
+  font-weight: 600;
+  text-decoration: none;
+  color: #eb000f;
+  transition: color 200ms linear;
+}
+
+.atom-checkbox .checkbox-text-link:hover{
+  color: #333;
+}
+
+.atom-checkbox-input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: .001;
+}
+
+.atom-checkbox-input:checked ~ .checkbox-custom {
+  border-color: #eb000f !important;
+}
+
+.atom-checkbox-input:checked ~ .checkbox-custom .icon-check-thin {
+  opacity: 1;
+}
+
+.atom-checkbox-input:focus ~ .checkbox-custom{
+  border-color: black !important;
+}

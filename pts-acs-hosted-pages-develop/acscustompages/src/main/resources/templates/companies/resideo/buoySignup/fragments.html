@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<th:block th:fragment="head">
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://use.typekit.net/ebw8srh.css" />
+    <link rel="stylesheet" th:href="@{/companies-static/resideo/css/jquery-ui.min.css}" type="text/css" />
+    <link rel="stylesheet" th:href="@{/companies-static/resideo/css/normalize.css}" />
+    <link rel="stylesheet" th:href="@{/companies-static/resideo/css/skeleton.css}" />
+    <link rel="stylesheet" th:href="@{/companies-static/resideo/css/custom-hnwl-2.css}" />
+</th:block>
+<th:block th:fragment="tag">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N9PRGZ9');
+	</script>
+    <!-- End Google Tag Manager -->
+</th:block>
+<th:block th:fragment="fontawesome">
+    <script src="https://use.fontawesome.com/8edb1ff8d3.js"></script>
+</th:block>
+<th:block th:fragment="tagNoScript">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N9PRGZ9"
+                height="0" width="0" style="display:none;visibility:hidden">
+        </iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+</th:block>
+<th:block th:fragment="notYou">
+    <div class="six columns email">
+        <th:block th:with="email=*{items['email']},displayEmail=${#strings.isEmpty(email) ? false : true}" >
+            <th:block th:if="${displayEmail}">
+                <!--<%if(email != null && !email.equals("")){ %> -->
+                <img th:src="@{/companies-static/resideo/images/icircle.png}" alt="i" />
+                <!--<%=email %>--><span th:text="${email}">x@y.com</span>
+                <div class="email-tooltip">
+                    Not you? Click
+                    <a th:href="@{'/p/profile/search/' + *{appPath} + '/signup'}">here</a> to manage a different account.
+                </div>
+                <!--<% } %> -->
+            </th:block>
+        </th:block>
+    </div>
+</th:block>
+</body>
+</html>

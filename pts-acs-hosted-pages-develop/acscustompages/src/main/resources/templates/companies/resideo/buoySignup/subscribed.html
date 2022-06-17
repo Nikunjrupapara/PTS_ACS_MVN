@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:include="~{/companies/resideo/buoySignup/fragments :: head }" />
+    <th:block th:include="~{/companies/resideo/buoySignup/fragments :: fontawesome }" />
+    <th:block th:include="~{/companies/resideo/buoySignup/fragments :: tag }" />
+</head>
+<body>
+<th:block th:insert="~{/companies/resideo/buoySignup/fragments :: tagNoScript }" />
+<div class="container" style="min-height: 700px" th:object="${dynamicFormBean}">
+
+    <div class="main" role="main">
+        <div class="row main-header">
+            <div class="six columns">
+                <h1>YOU HAVE BEEN SUBSCRIBED</h1>
+            </div>
+            <th:block th:insert="~{/companies/resideo/buoySignup/fragments :: notYou }" />
+        </div>
+        <div id="status-banner-vis">
+            <strong><span class="large"><i class="fa fa-check" aria-hidden="true"></i></span>&nbsp; SUCCESS!</strong> <!--You have been subscribed-->
+        </div>
+        <div id="body-content">
+            <p style="margin-top: 30px;">Your subscription is confirmed. Return to the
+                <a href="https://www.resideo.com/us/en/products/water/whole-home-leak-detection/buoy-whole-home-water-controller-bsv-101-wc10-lf-u/" target="_blank">
+                    Buoy<span style="font-size: 10px; line-height: 0; vertical-align: 6px">&reg;</span>
+                    Whole Home Water Controller</a> product page.
+                <!-- <p style="margin-top: 30px;">Your subscription is confirmed. You will now be redirected to the Honeywell Smart Home Security System page.</p> -->
+                <!-- <p><button type="submit">Update preferences &gt;</button></p> -->
+                <!-- <p><button type="submit">Update preferences &gt;</button></p> -->
+        </div>
+        <!--  response.setHeader("Refresh", "15;url=https://yourhome.honeywell.com/honeywell-smart-home-security");  -->
+    </div>
+</div>
+
+</body>
+</html>

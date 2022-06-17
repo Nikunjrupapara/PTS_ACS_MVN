@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <th:block  th:insert="~{/companies/kodakmoments/member-unsub/fragments :: header}" />
+</head>
+<body style="padding-bottom:106px; text-align: center;">
+<div class="header">
+  <a href="https://www.kodakmoments.com/" border="0">
+    <img th:src="@{/companies-static/kodakmoments/member-unsub/images/logo.png}" id="logo" />
+  </a>
+</div>
+
+<div style="max-width:400px; margin:0 auto; padding-left:16px; padding-right:16px; text-align:left;">
+
+  <p style="margin-bottom:36px; margin-top:48px; text-align: left;">Your unsubscribe request is confirmed.</p>
+
+  <p style="margin-bottom:36px; text-align: left;">Please allow 10 business days for this request to take effect. You may continue to receive transactional emails from Kodak Moments.</p>
+
+  <p style="margin-bottom:36px; text-align: left;">If you have unsubscribed in error, please click below to resubscribe.</p>
+
+  <div>
+    <a href="https://www.kodakmoments.com/signup?" target="_blank" class="btn-red-outline">Subscribe</a>
+  </div>
+</div>
+<th:block th:insert="~{/companies/kodakmoments/member-unsub/fragments :: footer}" />
+</body>
+</html>

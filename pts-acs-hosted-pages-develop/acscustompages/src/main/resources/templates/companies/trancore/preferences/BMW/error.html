@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Your Credit Card Email Preferences</title>
+    <link th:href="@{/companies-static/trancore/preferences/BMW/css/styles.css}" rel="stylesheet" type="text/css" />
+</head>
+<body bgcolor="#FFFFFF">
+<div class="inner-div">
+    <div th:insert="~{/companies/trancore/preferences/BMW/includes/header :: header}"></div>
+    <table class="bodyTable">
+        <tr><td>&nbsp;</td></tr>
+        <tr>
+            <td><p>We are unable to process your request online at this time and encourage you to try again later. We apologize for the inconvenience.</p></td>
+        </tr>
+        <tr><td>&nbsp;</td></tr>
+    </table>
+    <div th:insert="~{/companies/trancore/preferences/BMW/includes/footer :: footer}"></div>
+    <div id="errorDetails">
+        <input type="hidden" th:if="${message != null}" th:value="${message}" />
+        <input type="hidden" th:if="${url != null}" th:value="${url}" />
+    </div>
+</div>
+</body>
+</html>

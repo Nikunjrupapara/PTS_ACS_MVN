@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<th:block th:fragment="brandName(brand)">
+    <th:block th:switch="${brand}">
+        <span th:remove="tag" th:case="'DEFAULT'">Credit First National Association</span>
+        <span th:remove="tag" th:case="'AP'">AutoPass Dealers</span>
+        <span th:remove="tag" th:case="'AS'">Firestone</span>
+        <span th:remove="tag" th:case="'AT'">AutoPass Tire</span>
+        <span th:remove="tag" th:case="'BA'">Bobby Steve&#39;s Auto</span>
+        <span th:remove="tag" th:case="'BB'">Bridgestone Retailer</span>
+        <span th:remove="tag" th:case="'BC'">BOSCH</span>
+        <span th:remove="tag" th:case="'BF'">Bridgestone Firestone</span>
+        <span th:remove="tag" th:case="'BG'">Bridgestone Firestone</span>
+        <span th:remove="tag" th:case="'BH'">Brandon Honda</span>
+        <span th:remove="tag" th:case="'BM'">Morgan Auto Group</span>
+        <span th:remove="tag" th:case="'BO'">Best-One</span>
+        <span th:remove="tag" th:case="'BR'">Burt Brothers</span>
+        <span th:remove="tag" th:case="'BS'">Bridgestone</span>
+        <span th:remove="tag" th:case="'BX'">BRAKEmax</span>
+        <span th:remove="tag" th:case="'CA'">Chabill&#39;s Tire</span>
+        <span th:remove="tag" th:case="'CT'">Commercial Tire</span>
+        <span th:remove="tag" th:case="'DA'">Dayton Tire and Auto Service Center</span>
+        <span th:remove="tag" th:case="'DE'">Driver&#39;s Edge</span>
+        <span th:remove="tag" th:case="'DO'">Detroit Tire and Auto Service Center</span>
+        <span th:remove="tag" th:case="'DR'">Desert Rat</span>
+        <span th:remove="tag" th:case="'DT'">Dunn Tire</span>
+        <span th:remove="tag" th:case="'EV'">Evans Tire</span>
+        <span th:remove="tag" th:case="'FL'">FADA</span>
+        <span th:remove="tag" th:case="'FM'">1stMILE</span>
+        <span th:remove="tag" th:case="'FP'">Morgan Auto Group</span>
+        <span th:remove="tag" th:case="'GC'">GCR</span>
+        <span th:remove="tag" th:case="'GG'">GoodGuys</span>
+        <span th:remove="tag" th:case="'GM'">Morgan Auto Group</span>
+        <span th:remove="tag" th:case="'GR'">Grismer Tire</span>
+        <span th:remove="tag" th:case="'GW'">Gateway Tire</span>
+        <span th:remove="tag" th:case="'HO'">Morgan Auto Group</span>
+        <span th:remove="tag" th:case="'HT'">Hibdon Tires Plus</span>
+        <span th:remove="tag" th:case="'JF'">Jack Furrier</span>
+        <span th:remove="tag" th:case="'KC'">Morgan Auto Group</span>
+        <span th:remove="tag" th:case="'KP'">Kost Tire</span>
+        <span th:remove="tag" th:case="'LA'">Louetta Automotive and Tire Service</span>
+        <span th:remove="tag" th:case="'LT'">Lamb&#39;s Tire</span>
+        <span th:remove="tag" th:case="'MB'">Modica Brothers</span>
+        <span th:remove="tag" th:case="'MC'">Bridgestone Retailer</span>
+        <span th:remove="tag" th:case="'MG'">Morgan Auto Group</span>
+        <span th:remove="tag" th:case="'MK'">Morgan Auto Group</span>
+        <span th:remove="tag" th:case="'MO'">Morgan Auto Group</span>
+        <span th:remove="tag" th:case="'MP'">Morgan Auto Group</span>
+        <span th:remove="tag" th:case="'MR'">Martin Tire</span>
+        <span th:remove="tag" th:case="'MW'">Morgan Auto Group</span>
+        <span th:remove="tag" th:case="'NA'">Bridgestone</span>
+        <span th:remove="tag" th:case="'NW'">Northwest Tire</span>
+        <span th:remove="tag" th:case="'PF'">Perfection Tire</span>
+        <span th:remove="tag" th:case="'PG'">Pugh&#39;s Tire and Service Centers</span>
+        <span th:remove="tag" th:case="'PL'">Peerless Tire</span>
+        <span th:remove="tag" th:case="'PP'">Tires Plus</span>
+        <span th:remove="tag" th:case="'PS'">Pomp&#39;s Tire Service</span>
+        <span th:remove="tag" th:case="'PT'">Pueblo Tire</span>
+        <span th:remove="tag" th:case="'PZ'">Plaza Tire Service</span>
+        <span th:remove="tag" th:case="'RA'">Ramona Tire</span>
+        <span th:remove="tag" th:case="'RC'">Morgan Auto Group</span>
+        <span th:remove="tag" th:case="'RF'">Morgan Auto Group</span>
+        <span th:remove="tag" th:case="'RG'">Morgan Auto Group</span>
+        <span th:remove="tag" th:case="'RH'">Morgan Auto Group</span>
+        <span th:remove="tag" th:case="'RM'">RoadMart</span>
+        <span th:remove="tag" th:case="'RN'">Morgan Auto Group</span>
+        <span th:remove="tag" th:case="'RT'">Morgan Auto Group</span>
+        <span th:remove="tag" th:case="'SD'">Sun Devil &amp; Sun Auto Service</span>
+        <span th:remove="tag" th:case="'SM'">Southern Tire Mart</span>
+        <span th:remove="tag" th:case="'SN'">Morgan Auto Group</span>
+        <span th:remove="tag" th:case="'SP'">Speedco</span>
+        <span th:remove="tag" th:case="'TE'">Tate Boys</span>
+        <span th:remove="tag" th:case="'TF'">Town Fair Tire</span>
+        <span th:remove="tag" th:case="'TG'">Tire Alliance Groupe</span>
+        <span th:remove="tag" th:case="'TK'">Tire Rack</span>
+        <span th:remove="tag" th:case="'TM'">Tallman&#39;s Tire and Auto Repair</span>
+        <span th:remove="tag" th:case="'TP'">Tires Plus</span>
+        <span th:remove="tag" th:case="'TR'">Tire-Rama</span>
+        <span th:remove="tag" th:case="'TT'">Toyota of Tampa Bay</span>
+        <span th:remove="tag" th:case="'TW'">Tire Works</span>
+        <span th:remove="tag" th:case="'VG'">Morgan Auto Group</span>
+        <span th:remove="tag" th:case="'VT'">Virginia Tire &amp; Auto</span>
+        <span th:remove="tag" th:case="'WA'">Wilhelm Automotive</span>
+        <span th:remove="tag" th:case="'WN'">Ted Wiens</span>
+        <span th:remove="tag" th:case="'WR'">Wheel Works</span>
+        <span th:remove="tag" th:case="'WW'">Wheel Works</span>
+        <span th:remove="tag" th:case="*">Credit First National Association</span>
+    </th:block>
+</th:block>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{
+	"hasProfile": true,
+	"hasServices": true,
+	"hasCustomResources": true,
+	"hasEmails": false,
+	"profile": {
+		"customFields": {
+			"cusBuoyPage": "Y"
+		}
+	},
+	"services": {
+		"add": [
+			"honeywellhomeemails",
+			"honeywellhomeasks",
+			"honeywellhomepresentedoffers"
+		],
+		"remove": [
+
+		]
+	},
+	"customResources": [
+		{
+			"name": "cusHosted_pages_log",
+			"records": [
+				{
+					"email": "charlesb@yesmail.com",
+					"customerId": "charlesb@yesmail.com",
+					"optInAsks": true,
+					"optInEmails": true,
+					"optInEnergy": false,
+					"optInOffers": true,
+					"optInSupport": false,
+					"source": "buoyEmailSignup",
+					"unsubAll": false
+				}
+			]
+		}
+	]
+}

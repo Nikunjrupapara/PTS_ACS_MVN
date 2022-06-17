@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>FHF - Step 3</title>
+    <th:block th:include="~{/companies/boscovs/fhf-registration/fragments :: head}" />
+    <style>
+        .full-width img{margin:0 auto; width:670px;}
+        html { height: 100%; }
+        body {height: 100%; margin-left: 0 auto; text-align: left; font-family: Roboto, sans-serif; letter-spacing: 1px;}
+        h1 {font-family: Roboto, sans-serif; font-size:30px; font-weight: Bold 700; color: #322384;}
+        h2{font-family: Roboto, sans-serif; font-size: 20px; font-weight: 700; color: #322384}
+        p {font-family: Roboto, sans-serif; font-size:20px; font-weight: 400; color: #322384;}
+        a {text-decoration: none}
+        .logo {display: block; margin-left: auto; margin-right: auto;}
+        form {position: relative; left: 100px; width: 900px; border-radius: 5px; background-color: #ffde0040; padding: 10px 20px; overflow: hidden;}
+        /*.col1 {display: inline-block; float: left; width: 450px; border: 0;}
+        .col2 {position: relative; display: block; float: right; line-height: 20px; width: 450px; border: 0;}*/
+        input[type=text], select {width: 600px; display: block; border: 1px solid #ccc; border border-radius: 4px; box-sizing: border-box; font-family: Roboto, sans-serif; font-size: 20px;}
+        input[type=submit] {width: 100px; padding: 14px, 20px; background-color: #d2232a; color: white; margin: 8px 0px; display: block; border: none; border-radius: 4px; cursor: pointer; font-family: Roboto, sans-serif; font-size: 20px;}
+        label{display: block; font-family: Roboto, sans-serif; font-size:20px; font-weight: 400; color: #322384; padding: 20px 10px 4px 2px;}
+        .StDrop { width: 100px; }
+        .error { margin: 5px; font-size: 1em; color: red; }
+    </style>
+</head>
+<body th:object="${dynamicFormBean}" th:with="orgId=*{items['npID']},hasOrg=${not #strings.isEmpty(orgId)}">
+<th:block th:include="~{/companies/boscovs/fhf-registration/fragments :: logo}" />
+
+<!-- Flag hasOrg is true. Display this block if an Organization was chosen in step 2 (id query parameter) -->
+<div th:if="${hasOrg}">
+    <div style="padding-top: 30px; position: relative; left: 100px;">
+        <h1>
+            Friends Helping Friends Registration Page (Step 3)<br />
+            Update Your Contact Information and Registration Information
+        </h1>
+        <p>
+            <span th:text="*{items['orgName']}">Org Name</span><br />
+            <span th:text="*{items['address1']}">Address 1</span><br />
+            <span th:text="*{items['city']}">City</span>,
+            <span th:text="*{items['stateCode']}">State</span>
+            <!--<span th:text="*{items['zipcode']}">Zipcode</span>-->
+            <span th:text="${param.zip}">Zipcode</span>
+        </p>
+    </div>
+    <div style="padding-top: 10px; position: relative; left: 100px;" >
+        <h2>Enter your Contact Information below:</h2>
+    </div>
+</div>
+<!-- End hasOrg -->
+<!-- Flag hasOrg is false. Display this block if no Organization id is provided (id query parameter) -->
+<div th:unless="${hasOrg}" class="noOrg">
+    <div style="padding-top: 30px; position: relative; left: 100px;">
+        <h1>Friends Helping Friends Registration Page (Step 3)<br>Enter Your Information to Register</h1>
+    </div>
+</div>
+<!-- End noOrg -->
+<div style="padding-bottom: 200px;">
+    <form th:object="${dynamicFormBean}" method="post"
+          th:action="@{${dynamicFormBean.buildSubmitUrl()}}">
+        <p th:if="${dynamicFormBean.hasErrors()}" id="globalError" class="error">
+            Please correct the errors highlighted below
+        </p>
+        <th:block th:if="${hasOrg}">
+            <!-- Hidden fields for when we have an Organization -->
+            <input type="hidden" th:field="*{items['orgName']}" />
+            <input type="hidden" th:field="*{items['address1']}" />
+            <input type="hidden" th:field="*{items['city']}" />
+            <input type="hidden" th:field="*{items['stateCode']}" />
+            <!--<input type="hidden" th:field="*{items['zipcode']}" />-->
+            <input type="hidden" id="items'zipcode'" name="items['zipcode']" th:value="${param.zip}" />
+        </th:block>
+        <th:block th:if="${!hasOrg}">
+            <!-- Inputs for Organization details when no Organization Id provided in URL -->
+            <label for="name" >Organization Name</label>
+            <p th:if="${dynamicFormBean.isError('orgName')}" id="orgNameError" class="error">
+                <th:block th:switch="${dynamicFormBean.errorCode('orgName')}">
+                    <span th:case="required">Organization Name is required</span>
+                    <span th:case="*">Please enter a valid Organization Name</span>
+                </th:block>
+            </p>
+            <input id="name" th:field="*{items['orgName']}" type="text" placeholder="Organization Name" />
+            <label for="address" >Organization Address</label>
+            <p th:if="${dynamicFormBean.isError('address1')}" id="orgAddressError" class="error">
+                <th:block th:switch="${dynamicFormBean.errorCode('address1')}">
+                    <span th:case="required">Address is required</span>
+                    <span th:case="*">Please enter a valid address</span>
+                </th:block>
+            </p>
+            <input id="address" th:field="*{items['address1']}" type="text" placeholder="Organization Address" />
+            <table border="0" cellspacing="0" cellpadding="0">
+                <tr
+                        th:with="cityErr=${dynamicFormBean.isError('city')},
+                         stateErr=${dynamicFormBean.isError('stateCode')},
+                         zipErr=${dynamicFormBean.isError('zipcode')}">
+                    <td>
+                        <table>
+                            <tr>
+                                <td>
+                                    <label for="city" >City</label>
+                                    <p th:if="${cityErr}" id="orgCityError" class="error">
+                                        <th:block th:switch="${dynamicFormBean.errorCode('city')}">
+                                            <span th:case="required">City is required</span>
+                                            <span th:case="*">Please enter a valid city</span>
+                                        </th:block>
+                                    </p>
+                                    <input id="city" th:field="*{items['city']}" type="text" style="width: 400px;" placeholder="City" />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table cellspacing="10">
+                            <tr>
+                                <td>
+                                    <label for="state">State</label>
+                                    <p th:if="${stateErr}" id="orgStateError" class="error">State is required</p>
+                                    <select id="state" th:field="*{items['stateCode']}" class="StDrop">
+                                        <option value="">State</option>
+                                        <option value="CT">CT</option>
+                                        <option value="DC">DC</option>
+                                        <option value="DE">DE</option>
+                                        <option value="MA">MA</option>
+                                        <option value="MD">MD</option>
+                                        <option value="NJ">NJ</option>
+                                        <option value="NY">NY</option>
+                                        <option value="OH">OH</option>
+                                        <option value="PA">PA</option>
+                                        <option value="RI">RI</option>
+                                        <option value="VA">VA</option>
+                                        <option value="VT">VT</option>
+                                        <option value="WV">WV</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <label for="zip" >Zip Code</label>
+                        <p th:if="${zipErr}" id="orgZipError" class="error">
+                            <th:block th:switch="${dynamicFormBean.errorCode('zipcode')}">
+                                <span th:case="required">Zipcode is required</span>
+                                <span th:case="*">Please enter a valid zipcode</span>
+                            </th:block>
+                        </p>
+                        <input id="zip" th:field="*{items['zipcode']}" type="text" style="width: 100px;" placeholder="Zip Code" />
+                    </td>
+                </tr>
+            </table>
+        </th:block>
+        <!-- Contact information fields -->
+        <label for="fname" >Contact First Name</label>
+        <p th:if="${dynamicFormBean.isError('firstName')}" id="fnameError" class="error">
+            <th:block th:switch="${dynamicFormBean.errorCode('firstName')}">
+                <span th:case="required">Contact First Name is required</span>
+                <span th:case="*">Please enter a valid Contact First Name</span>
+            </th:block>
+        </p>
+        <input id="fname" th:field="*{items['firstName']}" type="text" placeholder="First Name" />
+        <label for="lname" >Contact Last Name</label>
+        <p th:if="${dynamicFormBean.isError('lastName')}" id="lnameError" class="error">
+            <th:block th:switch="${dynamicFormBean.errorCode('lastName')}">
+                <span th:case="required">Contact Last Name is required</span>
+                <span th:case="*">Please enter a valid Contact Last Name</span>
+            </th:block>
+        </p>
+        <input id="lname" th:field="*{items['lastName']}" type="text" placeholder="Last Name" />
+        <label for="email" >Contact Email</label>
+        <p th:if="${dynamicFormBean.isError('email')}" id="emailError" class="error">
+            <th:block th:switch="${dynamicFormBean.errorCode('email')}">
+                <span th:case="required">Contact Email is required</span>
+                <span th:case="*">Please enter a valid email address</span>
+            </th:block>
+        </p>
+        <input id="email" th:field="*{items['email']}" type="text" placeholder="Email" />
+        <label for="emailc" >Confirm Email</label>
+        <p th:if="${dynamicFormBean.isError('confirmEmail')}" id="emailcError" class="error">
+            <th:block th:switch="${dynamicFormBean.errorCode('confirmEmail')}">
+                <span th:case="required">Confirm email is required</span>
+                <span th:case="*">Confirmation email does not match Contact Email</span>
+            </th:block>
+        </p>
+        <input id="emailc" th:field="*{items['confirmEmail']}" type="text" placeholder="Email" />
+        <label for="phone" >Contact Phone #</label>
+        <p th:if="${dynamicFormBean.isError('phone')}" id="phoneError" class="error">
+            <th:block th:switch="${dynamicFormBean.errorCode('phone')}">
+                <span th:case="required">Contact Phone is required</span>
+                <span th:case="nomatch">Contact Phone Numbers do not match</span>
+                <span th:case="*">Please enter a valid Contact Phone</span>
+            </th:block>
+        </p>
+        <input id="phone" th:field="*{items['phone']}" type="text" placeholder="Phone #" onkeypress='validate(event)' />
+        <label for="phonec" >Confirm Phone #</label>
+        <p th:if="${dynamicFormBean.isError('confirmPhone')}" id="phonecError" class="error">
+            <th:block th:switch="${dynamicFormBean.errorCode('confirmPhone')}">
+                <span th:case="required">Confirm phone is required</span>
+                <span th:case="*">Confirm phone does not match Contact Phone</span>
+            </th:block>
+        </p>
+        <input id="phonec" th:field="*{items['confirmPhone']}" type="text" placeholder="Phone #" onkeypress='validate(event)' />
+        <th:block th:include="~{/companies/boscovs/fhf-registration/fragments :: passes}" />
+        <th:block th:include="~{/companies/boscovs/fhf-registration/fragments :: stores('pickupStore')}" />
+        <th:block th:with="val=${hasOrg ? 'Update' : 'Register'}">
+            <input id="submit" type="submit" th:value="${val}">
+        </th:block>
+        <input type="hidden" th:field="*{items['npID']}" />
+        <input type="hidden" id="storeName" th:field="*{items['storeName']}" />
+
+    </form>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script th:src="@{/companies-static/boscovs/fhf-registration/js/fhf_registration.js}" type="text/javascript"></script>
+</body>
+</html>

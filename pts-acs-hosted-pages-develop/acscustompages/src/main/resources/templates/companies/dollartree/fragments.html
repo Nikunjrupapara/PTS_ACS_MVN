@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<th:block th:fragment="head">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dollar Tree</title>
+    <link rel="stylesheet" th:href="@{/companies-static/dollartree/css/juiced.css}" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/companies-static/dollartree/css/custom.css}" type="text/css" />
+
+    <link rel="stylesheet" type="text/css" th:href="@{/companies-static/dollartree/css/waitMe.min.css}" />
+</th:block>
+
+<th:block th:fragment="head_signup">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dollar Tree</title>
+    <link rel="stylesheet" th:href="@{/companies-static/dollartree/css/juiced_signup.css}" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/companies-static/dollartree/css/custom_signup.css}" type="text/css" />
+
+    <link rel="stylesheet" type="text/css" th:href="@{/companies-static/dollartree/css/waitMe.min.css}" />
+</th:block>
+
+
+<th:block th:fragment="privacyBlockIndex">
+
+    <div class="col-12 half-space">
+        <p class="green no-margin">We Respect Your Privacy</p>
+        <p class="small">For more details on how we use your information,
+            please see our <a target="_parent" href="https://www.dollartree.com/custserv/custserv.jsp?pageName=Privacy"><strong>Privacy and
+                Security page</strong></a>.</p>
+        <p class="small"><a target="_parent" href="https://www.dollartree.com/terms">Terms &amp; Conditions</a></p>
+    </div>
+
+</th:block>
+
+<th:block th:fragment="privacyBlockConfirm">
+
+    <div class="col-12 half-space">
+        <p class="green no-margin">We Respect Your Privacy</p>
+        <p class="small">We will not share your email address with any third-party vendors. For more details on how we use your information,
+            please see our <a target="_parent" href="https://www.dollartree.com/custserv/custserv.jsp?pageName=Privacy"><strong>Privacy and
+                Security page</strong></a>.</p>
+        <p class="small"><a target="_parent" href="https://www.dollartree.com/terms">Terms &amp; Conditions</a></p>
+    </div>
+
+</th:block>
+
+
+</body>
+</html>

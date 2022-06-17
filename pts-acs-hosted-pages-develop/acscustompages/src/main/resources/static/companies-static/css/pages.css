@@ -1,0 +1,35 @@
+body {
+    font-family: "Roboto", "Verdana", sans-serif;
+}
+.logo {
+    height: 75px;
+}
+h3 {
+
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 5px;
+    padding: 5px;
+}
+.grid-container > div {
+    padding: 5px 0;
+}
+.grid-item {
+    grid-column: 1 / 2;
+}
+.item-label {
+    grid-column: 1
+    min-width: 300px
+}
+.item-field {
+    grid-column: 2
+}
+.field-error {
+    border-color: red;
+}
+.error {
+    color: red;
+    font-size: 0.8rem;
+}

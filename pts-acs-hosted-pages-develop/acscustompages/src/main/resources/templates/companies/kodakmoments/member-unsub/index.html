@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <th:block  th:insert="~{/companies/kodakmoments/member-unsub/fragments :: header}" />
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body style="padding-bottom:106px; text-align: center;" th:object="${dynamicFormBean}">
+<form id="feedback" th:with="skip=${ (param.skip==null)?'':'?skip' }" th:action="@{'/p/profile/search/' + *{contextPath} + ${skip}}" method="post" th:object="${dynamicFormBean}">
+  <div class="header">
+    <a href="https://www.kodakmoments.com/" border="0">
+      <img th:src="@{/companies-static/kodakmoments/member-unsub/images/logo.png}" id="logo" />
+    </a>
+  </div>
+
+  <div style="max-width:400px; margin:0 auto; padding-left:16px; padding-right:16px; text-align:left;">
+
+    <p style="margin-bottom:36px; margin-top:36px; text-align: left;">We're sorry to see you go.</p>
+
+    <div th:if="${dynamicFormBean.isError('email')}">
+      <span class="error">Please enter a valid email address!</span>
+    </div>
+    <input type="email" th:field="*{items['email']}" placeholder="Email ..." class="form-input email-input" style="margin-bottom:36px;" />
+
+    <div class="checkbox" style="margin-bottom:24px;" th:with="name='all'">
+      <th:block th:with="checked=(*{items['__${name}__']}=='1')">
+        <label class="atom-checkbox">
+          <input type="checkbox" class="atom-checkbox-input" th:id="all" th:name="items[__${name}__]" th:value="1" th:checked="${checked}" />
+
+          <span class="checkbox-custom">
+              <span class="icon-check-thin">
+                <img th:src="@{/companies-static/kodakmoments/member-unsub/images/check.png}" />
+              </span>
+            </span>
+          <span class="checkbox-custom-label">I no longer want to receive emails.</span>
+        </label>
+      </th:block>
+    </div>
+
+    <div class="checkbox" th:with="name='one'" th:unless="${param.skip}">
+      <th:block th:with="checked=(*{items['__${name}__']}=='1')">
+        <label class="atom-checkbox">
+          <input type="checkbox" class="atom-checkbox-input"  th:id="one" th:name="items[__${name}__]" th:value="1" th:checked="${checked}" />
+          <span class="checkbox-custom">
+              <span class="icon-check-thin">
+                <img th:src="@{/companies-static/kodakmoments/member-unsub/images/check.png}" />
+              </span>
+            </span>
+          <span class="checkbox-custom-label">I no longer want to receive 10% off all orders.</span>
+        </label>
+      </th:block>
+    </div>
+
+
+    <div style="margin-bottom:36px; margin-top:4px;font-size:14px;" th:unless="${param.skip}">
+      <a href="https://www.kodakmoments.com/members" target="_blank" style="padding-left:44px; position:relative; ">See Details</a>
+    </div>
+    <div th:if="${dynamicFormBean.isError('recaptcha')}">
+      <span class="error">Recaptcha validation failed.  Please reload the form and try again.</span>
+    </div>
+    <div class="g-recaptcha" th:attr="data-sitekey=${dynamicFormBean.getRecaptchaKey()}"></div>
+    <span id="captchaError" class="alert alert-danger col-sm-4" style="display:none"></span>
+    <div style="margin-top:30px;">
+      <button class="btn-red">Submit</button>
+    </div>
+  </div>
+  <th:block th:insert="~{/companies/kodakmoments/member-unsub/fragments :: footer}" />
+</form>
+</body>
+</html>

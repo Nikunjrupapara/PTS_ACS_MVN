@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:include="~{/companies/resideo/stormM5/fragments :: head }" />
+</head>
+<body>
+
+<div class="container" style="min-height: 700px" th:object="${dynamicFormBean}" th:with="brand=${dynamicFormBean.getBrand()}">
+    <form method="post" th:action="@{'/p/profile/email/' + *{contextPath}}" id="subForm">
+        <div class="main" role="main">
+            <div class="row main-header">
+                <div class="six columns">
+                    <h1>THANKS FOR SIGNING UP</h1>
+                </div>
+
+                <th:block th:insert="~{/companies/resideo/stormM5/fragments :: notYou }" />
+
+            </div>
+            <div id="status-banner" style="background-color: #166A96; visibility: visible; height: auto">
+                One last step
+            </div>
+
+            <th:block th:with="result=${dynamicFormBean.profileRequestResult},
+                            triggerEmail=${result.emailTriggered},
+                            triggerEmailError=${triggerEmail and not result.emailSuccess}">
+                <div th:if="${triggerEmailError}" style="background-color: #f7361a; visibility: visible; height: auto">
+                    <strong>ERROR!</strong> We encountered a problem while sending you a link. Please contact customer care at 1-800-633-3991 or try clicking the above link again.
+                </div>
+            </th:block>
+
+            <div id="body-content">
+                <p style="margin-top: 30px;">In order to begin receiving email updates from Resideo, please click "Subscribe Now" and update your preferences.</p>
+                <button type="submit">Subscribe Now &gt;</button>
+            </div>
+        </div>
+
+        <input type="hidden" th:field="*{brand}" />
+        <input type="hidden" th:field="*{items['cusCustomerIdHash']}" />
+        <input type="hidden" th:field="*{items['email']}" />
+        <input type="hidden" th:field="*{items['firstName']}" />
+        <input type="hidden" th:field="*{items['lastName']}" />
+
+
+    </form>
+</div>
+
+</body>
+</html>

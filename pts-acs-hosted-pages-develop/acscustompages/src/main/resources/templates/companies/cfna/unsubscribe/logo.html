@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<th:block th:fragment="getLogo(brand)">
+    <th:block th:switch="${brand}">
+        <img th:case="'AP'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/AutoPassDealersCreditCard.gif}" />
+        <img th:case="'AS'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/FirestoneCreditCard-blk.gif}" />
+        <img th:case="'AT'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/AutoPassCreditCard.gif}" />
+        <img th:case="'BA'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/BobbyStevesCreditCard.gif}" />
+        <img th:case="'BB'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/BridgestoneRetailerCreditCard.gif}" />
+        <img th:case="'BC'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/Bosch.gif}" />
+        <img th:case="'BF'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/BF-BridgestoneFirestone.gif}" />
+        <img th:case="'BG'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/BridgestoneFirestoneCreditCard.gif}" />
+        <img th:case="'BH'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/BrandonHonda.gif}" />
+        <img th:case="'BM'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/MorganAutoGroup.gif}" />
+        <img th:case="'BO'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/BestOne.gif}" />
+        <img th:case="'BR'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/BurtBros.gif}" />
+        <img th:case="'BS'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/BridgestoneCreditCard.gif}" />
+        <img th:case="'BX'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/BrakeMax.gif}" />
+        <img th:case="'CA'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/CA_Unsubscribe.gif}" />
+        <img th:case="'CT'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/CommercialTire.gif}" />
+        <img th:case="'DA'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/DA_YesMail_Unsubscribe_Image.gif}" />
+        <img th:case="'DE'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/DriversEdge.gif}" />
+        <img th:case="'DO'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/DO_YesMail_Unsubscribe_Image.gif}" />
+        <img th:case="'DR'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/DesertRat.gif}" />
+        <img th:case="'DT'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/DunnTireandLogo.gif}" />
+        <img th:case="'EV'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/EvansTireandLogo.gif}" />
+        <img th:case="'FL'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/FloridaAutomobileAssociation.gif}" />
+        <img th:case="'FM'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/2022_FM_YesMail_Unsubscribe_Image.gif}" />
+        <img th:case="'FP'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/MorganAutoGroup.gif}" />
+        <img th:case="'GC'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/GCR.gif}" />
+        <img th:case="'GG'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/GoodGuys.gif}" />
+        <img th:case="'GM'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/MorganAutoGroup.gif}" />
+        <img th:case="'GR'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/Grismer.gif}" />
+        <img th:case="'GW'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/GatewayTireCreditCard.gif}" />
+        <img th:case="'HO'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/MorganAutoGroup.gif}" />
+        <img th:case="'HT'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/HibdonTiresPlusCreditCard.gif}" />
+        <img th:case="'JF'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/JackFurrierCreditCard.gif}" />
+        <img th:case="'KC'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/MorganAutoGroup.gif}" />
+        <img th:case="'KP'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/Kost.gif}" />
+        <img th:case="'LA'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/LA_YesMail_Unsubscribe_Image.gif}" />
+        <img th:case="'LT'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/LT_Unsubscribe.gif}" />
+        <img th:case="'MB'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/ModicaBros.gif}" />
+        <img th:case="'MC'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/BridgestoneRetailerCreditCard.gif}" />
+        <img th:case="'MG'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/MorganAutoGroup.gif}" />
+        <img th:case="'MK'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/MorganAutoGroup.gif}" />
+        <img th:case="'MO'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/MorganAutoGroup.gif}" />
+        <img th:case="'MP'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/MorganAutoGroup.gif}" />
+        <img th:case="'MR'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/MartinTire.gif}" />
+        <img th:case="'MW'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/MorganAutoGroup.gif}" />
+        <img th:case="'NA'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/BridgestoneCreditCard.gif }" />
+        <img th:case="'NW'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/NW_Northwest_Unsubscribe.gif}" />
+        <img th:case="'PF'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/PerfectionTireCreditCard.gif}" />
+        <img th:case="'PG'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/PG_YM_Unsubscribe.gif}" />
+        <img th:case="'PL'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/Peerless.gif}" />
+        <img th:case="'PP'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/TiresPlusCreditCard.gif}" />
+        <img th:case="'PS'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/PompsCreditCard.gif}" />
+        <img th:case="'PT'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/PuebloTire.gif}" />
+        <img th:case="'PZ'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/PlazaTire.gif}" />
+        <img th:case="'RA'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/RamonaTireCreditCard.gif}" />
+        <img th:case="'RC'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/MorganAutoGroup.gif}" />
+        <img th:case="'RF'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/MorganAutoGroup.gif}" />
+        <img th:case="'RG'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/MorganAutoGroup.gif}" />
+        <img th:case="'RH'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/MorganAutoGroup.gif}" />
+        <img th:case="'RM'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/RoadMartCreditCard.gif}" />
+        <img th:case="'RN'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/MorganAutoGroup.gif}" />
+        <img th:case="'RT'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/MorganAutoGroup.gif}" />
+        <img th:case="'SD'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/SD_YM_Unsubscribe.gif}" />
+        <img th:case="'SM'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/SouthernTireMart.gif}" />
+        <img th:case="'SN'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/MorganAutoGroup.gif}" />
+        <img th:case="'SP'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/Speedco.gif}" />
+        <img th:case="'TE'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/TateBoys.gif}" />
+        <img th:case="'TF'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/TownFairTire.gif}" />
+        <img th:case="'TG'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/TAG.gif}" />
+        <img th:case="'TK'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/TK_Unsubscribe.gif}" />
+        <img th:case="'TM'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/TallmansTire_unsubscribe.gif}" />
+        <img th:case="'TP'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/TiresPlusCreditCard.gif}" />
+        <img th:case="'TR'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/Tire-RamaCreditCard.gif}" />
+        <img th:case="'TT'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/ToyotaofTampaBay.gif}" />
+        <img th:case="'TW'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/TireWorksCreditCard.gif}" />
+        <img th:case="'VG'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/MorganAutoGroup.gif}" />
+        <img th:case="'VT'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/ViriginiaTireandLogo.gif}" />
+        <img th:case="'WA'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/WA_Unsubscribe.gif}" />
+        <img th:case="'WN'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/TedWiens.gif}" />
+        <img th:case="'WR'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/WheelWorksCreditCard.gif}" />
+        <img th:case="'WW'" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/WheelWorksCreditCard.gif}" />
+        <img th:case="*" id="logo" th:src="@{/companies-static/cfna/unsubscribe/images/CreditFirstNationalAssociation.gif}" />
+    </th:block>
+</th:block>
+</body>
+</html>

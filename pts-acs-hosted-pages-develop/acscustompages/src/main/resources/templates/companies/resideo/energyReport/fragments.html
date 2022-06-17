@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<th:block th:fragment="form(buttonValue)">
+    <form id="form_area" method="post" th:action="@{'/p/services/update/' + *{contextPath}}" th:object="${dynamicFormBean}">
+
+        <input type="submit" name="submit" id="submit" th:value="${buttonValue}">
+        <th:block th:insert="~{ :: updatePreferences }" />
+        <input type="hidden" th:field="*{items['cusCustomerIdHash']}" />
+        <input type="hidden" th:field="*{items['cusCustomerUUID']}" />
+        <input type="hidden" th:field="*{items['email']}" />
+    </form>
+</th:block>
+<th:block th:fragment="updatePreferences">
+    <p class="unsubText" style="text-align: center;">
+        <a th:href="@{'/p/profile/secure/preferences/lookup?l=' + *{items['cusCustomerIdHash']} + '&s=' + *{items['cusCustomerUUID']} + '&view=services'}" target="_blank">
+            UPDATE EMAIL PREFERENCES
+            <img th:src="@{/companies-static/resideo/images/arrow2.png}" width="25" height="12" alt="" />
+        </a>
+    </p>
+</th:block>
+</body>
+</html>

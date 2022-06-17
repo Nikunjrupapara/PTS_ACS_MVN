@@ -1,0 +1,359 @@
+@font-face {
+     font-family: "Honeywell Sans";
+     src: url("../fonts/HoneywellSans-Book.eot");
+     src: url("../fonts/HoneywellSans-Book.eot.eot?#iefix") format('embedded-opentype'), url("../fonts/HoneywellSans-Book.woff") format("woff"), url("../fonts/HoneywellSans-Book.woff2") format("woff2"), url("../fonts/HoneywellSans-Book.ttf") format("truetype"), url("../fonts/HoneywellSans-Book.svg") format("svg");
+     font-weight: normal;
+}
+ @font-face {
+     font-family: "Honeywell Sans";
+     src: url("../fonts/HoneywellSans-Bold.eot");
+     src: url("../fonts/HoneywellSans-Bold.eot.eot?#iefix") format('embedded-opentype'), url("../fonts/HoneywellSans-Bold.woff") format("woff"), url("../fonts/HoneywellSans-Bold.woff2") format("woff2"), url("../fonts/HoneywellSans-Bold.ttf") format("truetype"), url("../fonts/HoneywellSans-Bold.svg") format("svg");
+     font-weight: bold;
+}
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+ html {
+     font-size: 16px;
+}
+ p {
+     font-family: 'Honeywell Sans', sans-serif;
+}
+ #container {
+     width: 100%;
+     background-color: #FFFFFF;
+     margin: auto;
+}
+ #innerContainer {
+     max-width: 900px;
+     margin: auto;
+}
+ #Honeywell_logo {
+     width: 245px;
+     height: 36px;
+     padding-top: 60px;
+     text-align: left;
+}
+ #Resideo_logo {
+     width: 194px;
+     height: 24px;
+     padding-top: 45px;
+     text-align: left;
+}
+ #form_area {
+     width: 100%;
+     background-color: #E0E0E0;
+     position: relative;
+}
+#error_form_area {
+     width: 100%;
+     background-color: #EE3124;
+     position: relative;
+}
+#error_form_area h1 {
+     margin-bottom: 20px;
+     text-align: center;
+	     font-family: 'Honeywell Sans', sans-serif;
+     font-weight: bold;
+     color: #fff;
+     font-size: 2em;
+     letter-spacing: .25px;
+}
+#error_form_area p {
+     font-family: 'Honeywell Sans', sans-serif;
+     color: #fff;
+     font-size: 1.1875em;
+     line-height: 1.78125em;
+     margin-bottom: 1em;
+     letter-spacing: .25px;
+     text-align: center;
+}
+
+ #bodyCopy {
+     margin-bottom: 80px;
+}
+ #bodyCopy p, #no_record_bodyCopy p {
+     font-family: 'Honeywell Sans', sans-serif;
+     font-weight: 400;
+     color: #333;
+     font-size: 1.1875em;
+     line-height: 1.78125em;
+     margin-bottom: 1em;
+     letter-spacing: .25px;
+}
+ .form-top {
+     padding: 60px;
+}
+ .form-top p {
+     font-family: 'Honeywell Sans', sans-serif;
+     font-weight: bold;
+     color: #000;
+     font-size: 2em;
+     letter-spacing: .25px;
+     margin-bottom: 20px;
+}
+ .form-top_error {
+     padding: 60px;
+}
+ .form-top_error p {
+     font-family: 'Honeywell Sans', sans-serif;
+     font-weight: bold;
+     color: #000;
+     font-size: 2em;
+     letter-spacing: .25px;
+     margin-bottom: 20px;
+}
+ .form-top_error img {
+     width: 50px;
+     height: 50px;
+	 margin: 0 auto 50px auto;
+	 display: block;
+}
+
+
+ .error {
+     background-color: #ee3124;
+     padding: 50px;
+}
+ .success p, .error p {
+     font-family: 'Honeywell Sans', sans-serif;
+     color: #fff;
+     font-size: 1.1875em;
+     line-height: 1.78125em;
+     text-align: center;
+     letter-spacing: .25px;
+}
+ .error p:last-of-type {
+     font-size: 1em;
+}
+ #verify {
+     margin-top:0;
+     width: 110px;
+     height: 48px;
+}
+ #reenter_email_button{
+     text-align: right;
+}
+ #reenter_email {
+     margin-top:20px;
+     width: 250px;
+     height: 48px;
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     background-color: #4076b8;
+     border: none;
+     color: #FFFFFF;
+     border-radius: 0;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-family: 'Honeywell Sans', sans-serif;
+     font-size: .875em;
+     font-weight: bold;
+     letter-spacing: .25px;
+}
+input[type=email]{
+     padding: 10px;
+     width: 60%;
+     height: 40px;
+     margin-right: 180px;
+}
+ #success_form_area {
+     margin-top: 100px;
+     margin-bottom: 100px;
+     width: 100%;
+     background-color: #4076B8;
+     position: relative;
+}
+ #no_record_form_area {
+     margin-top: 100px;
+     margin-bottom: 100px;
+     width: 100%;
+     background-color: #E0E0E0;
+     position: relative;
+}
+ .form-bottom {
+     padding: 0px 60px 60px;
+}
+ #headline {
+     padding: 100px 0px 80px 0px;
+}
+ #headline h1 {
+     font-family: 'Honeywell Sans', sans-serif;
+     color: #333333;
+     font-weight: bold;
+     text-align: center;
+     font-size: 2.8125em;
+     letter-spacing: .25px;
+}
+ #rollover {
+     margin-top: 45px;
+     width: 100%;
+     display: -webkit-flex;
+     display: flex;
+     -webkit-justify-content: space-between;
+     justify-content: space-between;
+}
+ #rollover_question {
+     text-align: right;
+     vertical-align: top;
+     padding: 5px 0 0 15px;
+}
+ #rollover_question_h2, #form_area h2, #no_record_form_area h2 {
+     font-family: 'Honeywell Sans', sans-serif;
+     font-weight: bold;
+     color: #000000;
+     font-size: 1.875em;
+     letter-spacing: .25px;
+     padding-bottom: 0;
+     margin-bottom: 1em;
+     vertical-align: top;
+}
+ #success_form_area h2 {
+     font-family: 'Honeywell Sans', sans-serif;
+     font-weight: bold;
+     color: #ffffff;
+     font-size: 1.875em;
+     letter-spacing: .25px;
+     padding-bottom: 0;
+     margin-bottom: 1em;
+     vertical-align: top;
+}
+ #success_form_area p {
+     font-family: 'Honeywell Sans', sans-serif;
+     font-weight: 400;
+     color: #ffffff;
+     font-size: 1.1875em;
+     line-height: 1.78125em;
+     margin-bottom: 1em;
+     letter-spacing: .25px;
+}
+
+/*#form_area h2 {
+     margin-top: 40px;
+}
+*/
+/*#form_area h2:first-of-type {
+     margin-top: 0px;
+}
+*/
+ #bodyCopy .smalltype {
+     font-size: 0.875em;
+     line-height: 1.375em;
+     padding-top: 6px;
+     padding-bottom: 40px;
+}
+
+ .submit-button {
+     text-align: right 
+}
+ .hr {
+     padding-left: 42px;
+     padding-right: 42px;
+     border-bottom: 2px solid white;
+     margin: 40px 0 0px;
+}
+ .topMargin0 {
+     margin-top: 0;
+}
+ input[type=submit] {
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     background-color: #4076b8;
+     border: none;
+     color: #FFFFFF;
+     width: 170px;
+     height: 50px;
+     border-radius: 0;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-family: 'Honeywell Sans', sans-serif;
+     font-size: .875em;
+     font-weight: bold;
+     margin-top: 60px;
+     letter-spacing: .25px;
+}
+ #footer {
+     margin-top: 40px;
+     margin-bottom: 40px;
+     display: -webkit-flex;
+     display: flex;
+}
+ #footer_question {
+     padding-right: 15px;
+}
+ #footer_question_p {
+     font-family: 'Honeywell Sans', sans-serif;
+     font-size: 1em;
+     line-height: 1.5em;
+     color: #333333;
+     vertical-align: top;
+}
+ #footer_question_p a {
+     text-decoration:none;
+     color: #4076B8;
+     font-size: 0.875em;
+     font-weight: bold;
+}
+ .success {
+     background-color: #4076b8;
+     padding: 50px;
+}
+ ul {
+     list-style-image: url('../images/bracket.png');
+	 margin-left: 80px;
+}
+ li {
+     font-family: 'Honeywell Sans', sans-serif;
+     font-weight: 400;
+     color: #333;
+     font-size: 1em;
+     line-height: 1.25em;
+     letter-spacing: .25px;
+     margin-bottom: 15px;
+}
+ li a {
+     text-decoration:none;
+     color: #4076B8;
+     font-weight: bold;
+}
+ @media only screen and (max-width: 900px) {
+     #header, #footer {
+         padding-left: 30px;
+         padding-right: 30px;
+    }
+}
+ @media only screen and (max-width: 414px) {
+     .form-top {
+         padding: 30px 30px 20px;
+    }
+     .form-bottom {
+         padding: 0px 30px 30px;
+    }
+     .checkbox-label {
+         margin-left: 0px;
+    }
+     input[type=submit] {
+         margin-top: 30px;
+    }
+     .success, .error {
+         padding: 30px;
+    }
+     #rollover_question_h2, #form_area h2 {
+         font-size: 1.625em;
+    }
+input[type=email]{
+     margin-right: 20px;
+}	 
+}
+ @media only screen and (max-width: 375px) {
+     #headline {
+         font-size: 2.25em;
+    }
+input[type=email]{
+     margin-right: 20px;
+}	 
+}

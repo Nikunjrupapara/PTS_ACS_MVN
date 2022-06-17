@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Unauthorized!</title>
+</head>
+<body>
+<h3>Unauthorized</h3>
+<p>We were unable to authorize this request!</p>
+<div th:if="${e != null}" th:with="ex=${e}">
+    <input type="hidden" name="msg" th:value="${ex.getMessage()}"/><br />
+    <input type="hidden" name="reason" th:value="${ex.getCustomPagesRequest().getAuthenticationStatus()}" />
+</div>
+</body>
+</html>

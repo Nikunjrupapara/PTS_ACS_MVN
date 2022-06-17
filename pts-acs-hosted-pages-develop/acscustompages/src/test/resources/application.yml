@@ -1,0 +1,12 @@
+barcode:
+  baseUrl: http://localhost:8083/barcode-google
+microservices:
+  base-url: http://localhost:8080
+server:
+  servlet:
+    context-path: /acscustompages
+spring:
+  boot:
+    admin:
+      username: username
+      password: password

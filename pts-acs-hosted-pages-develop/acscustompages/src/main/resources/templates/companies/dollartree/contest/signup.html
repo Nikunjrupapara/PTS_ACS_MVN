@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<th:block th:replace="~{/companies/dollartree/contest/fragments :: head }">
+		<meta charset="utf-8" />
+    	<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" th:href="@{/companies-static/dollartree/css/normalize.css}">
+		<link rel="stylesheet" th:href="@{/companies-static/dollartree/css/custom-2022.css}">
+	</th:block>
+    <link rel="stylesheet" th:href="@{/companies-static/dollartree/css/waitMe.min.css}">
+
+	<title>Dollar Tree Email Contest</title>
+</head>
+<body th:object="${dynamicFormBean}" th:with="email=*{items['email']},brand=*{brand}">
+<div class="container">
+	<header>
+		<th:block th:replace="~{/companies/dollartree/contest/fragments :: header }">
+			<a th:href="@{'/p/profile/search/contest/signup'}">
+				<img th:src="@{/companies-static/dollartree/images/envelope.png}" width="330" alt="email sign-up contest" class="logo"/>
+			</a>
+			<nav class="shadow">
+				<ul class="nav">
+					<li><a th:href="@{'/p/profile/search/contest/signup'}">Entry Form</a></li>
+					<li><a th:href="@{'/p/page/display/contest/rules'}">Rules</a></li>
+					<li><a th:href="@{'/p/page/display/contest/privacy'}">Privacy</a></li>
+					<li class="lastFloat"><a th:href="@{'/p/page/display/contest/winners'}">Winners</a></li>
+				</ul>
+			</nav>
+			<div class="bannerText shadow">
+				<h1 style="margin-bottom: 0; font-family: 'Arial Black', sans-serif;">Sign Up for Dollar Tree Emails</h1>
+				<p style="font-size: 16px;" class="mb-2">and be entered for a chance to win<sup>&dagger;</sup> a $100 Dollar Tree gift card!</p>
+			</div>
+		</th:block>		
+	</header>
+
+	<div class="main" role="main">
+		<div class="gift-card-cont">
+			<div class="leftCard">
+				<img th:src="@{/companies-static/dollartree/images/gift-card-c.png}" width="146" alt="$100 gift card" />
+			</div>
+			<div class="rightCard">
+				<p class="larger">Enter now for a chance to win<sup>&#0134;</sup> one<br>
+					of ten $100 Dollar Tree gift cards!</p>
+				<p class="small mt-1"><sup>&#0134;</sup>Restrictions apply. See Rules for details.</p>
+			</div>
+		</div>
+		
+		<div class="mobile-nav">
+		   <th:block th:replace="~{/companies/dollartree/contest/fragments :: navSide }">
+				<a th:href="@{'/p/profile/search/contest/signup'}" class="button-bar">Entry Form</a>
+				<a th:href="@{'/p/page/display/contest/rules'}" class="button-bar">Rules</a>
+				<a th:href="@{'/p/page/display/contest/privacy'}" class="button-bar">Privacy</a>
+				<a th:href="@{'/p/page/display/contest/winners'}" class="button-bar">Winners</a>
+			</th:block>
+		</div>
+		
+		<div class="form-cont">
+			<div class="rules">
+                <h3><strong>How many times can I enter?</strong></h3>
+                <p>One entry per customer is allowed from May 22, 2022 to June&nbsp;4, 2022. 
+                <a th:href="@{'/p/page/display/contest/rules'}" class="primary">See Rules</a></p>
+                <br>
+                <h3><strong>Why is this information required?</strong></h3>
+                <p>This information is required so that we can contact winners, ensure you are a U.S. resident, and meet other eligibility requirements.</p>
+                <br>
+                <h3><strong>How will you notify me if I won?</strong></h3>
+                <p>Winners will be notified via email.</p>
+                <br>
+                <h3><strong>How is my privacy protected?</strong></h3>
+                <p>Find out how your privacy is protected <a th:href="@{'/p/page/display/contest/privacy'}" class="primary">here</a>.</p>
+			</div>
+			<div class="entry-form">
+                    <form  th:action="@{'/p/profile/search/' + *{contextPath}}" onsubmit="return validSignupForm();" name="form1" id="form1" method="post" >
+                        <div class="form-field-container mt-1">
+                            <p class="sideLabel" style="font-style: italic;"><span id="lbl_msg" style="color: Red; font-weight: bold;">*</span>indicates required fields</p>
+                        </div>
+                        <br />
+                        <table role="presentation">
+                            <tr>
+                                <td><label for="email" class="sideLabel"><span style="color: Red;">*</span>Email Address:</label></td>
+                                <td> <input id="email" type="text" maxlength="40" size="20" tabindex="1" th:field="*{items['email']}" required/></td>
+                            </tr>
+                            <tr>
+                                <td><label for="zip" class="sideLabel"><span style="color: Red;">*</span>Zip Code:</label></td>
+                                <td> <input type="text" maxlength="10" id="zip" tabindex="2" th:field="*{items['zip']}" pattern="(\d{5}([\-]\d{4})?)" required/></td>
+                            </tr>
+                            <tr>
+                                <td><label for="firstName" class="sideLabel"><span style="color: Red;">*</span>First Name:</label></td>
+                                <td>  <input type="text" maxlength="40" id="firstName" tabindex="3" th:field="*{items['firstName']}" required/></td>
+                            </tr>
+                            <tr>
+                                <td><label for="lastName" class="sideLabel"><span style="color: Red;">*</span>Last Name:</label></td>
+                                <td> <input type="text" maxlength="40" id="lastName" tabindex="4" th:field="*{items['lastName']}" required/></td>
+                            </tr>
+                        </table>
+
+                        <br />
+                        <div class="form-field-container">
+                            <h2 class="primary">Dollar Tree Email Preferences</h2>
+
+                            <div class="mobilePadding_checkBoxes">
+                                <input type="checkbox" value="Y" tabindex="5" id="subscribe" name="items['subscribe']" required/>
+                                <label for="subscribe" id="forSubscribe" class="checklabel">Online Offers &amp; In-Store Specials</label>
+                                <p class=" small mt-1 mb-1">You can also sign up for emails tailored to your business or organization:</p>
+                            </div>
+                            <div class="emailPrefList">
+                                <div class="mobilePadding_checkBoxes">
+                                    <input id="emailOption3" type="checkbox" value="Y" tabindex="6" th:field="*{items['cusCraftOrg']}" />
+                                    <label for="emailOption3" class="checklabel">Crafts &amp; DIY</label>
+                                    <p class="checkText">&nbsp;</p>
+                                </div>
+
+                                <div class="mobilePadding_checkBoxes">
+                                    <input id="emailOption4" type="checkbox" value="Y" tabindex="7" th:field="*{items['floristOrg']}" />
+                                    <label for="emailOption4" class="checklabel">Floral &amp; Centerpiece Supplies</label>
+                                    <p class="checkText">&nbsp;</p>
+                                </div>
+
+                                <div class="mobilePadding_checkBoxes">
+                                    <input id="emailOption5" type="checkbox"  value="Y"  tabindex="8" th:field="*{items['educationOrg']}" />
+                                    <label for="emailOption5" class="checklabel">Educational &amp; Classroom Supplies</label>
+                                    <p class="checkText">&nbsp;</p>
+                                </div>
+                            </div>
+                            <div class="emailPrefList">
+                                <div class="mobilePadding_checkBoxes">
+                                    <input id="emailOption6" type="checkbox" value="Y" tabindex="9" th:field="*{items['nonprofitOrg']}" />
+                                    <label for="emailOption6" class="checklabel">Nonprofit &amp; Charitable Supplies</label>
+                                    <p class="checkText">&nbsp;</p>
+                                </div>
+
+                                <div class="mobilePadding_checkBoxes">
+                                    <input id="emailOption7" type="checkbox" value="Y" tabindex="10" th:field="*{items['restaurantOrg']}" />
+                                    <label for="emailOption7" class="checklabel">Dining, Restaurant &amp; Catering Supplies</label>
+                                    <p class="checkText">&nbsp;</p>
+                                </div>
+
+                                <div class="mobilePadding_checkBoxes">
+                                    <input id="emailOption8" type="checkbox" value="Y" tabindex="11" th:field="*{items['cateringOrg']}" />
+                                    <label for="emailOption8" class="checklabel">Party Planning &amp; Special Events</label>
+                                    <p class="checkText">&nbsp;</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <p class="required" style="margin: 0; display: none;" id="errorText">Please select and enter the required information.</p>
+
+
+                        <input type="hidden" th:field="*{brand}" />
+                        <input type="hidden" th:field="*{items['cusCustomerIdHash']}" />
+                        <input type="submit" class="signUpBtn mt-2" value="Sign Up Now" tabindex="12">
+
+
+                    </form>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<script th:src="@{/companies-static/dollartree/js/jquery.min.js}"></script>
+<script th:src="@{/companies-static/dollartree/js/waitMe.min.js}"></script>
+<script>
+
+  document.getElementById("form1").addEventListener("submit", function(event){
+	  event.preventDefault()
+	});
+
+  //Sign up page validations
+
+  	document.getElementById("email").addEventListener("change", function(event){
+		var isValid = true;
+		document.getElementById("errorText").style.visibility = "hidden";
+
+		// Check email is filled in and valid
+		var mailformat = /^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+		var emailEl = document.getElementById("email");
+		if (form1.email.value.match(mailformat)) {
+			emailEl.classList.remove("input-error");
+		} else {
+			emailEl.classList.add("input-error");
+			isValid = false;
+		}
+
+		if (!isValid) {
+			document.getElementById("errorText").style.visibility = "visible";
+			//return false;
+		}
+	});
+
+	document.getElementById("zip").addEventListener("change", function(event){
+		var isValid = true;
+		document.getElementById("errorText").style.visibility = "hidden";
+
+		// Check zip code
+		var zip_pattern = /^\d{5}([\-]\d{4})?$/;
+		var zipEl = document.getElementById("zip");
+		if (form1.zip.value.match(zip_pattern)) {
+			zipEl.classList.remove("input-error");
+		} else {
+			zipEl.classList.add("input-error");
+			isValid = false;
+		}
+
+		if (!isValid) {
+			document.getElementById("errorText").style.visibility = "visible";
+			//return false;
+		}
+	});
+
+	document.getElementById("subscribe").addEventListener("change", function(event){
+
+		var isValid = true;
+		document.getElementById("errorText").style.visibility = "hidden";
+
+		// is checkbox to receive checked
+		var subEl = document.getElementById("subscribe");
+		var checkEl = document.getElementById("forSubscribe");
+		if (subEl.checked) {
+			checkEl.classList.remove("input-error");
+		} else {
+			checkEl.classList.add("input-error");
+			isValid = false;
+		}
+
+		if (!isValid) {
+			document.getElementById("errorText").style.visibility = "visible";
+		}
+	});
+
+	function validSignupForm() {
+	    $("body").waitMe({});
+		//alert("In signup form");
+		var isValid = true;
+		document.getElementById("errorText").style.visibility = "hidden";
+
+
+
+		// is checkbox to receive checked
+		var subEl = document.getElementById("subscribe");
+		var checkEl = document.getElementById("forSubscribe");
+		if (subEl.checked) {
+			checkEl.classList.remove("input-error");
+		} else {
+			checkEl.classList.add("input-error");
+			isValid = false;
+		}
+		// Check email is filled in and valid
+		var mailformat = /^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+		var emailEl = document.getElementById("email");
+		if (form1.email.value.match(mailformat)) {
+			emailEl.classList.remove("input-error");
+		} else {
+			emailEl.classList.add("input-error");
+			isValid = false;
+		}
+		// Check zip code
+		var zip_pattern = /^\d{5}([\-]\d{4})?$/;
+		var zipEl = document.getElementById("zip");
+		if (form1.zip.value.match(zip_pattern)) {
+			zipEl.classList.remove("input-error");
+		} else {
+			zipEl.classList.add("input-error");
+			isValid = false;
+		}
+
+		if (isValid) {
+		   $("#email").val($("#email").val().toLowerCase());
+			//return true;
+			document.form1.submit();
+		} else {
+			document.getElementById("errorText").style.visibility = "visible";
+			$("body").waitMe('hide');
+			return false;
+		}
+	}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <th:block  th:insert="~{/companies/kodakmoments/member-unsub/fragments :: header}" />
+</head>
+<body style="padding-bottom:106px; text-align: center;">
+<div class="header">
+  <a href="https://www.kodakmoments.com/" border="0">
+    <img th:src="@{/companies-static/kodakmoments/member-unsub/images/logo.png}" id="logo" />
+  </a>
+</div>
+
+<div style="max-width:400px; margin:0 auto; padding-left:16px; padding-right:16px; text-align:left;" th:object="${dynamicFormBean}">
+
+  <p style="margin-bottom:36px; margin-top:48px; text-align: left;">We&apos;re sorry that an error occurred while processing your request.</p>
+
+  <p style="margin-bottom:36px; text-align: left;">Please click <a th:href="@{'/p/profile/search/' + *{appPath} + '/index'}">here</a> to try again.</p>
+</div>
+<th:block th:insert="~{/companies/kodakmoments/member-unsub/fragments :: footer}" />
+</body>
+</html>

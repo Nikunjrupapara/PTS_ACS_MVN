@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:include="~{/companies/resideo/buoySignup/fragments :: head }" />
+    <th:block th:include="~{/companies/resideo/buoySignup/fragments :: fontawesome }" />
+    <th:block th:include="~{/companies/resideo/buoySignup/fragments :: tag }" />
+</head>
+<body>
+<th:block th:insert="~{/companies/resideo/buoySignup/fragments :: tagNoScript }" />
+<div class="container" style="min-height: 700px">
+    <th:block th:object="${dynamicFormBean}"
+              th:with="result=${dynamicFormBean.profileRequestResult},
+              errors=${result.isAllSuccess() == false}">
+        <!-- <header role="banner">
+            <img src="images/HoneywellHomeLogo.png" alt="Honeywell Home" />
+        </header> -->
+
+        <div class="main" role="main">
+            <div class="row main-header">
+                <div class="six columns">
+                    <!--<% if (errors > 0) { %>-->
+                    <h1 th:if="${errors == true}">OH NO! SOMETHING WENT WRONG</h1>
+                    <!--<% } else { %>-->
+                    <h1 th:if="${errors == false}">YOU HAVE BEEN SUBSCRIBED</h1>
+                    <!--<% } %> -->
+                </div>
+                <div class="six columns email">
+                    <th:block th:insert="~{/companies/resideo/buoySignup/fragments :: notYou }" />
+                </div>
+            </div>
+            <!--<% if (errors > 0) { %> -->
+            <div th:if="${errors == true}" id="status-banner" style="background-color: #f7361a; visibility: visible; height: auto">
+                <strong>! ERROR</strong> We encountered a problem. Please contact customer care at 1-800-633-3991 or try clicking the link in email again.
+            </div>
+            <!--<% } else { %> -->
+            <!--  <form name="confirmed" method="post" id="cForm" class="x-space" action="emailConfirmedFrame.jsp?s=sValue&i=iValue"> -->
+            <th:block th:if="${errors == false}">
+                <div id="status-banner-vis">
+                    <strong><span class="large"><i class="fa fa-check" aria-hidden="true"></i></span>&nbsp; SUCCESS!</strong> <!--You have been subscribed-->
+                </div>
+                <div id="body-content">
+                    <p style="margin-top: 30px;">Your subscription is confirmed. Return to the <a href="https://www.resideo.com/us/en/products/water/whole-home-leak-detection/buoy-whole-home-water-controller-bsv-101-wc10-lf-u/" target="_blank">BUOY<span style="font-size: 10px; line-height: 0; vertical-align: 6px">&reg;</span> Whole Home Water Controller</a> product page.
+                        <!--You will now be redirected to the Honeywell Smart Home Security System page.-->
+                    </p>
+                    <!-- <p><button type="submit">Update preferences &gt;</button></p> -->
+                </div>
+                <!-- </form> -->
+                <!-- <% } %> -->
+            </th:block>
+            <!-- response.setHeader("Refresh", "15;url=https://yourhome.honeywell.com/honeywell-smart-home-security"); -->
+        </div>
+    </th:block>
+</div>
+
+</body>
+</html>

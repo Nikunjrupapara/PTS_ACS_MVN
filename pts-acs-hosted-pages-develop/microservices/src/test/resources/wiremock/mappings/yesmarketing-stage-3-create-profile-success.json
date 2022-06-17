@@ -1,0 +1,124 @@
+{
+	"request": {
+		"method": "POST",
+		"url": "/profileAndServicesExt/profile"
+	},
+	"response": {
+		"status": 201,
+		"headers": {
+			"Content-Type": "application/json; charset=utf-8"
+		},
+		"jsonBody": {
+			"PKey": "@LZdQdXuVFw8sTQMSeVWXyq5QcpO75KRHQUsSrr7POBBEn1UN4jdexWCo_FGdbI49vRVlc46wRGjgUfEHmtJMGUvYnO8",
+			"age": 0,
+			"birthDate": "",
+			"blackList": false,
+			"blackListAllLastModified": "",
+			"blackListEmail": false,
+			"blackListEmailLastModified": "",
+			"blackListFax": false,
+			"blackListFaxLastModified": "",
+			"blackListLastModified": "",
+			"blackListMobile": false,
+			"blackListMobileLastModified": "",
+			"blackListPhone": false,
+			"blackListPhoneLastModified": "",
+			"blackListPostalMail": false,
+			"blackListPostalMailLastModified": "",
+			"blackListPushnotification": false,
+			"ccpaOptOut": false,
+			"ccpaOptOutLastModified": "",
+			"created": "2020-04-14 15:39:56.030Z",
+			"cryptedId": "eUI2yx/8GaWIFNcLqiV4253fVZmLoUlvd04jlvb1RG/zogYeY0nxuNn9X7IiOEKuoWL0aw==",
+			"cusCbCustomerProfileLink": {
+				"href": "https://mc.adobe.io/yesmarketing-mkt-stage3/campaign/profileAndServicesExt/profile/@LZdQdXuVFw8sTQMSeVWXyq5QcpO75KRHQUsSrr7POBBfBCGof_c2qjOnSaUvq9vuMWMQ6TCp8IC6by125xyRCFrIaRU/cusCbCustomerProfileLink/"
+			},
+			"cusCbMappingSKProfileLink": {
+				"href": "https://mc.adobe.io/yesmarketing-mkt-stage3/campaign/profileAndServicesExt/profile/@LZdQdXuVFw8sTQMSeVWXyq5QcpO75KRHQUsSrr7POBBfBCGof_c2qjOnSaUvq9vuMWMQ6TCp8IC6by125xyRCFrIaRU/cusCbMappingSKProfileLink/"
+			},
+			"cusCbMappingTestProfileLink": {
+				"href": "https://mc.adobe.io/yesmarketing-mkt-stage3/campaign/profileAndServicesExt/profile/@LZdQdXuVFw8sTQMSeVWXyq5QcpO75KRHQUsSrr7POBBfBCGof_c2qjOnSaUvq9vuMWMQ6TCp8IC6by125xyRCFrIaRU/cusCbMappingTestProfileLink/"
+			},
+			"cusCbParentprofileLink": {
+				"href": "https://mc.adobe.io/yesmarketing-mkt-stage3/campaign/profileAndServicesExt/profile/@LZdQdXuVFw8sTQMSeVWXyq5QcpO75KRHQUsSrr7POBBfBCGof_c2qjOnSaUvq9vuMWMQ6TCp8IC6by125xyRCFrIaRU/cusCbParentprofileLink/"
+			},
+			"cusCbTransactionsProfileLink": {
+				"href": "https://mc.adobe.io/yesmarketing-mkt-stage3/campaign/profileAndServicesExt/profile/@LZdQdXuVFw8sTQMSeVWXyq5QcpO75KRHQUsSrr7POBBfBCGof_c2qjOnSaUvq9vuMWMQ6TCp8IC6by125xyRCFrIaRU/cusCbTransactionsProfileLink/"
+			},
+			"cusCustomerId": "cb-ym",
+			"cusEncryptedId": "",
+			"cusLatitude": 0,
+			"cusListLoadProfilelink": {
+				"href": "https://mc.adobe.io/yesmarketing-mkt-stage3/campaign/profileAndServicesExt/profile/@LZdQdXuVFw8sTQMSeVWXyq5QcpO75KRHQUsSrr7POBBfBCGof_c2qjOnSaUvq9vuMWMQ6TCp8IC6by125xyRCFrIaRU/cusListLoadProfilelink/"
+			},
+			"cusLongitude": 0,
+			"cusPrimaryStore": "",
+			"cusPrimaryStorelink": null,
+			"cusPromotionprofilelink": {
+				"href": "https://mc.adobe.io/yesmarketing-mkt-stage3/campaign/profileAndServicesExt/profile/@LZdQdXuVFw8sTQMSeVWXyq5QcpO75KRHQUsSrr7POBBfBCGof_c2qjOnSaUvq9vuMWMQ6TCp8IC6by125xyRCFrIaRU/cusPromotionprofilelink/"
+			},
+			"cusRewardsActive": "Y",
+			"cusRewardsExpiration": "",
+			"cusRewardsId": "",
+			"cusRewardsPoints": "",
+			"cusRewardsType": "",
+			"cusRfcProfilelink": {
+				"href": "https://mc.adobe.io/yesmarketing-mkt-stage3/campaign/profileAndServicesExt/profile/@LZdQdXuVFw8sTQMSeVWXyq5QcpO75KRHQUsSrr7POBBfBCGof_c2qjOnSaUvq9vuMWMQ6TCp8IC6by125xyRCFrIaRU/cusRfcProfilelink/"
+			},
+			"cusSecondaryStore": "",
+			"cusSecondaryStorelink": null,
+			"cusSuppressedDomain": false,
+			"cusTransactionDetailProfilelink": {
+				"href": "https://mc.adobe.io/yesmarketing-mkt-stage3/campaign/profileAndServicesExt/profile/@LZdQdXuVFw8sTQMSeVWXyq5QcpO75KRHQUsSrr7POBBfBCGof_c2qjOnSaUvq9vuMWMQ6TCp8IC6by125xyRCFrIaRU/cusTransactionDetailProfilelink/"
+			},
+			"cusTransactionProfilelink": {
+				"href": "https://mc.adobe.io/yesmarketing-mkt-stage3/campaign/profileAndServicesExt/profile/@LZdQdXuVFw8sTQMSeVWXyq5QcpO75KRHQUsSrr7POBBfBCGof_c2qjOnSaUvq9vuMWMQ6TCp8IC6by125xyRCFrIaRU/cusTransactionProfilelink/"
+			},
+			"domain": "yesmail.com",
+			"email": "charlesb@yesmail.com",
+			"emailFormat": "unknown",
+			"externalId": "",
+			"fax": "",
+			"firstName": "Charles",
+			"gender": "unknown",
+			"href": "https://mc.adobe.io/yesmarketing-mkt-stage3/campaign/profileAndServicesExt/profile/@LZdQdXuVFw8sTQMSeVWXyq5QcpO75KRHQUsSrr7POBBEn1UN4jdexWCo_FGdbI49vRVlc46wRGjgUfEHmtJMGUvYnO8",
+			"isExternal": false,
+			"lastModified": "2020-04-14 15:39:56.029Z",
+			"lastName": "Berger (Ym)",
+			"location": {
+				"address1": "",
+				"address2": "",
+				"address3": "",
+				"address4": "",
+				"city": "",
+				"countryCode": "",
+				"stateCode": "",
+				"zipCode": ""
+			},
+			"middleName": "",
+			"mobilePhone": "",
+			"phone": "",
+			"postalAddress": {
+				"addrDefined": false,
+				"addrErrorCount": 0,
+				"addrLastCheck": "",
+				"addrQuality": "0",
+				"line1": "Charles BERGER (YM)",
+				"line2": "",
+				"line3": "",
+				"line4": "",
+				"line5": "",
+				"line6": "",
+				"serialized": "Charles BERGER (YM)\n\n\n\n\n"
+			},
+			"preferredLanguage": "none",
+			"salutation": "",
+			"subscriptions": {
+				"href": "https://mc.adobe.io/yesmarketing-mkt-stage3/campaign/profileAndServicesExt/profile/@LZdQdXuVFw8sTQMSeVWXyq5QcpO75KRHQUsSrr7POBBfBCGof_c2qjOnSaUvq9vuMWMQ6TCp8IC6by125xyRCFrIaRU/subscriptions/"
+			},
+			"thumbnail": "/nl/img/thumbnails/defaultProfil.png",
+			"timeZone": "none",
+			"title": "Charles Berger (Ym) (charlesb@yesmail.com)"
+		}
+	}
+}

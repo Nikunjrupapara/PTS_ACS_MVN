@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <style type="text/css">		* {
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 14px;
+		}
+		a:link {
+			color: #0060af;
+			text-decoration: underline;
+			font-weight: bold;
+		}
+		a:visited {
+			color: #0060af;
+			text-decoration: underline;
+			font-weight: bold;
+		}
+		a:active {
+			color: #0060af;
+			text-decoration: underline;
+			font-weight: bold;
+		}
+		a:hover {
+			color: #0060af;
+			text-decoration: underline;
+			font-weight: bold;
+		}
+		#wrapper {
+			width: 600px;
+			margin: 20px auto;
+			padding: 10px 0;
+		}
+		#content {
+			padding: 0 20px 10px;
+			border-bottom: 1px solid #999;
+		}
+		#content img {
+			margin-left: 5px;
+		}
+		#signup {
+			padding: 0 20px 10px;
+		}
+		#quote {
+			padding: 0 20px 10px;
+			border-bottom: 1px solid #999;
+		}
+		#quote p {
+			font-family: Georgia, "Times New Roman", Times, serif;
+		}
+		h1 {
+			font-family: "Arial Black", Gadget, sans-serif;
+			font-size: 20px;
+			line-height: 22px;
+			margin: 10px 0;
+		}
+		h2 {
+			font-weight: bold;
+			color: #0060af;
+		}
+		p, h2, ul {
+			font-size: 14px;
+			margin: 10px 0;
+		}
+		h4 {
+			font-size: 14px;
+			font-weight: bold;
+		}
+		ul {
+			color: #0060af;
+		}
+		li {
+			margin-left: 20px;
+		}
+		li p {
+			color: #000;
+			margin: 5px 0;
+		}
+		p span {
+			font-size: 9px;
+		}
+	</style>
+    <title>Basic Training</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+
+<!-- BODY -->
+<body th:object="${dynamicFormBean}" th:with="email=*{items['email']},brand=*{brand}">
+
+<div id="wrapper">
+    <table style="margin:5px auto;" cellspacing="0" cellpadding="0" border="0" align="center" width="600">
+        <tbody>
+        <tr>
+            <td><!-- Header -->
+                <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tbody>
+                    <tr style="margin:0; padding:0;">
+                        <td style="margin:0; padding:0;" width="40px">
+                            <img spname="blueblock.gif" th:src="@{/companies-static/kalmbachmedia/images/MRR/blueblock.gif}"  alt="" xt="SPIMAGE" contentid="7956649" align="left" height="63" width="40" />
+                        </td>
+                        <td style="border-bottom:double #333; margin:0; padding:0;" width="560px">
+                            <img spname="head-basictraining.gif" alt="Basic Training" th:src="@{/companies-static/kalmbachmedia/images/MRR/head-basictraining.gif}" style="padding-left:0px; margin:0;" xt="SPIMAGE" contentid="7956648" align="left" height="38" width="340" />
+                            <img spname="logo-mr.gif" alt="&lt;em&gt;Model Railroader&lt;/em&gt; Magazine" th:src="@{/companies-static/kalmbachmedia/images/MRR/logo-mr.gif}" style="padding-right:20px; margin:0" xt="SPIMAGE" contentid="7956650" border="0" align="right" height="39" width="111" />
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <!-- End Header -->
+        </tbody>
+    </table>
+    <div id="content">
+        <h1>
+            Learn the fundamentals from <em>Model Railroader</em> with our FREE Basic Training E-mail Series!
+        </h1>
+        <p>
+            For beginners and those who could use a refresher on key model railroad fundamentals, <em>Model Railroader</em>'s Basic Training E-mail Series is for YOU!
+        </p>
+        <img spname="computer.jpg" alt="Model Railroader Basic Training" th:src="@{/companies-static/kalmbachmedia/images/MRR/computer.jpg}" xt="SPIMAGE" contentid="7956647" border="0" align="right" height="205" width="302" />
+        <h2>
+            This series of six e-mails includes:
+        </h2>
+        <ul>
+            <li>
+                <p>
+                    a clear explanation of scales and gauges
+                </p>
+            </li>
+            <li>
+                <p>
+                    a demonstration of model train sets
+                </p>
+            </li>
+            <li>
+                <p>
+                    the basics of laying track, cutting rails, and installing joiners
+                </p>
+            </li>
+            <li>
+                <p>
+                    benchwork techniques for a small model railroad
+                </p>
+            </li>
+            <li>
+                <p>
+                    tips and techniques for creating realistic scenery
+                </p>
+            </li>
+            <li>
+                <p>
+                    inspiring photos and videos of finished layouts
+                </p>
+            </li>
+        </ul>
+    </div>
+    <div id="quote">
+        <p>
+            <em>&quot;Welcome to Basic Training for model railroaders. For the next six weeks you'll receive a weekly e-mail about a different aspect of building a model railroad &ndash; from trains, to track, to scenery. Be sure to click through the links to find even more information at ModelRailroader.com. At the end of the series you'll be well on your way to enjoying what many call &quot;The World's Greatest Hobby.&quot;</em>
+        </p>
+        <p>
+            <strong><em>&mdash; Hal Miller, Editor, </em>Model Railroader<em> magazine</em></strong>
+        </p>
+    </div>
+    <div id="signup">
+        <h2>
+            Signing up is quick and easy. Use the form below to enter your e-mail, then click &quot;Sign up.&quot;
+        </h2>
+        <h4>
+            Email
+        </h4>
+
+        <!-- FORM -->
+        <form method="post" th:action="@{'/p/profile/search/' + *{contextPath}}">
+
+            <label>
+                <input id="email" type="email" maxlength="256" th:field="*{items['email']}" oninput="lowercase()" onkeyup="lowercase()">
+            </label>
+
+            <br />
+            <label>
+                <input spname="submit-basics.jpg" alt="submit" th:src="@{/companies-static/kalmbachmedia/images/MRR/submit-basics.jpg}" name="submit" style="margin:0;" xt="SPIMAGE" contentid="7956646" type="image" border="0" />
+            </label>
+
+            <input type="hidden" th:field="*{brand}" />
+            <input type="hidden" th:field="*{items['cusCustomerIdHash']}" />
+        </form>
+
+        <div data-abide-error>
+            <span class="pure-form-message" style="color:red;">
+                <div th:if="${dynamicFormBean.isError('email')} == true">
+                    Invalid email address format. Please enter a valid email address.
+                </div>
+                <p class="error" th:text="${errorMsg}"></p>
+            </span> <br>
+        </div>
+        <p>
+            <span style="font-size: 12px;">Please note: <em>Model Railroader</em> will never share your information with any other companies. Upon completion of this series, you will begin receiving the weekly <em>Model Railroader</em> newsletter, special offers, and surveys. You also have the ability to unsubscribe from these newsletters at any time simply by following the unsubscribe link located at the bottom of each email. </span><a href="https://www.kalmbach.com/privacy/" target="_blank" name="Privacy Policy" xt="SPCLICK" xthyperlink="735308"><span style="font-size: 12px;">View our privacy policy.</span></a>
+        </p>
+    </div>
+</div>
+<!-- THIS IS WHERE THE OPT OUT CODE WILL GO -->
+<!-- END OF THE OPT OUT CODE -->
+<script type="text/javascript">
+    function lowercase() {
+        var fld = document.getElementById("email");
+        fld.value = fld.value.toLowerCase();
+    }
+</script>
+</body>
+</html>
+

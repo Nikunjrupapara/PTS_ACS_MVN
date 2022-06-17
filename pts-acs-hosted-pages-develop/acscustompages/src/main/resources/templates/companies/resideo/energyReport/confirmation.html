@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HoneywellHome Energy Reports Resubscribe</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/companies-static/resideo/css/PreferenceCenterHonE.css}">
+    <link rel="icon" href="https://www.honeywellhome.com/Areas/HoneywellHome/favicon.ico?v=637341191467108241" type="image/x-icon" />
+    <th:block th:replace="~{/companies/resideo/ga :: getHeadGATag('__${dynamicFormBean.getBrand()}__')}" />
+</head>
+<body bgcolor="#FFFFFF"><th:block th:replace="~{/companies/resideo/ga :: getBodyGATag('__${dynamicFormBean.getBrand()}__')}" />
+<div id="container">
+    <th:block th:object="${dynamicFormBean}"
+              th:with="result=${dynamicFormBean.profileRequestResult},
+                        isUpdate=${result.isUpdate()},
+                        isUpdateError=${isUpdate && !result.isServicesSuccess()},
+                        failure=${isUpdateError}"
+    >
+        <div id="innerContainer">
+            <div id="header">
+            <!--<% if(failure){ %>-->
+                <th:block th:switch="${failure}">
+                    <th:block th:case="true">
+                        <div>
+                            <a href="https://www.honeywellhome.com/us/en" target="_blank">
+                                <img th:src="@{/companies-static/resideo/images/HoneywellHomeLogo.png}" height="36" alt="Honeywell Home" border="0" style="display:block;" />
+                            </a>
+                        </div>
+                        <div class="error">
+                            <p class="errorHead">IT LOOKS LIKE AN ERROR HAS OCCURRED</p>
+                            <p class="errorBody">Please refresh the page and try again</p>
+                        </div>
+                    </th:block>
+                    <!--<% } else if(success){ %>-->
+                    <th:block th:case="*">
+                        <div>
+                            <a href="https://www.honeywellhome.com/us/en" target="_blank">
+                                <img th:src="@{/companies-static/resideo/images/HoneywellHomeLogo.png}" height="36" alt="Honeywell Home" border="0" style="display:block;" />
+                            </a>
+                        </div>
+                        <div id="headline"></div>
+                        <div id="headline2">
+                            <div id="rollover_question_h2">YOU HAVE BEEN RESUBSCRIBED </div>
+                        </div>
+                        <div id="bodyCopy">
+                            <p>Your ability to receive a customized report is based upon the connectivity and eligibility of your device. Subscribing to this does not guarantee you will receive this report.</p>
+                        </div>
+                        <th:block th:insert="~{companies/resideo/energyReport/fragments :: updatePreferences }" />
+                    </th:block>
+                </th:block>
+            </div> <!-- header -->
+            <!--<% } %>-->
+            <div id="footer">
+                <div id="footer_question">
+                    <p><img th:src="@{/companies-static/resideo/images/info.png}" width="24" height="24" alt="?" /></p>
+                </div>
+                <div id="footer_question_p">
+                    <!--<p>Want to change your email address? <a href="#" target="_blank">VISIT OUR FAQ PAGE TO SEE HOW&nbsp;<img src="images/arrow2.png" width="25" height="12" alt="" /></a></p>-->
+                    <p>Have a connected device? Please update your email address in your mobile app or on your <a href="https://www.mytotalconnectcomfort.com/" target="_blank">MYTOTALCONNECTCOMFORT.COM</a> profile.</p>
+                    <p><br>You can also visit our <a href="https://www.honeywellhome.com/us/en/support" target="_blank">CUSTOMER SUPPORT PAGE</a> to connected with a client service representative to address any other questions you may have. </p>
+                </div>
+            </div>
+        </div>	<!-- innerContainer -->
+    </th:block>
+</div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<th:block th:fragment="head">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" >
+    <!--<script type="text/javascript" src="/wcsstore/boscovs/js/tealium-env.js"></script>-->
+    <script type="text/javascript">
+		   var utag_data={
+		   page_name      : "FHF",
+		   page_type      : "PromoContent"
+		   };
+	</script>
+</th:block>
+<th:block th:fragment="logo">
+    <!--FHF Logo-->
+    <div style="padding-top: 30px">
+        <a href="https://www.boscovs.com/" title="Boscovs" target="_blank">
+            <img class="logo" th:src="@{/companies-static/boscovs/fhf-registration/images/FHF_LOGO_2022.jpg}" border="0"
+                 alt="Boscovs Friends Helping Friends Logo 2022" width="350">
+        </a>
+    </div>
+    <!--END FHF Logo-->
+</th:block>
+<th:block th:fragment="passes">
+    <label for="passes">How many more passes would you like:</label>
+    <p th:if="${dynamicFormBean.isError('pass_count')}" class="error">
+        <th:block th:switch="${dynamicFormBean.errorCode('passCount')}">
+            <span th:case="*">Please select a number of passes</span>
+        </th:block>
+    </p>
+    <select id="passes" th:field="*{items['passCount']}" required>
+        <option value="">Please select the number of passes required</option>
+        <option value="100">100 (1 pack)</option>
+        <option value="200">200 (2 packs)</option>
+        <option value="300">300 (3 packs)</option>
+        <option value="400">400 (4 packs)</option>
+        <option value="500">500 (5 packs)</option>
+        <option value="600">600 (6 packs)</option>
+        <option value="700">700 (7 packs)</option>
+    </select>
+</th:block>
+<th:block th:fragment="stores(fieldName)">
+    <label for="store">Pick-up Store</label>
+    <p th:if="${dynamicFormBean.isError('__${fieldName}__')}" class="error">
+        <th:block th:switch="${dynamicFormBean.errorCode('__${fieldName}__')}">
+            <span th:case="*">Please select a pickup store</span>
+        </th:block>
+    </p>
+    <select id="store" th:field="*{items['__${fieldName}__']}" onchange="setStore()">
+        <option value="">Please select a store</option>
+        <option value="66">Albany, NY - Boscov's Albany</option>
+        <option value="79">Altoona, PA - Boscov's Altoona</option>
+        <option value="42">Baltimore, MD - Boscov's White Marsh</option>
+        <option value="62">Bensalem, PA - Boscov's Neshaminy</option>
+        <option value="11">Binghamton, NY - Boscov's Binghamton</option>
+        <option value="69">Butler, PA - Boscov's Butler</option>
+        <option value="12">Camp Hill, PA - Boscov's Camp Hill</option>
+        <option value="72">Christiana, DE - Boscov's Christiana</option>
+        <option value="70">Clifton Park - Boscov's Clifton Park</option>
+        <option value="33">Deptford, NJ - Boscov's Deptford</option>
+        <option value="10">Dover, DE - Boscov's Dover</option>
+        <option value="65">Easton, PA - Boscov's Easton</option>
+        <option value="73">Eatontown, NJ - Boscov's Monmouth</option>
+        <option value="47">Erie, PA - Boscov's Erie</option>
+        <option value="18">Egg Harbor Township, NJ - Boscov's Atlantic City</option>
+        <option value="68">Exton, PA - Boscov's Exton</option>
+        <option value="77">Frederick, MD - Boscov's Frederick</option>
+        <option value="14">Harrisburg, PA - Boscov's Harrisburg</option>
+        <option value="9" >Hazleton, PA - Boscov's Hazleton</option>
+        <option value="51">Johnstown, PA - Boscov's Johnstown</option>
+        <option value="17">Lancaster, PA - Boscov's Lancaster</option>
+        <option value="5" >Lebanon, PA - Boscov's Lebanon</option>
+        <option value="60">Media, PA - Boscov's Granite Run</option>
+        <option value="44">Meriden, CT - Boscov's Meriden</option>
+        <option value="48">Milford, CT - Boscov's Milford</option>
+        <option value="67">Monaca, PA - Boscov's Beaver Valley</option>
+        <option value="59">Moorestown, NJ - Boscov's Moorestown</option>
+        <option value="46">New Hartford, NY - Boscov's Sangertown Square</option>
+        <option value="20">Niles, OH - Boscov's Niles</option>
+        <option value="63">Plymouth Meeting, PA - Boscov's Plymouth Meeting</option>
+        <option value="61">Pottstown, PA - Boscov's Pottstown (Coventry Mall)</option>
+        <option value="6" >Pottsville, PA - Boscov's Pottsville (Fairlane Village)</option>
+        <option value="49">Providence, RI - Boscov's Providence</option>
+        <option value="4" >Reading, PA - Boscov's Exeter (East)</option>
+        <option value="3" >Reading, PA - Boscov's Fairgrounds (North)</option>
+        <option value="43">Saint Clairsville, OH - Boscov's Ohio Valley</option>
+        <option value="50">Salisbury, MD - Boscov's Salisbury</option>
+        <option value="52">Scranton, PA - Boscov's Scranton</option>
+        <option value="7" >Selinsgrove, PA - Boscov's Selinsgrove</option>
+        <option value="74">Toms River, NJ - Boscov's Toms River</option>
+        <option value="64">Vineland, NJ - Boscov's Vineland</option>
+        <option value="53">Voorhees, NJ - Boscov's Voorhees</option>
+        <option value="76">Westminster, MD - Boscov's Westminster</option>
+        <option value="28">Whitehall, PA - Boscov's Lehigh Valley</option>
+        <option value="8" >Wilkes-Barre, PA - Boscov's Wilkes Barre</option>
+        <option value="16">Wilmington, DE - Boscov's Wilmington</option>
+        <option value="41">Woodbridge, NJ - Boscov's Woodbridge</option>
+        <option value="75">Wyomissing, PA - Boscov's Berkshire</option>
+        <option value="19">York, PA - Boscov's York</option>
+    </select>
+</th:block>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+		<head>
+            <meta charset="UTF-8">
+            <meta http-equiv="content-type" content="text/html; charset=utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Mastercard priceless specials - opt out.</title>
+            <link rel="stylesheet" type="text/css" th:href="@{/companies-static/mcrewards/css/reset.css}"/>
+            <link rel="stylesheet" type="text/css" th:href="@{/companies-static/mcrewards/css/smart-carousel.css}"/>
+            <link rel="stylesheet" type="text/css" th:href="@{/companies-static/mcrewards/css/smart-carousel-skins.css}"/>
+            <link rel="stylesheet" type="text/css" th:href="@{/companies-static/mcrewards/css/style.css}"/>
+            <style>* {border: 0px solid red!important;}</style>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		</head>
+		<body th:object="${dynamicFormBean}" th:with="email=*{items['email']},brand=*{brand}">
+            <div id="mainContainer">
+                    <div id="preheaderContainer">
+                        <div>
+                            <img th:src="@{/companies-static/mcrewards/images/MC_priceless_spec_hrz_RGB_rev.png}" width="500" height="auto" border="0" alt="MCRewards Logo" class="logoMob" />
+                        </div>
+                    </div>
+                    <div id="heroImage"> &nbsp; </div>
+                    <div id="outerContainer">
+                        <div id="innerContainer">
+                             <div id="footerContainer">
+                                 <div id="main">
+                                     <div id="emailAddress">&nbsp;</div>
+                                     <br /><br />
+                                     Zrezygnowa&#x142;e&#x15B; z opcji otrzymywania marketingowych wiadomo&#x15B;ci e-mail<br class="hide" /> od programu partnerskiego Mastercard Priceless Specials.
+                                     <br /><br />
+                                     Prosz&#x119; klikn&#x105;&#x107; <a href="http://www.mastercard.pl/specials">tutaj</a> aby przej&#x15B;&#x107; do strony g&#x142;&#xF3;wnej programu.
+                                 </div>
+                            </div>
+                        </div>
+                        <div id="bottomContainer">
+                             <div class="masterCardContainer">
+                                 <img th:src="@{/companies-static/mcrewards/images/MC_priceless_spec_hrz_RGB_pos.png}" width="500" height="auto" alt="MCRewards Logo" class="logoMob" />
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </body>
+</html>

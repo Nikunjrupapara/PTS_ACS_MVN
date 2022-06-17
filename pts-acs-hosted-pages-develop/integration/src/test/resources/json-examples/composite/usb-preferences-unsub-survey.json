@@ -1,0 +1,28 @@
+{
+	"hasProfile": true,
+	"hasServices": false,
+	"hasCustomResources": false,
+	"hasEmails": true,
+	"profile": {
+		"customFields": {
+			"cusAcctL4": "9876",
+			"cusPartner": "BMW",
+			"cusUnsubReason": "1",
+			"cusUnsubReasonDesc": "",
+			"cusUnsubReasonDate": "2020-12-04 09:38:23.000Z"
+		},
+		"email": "charlesb@yesmail.com"
+	},
+	"emails": [
+		{
+			"eventId": "EVTsign_uppageconfirmation_bmw",
+			"email": "charlesb@yesmail.com",
+			"ctx": {
+				"acctL4": "9876",
+				"lastName": "Berger",
+				"firstName": "Charles",
+				"customerIDHash": "CustomerIdHash goes here"
+			}
+		}
+	]
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <title>MR Video Plus</title>
+    <meta name="viewport" content="width=320, initial-scale=.53;minimum-scale=.53, user-scalable=yes" />
+</head>
+<body th:object="${dynamicFormBean}" th:with="email=*{items['email']},brand=*{brand}" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="#ffffff">
+<table style="max-width:600px;" width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
+    <tbody>
+    <tr>
+        <td colspan="2"><img style="display:block;" th:src="@{/companies-static/kalmbachmedia/images/MRVP/P29536_header.jpg}" alt="MR Video Plus Preview Series" xt="SPIMAGE" contentid="7841946" spname="P29536_header.jpg" width="600" border="0" /></td>
+    </tr>
+    </tbody>
+</table>
+<table style="font-family:Arial, Helvetica, sans-serif; font-size:16px; max-width:600px;" width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
+    <tbody>
+    <tr>
+        <td colspan="2">
+            <p style="font-size:28px; color:#0061B2; font-weight:bold;">
+                Sign Up for Our FREE Preview Series
+            </p>
+            <p>
+                MR Video Plus offers a free email series to preview some of the great episodes and exclusive videos found on our site.
+            </p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<table style="font-family:Arial, Helvetica, sans-serif; font-size:16px; max-width:600px;" width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
+    <tbody>
+    <tr>
+        <td><strong>This series of five emails includes:</strong>
+            <ul>
+                <li><strong>ASK MRVP:</strong> Get answers to your questions.</li>
+                <li><strong>OFF THE RAILS:</strong> Learn clever hobby tips and tricks.</li>
+                <li><strong>DREW'S TRACKSIDE ADVENTURES:</strong> Explore amazing railfan locations.</li>
+                <li><strong>DCC PROGRAMMING:</strong> Take command of technology.</li>
+                <li><strong>EXCLUSIVE LAYOUT VISITS:</strong> Watch premier model railroads in action.</li>
+            </ul>
+            <p>
+                Signing up is quick, easy, and <strong>FREE!</strong> Use the form below to enter your email, then click &quot;Sign up.&quot;
+            </p>
+        </td>
+        <td valign="middle"><img th:src="@{/companies-static/kalmbachmedia/images/MRVP/P29536_MRV-graphic.jpg}" alt="Tank" style="display:block; float:right;" xt="SPIMAGE" contentid="7841949" spname="P29536_MRV-graphic.jpg" width="200" border="0" /></td>
+    </tr>
+    </tbody>
+</table>
+<table style="font-family:Arial, Helvetica, sans-serif; font-size:18px; max-width:540px" width="90%" cellspacing="0" cellpadding="0" border="0" align="center">
+    <tbody>
+    <tr>
+        <td>
+            <!-- FORM -->
+            <form method="post" th:action="@{'/p/profile/search/' + *{contextPath}}" style="margin:0 0 0 20px;">
+                <label>
+                    <input style="width:400px; margin:5px 0;" type="text" th:field="*{items['email']}" />
+                </label><br />
+                <label>
+                    <input style="margin:5px 0 0 0;" name="submit" id="imageField" th:src="@{/companies-static/kalmbachmedia/images/MRVP/P29536_button.jpg}" xt="SPIMAGE" contentid="7841944" spname="P29536_button.jpg" type="image" border="0" />
+                </label>
+
+                <input type="hidden" th:field="*{brand}" />
+                <input type="hidden" th:field="*{items['cusCustomerIdHash']}" />
+
+            </form>
+
+            <div data-abide-error>
+            <span class="pure-form-message" style="color:red;">
+                <p class="error" th:text="${errorMsg}"></p>
+            </span> <br>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<table style=" font-size:11px; color:#666666; font-family:Arial, Helvetica, sans-serif; max-width:600px" width="100%" cellspacing="0" cellpadding="15" border="0" align="center">
+    <tbody>
+    <tr>
+        <td valign="top" align="left">
+            <p>
+                Please note: MR Video Plus will never share your information with any other companies. Upon completion of the series, you will begin receiving the weekly MR Video Plus newsletter, special offers, and surveys. You also have the ability to unsubscribe from these newsletters at any time by following the unsubscribe link located at the bottom of each email. <a href="https://www.kalmbach.com/privacy/" target="_blank" name="Privacy Policy" xt="SPCLICK" xthyperlink="735310">View our privacy policy.</a>
+            </p>
+            <p>
+                P29536
+            </p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

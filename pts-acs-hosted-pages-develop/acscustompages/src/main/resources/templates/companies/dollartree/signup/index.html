@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<th:block th:include="~{/companies/dollartree/fragments :: head_signup }" />
+</head>
+<body th:object="${dynamicFormBean}" th:with="email=*{items['email']},brand=*{brand}">
+
+
+<form
+		method="post" th:action="@{'/p/profile/search/' + *{contextPath}}"
+		onsubmit="return validSignupForm();" name="form1" id="form1">
+
+  <div class="container gray dt-margin" role="main">
+    <div class="col-md-6">
+      <div class="container gutters items-start">
+        <div class="col-12 padding-top">
+			<p style="margin: 0;padding: 0;"><span class="required required-first">*</span>
+				<input type="checkbox" value="Y" id="subscribe" name="items['subscribe']" tabindex="0" class="offset" />
+				<label for="subscribe" class="green bigger" style="vertical-align: top;display: inline-block;margin-top: 0;">Yes! Sign me up for emails.</label>
+				<span class="checkmark check-required" id="subcheck"></span>
+			</p>
+			<p class="indent">Get access to exclusive promotions, alerts for brand new arrivals, ad sneak peeks, and craft &amp; recipe ideas from our Value Seekers Blog!</p>
+
+				<div class="container gutters-sm-all items-center more-space">
+
+				  <div class="col-4 text-left">
+						<label for="email"><span class="required">*</span> Email:</label>
+				  </div>
+				  <div class="col-8">
+						<input id="email" th:field="*{items['email']}" placeholder="Email Address" type="email" class="form-control radius">
+				  </div>
+				  <div class="col-4 col-sm-4 text-left">
+					   <label for="zip"><span class="required">*</span> Zip Code:</label>
+				  </div>
+				  <div class="col-8 col-sm-8">
+					   <input id="zip" th:field="*{items['zip']}" placeholder="Zip Code" pattern="(\d{5}([\-]\d{4})?)" type="text" class="form-control radius">
+				  </div>
+				  <div class="col-12 text-right small">
+					   <span class="required">*</span> Required
+				  </div>
+				</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="container gutters">
+        <div class="col-12 text-center">
+          <img th:src="@{/companies-static/dollartree/images/dt-welcome.png}" width="70%" class="feature-img">
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="container gutters-sm-all dt-margin">
+  	<div class="col-12">
+		<p class="bigger green"><strong>Optional:</strong> Sign up for emails tailored to your interests or business.</p>
+	</div>
+  	<div class="col-12 col-md-6 indent-30">
+		<input type="checkbox" id="crafts" value="Y" name="items['cusCraftOrg']"  />
+		<label for="crafts" class="custom-checkbox">Crafts &amp; DIY</label>
+	</div>
+  	<div class="col-12 col-md-6 half-space indent-30">
+		<input type="checkbox" id="floral" value="Y" name="items['floristOrg']"  />
+		<label for="floral" class="custom-checkbox">Floral &amp; Centerpiece Supplies</label>
+	</div>
+  	<div class="col-12 col-md-6 half-space indent-30">
+		<input type="checkbox" id="edu" value="Y" name="items['educationOrg']"   />
+		<label for="edu" class="custom-checkbox">Educational &amp; Classroom Supplies</label>
+	</div>
+  	<div class="col-12 col-md-6 half-space indent-30">
+		<input type="checkbox" id="nonprofit" value="Y" name="items['nonprofitOrg']" />
+		<label for="nonprofit" class="custom-checkbox">Nonprofit &amp; Charitable Supplies</label>
+	</div>
+  	<div class="col-12 col-md-6 half-space indent-30">
+		<input type="checkbox" id="dining" value="Y" name="items['restaurantOrg']" />
+		<label for="dining" class="custom-checkbox">Restaurant &amp; Catering Supplies</label>
+	</div>
+  	<div class="col-12 col-md-6 half-space indent-30">
+		<input type="checkbox" id="party" value="Y" name="items['cateringOrg']" />
+		<label for="party" class="custom-checkbox">Party Planning &amp; Special Events</label>
+	</div>
+  	<div class="col-12 hidden">
+	  <p class="required hidden" style="margin: 0;" id="errorText">Please select and enter the required information.</p>
+  	</div>
+
+
+	  <div class="col-12">
+		  <button type="submit" class="btn radius cursor-pointer btn-subscribe indent-30 center">Subscribe</button>
+		  <p class="smaller mt-2">
+			  By clicking "Subscribe", you agree to Dollar Tree's <a target="_parent" href="https://www.dollartree.com/terms"><strong>Terms & Conditions</strong></a> and acknowledge that your information will be used as described in our
+				<a target="_parent" href="https://www.dollartree.com/custserv/custserv.jsp?pageName=Privacy"><strong>Privacy Policy</strong></a>. We are committed to protecting your privacy. Your email address will never be sold or distributed to a third party for any reason. </br></br>
+			</p>
+	  </div>
+
+  </div>
+
+	<input type="hidden" th:field="*{brand}" />
+	<input type="hidden" th:field="*{items['cusCustomerIdHash']}" />
+</form>
+<script th:src="@{/companies-static/resideo/js/jquery.min.js}"></script>
+<script th:src="@{/companies-static/resideo/js/waitMe.min.js}"></script>
+<script>
+
+  document.getElementById("form1").addEventListener("submit", function(event){
+	  event.preventDefault()
+	});
+
+  //Sign up page validations
+
+  	document.getElementById("email").addEventListener("change", function(event){
+		var isValid = true;
+		document.getElementById("errorText").style.visibility = "hidden";
+
+		// Check email is filled in and valid
+		var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+		var emailEl = document.getElementById("email");
+		if (form1.email.value.match(mailformat)) {
+			emailEl.classList.remove("input-error");
+		} else {
+			emailEl.classList.add("input-error");
+			isValid = false;
+		}
+
+		if (!isValid) {
+			document.getElementById("errorText").style.visibility = "visible";
+			//return false;
+		}
+	});
+
+	document.getElementById("zip").addEventListener("change", function(event){
+		var isValid = true;
+		document.getElementById("errorText").style.visibility = "hidden";
+
+		// Check zip code
+		var zip_pattern = /^\d{5}([\-]\d{4})?$/;
+		var zipEl = document.getElementById("zip");
+		if (form1.zip.value.match(zip_pattern)) {
+			zipEl.classList.remove("input-error");
+		} else {
+			zipEl.classList.add("input-error");
+			isValid = false;
+		}
+
+		if (!isValid) {
+			document.getElementById("errorText").style.visibility = "visible";
+			//return false;
+		}
+	});
+
+	document.getElementById("subscribe").addEventListener("change", function(event){
+
+		var isValid = true;
+		document.getElementById("errorText").style.visibility = "hidden";
+
+		// is checkbox to receive checked
+		var subEl = document.getElementById("subscribe");
+		var checkEl = document.getElementById("subcheck");
+		if (subEl.checked) {
+			checkEl.classList.remove("checkmark-error");
+		} else {
+			checkEl.classList.add("checkmark-error");
+			isValid = false;
+		}
+
+		if (!isValid) {
+			document.getElementById("errorText").style.visibility = "visible";
+		}
+	});
+
+	function validSignupForm() {
+	    $("body").waitMe({});
+		//alert("In signup form");
+		var isValid = true;
+		document.getElementById("errorText").style.visibility = "hidden";
+
+
+
+		// is checkbox to receive checked
+		var subEl = document.getElementById("subscribe");
+		var checkEl = document.getElementById("subcheck");
+		if (subEl.checked) {
+			checkEl.classList.remove("checkmark-error");
+		} else {
+			checkEl.classList.add("checkmark-error");
+			isValid = false;
+		}
+		// Check email is filled in and valid
+		var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+		var emailEl = document.getElementById("email");
+		if (form1.email.value.match(mailformat)) {
+			emailEl.classList.remove("input-error");
+		} else {
+			emailEl.classList.add("input-error");
+			isValid = false;
+		}
+		// Check zip code
+		var zip_pattern = /^\d{5}([\-]\d{4})?$/;
+		var zipEl = document.getElementById("zip");
+		if (form1.zip.value.match(zip_pattern)) {
+			zipEl.classList.remove("input-error");
+		} else {
+			zipEl.classList.add("input-error");
+			isValid = false;
+		}
+
+		if (isValid) {
+		   $("#email").val($("#email").val().toLowerCase());
+			//return true;
+			document.form1.submit();
+		} else {
+			document.getElementById("errorText").style.visibility = "visible";
+			$("body").waitMe('hide');
+			return false;
+		}
+	}
+</script>
+
+
+</body>
+</html>

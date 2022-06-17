@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FHF Registered - Step 1</title>
+    <th:block th:include="~{/companies/boscovs/fhf-registered/fragments :: head}" />
+</head>
+<body>
+<th:block th:include="~{/companies/boscovs/fhf-registration/fragments :: logo}" />
+
+<!--Content-->
+<div style="padding-top: 30px; position: relative; left: 100px;">
+    <h1>Requesting Additional Passes ~ Already Registered</h1>
+</div>
+
+<div style="padding-top: 20px;" class="zipcode">
+    <form name="findOrgs" method="get" th:action="@{'/p/customResource/list/fhf-registered/step2'}">
+        <label style="padding-bottom: 5px;" class="labeltxt" th:for="zipcode">
+            Please Enter Your Organization Zip Code Below:
+        </label>
+        <br />
+        <br />
+        <input style="font-size: 20px; padding-top: 4px;" type="text" id="zipcode" name="zipcode" placeholder="Zip Code" maxlength=5
+               pattern="^[0-9]{5}$" required onkeypress='validate(event)'/>
+        <br />
+        <br />
+        <input type="hidden" id="pageNumber" name="page" value="1" />
+        <input style="font-size: 20px;" type="submit" value="Next">
+    </form>
+</div>
+<!--End Content-->
+<script th:src="@{/companies-static/boscovs/fhf-registered/js/fhf_registration.js}"></script>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+/*
+#email{
+    text-transform: lowercase;
+}
+*/
+
+body{
+  font-family: 'Nunito', sans-serif;
+  font-size:24px; line-height: 120%;;
+}
+p { margin-bottom: .5rem; }
+a, a:visited, a:link { color: #439451; }
+.unsub, .unsub:visited, .unsub:link { color: #439451; text-decoration: underline; }
+
+.green { color: #439451; }
+.blue { background-color: #0066cc; }
+.required { color: #db3832; }
+.gray { background-color: #f3f4f6; }
+
+.bigger { font-size: 1.1em; }
+.large { font-size: 32px; font-weight: 600; line-height: 120%; }  	
+.huge { font-size: 56px; font-weight: 600; line-height: 120%; }  	
+.small { font-size: 20px; }
+.no-margin { margin: 0; padding: 0; }
+.preftop { margin-top: 3em; }
+
+.half-space { margin-top: 0.25em; }
+.more-space { margin-top: 1em; }
+
+.custom-checkbox {
+  display: block;
+  position: relative;
+  padding-left: 48px;
+  margin-bottom: 4px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+/* Hide the browser's default checkbox */
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0; }
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 25px;
+  background-image: url("../images/checkbox.png"); }
+
+.checkmark-error {background-image: url("../images/check-error.png"); }
+
+/* On mouse-over, add a grey background color */
+/* When the checkbox is checked, add a blue background */
+.custom-checkbox input:checked ~ .checkmark {
+  background-image: url("../images/checked.png"); }
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none; }
+
+.required-first {
+	padding-top: 1em;
+}
+
+/* Show the checkmark when checked */
+.custom-checkbox input:checked ~ .checkmark:after {
+  display: block; }
+
+.display-inline { display: inline !important; }
+.check-required { top: 12px; }
+.padding-top { margin-top: 1em; }
+.padding-confirm { margin-top: 2em; }
+.padding-pref { margin-top: 3em; }
+.align-middle { vertical-align: middle; }
+.indent { margin-left: 70px; margin-top: 0; }
+.indent-30 { margin-left: 30px; }
+.feature-img { margin-top: 2em; margin-bottom: 1em; }
+.dt-margin { padding-left: 40px; padding-right: 40px; }
+.btn-subscribe { padding-left: 40px; padding-right: 40px; font-size: 30px; }
+input[type="text"],input[type="email"] { font-size: 24px; font-family: 'Nunito', sans-serif; }
+
+.input-error { border-color: #db3832; }
+
+  @media (max-width: 480px) {
+	body { font-size:17px; line-height: 130%; }
+	.dt-margin { padding-left: 8px; padding-right: 0px; }
+	input[type="text"],input[type="email"] { font-size: 20px; }
+	.huge { font-size: 30px; }
+	.large { font-size: 20px; }
+	.small { font-size: 14px; }
+	.indent { font-size: 16px; margin-left: 60px; }
+	.hide { width: 0px !important; height: 0px !important; display: none !important; }
+	.checkmark { height: 20px; width: 21px; }
+	.mobile-center { text-align: center; }
+  }

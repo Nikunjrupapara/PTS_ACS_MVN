@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:with="brand=${dynamicFormBean.getBrand()}">
+    <th:block th:replace="~{/companies/resideo/freeFilter/fragments :: getHead()}" />
+</head>
+<body bgcolor="#FFFFFF">
+    <div id="container"  th:object="${dynamicFormBean}" th:with="brand=${dynamicFormBean.getBrand()}">
+        <div id="innerContainer">
+            <div id="header"><!-- th:include="~{/companies/resideo/freeFilter/fragments :: getLogoHeader('__${brand}__')}" -->
+                <div id="Resideo_logo" th:replace="~{/companies/resideo/freeFilter/fragments :: getLogo()}" />
+                <div class="error">
+                    <th:block th:insert="~{/companies/resideo/freeFilter/fragments :: warning()}" />
+                    <h1>Uh oh...</h1>
+                    <p>
+                        It looks like something went wrong. Your redemption code seems to be invalid.<br />
+                        Please check your code and try again.
+                    </p>
+                    <p>&nbsp;</p>
+                    <th:block th:insert="~{/companies/resideo/freeFilter/fragments :: tryAgain()}" />
+                </div>
+            </div>
+            <div id="footer"></div>
+        </div>
+    </div>
+</body>
+</html>

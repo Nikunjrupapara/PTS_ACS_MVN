@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+	<th:block th:include="~{/companies/dollartree/contest/fragments :: head }">
+		<meta charset="utf-8" />
+    	<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" th:href="@{/companies-static/dollartree/css/normalize.css}">
+		<link rel="stylesheet" th:href="@{/companies-static/dollartree/css/custom-2022.css}">
+	</th:block>
+	<title>Dollar Tree Email Contest - Rules</title>
+</head>
+<body>
+<div class="container">
+	<header>
+		<th:block th:replace="~{/companies/dollartree/contest/fragments :: header }">
+			<a th:href="@{'/p/profile/search/contest/signup'}">
+				<img th:src="@{/companies-static/dollartree/images/envelope.png}" width="330" alt="email sign-up contest" class="logo"/>
+			</a>
+			<nav class="shadow">
+				<ul class="nav">
+					<li><a th:href="@{'/p/profile/search/contest/signup'}">Entry Form</a></li>
+					<li><a th:href="@{'/p/page/display/contest/rules'}">Rules</a></li>
+					<li><a th:href="@{'/p/page/display/contest/privacy'}">Privacy</a></li>
+					<li class="lastFloat"><a th:href="@{'/p/page/display/contest/winners'}">Winners</a></li>
+				</ul>
+			</nav>
+			<div class="bannerText shadow">
+				<h1 style="margin-bottom: 0; font-family: 'Arial Black', sans-serif;">Sign Up for Dollar Tree Emails</h1>
+				<p style="font-size: 16px;" class="mb-2">and be entered for a chance to win<sup>&dagger;</sup> a $100 Dollar Tree gift card!</p>
+			</div>
+		</th:block>		
+	</header>
+
+	<div class="main" role="main">		
+		<div class="mobile-nav">
+			<th:block th:replace="~{/companies/dollartree/contest/fragments :: navSide }" >
+				<a th:href="@{'/p/profile/search/contest/signup'}" class="button-bar">Entry Form</a>
+				<a th:href="@{'/p/page/display/contest/rules'}" class="button-bar">Rules</a>
+				<a th:href="@{'/p/page/display/contest/privacy'}" class="button-bar">Privacy</a>
+				<a th:href="@{'/p/page/display/contest/winners'}" class="button-bar">Winners</a>
+			</th:block>
+		</div>
+		
+		<div class="form-cont">
+			<div class="rules pt-6">
+				<th:block th:replace="~{/companies/dollartree/contest/fragments :: signupNow }">
+					<img src="images/gift-card.png" width="146" alt="$100 gift card" />
+					<h2 style="margin-bottom: 0;">Ready to Enter?</h2>
+					<p>We are giving away ten $100 Dollar Tree gift cards!</p>
+					<p class="mt-2"><a class="signUpBtn" th:href="@{'/p/profile/search/contest/signup'}">Sign Up Now</a></p>
+				</th:block>
+			</div>
+			<div class="entry-form legal">
+				<h2>2022 Dollar Tree Email Sign-Up Contest Official Rules</h2>
+
+				<p>NO PURCHASE OR PAYMENT OF ANY KIND IS NECESSARY TO ENTER OR WIN. PURCHASE DOES NOT IMPROVE ODDS OF WINNING. VOID WHERE PROHIBITED.</p>
+
+				<p><strong>CONTEST DATES</strong><br>
+				The Dollar Tree Email Sign-Up Contest (the &ldquo;Promotion&rdquo;) is being held by Dollar Tree Stores, Inc. (&ldquo;Dollar Tree&rdquo;). The Contest begins at 12:01am Eastern Time (&ldquo;ET&rdquo;) on Sunday, May 22, 2022, and closes at 11:59pm Eastern Time (&ldquo;ET&rdquo;) on Saturday, June 4, 2022 (the &ldquo;Promotion Period&rdquo;). Entries received other than during the Promotion Period will be disqualified.</p>
+
+				<p><strong>ELIGIBILITY</strong><br>
+				No purchase is necessary to enter or win. The Promotion is void wherever prohibited or restricted. All applicable federal, state, and local laws and regulations apply. The Promotion is open only to legal residents of the contiguous forty-eight (48) United States and the District of Columbia who are age eighteen years old (18) or older and have reached the age of legal majority in their state of residence as of May 22, 2022. A person who complies with all the eligibility rules shall be referred to as &ldquo;Entrant.&rdquo; Employees of Dollar Tree and its subsidiaries, affiliates, licensees, service providers, prize suppliers, agents, advertising or promotion agencies, and those involved in the production, development, implementation or handling of Promotion (collectively, the &ldquo;Promotion Entities&rdquo;), and/or the immediate family (parent, child, sibling, or spouse) or household member (whether or not related) of any such employee are not eligible to participate in this Promotion. Non-compliance with these Official Rules shall result in disqualification from the Promotion. </p>
+
+				<p><strong>PRIZES</strong><br>
+				Ten (10) winners will each receive one (1) $100 Dollar Tree gift card. Each winner is responsible for the reporting and payment of all state, federal, and local taxes applicable to the receipt of a prize. No transfer, assignment, cash redemption, or substitution of a prize is permitted except that Dollar Tree reserves the right, in its sole and absolute discretion, to substitute a prize with a prize of comparable or greater value or cash value. In the event that a prize cannot be awarded for any reason or a winner is not capable of redeeming a prize for any reason, Dollar Tree shall not be obligated to award any prize. All decisions of Dollar Tree relating to this Promotion will be final. </p>
+
+				<p><strong>HOW TO ENTER</strong><br>
+				To enter, Entrant must complete an email subscription form online at <a th:href="@{'/p/profile/search/contest/signup'}" class="primary">
+
+						<th:block th:switch="${dynamicFormBean.getEnvironmentName()}">
+							<th:block th:case="'qa'">https://dollartree-qa.ptsacs.data-axle.com/p/profile/search/contest/signup</th:block>
+							<th:block th:case="'development'">http://test.mailing.dollartree.com:8081/acscustompages/p/profile/search/contest/signup</th:block>
+							<th:block th:case="*">https://mailing.dollartree.com/p/profile/search/contest/signup</th:block>
+						</th:block>
+
+					</a>.
+
+				Only new email subscribers will be entered into the contest for a chance to win. Only one entry per customer. Customers submitting multiple names and/or multiple email addresses will be disqualified. The award of a prize is contingent upon Entrant complying with all conditions and fulfilling all requirements set forth herein. Entries must include all of the required information as set forth in the submission form and herein or will be deemed ineligible.</p>
+
+				<p><strong>WINNER SELECTION</strong><br>
+				Between June 6 through June 17, ten (10) potential winners will be selected at random from among all eligible entries received. The odds of being selected as a potential winner depend on the number of eligible entries received. Winners will be announced by July 1, 2022. </p>
+
+				<p><strong>HOW TO CLAIM PRIZE</strong><br>
+				Potential winners will be notified via email through email address supplied during the Promotion entry and will be asked to provide their full name, age, and mailing address within a specific time period. Prizes will be mailed within three (3) weeks of receipt of winner&rsquo;s details. If a potential winner cannot be contacted within three (3) days of the first attempt to contact him/her, or does not respond within the timeframe stated in the notification, Dollar Tree may select an alternate potential winner in his/her place. Winners that cannot be contacted within the allotted timeframe will no longer be eligible to claim the prize. </p>
+
+				<p><strong>PRIVACY AND PUBLICITY</strong><br>
+				Dollar Tree will collect personal data from Entrants, and this information may be used for the purposes of administering the Promotion, publicizing the Promotion (including in connection with the announcement of winners), and otherwise in accordance with the Dollar Tree Privacy Policy (available at https://www.dollartree.com/privacy-policy). Unless prohibited by law, participation in the Promotion constitutes each Entrant&rsquo;s consent for Dollar Tree to use the Entrant&rsquo;s name (or username), age, hometown, and state of residence for promotional purposes worldwide, in any media now known or later developed, without additional payment or consideration to the Entrant. </p>
+
+				<p><strong>GENERAL RELEASE AND WAIVER OF CLAIMS</strong><br>
+				By participating in the Promotion, each Entrant agrees (for himself/herself and his/her heirs) to release and hold harmless the Promotion Entities and each such company&rsquo;s respective officers, directors, employees, and agents (collectively, the &ldquo;Released Parties&rdquo;) from and against any claim or cause of action arising out of participation in the Promotion or receipt or use of any prize, including, but not limited to: (1) unauthorized human intervention in the Promotion; (b) technical or printing errors; (c) lost, late, postage-due, garbled, illegible, misdirected or undeliverable mail or email; (d) errors in the administration of the Promotion or the processing of entries; or (e) injury or damage to persons or property which may be caused directly or indirectly, in whole or in part, from participation in the Promotion or receipt or use of any prize. Entrant further agrees that in any cause of action, the Released Parties&rsquo; liability will be limited to the cost of entering and participating in the Promotion, and in no event shall the Released Parties be liable for attorneys&rsquo; fees. </p>
+
+				<p><strong>DISPUTES</strong><br>
+				Except where prohibited, Entrant agrees that any and all disputes, claims, and causes of action arising out of the Promotion or any prize awarded shall be resolved individually, without resort to any form of class action, and exclusively by the appropriate court located in the city of Norfolk in the Commonwealth of Virginia. All issues and questions concerning these Official Rules, your rights and obligations, or Dollar Tree&rsquo;s rights and obligations shall be governed by the laws of the Commonwealth of Virginia, without giving effect to any choice of law or conflict of law rules. </p>
+
+				<p><strong>GENERAL CONDITIONS</strong><br>
+				Dollar Tree reserves the right, in its sole and absolute discretion, to disqualify any individual found to be tampering with the entry process, submitting multiple entries using different email addresses or the operation of the Promotion; to be acting in violation of these Official Rules; or to be acting in a non-sportsmanlike or disruptive manner; or with intent or apparent intent to annoy, abuse, threaten, embarrass, harm, or harass, in any way, any other person. If for any reason the Promotion is not capable of running as planned by reason of, but not limited to, business or market circumstances, force majeure, public health concerns, tampering, unauthorized intervention, actions by entrants, fraud, or any other cause which, Dollar Tree in its sole and absolute discretion, deems could affect the administration, security, fairness, integrity, or proper conduct of the Promotion, Dollar Tree reserves the right, in its sole and absolute discretion, to cancel, terminate, modify, or suspend the Promotion by posting a notice on its website. If the Promotion is terminated before the end of the Promotion Period, Dollar Tree will select potential winners from all eligible entries received as of the termination date of the Promotion. Dollar Tree&rsquo;s failure to enforce any term of these Official Rules shall not constitute a waiver of that or any other provision. In the event that an entry is confirmed to have been erroneously deleted, lost, or destroyed, entrant&rsquo;s sole remedy shall be another entry into the Promotion. If any provision of these Official Rules is held to be IN NO EVENT WILL DOLLAR TREE OR ANY RELEASEE BE RESPONSIBLE OR LIABLE FOR ANY INJURIES, CLAIMS, ACTIONS, DAMAGES, LOSSES, OR LIABILITY OF ANY KIND, INCLUDING DIRECT, INDIRECT, INCIDENTAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES RESULTING FROM OR ARISING FROM PARTICIPATION IN, OR THE PRODUCTION, PROMOTION, OR ADMINISTRATION OF, THE PROMOTION, OR ACCEPTANCE, POSSESSION, USE, MISUSE, OR NONUSE OF A PRIZE THAT MAY BE AWARDED. WITHOUT LIMITING THE FOREGOING, ALL PRIZES ARE PROVIDED &ldquo;AS IS&rdquo; WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. SOME JURISDICTIONS MAY NOT ALLOW THE LIMITATIONS OR EXCLUSION OF LIABILITY FOR INCIDENTAL OR CONSEQUENTIAL DAMAGES OR EXCLUSION OF IMPLIED WARRANTIES, SO SOME OF THE ABOVE LIMITATIONS OR EXCLUSIONS MAY NOT APPLY TO YOU. CHECK YOUR LOCAL LAWS FOR ANY RESTRICTIONS OR LIMITATIONS REGARDING THESE LIMITATIONS OR EXCLUSIONS. ANY ATTEMPT BY A PARTICIPANT OR ANY OTHER INDIVIDUAL TO DELIBERATELY UNDERMINE THE LEGITIMATE OPERATION OF THE PROMOTION MAY BE A VIOLATION OF CRIMINAL AND CIVIL LAWS, AND SHOULD ANY SUCH ATTEMPT BE MADE, DOLLAR TREE RESERVES THE RIGHT TO SEEK DAMAGES FROM ANY SUCH PERSON TO THE FULLEST EXTENT PERMITTED BY LAW.</p>
+
+				<p><strong>DISCLOSURE OF WINNERS</strong><br>
+				To receive notification of the winners&rsquo; names, send a self-addressed and stamped envelope marked &ldquo;Dollar Tree Email Sign-Up Contest&rdquo; on the back of the envelope to: Dollar Tree Direct, 500 Volvo Parkway, Chesapeake, VA 23320. Contest winners will also be posted online within the Official Rules.</p>
+
+				<p><strong>DOLLAR TREE</strong><br>
+				The Promotion is sponsored by Dollar Tree Stores, Inc., 500 Volvo Parkway, Chesapeake, VA 23320.</p>
+
+			</div>
+		</div>
+	</div>
+
+</div>
+</body>
+</html>

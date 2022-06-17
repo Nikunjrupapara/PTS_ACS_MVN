@@ -1,0 +1,156 @@
+.header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.82);
+  color: rgba(0, 0, 0, 0.82);
+}
+
+.div-block {
+  background-image: url('../images/km_k-1.svg');
+  background-position: 50% 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.km-logo {
+  width: 10%;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+
+.heading {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-family: Poppins, sans-serif;
+  color: #fff;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.hed {
+  margin-left: 20px;
+}
+
+.body {
+  font-family: Poppins, sans-serif;
+  font-size: 18px;
+  line-height: 1.6em;
+  font-weight: 600;
+  text-align: center;
+}
+
+.text-div-1 {
+  max-width: 640px;
+  padding-top: 40px;
+}
+
+.thank-you {
+  font-family: Poppins, sans-serif;
+  font-size: 42px;
+  text-align: center;
+}
+
+.container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 0px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 991px) {
+  .header {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+
+  .km-logo {
+    width: 17%;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+  }
+
+  .heading {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .hed {
+    line-height: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .km-logo {
+    width: 18%;
+  }
+
+  .heading {
+    margin-top: 0px;
+    font-size: 16px;
+    line-height: 16px;
+  }
+
+  .hed {
+    margin-left: 10px;
+  }
+
+  .body {
+    margin-bottom: 0px;
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .thank-you {
+    font-size: 34px;
+  }
+
+  .container {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .header {
+    padding-left: 0px;
+  }
+
+  .km-logo {
+    width: 26%;
+  }
+
+  .heading {
+    padding-top: 0px;
+    font-size: 16px;
+    line-height: 16px;
+  }
+
+  .container {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
+

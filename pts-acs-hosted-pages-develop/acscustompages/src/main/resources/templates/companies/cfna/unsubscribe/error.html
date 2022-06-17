@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Unsubscribe Error</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/companies-static/cfna/unsubscribe/unsubscribe.css}" />
+</head>
+<body th:object="${dynamicFormBean}"
+      th:with="brand=${#strings.defaultString(#strings.toUpperCase(dynamicFormBean.getQueryParamFirstValue('brand')),'DEFAULT')},
+      brandUrl='https://www.cfna.com'">
+    <div id="container">
+        <th:block th:replace="~{/companies/cfna/unsubscribe/logo :: getLogo('__${brand}__') }" />
+        <p class="mrgntoptall">
+            We are experiencing technical difficulties with your request.<br /><br />
+            Please try again at a later time.
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FHF - Step 2</title>
+    <th:block th:include="~{/companies/boscovs/fhf-registration/fragments :: head}" />
+    <style>
+		.full-width img{margin:0 auto; width:670px;}
+		html {height: 100%;}
+		body {height: 100%; margin-left: 0 auto; text-align: left; font-family: Roboto, sans-serif; letter-spacing: 1px;}
+		h1 {font-family: Roboto, sans-serif; font-size:32px; font-weight: Bold 700; color: #322384;}
+		.logo {display: block; margin-left: auto; margin-right: auto;}
+		.zipcode {position: relative; left: 100px; width: 900px; border-radius: 5px; background-color: #ffde0040; padding: 20px; }
+		.labeltxt {font-family: Roboto, sans-serif; font-size:20px; font-weight: 400; color: #322384;}
+		.odd { background-color: #ffde0040; }
+		.error { font-size: 12px; color: red; }
+		.paging-control { display: inline-block; }
+	</style>
+</head>
+<body th:object="${dynamicFormBean}" th:with="hasResult=${!dynamicFormBean.hasErrors() && dynamicFormBean.hasRequestResult()}">
+<th:block th:include="~{/companies/boscovs/fhf-registration/fragments :: logo}" />
+
+<!--Content-->
+
+    <!--Form-->
+    <div style="padding-top: 30px; position: relative; left: 100px;">
+        <h1>
+            Friends Helping Friends Registration Page (Step 2)<br />
+            Click on your Organization below to Complete Registration Process
+        </h1>
+        <p>If your Organization is not listed below,
+            <a id="clickHere" th:href="@{'/p/customResource/secure/fhf-registration/lookup?zip=' + *{items['zipcode']}}">
+                <span style="font-family: Roboto, sans-serif; font-size:20px; font-weight: 600; color: #d2232a; text-decoration: none;">
+                    CLICK HERE
+                </span>
+            </a> to register your Organization.
+        </p>
+    </div>
+
+    <div style="padding-top: 20px;" class="zipcode">
+        <form action="" method="get">
+            <th:block th:with="name='zipcode'">
+                <p th:if="${dynamicFormBean.hasErrors()}">
+                    <span th:class="error">Please enter a valid 5 digit Zip Code</span>
+                </p>
+                <label style="padding-bottom: 5px;" class="labeltxt" for="zipcode">
+                    Please Enter Your Zip Code
+                </label>
+                <input style="font-size: 20px; padding-top: 4px;" type="text" id="zipcode" name="zipcode" maxlength=5 th:value="*{items['zipcode']}"
+                       pattern="^[0-9]{5}$" onkeypress='validate(event)'/>
+                <input style="font-size: 20px;" type="submit" value="Next">
+                <input type="hidden" name="page" th:value="1" />
+            </th:block>
+        </form>
+    </div>
+    <!--End Form-->
+
+    <!--Orgs-->
+    <div style="position: relative; left: 100px; padding-top: 30px; width: 900px;"
+         th:with="listDetails=${dynamicFormBean.getListDetails()},data=${listDetails.getData()}">
+        <table id="organizations" width="900" border="1" cellspacing="0" cellpadding="4" align="left">
+            <tr style="background-color: #ffde00; font-family: Roboto, sans-serif; font-size: 20px; font-weight: 700; color: #322384">
+                <th>
+                    Organization Name
+                </th>
+                <th>
+                    Address
+                </th>
+                <th>
+                    City
+                </th>
+                <th>
+                    State
+                </th>
+                <th>
+                    Zip
+                </th>
+            </tr>
+            <tr th:each="rec,iterStat : ${data}" class="orgRow" th:classappend="${iterStat.odd}? 'odd'">
+                <td th:with="npId=${rec.getValueAsString('npID')},orgName=${rec.getValueAsString('orgName')},searchZip=*{items['zipcode']}">
+                    <a th:href="@{'/p/customResource/secure/fhf-registration/lookup?zip=' + ${searchZip} + '&id=' + ${npId}}">
+                        <span th:text="${orgName}">Org Name</span>
+                    </a>
+                </td>
+                <td th:text="${rec.getValueAsString('address1')}">Address 1</td>
+                <td th:text="${rec.getValueAsString('city')}">City</td>
+                <td th:text="${rec.getValueAsString('stateCode')}">State</td>
+                <td th:text="${rec.getValueAsString('zipcode')}">Zip Code</td>
+            </tr>
+        </table>
+        <div th:if="${listDetails.isDisplayPaging()}"
+           th:with="currentPage=${listDetails.getCurrentPage()},
+           totalPages=${listDetails.getTotalPages()},
+           zipcode=*{items['zipcode']}">
+            <th:block th:if="${totalPages > 1}">
+                <a id="prev" th:if="${currentPage > 1}" th:with="page=${currentPage - 1}"
+                   th:href="@{${dynamicFormBean.buildSubmitUrl(false)} + '?zipcode=' + ${zipcode} + '&page=' + ${page}}">Previous</a>
+                <span class="paging-control" th:text="'Page ' + ${currentPage} + ' of ' + ${totalPages} + '.'">Page x of y.</span>
+                <a id="next" th:if="${currentPage < totalPages}" th:with="page=${currentPage + 1}"
+                   th:href="@{${dynamicFormBean.buildSubmitUrl(false)} + '?zipcode=' + ${zipcode} + '&page=' + ${page}}">Next</a>
+            </th:block>
+        </div>
+        <br /><br />
+        <!-- Add some whitespace to bottom of page -->
+        <p>&nbsp;</p>
+    </div>
+    <!--End Orgs-->
+
+<script th:src="@{/companies-static/boscovs/fhf-registration/js/fhf_registration.js}"></script>
+
+</body>
+</html>

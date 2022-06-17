@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Unsubscribe</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/companies-static/cfna/unsubscribe/css/unsubscribe.css}" />
+</head>
+<body th:object="${dynamicFormBean}"
+      th:with="brand=${#strings.defaultString(#strings.toUpperCase(dynamicFormBean.getQueryParamFirstValue('brand')),'DEFAULT')},
+      brandUrl='https://www.cfna.com'">
+    <div id="container">
+        <a th:href="${brandUrl}" target="_blank">
+            <th:block th:replace="~{/companies/cfna/unsubscribe/logo :: getLogo('__${brand}__') }" />
+        </a>
+        <form method="post" th:action="@{${dynamicFormBean.buildSubmitUrl()}}">
+            <input type="hidden" th:field="*{items['cusCustomerIdHash']}" />
+
+            <h1 style="font-size: 20px;">We're sorry to see you go &hellip;</h1>
+
+            <p class="mrgntopmed">
+                To unsubscribe from the email marketing of the
+                <th:block th:insert="~{/companies/cfna/unsubscribe/fragments :: brandName('__${brand}__')}" />Credit Card,
+                issued by Credit First National Association, click the "Submit" button.
+                <br /><br />
+                If you do not wish to unsubscribe, simply click "Cancel" below.
+                <br /><br />
+                Please understand that you may continue to receive messages from other affiliated companies, to which you
+                are currently subscribed, unless you separately opt-out from receiving future email messages from such
+                companies.
+                <br /><br />
+                Thank you.
+            </p>
+            <table width="200" border="0" cellpadding="0" cellspacing="0" style="margin-top:20px;">
+                <tr>
+                    <td><input id = "submit" name="submit" type="submit" value="Submit" /></td>
+                    <td><input id = "cancel" type="button" th:attr="onclick=|window.location.href='${brandUrl}';|" value="Cancel"/></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+</body>
+</html>

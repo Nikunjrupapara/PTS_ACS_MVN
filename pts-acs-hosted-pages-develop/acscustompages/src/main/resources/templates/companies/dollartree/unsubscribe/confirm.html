@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<th:block th:include="~{/companies/dollartree/fragments :: head }" />
+</head>
+
+
+<body th:object="${dynamicFormBean}" th:with="email=*{items['email']},brand=*{brand}">
+
+
+<form action="email-preference.jsp" method="post" name="form1" id="form1">
+  <div class="container gray dt-margin" role="main">
+    <div class="col-md-6"> 
+      <div class="container gutters items-start">
+        <div class="col-12 padding-top text-center">
+        	<p class="green huge text-center padding-confirm">You&rsquo;ve been unsubscribed.</p>
+        	
+        	<p>If you change your mind, <br class="hide">
+        	click below.</p>
+  			<p>
+                <a th:href="@{'/p/profile/search/signup/index'}" class="btn radius background-color-primary color-auto cursor-pointer hover-background-color-darker btn-subscribe">SIGN UP</a>
+            </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="container gutters">
+        <div class="col-12 text-center">
+          <img th:src="@{/companies-static/dollartree/images/unsub-conf.png}" width="100%" class="feature-img">
+
+        </div>
+      </div>
+   
+    </div>
+  </div>
+  
+  <div class="container gutters-sm-all dt-margin">
+<!--  	<div class="col-12 half-space">-->
+<!--  		<p class="green no-margin">We Respect Your Privacy</p>-->
+<!--  		<p class="small">We will not share your email address with any third-party vendors. For more details on how we use your information, -->
+<!--			please see our <a target="_parent" href="https://www.dollartree.com/custserv/custserv.jsp?pageName=Privacy"><strong>Privacy and -->
+<!--			Security page</strong></a>.</p>-->
+<!--		<p class="small"><a target="_parent" href="https://www.dollartree.com/terms">Terms &amp; Conditions</a></p>-->
+<!--  	</div>-->
+
+    <th:block th:include="~{/companies/dollartree/fragments :: privacyBlockConfirm }" />
+  	
+  </div>
+</form>
+<img th:src="@{${'https://bluecore.com/api/channels/unsubscribe_pixel?namespace=dollar_tree&email=' + email}}"/>
+  
+  
+<!--track bgn-->
+<script type="text/javascript">
+var triggermail=triggermail||[];triggermail.load=function(a){
+var b=document.createElement("script");b.type="text/javascript";
+b.async=!0;b.src="https://api.bluecore.com/triggermail.js/"+a+".js";
+a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(b,a)};
+triggermail.load("dollar_tree");window.triggermail=triggermail;
+</script>
+<!--track end-->
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+# Config file for Jwts for Unit Tests
+# Contains dummy data
+jwts:
+  -
+    company: ymnewsolutions
+    context-path: preferences
+    token: XYZ

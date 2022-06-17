@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Page 2</title>
+</head>
+<body>
+<h3>Page 2</h3>
+<form action="#" th:action="@{${contextPath}}" th:object="${formBean}" method="post">
+    <div>
+        <span th:if="${#fields.hasGlobalErrors()}" th:text="#{message.errorsFound}">Errors found</span>
+    </div>
+    <div>
+        <label th:for="email" th:text="#{form.email}" >Email</label>
+        <input type="text" th:field="*{items['email']}" />
+    </div>
+    <div>
+        <input type="submit" value="Submit" th:value="#{form.submitLabel}" />
+    </div>
+</form>
+</body>
+</html>

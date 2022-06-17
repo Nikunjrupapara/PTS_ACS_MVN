@@ -1,0 +1,160 @@
+@charset "utf-8";
+body {
+	font-size:12px;
+}
+h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 24px;
+	color: #505050;
+	font-weight: normal;
+	margin: 0px;
+	padding: 0px;
+}
+
+p {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #505050;
+}
+label {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #505050;
+}
+.bodyDiv{
+	height: 800px;
+	width: auto;
+	overflow: auto;
+	border: solid;
+	border-width: 1px;
+}
+
+.bodyTable{
+	width: 750px;
+	border: 0;
+    text-align:center; 
+    margin-left:auto; 
+    margin-right:auto; 
+}
+
+.bodyTable tr, td{
+	padding: 0;
+	text-align: left;
+}
+
+.message {
+	color: #b51008;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.hiddenMessage {
+	color: #b51008;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	display: none;
+}
+
+.buttons{
+	/*width: 48px;*/
+	height: 27px;
+	border: 0;
+}
+
+.topBanner {
+	border-top-color: #DDDDDD;
+	border-top-width: 2px;
+	border-top-style: solid;
+	background-color: #F1F1F1;
+	height: 35px;
+}
+
+.bottomBanner {
+	background-color: #F1F1F1;
+	color: #4D4F53;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	text-align: left;
+	padding: 4px;
+}
+
+.bottomBannerWithBorder {
+	background-color: #F1F1F1;
+	color: #4D4F53;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	text-align: left;
+	border-bottom-color: #DDDDDD;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+}
+
+a:link , a:visited, a:active{
+    /*color: #1c69d3;*/
+	color: #000000;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+a:hover{
+    /*color: #1c69d3;*/
+	color: #000000;
+	cursor: pointer;
+}
+
+.footer {
+	/*position: absolute;*/
+	/*bottom:0px;*/
+    width:800px;
+	background-color: #F1F1F1;
+	color: #4D4F53;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	text-align: left;
+	#padding: 4px;
+	
+	display:block;
+}
+.ftrbox {
+	width:800px;
+	border: 1px solid #D0D0D0;
+	background-color: #FFFFFF;
+}
+
+.ftnote {
+    width:768px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	color: #000000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	text-align: left;
+	padding: 10px;
+}
+
+.outer-div
+{
+     margin: 0 auto;
+     /*width: 100px; */
+}
+.inner-div
+{
+  /*position: absolute;*/
+  top: 0%; 
+  /*left: 50%;*/
+  /*transform: translate(-50%,-50%);*/
+  width: 800px;
+  /*height: 1200px;*/
+      margin-left:auto; 
+    margin-right:auto; 
+  text-align:left;
+}
+
+#vexp{
+	display:block;
+	min-height:800px;
+}
+

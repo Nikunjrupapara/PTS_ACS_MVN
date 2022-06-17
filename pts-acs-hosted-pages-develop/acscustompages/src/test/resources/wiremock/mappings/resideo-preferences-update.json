@@ -1,0 +1,228 @@
+{
+	"request": {
+		"method": "POST",
+		"url": "/v1/services/composite/b1c8b9cb9eccec7ea8f9e03293b3523b6acdc5b530af1d886db24c1790185027",
+		"bodyPatterns": [
+			{
+				"matchesJsonPath": "$.customResources[0][?(@.name == 'cusHosted_pages_logs')]"
+			}
+		]
+	},
+	"response": {
+		"status": 200,
+		"headers": {
+			"Content-Type": "application/json"
+		},
+		"jsonBody": {
+			"profileSuccess": false,
+			"servicesSuccess": true,
+			"customResourcesSuccess": true,
+			"emailsSuccess": false,
+			"errorMessage": null,
+			"profile": {
+				"profile": {
+					"PKey": "@gvRhrrCXk6OXnpPmZ5mZRDqz5h6l-vnHCaza-KvdXGR1G1MKyPjQEqi4nr7zbCZLqpOLFcoggE_xOcBmkHeKFqCqY9DpO1mAweicVPPiWIq5nTW3",
+					"acsId": null,
+					"age": 0,
+					"birthDate": "",
+					"blackList": false,
+					"blackListAllLastModified": "2021-01-05 19:08:48.377Z",
+					"blackListEmail": false,
+					"blackListEmailLastModified": "2021-01-05 19:08:48.377Z",
+					"blackListFax": false,
+					"blackListFaxLastModified": "2021-01-05 19:08:48.377Z",
+					"blackListLastModified": "2021-01-05 19:08:48.377Z",
+					"blackListMobile": false,
+					"blackListMobileLastModified": "2021-01-05 19:08:48.377Z",
+					"blackListPhone": false,
+					"blackListPhoneLastModified": "2021-01-05 19:08:48.377Z",
+					"blackListPostalMail": false,
+					"blackListPostalMailLastModified": "2021-01-05 19:08:48.377Z",
+					"blackListPushnotification": false,
+					"blackListPushnotificationLastModified": null,
+					"ccpaOptOut": false,
+					"ccpaOptOutLastModified": "2021-01-05 19:08:48.377Z",
+					"created": "2021-01-04 16:54:55.917Z",
+					"cryptedId": "yAngO8bufQCklDx51Wi9zR2m47vjBCOF8qmgYviTuN4TDxkhGLEUQEUVKEStFZ7Bhpp33g==",
+					"customFields": {
+						"cusMobileNumber": "",
+						"cusHosted_pages_logslink": {
+							"href": "https://mc.adobe.io/resideo-mkt-stage1/campaign/profileAndServicesExt/profile/@gvRhrrCXk6OXnpPmZ5mZRDqz5h6l-vnHCaza-KvdXGR1G1MKyPjQEqi4nr7zbCZLs7ohIroWQhdEGX55-ZHZtTI86txQ5vP2lEy_JJ6BxgOGVJhR1wT3-GwiqWHqvxngGlhBxQ/cusHosted_pages_logslink/"
+						},
+						"cusPartner_name": "",
+						"cusHoneywellhome_ecom_subdate": "",
+						"cusOptDate": "",
+						"cusMzp_account_number": "",
+						"cusTcc_sensor_datalink": {
+							"href": "https://mc.adobe.io/resideo-mkt-stage1/campaign/profileAndServicesExt/profile/@gvRhrrCXk6OXnpPmZ5mZRDqz5h6l-vnHCaza-KvdXGR1G1MKyPjQEqi4nr7zbCZLs7ohIroWQhdEGX55-ZHZtTI86txQ5vP2lEy_JJ6BxgOGVJhR1wT3-GwiqWHqvxngGlhBxQ/cusTcc_sensor_datalink/"
+						},
+						"cusStormM5Page": "",
+						"cusIsActivated": false,
+						"cusMember_number": "",
+						"cusCustomerId": "charlesb@yesmail.com",
+						"cusSend_resideo_modal": "",
+						"cusOptStatus": false,
+						"cusTenantName": "",
+						"cusDas_welcome_series_datalink": {
+							"href": "https://mc.adobe.io/resideo-mkt-stage1/campaign/profileAndServicesExt/profile/@gvRhrrCXk6OXnpPmZ5mZRDqz5h6l-vnHCaza-KvdXGR1G1MKyPjQEqi4nr7zbCZLs7ohIroWQhdEGX55-ZHZtTI86txQ5vP2lEy_JJ6BxgOGVJhR1wT3-GwiqWHqvxngGlhBxQ/cusDas_welcome_series_datalink/"
+						},
+						"cusInclude_modal_coupon": "",
+						"cusPartner_id": "",
+						"cusIsLockedOut": false,
+						"cusHw_activatedDate": "",
+						"cusSuppressedDomain": false,
+						"cusStateName": "",
+						"cusClient_customerId": "",
+						"cusResideo_signup_date": "",
+						"cusDeviceslink": {
+							"href": "https://mc.adobe.io/resideo-mkt-stage1/campaign/profileAndServicesExt/profile/@gvRhrrCXk6OXnpPmZ5mZRDqz5h6l-vnHCaza-KvdXGR1G1MKyPjQEqi4nr7zbCZLs7ohIroWQhdEGX55-ZHZtTI86txQ5vP2lEy_JJ6BxgOGVJhR1wT3-GwiqWHqvxngGlhBxQ/cusDeviceslink/"
+						},
+						"cusResideo_ecom_subdate": "",
+						"cusBuoyPage": "Y",
+						"cusDasPage": "",
+						"cusCust_type": "",
+						"cusHw_lastModifiedDate": "",
+						"cusCustomerIdHash": "b1c8b9cb9eccec7ea8f9e03293b3523b6acdc5b530af1d886db24c1790185027",
+						"cusSaas_userslink": {
+							"href": "https://mc.adobe.io/resideo-mkt-stage1/campaign/profileAndServicesExt/profile/@gvRhrrCXk6OXnpPmZ5mZRDqz5h6l-vnHCaza-KvdXGR1G1MKyPjQEqi4nr7zbCZLs7ohIroWQhdEGX55-ZHZtTI86txQ5vP2lEy_JJ6BxgOGVJhR1wT3-GwiqWHqvxngGlhBxQ/cusSaas_userslink/"
+						},
+						"cusHistoricEventslink": {
+							"href": "https://mc.adobe.io/resideo-mkt-stage1/campaign/profileAndServicesExt/profile/@gvRhrrCXk6OXnpPmZ5mZRDqz5h6l-vnHCaza-KvdXGR1G1MKyPjQEqi4nr7zbCZLs7ohIroWQhdEGX55-ZHZtTI86txQ5vP2lEy_JJ6BxgOGVJhR1wT3-GwiqWHqvxngGlhBxQ/cusHistoricEventslink/"
+						},
+						"cusHw_createdDate": "",
+						"cusWelcomeSeriesTrackinglink": {
+							"href": "https://mc.adobe.io/resideo-mkt-stage1/campaign/profileAndServicesExt/profile/@gvRhrrCXk6OXnpPmZ5mZRDqz5h6l-vnHCaza-KvdXGR1G1MKyPjQEqi4nr7zbCZLs7ohIroWQhdEGX55-ZHZtTI86txQ5vP2lEy_JJ6BxgOGVJhR1wT3-GwiqWHqvxngGlhBxQ/cusWelcomeSeriesTrackinglink/"
+						},
+						"cusIsDeleted": false,
+						"cusIsMigratedToAAd": "",
+						"cusWeb_source_info": "",
+						"cusApproval_code": "",
+						"cusDr_eligible_userslink": {
+							"href": "https://mc.adobe.io/resideo-mkt-stage1/campaign/profileAndServicesExt/profile/@gvRhrrCXk6OXnpPmZ5mZRDqz5h6l-vnHCaza-KvdXGR1G1MKyPjQEqi4nr7zbCZLs7ohIroWQhdEGX55-ZHZtTI86txQ5vP2lEy_JJ6BxgOGVJhR1wT3-GwiqWHqvxngGlhBxQ/cusDr_eligible_userslink/"
+						},
+						"cusResideo_ftvmodal_date": "",
+						"cusDeletedDate": "",
+						"cusListLoadProfilelink": {
+							"href": "https://mc.adobe.io/resideo-mkt-stage1/campaign/profileAndServicesExt/profile/@gvRhrrCXk6OXnpPmZ5mZRDqz5h6l-vnHCaza-KvdXGR1G1MKyPjQEqi4nr7zbCZLs7ohIroWQhdEGX55-ZHZtTI86txQ5vP2lEy_JJ6BxgOGVJhR1wT3-GwiqWHqvxngGlhBxQ/cusListLoadProfilelink/"
+						},
+						"cusDas_welcome_series_trackinglink": {
+							"href": "https://mc.adobe.io/resideo-mkt-stage1/campaign/profileAndServicesExt/profile/@gvRhrrCXk6OXnpPmZ5mZRDqz5h6l-vnHCaza-KvdXGR1G1MKyPjQEqi4nr7zbCZLs7ohIroWQhdEGX55-ZHZtTI86txQ5vP2lEy_JJ6BxgOGVJhR1wT3-GwiqWHqvxngGlhBxQ/cusDas_welcome_series_trackinglink/"
+						},
+						"cusHoneywellhome_ftvmodal_date": "",
+						"cusDas_deviceslink": {
+							"href": "https://mc.adobe.io/resideo-mkt-stage1/campaign/profileAndServicesExt/profile/@gvRhrrCXk6OXnpPmZ5mZRDqz5h6l-vnHCaza-KvdXGR1G1MKyPjQEqi4nr7zbCZLs7ohIroWQhdEGX55-ZHZtTI86txQ5vP2lEy_JJ6BxgOGVJhR1wT3-GwiqWHqvxngGlhBxQ/cusDas_deviceslink/"
+						},
+						"cusSignuppage_userStatus": "",
+						"cusIs_web_source": false,
+						"cusResideo_offersignup_date": "",
+						"cusDr_suppression_userslink": {
+							"href": "https://mc.adobe.io/resideo-mkt-stage1/campaign/profileAndServicesExt/profile/@gvRhrrCXk6OXnpPmZ5mZRDqz5h6l-vnHCaza-KvdXGR1G1MKyPjQEqi4nr7zbCZLs7ohIroWQhdEGX55-ZHZtTI86txQ5vP2lEy_JJ6BxgOGVJhR1wT3-GwiqWHqvxngGlhBxQ/cusDr_suppression_userslink/"
+						},
+						"cusSend_honeywellhome_modal": "",
+						"cusHoneywellhome_offersignup_date": "",
+						"cusTenantId": 0,
+						"cusCustomerUUID": "af66a63d-ff29-41cc-8404-2c53f262861f",
+						"cusWelcomeSeriesDatalink": {
+							"href": "https://mc.adobe.io/resideo-mkt-stage1/campaign/profileAndServicesExt/profile/@gvRhrrCXk6OXnpPmZ5mZRDqz5h6l-vnHCaza-KvdXGR1G1MKyPjQEqi4nr7zbCZLs7ohIroWQhdEGX55-ZHZtTI86txQ5vP2lEy_JJ6BxgOGVJhR1wT3-GwiqWHqvxngGlhBxQ/cusWelcomeSeriesDatalink/"
+						},
+						"cusHoneywellhome_signup_date": "",
+						"cusT9Page": "",
+						"cusAuto_include": "",
+						"cusSource": "",
+						"cusRfcProfilelink": {
+							"href": "https://mc.adobe.io/resideo-mkt-stage1/campaign/profileAndServicesExt/profile/@gvRhrrCXk6OXnpPmZ5mZRDqz5h6l-vnHCaza-KvdXGR1G1MKyPjQEqi4nr7zbCZLs7ohIroWQhdEGX55-ZHZtTI86txQ5vP2lEy_JJ6BxgOGVJhR1wT3-GwiqWHqvxngGlhBxQ/cusRfcProfilelink/"
+						}
+					},
+					"customerId": "charlesb@yesmail.com",
+					"domain": "yesmail.com",
+					"email": "charlesb@yesmail.com",
+					"emailFormat": "unknown",
+					"externalId": "",
+					"fax": "",
+					"firstName": "Charles",
+					"gender": "unknown",
+					"geoUnit": null,
+					"href": "https://mc.adobe.io/resideo-mkt-stage1/campaign/profileAndServicesExt/profile/@gvRhrrCXk6OXnpPmZ5mZRDqz5h6l-vnHCaza-KvdXGR1G1MKyPjQEqi4nr7zbCZLqpOLFcoggE_xOcBmkHeKFqCqY9DpO1mAweicVPPiWIq5nTW3",
+					"isExternal": false,
+					"lastModified": "2021-01-05 19:08:48.377Z",
+					"lastName": "Berger",
+					"location": {
+						"address1": null,
+						"address2": null,
+						"address3": null,
+						"address4": null,
+						"city": null,
+						"countryCode": null,
+						"stateCode": null,
+						"zipCode": null
+					},
+					"middleName": "",
+					"mobilePhone": "",
+					"orgUnit": null,
+					"phone": "",
+					"postalAddress": {
+						"addrDefined": null,
+						"addrErrorCount": null,
+						"addrLastCheck": null,
+						"addrQuality": null,
+						"line1": null,
+						"line2": null,
+						"line3": null,
+						"line4": null,
+						"line5": null,
+						"line6": null,
+						"serialized": null
+					},
+					"preferredLanguage": "none",
+					"salutation": "",
+					"subscriptions": {
+						"href": "https://mc.adobe.io/resideo-mkt-stage1/campaign/profileAndServicesExt/profile/@gvRhrrCXk6OXnpPmZ5mZRDqz5h6l-vnHCaza-KvdXGR1G1MKyPjQEqi4nr7zbCZLFGKGo9y1WtyVJTqdrXn2f47srFl68FE-nhmNwaWjVP1EPVgn/subscriptions/"
+					},
+					"thumbnail": "/nl/img/thumbnails/defaultProfil.png",
+					"timeZone": "none",
+					"title": "Charles Berger (charlesb@yesmail.com)"
+				},
+				"currentServices": [
+					{
+						"name": "honeywellhomeenergyreport",
+						"label": "Whole Home Energy Report",
+						"created": "2021-01-11 10:50:55.838Z"
+					}
+				]
+			},
+			"customResources": [
+				{
+					"name": "cusHosted_pages_logs",
+					"records": [
+						{
+							"fields": {
+								"exported": "",
+								"zip": "",
+								"optInOffers": "false",
+								"exportStatus": "",
+								"created": "2021-01-11 10:53:23.162Z",
+								"link": "null",
+								"unsubAll": "false",
+								"acsId": "c00f86b8-26f9-4a5f-9399-3f892574c97f",
+								"PKey": "@RoIXSsQxR9_ofIdX6wJohBcuL0ywjCHrPXrjhDShLZTG32-_WCKYaIiYgR9ovENGcSJX9r-HK-4FEEIB1fIz5viBIX2oLg8z0N52PgIFGTwTmj5k",
+								"source": "honeywellPrefCenter",
+								"optInEnergy": "true",
+								"title": "15,590,560",
+								"productName": "",
+								"optInAsks": "false",
+								"optInEmails": "false",
+								"customerId": "charlesb@yesmail.com",
+								"modelNumber": "",
+								"href": "https://mc.adobe.io/resideo-mkt-stage1/campaign/profileAndServicesExt/cusHosted_pages_logs/@RoIXSsQxR9_ofIdX6wJohBcuL0ywjCHrPXrjhDShLZTG32-_WCKYaIiYgR9ovENGcSJX9r-HK-4FEEIB1fIz5viBIX2oLg8z0N52PgIFGTwTmj5k",
+								"lastModified": "2021-01-11 10:53:23.162Z",
+								"optInSupport": "false",
+								"email": "charlesb@yesmail.com"
+							}
+						}
+					]
+				}
+			],
+			"emails": null
+		}
+	}
+}

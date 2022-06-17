@@ -1,0 +1,22 @@
+{
+	"hasProfile": true,
+	"hasServices": false,
+	"hasCustomResources": false,
+	"hasEmails": true,
+	"profile": {
+		"email": "charlesb@yesmail.com",
+		"firstName": "Charles",
+		"lastName": "Berger"
+	},
+	"emails": [
+		{
+			"eventId": "EVTbuoySignupConfirmation",
+			"email": "charlesb@yesmail.com",
+			"ctx": {
+				"source": "buoyEmailSignup",
+				"lastName": "Berger",
+				"firstName": "Charles"
+			}
+		}
+	]
+}

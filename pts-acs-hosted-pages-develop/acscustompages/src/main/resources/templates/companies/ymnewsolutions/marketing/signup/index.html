@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ymnewsolutions Sign Up</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/companies-static/css/pages.css}" />
+</head>
+<body>
+    <img class="logo" src="https://www.data-axle.com/wp-content/uploads/2020/09/data_axle_horizontal_black_blue_crop.svg" />
+    <h1>Please sign up for our emails!</h1>
+        <th:block th:with="dynamicFormBean=${dynamicFormBean}">
+            <div class="grid-item">
+                <p>
+                    This is the <strong><span th:text="${dynamicFormBean.getEnvironmentName()}">env</span></strong> environment.
+                </p>
+            </div>
+            <th:block th:if="${dynamicFormBean.isError()}">
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <span class="error">An error occurred while processing your request.  Please try again later.</span>
+                    </div>
+                </div>
+            </th:block>
+        </th:block>
+        <form action="#" th:action="@{'/p/profile/create/' + *{contextPath}}" th:object="${dynamicFormBean}" method="post">
+            <div>Please enter your details below to receive our great offers...</div>
+            <div class="grid-container">
+                <div>
+                    <span class="error" th:if="${dynamicFormBean.isError('global')}" th:text="#{message.errorsFound}">Errors found</span>
+                </div>
+                <div class="grid-item">
+                    <div>
+                        <span class="error" th:if="${dynamicFormBean.isError('email')}"> <!--th:errors="*{email}"-->Email is invalid</span>
+                    </div>
+                    <label th:for="email" th:text="#{form.email}">Email:&nbsp;</label>
+                    <input required type="email" th:field="*{items['email']}" th:errorclass="field-error" />
+                </div>
+                <div class="grid-item">
+                    <div>
+                        <span class="error" th:if="${dynamicFormBean.isError('confirmEmail')}"> <!--th:errors="*{confirmEmail}"-->
+                            Confirm email is invalid
+                        </span>
+                    </div>
+                    <label th:for="${#ids.next('confirmEmail')}" th:text="#{form.confirmEmail}">Confirm Email:</label>
+                    <input type="email" th:field="*{items['confirmEmail']}" th:errorclass="field-error" />
+                </div>
+                <div class="grid-item">
+                    <div>
+                        <span class="error" th:if="${dynamicFormBean.isError('firstName')}"> <!--th:errors="*{firstName}"-->
+                            First name is invalid
+                        </span>
+                    </div>
+                    <label th:for="${#ids.next('firstName')}" th:text="#{form.firstName}">First Name:&nbsp;</label>
+                    <input required type="text" th:field="*{items['firstName']}" th:errorclass="field-error" />
+                </div>
+                <div class="grid-item">
+                    <div>
+                        <span class="error" th:if="${dynamicFormBean.isError('lastName')}"> <!--th:errors="*{lastName}"-->
+                            Last name is invalid
+                        </span>
+                    </div>
+                    <label th:for="${#ids.next('lastName')}" th:text="#{form.lastName}">Last Name:&nbsp;</label>
+                    <input required type="text" th:field="*{items['lastName']}" th:errorclass="field-error" />
+                </div>
+                <div class="grid-item">
+                    <div>
+                        <span class="error" th:if="${dynamicFormBean.isError('dateOfBirth')}"> <!--th:errors="*{dateOfBirth}"-->
+                            Date of Birth is invalid
+                        </span>
+                    </div>
+                    <label th:for="${#ids.next('dateOfBirth')}" th:text="#{form.dateOfBirth}">Date of Birth</label>
+                    <input required type="date" th:field="*{items['dateOfBirth']}" th:errorclass="field-error" />
+                </div>
+                <div class="grid-item">
+                    <div>
+                        <span class="error" th:if="${dynamicFormBean.isError('gender')}"> <!--th:errors="*{gender}"-->
+                            Gender is invalid
+                        </span>
+                    </div>
+                    <label th:for="${#ids.next('gender')}" th:text="#{form.gender}">Gender:</label>
+                    <select required th:field="*{items['gender']}" th:errorclass="field-error">
+                        <option th:each="gender : ${allGenders}"
+                                th:value="${gender.name}"
+                                th:text="#{${'gender.' + gender}}"
+                        >Gender</option>
+                    </select>
+                </div>
+                <div class="grid-item">
+                    <label th:for="cusHomePhone" th:text="#{form.homePhoneNumber}">Phone Number</label>
+                    <input type="text" th:field="*{items['cusHomePhone']}" th:errorclass="field-error" />
+                </div>
+                <div class="grid-item">
+                    <span>Do you wish to join our rewards programme?</span>
+                    <ul>
+                        <li>
+                            <input id="rewardsActiveN" name="rewardsActive" type="radio" th:field="*{items['cusRewardsActive']}" th:value="N" />
+                            <label for="rewardsActiveN" th:text="No">No</label>
+                        </li>
+                        <li>
+                            <input id="rewardsActiveY" name="rewardsActive" type="radio" th:field="*{items['cusRewardsActive']}" th:value="Y" />
+                            <label for="rewardsActiveY" th:text="Yes">Yes</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="grid-item">
+                    <input type="submit" value="Register" th:value="#{form.submitLabel}" />
+                </div>
+            </div>
+
+            <input type="hidden" th:field="*{items['JWT']}" id="JWT" />
+        </form>
+    <table>
+        <tr th:each="var : ${#vars.getVariableNames()}">
+            <td th:text="${var}"></td>
+            <td th:text="${#vars.getVariable(var)}"></td>
+        </tr>
+        <!--
+            Adding these manually because they are considered special.
+            see https://github.com/thymeleaf/thymeleaf/blob/thymeleaf-3.0.3.RELEASE/src/main/java/org/thymeleaf/context/WebEngineContext.java#L199
+        -->
+        <tr>
+            <td>param</td>
+            <td th:text="${#vars.getVariable('param')}"></td>
+        </tr>
+        <tr>
+            <td>session</td>
+            <td th:text="${#vars.getVariable('session')}"></td>
+        </tr>
+        <tr>
+            <td>application</td>
+            <td th:text="${#vars.getVariable('application')}"></td>
+        </tr>
+    </table>
+</body>
+</html>

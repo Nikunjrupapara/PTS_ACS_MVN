@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.2.0.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.yesmarketing</groupId>
+	<artifactId>pts-acs-hosted-pages</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>PTS ACS Hosted Pages</name>
+	<description>Application that allows PTS staff to test ACS Transactional messaging plus micro services for hosted pages applications</description>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<jsonwebtoken.version>0.11.1</jsonwebtoken.version>
+		<logstash.encoder.version>6.6</logstash.encoder.version>
+		<modelmapper.jsr310.version>1.2.0</modelmapper.jsr310.version>
+		<openapi.version>1.3.1</openapi.version>
+		<spring-boot-admin.version>2.3.1</spring-boot-admin.version>
+		<wiremock.version>2.25.1</wiremock.version>
+		<ymacsapi.version>1.0.4</ymacsapi.version>
+	</properties>
+
+	<dependencies>
+		<!-- Spring Boot dependencies -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<!--
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-ldap</artifactId>
+		</dependency>
+		-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>de.codecentric</groupId>
+			<artifactId>spring-boot-admin-starter-client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.session</groupId>
+			<artifactId>spring-session-core</artifactId>
+		</dependency>
+
+		<!-- Yes Marketing Dependencies -->
+		<dependency>
+			<groupId>com.yesmail.webservices_ptsfork</groupId>
+			<artifactId>api-v2-facade-common</artifactId>
+			<version>${ymacsapi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.yesmail.webservices_ptsfork</groupId>
+			<artifactId>yesmarketing-acsapi-common</artifactId>
+			<version>${ymacsapi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.yesmail.webservices_ptsfork</groupId>
+			<artifactId>yesmarketing-acsapi-admin-services</artifactId>
+			<version>${ymacsapi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.yesmail.webservices_ptsfork</groupId>
+			<artifactId>sagas</artifactId>
+			<version>${ymacsapi.version}</version>
+			<!-- can be removed if we update jsonwebtoken version in Sagas project to match version used here -->
+			<exclusions>
+				<exclusion>
+					<groupId>io.jsonwebtoken</groupId>
+					<artifactId>jjwt</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- Third party dependencies -->
+		<dependency>
+			<groupId>com.github.ben-manes.caffeine</groupId>
+			<artifactId>caffeine</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.github.chhsiao90</groupId>
+			<artifactId>modelmapper-module-jsr310</artifactId>
+			<!--version>${modelmapper.jsr310.version}</version-->
+			<version>1.2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-api</artifactId>
+			<version>${jsonwebtoken.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-impl</artifactId>
+			<version>${jsonwebtoken.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.jsonwebtoken</groupId>
+			<artifactId>jjwt-jackson</artifactId>
+			<version>${jsonwebtoken.version}</version>
+		</dependency>
+		<!-- Logstash encoder -->
+		<dependency>
+			<groupId>net.logstash.logback</groupId>
+			<artifactId>logstash-logback-encoder</artifactId>
+			<version>${logstash.encoder.version}</version>
+		</dependency>
+		<!-- SpringDoc Open API UI -->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>${openapi.version}</version>
+		</dependency>
+
+		<!-- Test Dependencies -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.unboundid</groupId>
+			<artifactId>unboundid-ldapsdk</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>de.flapdoodle.embed</groupId>
+			<artifactId>de.flapdoodle.embed.mongo</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.github.tomakehurst</groupId>
+			<artifactId>wiremock</artifactId>
+			<version>${wiremock.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>de.codecentric</groupId>
+				<artifactId>spring-boot-admin-dependencies</artifactId>
+				<version>${spring-boot-admin.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<!-- Remove logback.xml from spring rest basis jar -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>truezip-maven-plugin</artifactId>
+				<version>1.2</version>
+				<executions>
+					<execution>
+						<id>remove-a-file-from-jar</id>
+						<goals>
+							<goal>remove</goal>
+						</goals>
+						<phase>package</phase>
+						<configuration>
+							<fileset>
+								<!-- NB will need to change this line if version of Spring Rest Basis is changed -->
+								<!-- Spring Rest Basis dependency is in Sagas Common (yesmarketing-acsapi-common) jar -->
+								<directory>target/pts-acs-hosted-pages-${project.version}.jar/BOOT-INF/lib/spring-rest-basis-0.4.jar/</directory>
+								<includes>
+									<include>logback.xml</include>
+								</includes>
+							</fileset>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>com.github.eirslett</groupId>
+				<artifactId>frontend-maven-plugin</artifactId>
+				<version>1.9.1</version>
+				<configuration>
+					<workingDirectory>frontend</workingDirectory>
+					<installDirectory>target</installDirectory>
+				</configuration>
+				<executions>
+					<execution>
+						<id>install node and npm</id>
+						<goals>
+							<goal>install-node-and-npm</goal>
+						</goals>
+						<configuration>
+							<nodeVersion>v13.6.0</nodeVersion>
+							<npmVersion>6.13.4</npmVersion>
+						</configuration>
+					</execution>
+					<execution>
+						<id>npm install</id>
+						<goals>
+							<goal>npm</goal>
+						</goals>
+						<configuration>
+							<arguments>install</arguments>
+						</configuration>
+					</execution>
+					<execution>
+						<id>npm run build</id>
+						<goals>
+							<goal>npm</goal>
+						</goals>
+						<configuration>
+							<arguments>run build</arguments>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>generate-resources</phase>
+						<configuration>
+							<target>
+								<copy todir="${project.build.directory}/classes/public">
+									<fileset dir="${project.basedir}/frontend/build" />
+								</copy>
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	<repositories>
+		<repository>
+			<id>artifactory</id>
+			<name>Yes Marketing Artifactory</name>
+			<url>http://artifactory.aws.p0.com:8081/artifactory/repo</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>maven-central</id>
+			<name>Maven Central</name>
+			<url>https://repo1.maven.org/maven2</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>maven-central</id>
+			<name>Maven Central</name>
+			<url>https://repo1.maven.org/maven2/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+		<pluginRepository>
+			<id>Artifactory</id>
+			<url>http://artifactory.aws.p0.com:8081/artifactory/remote-repos</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+	<distributionManagement>
+		<repository>
+			<id>data-axle-pts</id>
+			<name>Data Axle PTS</name>
+			<url>http://artifactory.aws.p0.com:8081/artifactory/data-axle-pts</url>
+		</repository>
+	</distributionManagement>
+
+</project>

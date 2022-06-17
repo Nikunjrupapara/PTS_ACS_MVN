@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<th:block th:include="~{/companies/dollartree/contest/fragments :: head }">
+		<meta charset="utf-8" />
+    	<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" th:href="@{/companies-static/dollartree/css/normalize.css}">
+		<link rel="stylesheet" th:href="@{/companies-static/dollartree/css/custom-2022.css}">
+	</th:block>
+	<title>Dollar Tree Email Contest - Winners</title>
+</head>
+<body>
+<div class="container">
+	<header>
+		<th:block th:replace="~{/companies/dollartree/contest/fragments :: header }">
+			<a th:href="@{'/p/profile/search/contest/signup'}">
+				<img th:src="@{/companies-static/dollartree/images/envelope.png}" width="330" alt="email sign-up contest" class="logo"/>
+			</a>
+			<nav class="shadow">
+				<ul class="nav">
+					<li><a th:href="@{'/p/profile/search/contest/signup'}">Entry Form</a></li>
+					<li><a th:href="@{'/p/page/display/contest/rules'}">Rules</a></li>
+					<li><a th:href="@{'/p/page/display/contest/privacy'}">Privacy</a></li>
+					<li class="lastFloat"><a th:href="@{'/p/page/display/contest/winners'}">Winners</a></li>
+				</ul>
+			</nav>
+			<div class="bannerText shadow">
+				<h1 style="margin-bottom: 0; font-family: 'Arial Black', sans-serif;">Sign Up for Dollar Tree Emails</h1>
+				<p style="font-size: 16px;" class="mb-2">and be entered for a chance to win<sup>&dagger;</sup> a $100 Dollar Tree gift card!</p>
+			</div>
+		</th:block>		
+	</header>
+
+	<div class="main" role="main">		
+		<div class="mobile-nav">
+			<th:block th:replace="~{/companies/dollartree/contest/fragments :: navSide }" >
+				<a th:href="@{'/p/profile/search/contest/signup'}" class="button-bar">Entry Form</a>
+				<a th:href="@{'/p/page/display/contest/rules'}" class="button-bar">Rules</a>
+				<a th:href="@{'/p/page/display/contest/privacy'}" class="button-bar">Privacy</a>
+				<a th:href="@{'/p/page/display/contest/winners'}" class="button-bar">Winners</a>
+			</th:block>
+		</div>
+		
+		<div class="form-cont">
+			<div class="rules pt-6">
+				<th:block th:replace="~{/companies/dollartree/contest/fragments :: signupNow }" >
+					<img src="images/gift-card.png" width="146" alt="$100 gift card" />
+					<h2 style="margin-bottom: 0;">Ready to Enter?</h2>
+					<p>We are giving away ten $100 Dollar Tree gift cards!</p>
+					<p class="mt-2"><a class="signUpBtn" th:href="@{'/p/profile/search/contest/signup'}">Sign Up Now</a></p>
+				</th:block>
+			</div>
+			<div class="entry-form">
+                <!--h2>Winners</h2-->
+				<p>
+					<b>Winners will be announced here at the end of the contest.</b>
+				</p>
+			</div>
+		</div>
+	</div>
+
+</div>
+</body>
+</html>

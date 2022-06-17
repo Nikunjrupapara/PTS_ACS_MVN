@@ -1,0 +1,13 @@
+{
+	"hasProfile": false,
+	"hasServices": true,
+	"hasCustomResources": false,
+	"hasEmails": false,
+	"services": {
+		"add": [
+		],
+		"remove": [
+			"marketing"
+		]
+	}
+}

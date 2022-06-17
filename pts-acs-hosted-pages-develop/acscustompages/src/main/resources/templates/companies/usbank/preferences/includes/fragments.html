@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- displays the Next button for each brand -->
+<th:block th:fragment="next(brand)">
+    <th:block th:switch="${brand}">
+        <td height="27" align="left" valign="middle">
+            <input th:case="'ACG'" class="buttons" th:src="@{/companies-static/usbank/preferences/__${brand}__/images/Next.gif}" type="image" />
+            <input th:case="'AMP'" class="buttons" th:src="@{/companies-static/usbank/preferences/__${brand}__/images/Next.gif}" type="image" />
+            <input th:case="'ASB'" class="buttons" th:src="@{/companies-static/usbank/preferences/__${brand}__/images/Next.gif}" type="image" />
+            <input th:case="'BMW'" class="buttons" th:src="@{/companies-static/usbank/preferences/__${brand}__/images/Next.jpg}" type="image" />
+            <input th:case="'EJ'" class="buttons" th:src="@{/companies-static/usbank/preferences/__${brand}__/images/Next.gif}" type="image" />
+            <input th:case="'ELA'" class="buttons" th:src="@{/companies-static/usbank/preferences/__${brand}__/images/Next.gif}" type="image" />
+            <input th:case="'ELL'" class="buttons" th:src="@{/companies-static/usbank/preferences/__${brand}__/images/Next.jpg}" type="image" />
+            <input th:case="'FID'" class="buttons" th:src="@{/companies-static/usbank/preferences/__${brand}__/images/Next.gif}" type="image" />
+            <input th:case="'MNI'" class="buttons" th:src="@{/companies-static/usbank/preferences/__${brand}__/images/Next.jpg}" type="image" />
+            <input th:case="'QKN'" class="buttons" th:src="@{/companies-static/usbank/preferences/__${brand}__/images/Next.gif}" type="image" />
+            <input th:case="'RAD'" class="buttons" th:src="@{/companies-static/usbank/preferences/__${brand}__/images/Next.jpg}" type="image" />
+        </td>
+    </th:block>
+</th:block>
+<!-- Render the buttons for the new Signup form according to the brand -->
+<th:block th:fragment="signupNewButtons(brand)">
+    <th:block th:switch="${brand}">
+        <td th:case="'ACG'">
+            <a th:href="@{/p/profile/find/preferences/signup}">
+                <img th:src="@{/companies-static/usbank/preferences/ACG/images/Back.gif}" class="buttons" />
+            </a>
+            <input class="buttons" th:src="@{/companies-static/usbank/preferences/ACG/images/Submit.gif}" type="image" />
+            <!-- TODO: th:block is adding an unwanted div element which forces submit button to be below back button -->
+            <!--<th:block th:replace="~{this :: submitButton('__${brand}__')}" />-->
+        </td>
+        <td th:case="'AMP'">
+            <a th:href="@{/p/profile/find/preferences/signup}">
+                <img th:src="@{/companies-static/usbank/preferences/AMP/images/Back.gif}" class="buttons">
+            </a>
+            <input class="buttons" th:src="@{/companies-static/usbank/preferences/AMP/images/Submit.gif}" type="image" />
+            <!--<th:block th:replace="~{this :: submitButton('__${brand}__')}" />-->
+        </td>
+        <td th:case="'ASB'">
+            <a th:href="@{/p/profile/find/preferences/signup}">
+                <img th:src="@{/companies-static/usbank/preferences/ASB/images/Back.gif}" class="buttons">
+            </a>
+            <input class="buttons" th:src="@{/companies-static/usbank/preferences/ASB/images/Submit.gif}" type="image" />
+        </td>
+        <td th:case="'BMW'">
+            <a th:href="@{/p/profile/find/preferences/signup}">
+                <img th:src="@{/companies-static/usbank/preferences/BMW/images/Back.jpg}" class="buttons">
+            </a>
+            <input class="buttons" th:src="@{/companies-static/usbank/preferences/BMW/images/Submit.jpg}" type="image" />
+        </td>
+        <td th:case="'EJ'">
+            <a th:href="@{/p/profile/find/preferences/signup}">
+                <img th:src="@{/companies-static/usbank/preferences/EJ/images/Back.gif}" class="buttons">
+            </a>
+            <input class="buttons" th:src="@{/companies-static/usbank/preferences/EJ/images/Submit.gif}" type="image" />
+        </td>
+        <td th:case="'ELA'">
+            <a th:href="@{/p/profile/find/preferences/signup}">
+                <img th:src="@{/companies-static/usbank/preferences/ELA/images/Back.gif}" class="buttons">
+            </a>
+            <input class="buttons" th:src="@{/companies-static/usbank/preferences/ELA/images/Submit.gif}" type="image" />
+        </td>
+        <td th:case="'ELL'">
+            <a th:href="@{/p/profile/find/preferences/signup}">
+                <img th:src="@{/companies-static/usbank/preferences/ELL/images/Back.jpg}" class="buttons">
+            </a>
+            <input class="buttons" th:src="@{/companies-static/usbank/preferences/ELL/images/Submit.jpg}" type="image" />
+        </td>
+        <td th:case="'FID'">
+            <a th:href="@{/p/profile/find/fidelity/signup}">
+                <img th:src="@{/companies-static/usbank/preferences/FID/images/Back.gif}" class="buttons">
+            </a>
+            <input class="buttons" th:src="@{/companies-static/usbank/preferences/FID/images/Submit.gif}" type="image" />
+        </td>
+        <td th:case="'MNI'">
+            <a th:href="@{/p/profile/find/preferences/signup}">
+                <img th:src="@{/companies-static/usbank/preferences/MNI/images/Back.jpg}" class="buttons">
+            </a>
+            <input class="buttons" th:src="@{/companies-static/usbank/preferences/MNI/images/Submit.jpg}" type="image" />
+        </td>
+        <td th:case="'QKN'">
+            <a th:href="@{/p/profile/find/preferences/signup}">
+                <img th:src="@{/companies-static/usbank/preferences/QKN/images/Back.gif}" class="buttons">
+            </a>
+            <input class="buttons" th:src="@{/companies-static/usbank/preferences/QKN/images/Submit.gif}" type="image" />
+        </td>
+        <td th:case="'RAD'">
+            <a th:href="@{/p/profile/find/preferences/signup}">
+                <img th:src="@{/companies-static/usbank/preferences/RAD/images/Back.jpg}" class="buttons">
+            </a>
+            <input class="buttons" th:src="@{/companies-static/usbank/preferences/RAD/images/Submit.jpg}" type="image" />
+        </td>
+    </th:block>
+</th:block>
+<!-- Render a submit button according to the brand -->
+<th:block th:fragment="submitButton(brand)">
+    <th:block th:switch="${brand}">
+        <input th:case="'ACG'" class="buttons" th:src="@{/companies-static/usbank/preferences/ACG/images/Submit.gif}" type="image" />
+        <input th:case="'AMP'" class="buttons" th:src="@{/companies-static/usbank/preferences/AMP/images/Submit.gif}" type="image" />
+        <input th:case="'ASB'" class="buttons" th:src="@{/companies-static/usbank/preferences/ASB/images/Submit.gif}" type="image" />
+        <input th:case="'BMW'" class="buttons" th:src="@{/companies-static/usbank/preferences/BMW/images/Submit.jpg}" type="image" />
+        <input th:case="'EJ'" class="buttons" th:src="@{/companies-static/usbank/preferences/EJ/images/Submit.gif}" type="image" />
+        <input th:case="'ELA'" class="buttons" th:src="@{/companies-static/usbank/preferences/ELA/images/Submit.gif}" type="image" />
+        <input th:case="'ELL'" class="buttons" th:src="@{/companies-static/usbank/preferences/ELL/images/Submit.jpg}" type="image" />
+        <input th:case="'FID'" class="buttons" th:src="@{/companies-static/usbank/preferences/FID/images/Submit.gif}" type="image" />
+        <input th:case="'MNI'" class="buttons" th:src="@{/companies-static/usbank/preferences/MNI/images/Submit.jpg}" type="image" />
+        <input th:case="'QKN'" class="buttons" th:src="@{/companies-static/usbank/preferences/QKN/images/Submit.gif}" type="image" />
+        <input th:case="'RAD'" class="buttons" th:src="@{/companies-static/usbank/preferences/RAD/images/Submit.jpg}" type="image" />
+    </th:block>
+</th:block>
+<!-- Render a link to jump back to the signup page according to the brand -->
+<th:block th:fragment="backLink(brand)">
+    <th:block th:with="target=${brand == 'FID'} ? '/login' : '/signup'">
+        <a th:href="@{'/p/profile/find/' + *{appPath} + ${target}}">
+            <th:block th:switch="${brand}">
+                <img th:case="'ACG'" th:src="@{/companies-static/usbank/preferences/ACG/images/Back.gif}" class="buttons" />
+                <img th:case="'AMP'" th:src="@{/companies-static/usbank/preferences/AMP/images/Back.gif}" class="buttons" />
+                <img th:case="'ASB'" th:src="@{/companies-static/usbank/preferences/ASB/images/Back.gif}" class="buttons" />
+                <img th:case="'BMW'" th:src="@{/companies-static/usbank/preferences/BMW/images/Back.jpg}" class="buttons" />
+                <img th:case="'EJ'" th:src="@{/companies-static/usbank/preferences/EJ/images/Back.gif}" class="buttons" />
+                <img th:case="'ELA'" th:src="@{/companies-static/usbank/preferences/ELA/images/Back.gif}" class="buttons" />
+                <img th:case="'ELL'" th:src="@{/companies-static/usbank/preferences/ELL/images/Back.jpg}" class="buttons" />
+                <img th:case="'FID'" th:src="@{/companies-static/usbank/preferences/FID/images/Back.gif}" class="buttons" />
+                <img th:case="'MNI'" th:src="@{/companies-static/usbank/preferences/MNI/images/Back.jpg}" class="buttons" />
+                <img th:case="'QKN'" th:src="@{/companies-static/usbank/preferences/QKN/images/Back.gif}" class="buttons" />
+                <img th:case="'RAD'" th:src="@{/companies-static/usbank/preferences/RAD/images/Back.jpg}" class="buttons" />
+            </th:block>
+        </a>
+    </th:block>
+</th:block>
+<!-- Render a form that implements the back button according to the brand -->
+<th:block th:fragment="backForm(brand)">
+    <th:block th:with="target=${brand == 'FID'} ? '/login' : '/signup'">
+        <form name="back" id="back" method="post" th:Action="@{'/p/profile/find/' + *{appPath} + ${target}}">
+            <input type="hidden" th:field="*{items['email']}" />
+            <th:block th:with="name='confirmEmail'">
+                <input type="hidden" th:name="items[__${name}__]" th:value="*{items['email']}"/>
+            </th:block>
+            <input type="hidden" th:field="*{items['cusAcctL4']}" />
+            <th:block th:with="name='cusPartner'">
+                <input type="hidden" th:name="items[__${name}__]" th:value="${brand}" />
+            </th:block>
+            <th:block th:insert="this :: backButton('__${brand}__')" />
+        </form>
+    </th:block>
+</th:block>
+<!-- Render the back button according to the brand -->
+<th:block th:fragment="backButton(brand)">
+    <th:block th:switch="${brand}">
+        <input th:case="'ACG'" class="buttons" type="image" th:src="@{/companies-static/usbank/preferences/ACG/images/Back.gif}" />
+        <input th:case="'AMP'" class="buttons" type="image" th:src="@{/companies-static/usbank/preferences/AMP/images/Back.gif}" />
+        <input th:case="'ASB'" class="buttons" type="image" th:src="@{/companies-static/usbank/preferences/ASB/images/Back.gif}" />
+        <input th:case="'BMW'" class="buttons" type="image" th:src="@{/companies-static/usbank/preferences/BMW/images/Back.jpg}" />
+        <input th:case="'EJ'" class="buttons" type="image" th:src="@{/companies-static/usbank/preferences/EJ/images/Back.gif}" />
+        <input th:case="'ELA'" class="buttons" type="image" th:src="@{/companies-static/usbank/preferences/ELA/images/Back.gif}" />
+        <input th:case="'ELL'" class="buttons" type="image" th:src="@{/companies-static/usbank/preferences/ELL/images/Back.jpg}" />
+        <input th:case="'FID'" class="buttons" type="image" th:src="@{/companies-static/usbank/preferences/FID/images/Back.gif}" />
+        <input th:case="'MNI'" class="buttons" type="image" th:src="@{/companies-static/usbank/preferences/MNI/images/Back.jpg}" />
+        <input th:case="'QKN'" class="buttons" type="image" th:src="@{/companies-static/usbank/preferences/QKN/images/Back.gif}" />
+        <input th:case="'RAD'" class="buttons" type="image" th:src="@{/companies-static/usbank/preferences/RAD/images/Back.jpg}" />
+    </th:block>
+</th:block>
+
+
+<!--
+   <th:block th:insert="~{/companies/usbank/preferences/includes/fragments :: chooseAppropriateButton('__${brand}__')}" />
+-->
+<th:block th:fragment="chooseAppropriateButton(brand)">
+    <th:block th:switch="${brand}">
+        <span th:case="'ASB'">
+               <br><br><br>Choose the appropriate button to indicate your preference:
+        </span>
+        <span th:case="'EJ'">
+               <br><br><br>Choose the appropriate button to indicate your preference:
+        </span>
+        <span th:case="'ELA'">
+               <br><br><br>Choose the appropriate button to indicate your preference:
+        </span>
+        <span th:case="'FID'">
+               <br><br><br>Choose the appropriate button to indicate your preference:
+        </span>
+        <span th:case="*"></span>
+    </th:block>
+</th:block>
+
+<!--
+   <th:block th:insert="~{/companies/usbank/preferences/includes/fragments :: yesReceive('__${brand}__')}" />
+-->
+<th:block th:fragment="yesReceive(brand)">
+    <th:block th:switch="${brand}">
+        <label th:case="'ELA'" th:for="optin">Yes, I want to receive special offer emails.</label>
+        <label th:case="*" th:for="optin">Yes, I want to receive special offer emails and promotional emails for my credit card account.</label>
+    </th:block>
+</th:block>
+
+
+<!--
+   <th:block th:insert="~{/companies/usbank/preferences/includes/fragments :: enterZipMsg('__${brand}__')}" />
+-->
+<th:block th:fragment="enterZipMsg(brand)">
+    <th:block th:switch="${brand}">
+        <tr th:case="'ASB'"><td><p>Please enter your name and zip code as they appear on your credit card account</p></td></tr>
+        <tr th:case="'EJ'"><td><p>Please enter your name and zip code as they appear on your credit card account</p></td></tr>
+        <tr th:case="'ELA'"><td><p>Please enter your name and zip code as they appear on your credit card account</p></td></tr>
+        <tr th:case="*"><td></td></tr>
+    </th:block>
+</th:block>
+
+<!--
+<p th:insert="~{/companies/usbank/preferences/includes/fragments :: thankYouMsg('__${brand}__')}" />
+-->
+<th:block th:fragment="thankYouMsg(brand)">
+    <th:block th:switch="${brand}">
+        <p th:case="'ACG'">
+            Thank you for submitting your survey results.
+            <span th:insert="~{/companies/usbank/preferences/includes/fragments :: thankYouMsgOnly('__${brand}__')}" />
+            <br /><br />
+            <th:block th:insert="~{/companies/usbank/preferences/includes/fragments :: backLink('__${brand}__') }" />
+            <br />
+        </p>
+        <p th:case="'AMP'">
+            Thank you for submitting your survey results.
+            <span th:insert="~{/companies/usbank/preferences/includes/fragments :: thankYouMsgOnly('__${brand}__')}" />
+            <br /><br />
+            <th:block th:insert="~{/companies/usbank/preferences/includes/fragments :: backLink('__${brand}__') }" />
+            <br />
+        </p>
+        <p th:case="'ASB'">
+            Thank you for submitting your survey results.
+            <span th:insert="~{/companies/usbank/preferences/includes/fragments :: thankYouMsgOnly('__${brand}__')}" />
+            <br /><br />
+            <th:block th:insert="~{/companies/usbank/preferences/includes/fragments :: backLink('__${brand}__') }" />
+            <br />
+        </p>
+        <p th:case="'BMW'">
+            Thank you for submitting your survey results.
+            <span th:insert="~{/companies/usbank/preferences/includes/fragments :: thankYouMsgOnly('__${brand}__')}" />
+            <br /><br />
+            <th:block th:insert="~{/companies/usbank/preferences/includes/fragments :: backLink('__${brand}__') }" />
+            <br />
+        </p>
+        <p th:case="'EJ'" >
+            Thank you for submitting your survey results.
+            <span th:insert="~{/companies/usbank/preferences/includes/fragments :: thankYouMsgOnly('__${brand}__')}" />
+            <br /><br />
+            <th:block th:insert="~{/companies/usbank/preferences/includes/fragments :: backLink('__${brand}__') }" />
+            <br />
+        </p>
+        <p th:case="'ELA'">
+            Thank you for submitting your survey results.
+            <span th:insert="~{/companies/usbank/preferences/includes/fragments :: thankYouMsgOnly('__${brand}__')}" />
+            <br /><br />
+            <th:block th:insert="~{/companies/usbank/preferences/includes/fragments :: backLink('__${brand}__') }" />
+            <br />
+        </p>
+        <p th:case="'ELL'">
+            Thank you for submitting your survey results.
+            <span th:insert="~{/companies/usbank/preferences/includes/fragments :: thankYouMsgOnly('__${brand}__')}" />
+            <br /><br />
+            <th:block th:insert="~{/companies/usbank/preferences/includes/fragments :: backLink('__${brand}__') }" />
+            <br />
+        </p>
+        <p th:case="'FID'">
+            Thank you for submitting your survey results.
+            <span th:insert="~{/companies/usbank/preferences/includes/fragments :: thankYouMsgOnly('__${brand}__')}" />
+            <br /><br />
+            <th:block th:insert="~{/companies/usbank/preferences/includes/fragments :: backLink('__${brand}__') }" />
+            <br />
+        </p>
+        <p th:case="'MNI'">
+            Thank you for submitting your survey results.
+            <span th:insert="~{/companies/usbank/preferences/includes/fragments :: thankYouMsgOnly('__${brand}__')}" />
+            <br /><br />
+            <th:block th:insert="~{/companies/usbank/preferences/includes/fragments :: backLink('__${brand}__') }" />
+            <br />
+        </p>
+        <p th:case="'QKN'">
+            Thank you for submitting your survey results.
+            <span th:insert="~{/companies/usbank/preferences/includes/fragments :: thankYouMsgOnly('__${brand}__')}" />
+            <br /><br />
+            <th:block th:insert="~{/companies/usbank/preferences/includes/fragments :: backLink('__${brand}__') }" />
+            <br />
+        </p>
+        <p th:case="'RAD'">
+            Thank you for submitting your survey results.
+            <span th:insert="~{/companies/usbank/preferences/includes/fragments :: thankYouMsgOnly('__${brand}__')}" />
+            <br /><br />
+            <th:block th:insert="~{/companies/usbank/preferences/includes/fragments :: backLink('__${brand}__') }" />
+            <br />
+        </p>
+
+    </th:block>
+</th:block>
+
+
+<!--
+<span th:insert="~{/companies/usbank/preferences/includes/fragments :: thankYouMsgOnly('__${brand}__')}" />
+-->
+<th:block th:fragment="thankYouMsgOnly(brand)">
+    <th:block th:switch="${brand}">
+        <span th:case="'ACG'">
+            Please click on the back button below to modify your preferences or go to
+            <a href="https://www.creditcard.acg.aaa.com/" target="_blank">creditcard.acg.aaa.com</a> to login to your account.
+        </span>
+        <span th:case="'AMP'">
+            Please click on the back button below to modify your preferences or go to
+            <a href="https://www.ameriprisecreditcard.com/" target="_blank">ameriprisecreditcard.com</a>
+            to login to your account.
+        </span>
+        <span th:case="'ASB'">
+            Please click on the back button if you wish to resign up to receive special offers or call the number on the back of your card.
+        </span>
+        <span th:case="'BMW'">
+            Please click on the back button below to modify your preferences or go to
+            <a href="https://www.mybmwcreditcard.com" target="_blank">mybmwcreditcard.com</a>
+            to login to your account.
+        </span>
+        <span th:case="'EJ'" >
+            Please click on the back button below to modify your preferences or go to
+            <a href="https://www.edwardjonescreditcard.com" target="_blank">edwardjonescreditcard.com</a>
+            to login to your account.
+        </span>
+        <span th:case="'ELA'">
+            Please click on the back button below to modify your preferences.
+        </span>
+        <span th:case="'ELL'">
+            Please click on the back button if you wish to resign up to receive special offers or go to
+            <a href="https://www.flycardpreferred.com" target="_blank">flycardpreferred.com</a> to login to your account.
+        </span>
+        <span th:case="'FID'">
+           <!-- If you wish to update your preferences please click on the back button below.-->
+            Please click on the back button below to modify your preferences.
+        </span>
+        <span th:case="'MNI'">
+            Please click on the back button below to modify your preferences or go to
+            <a href="https://www.myminicreditcard.com" target="_blank">myminicreditcard.com</a> to login to your account.
+        </span>
+        <span th:case="'QKN'">
+            If you wish to update your preferences please click on the back button below or go to
+            <a href="https://www.quickencard.com" target="_blank">quickencard.com</a> to login to your account.
+        </span>
+        <span th:case="'RAD'">
+            If you wish to update your preferences please click on the back button below or go to
+            <a href="https://www.mybmwmotorradcard.com" target="_blank">mybmwmotorradcard.com</a>
+            to login to your account.
+        </span>
+
+    </th:block>
+</th:block>
+
+</body>
+</html>

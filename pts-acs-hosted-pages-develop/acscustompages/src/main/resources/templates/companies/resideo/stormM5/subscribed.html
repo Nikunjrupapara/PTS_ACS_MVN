@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:include="~{/companies/resideo/stormM5/fragments :: head }" />
+</head>
+<body>
+
+<div class="container" style="min-height: 700px" th:object="${dynamicFormBean}">
+
+    <div class="main" role="main">
+        <div class="row main-header">
+            <div class="six columns">
+                <h1>YOU HAVE BEEN SUBSCRIBED</h1>
+            </div>
+            <th:block th:insert="~{/companies/resideo/stormM5/fragments :: notYou }" />
+        </div>
+        <div id="status-banner-vis">
+            <strong><span class="large"><i class="fa fa-check" aria-hidden="true"></i></span>&nbsp; SUCCESS!</strong> <!--You have been subscribed-->
+        </div>
+        <div id="body-content">
+            <p style="margin-top: 30px;">Your subscription is confirmed. Return to the <a href="https://www.resideo.com/us/en/m5-smart-thermostat/" target="_blank">M5 Series<span style="font-size: 10px; line-height: 0; vertical-align: 6px">&reg;</span> Smart Thermostat</a> product page.
+        </div>
+        <!--  response.setHeader("Refresh", "15;url=https://yourhome.honeywell.com/honeywell-smart-home-security");  -->
+    </div>
+</div>
+
+</body>
+</html>

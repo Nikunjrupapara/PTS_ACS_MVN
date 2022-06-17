@@ -1,0 +1,49 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Boscovs - Unsubscribe</title>
+
+    <meta name="robots" content="noindex" />
+    <meta name="googlebot" content="noindex" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" th:href="@{/companies-static/boscovs/unsubscribe/css/pure.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/companies-static/boscovs/unsubscribe/css/unsubscribe.css}" />
+
+
+</head>
+
+
+<body th:object="${dynamicFormBean}" th:with="email=*{items['email']},brand=*{brand}">
+
+<div id="container" style="display:block">
+    <div class="wrapper">
+        <img alt="Logo" src="http://web.boscovsemail.com/images/boscovslogo.gif" />
+    </div>
+
+    <div id="main">
+        <p>To unsubscribe from future promotional emails, click on the button below.<br />
+            Please be aware that it may take up to 3 days for your request to be completely processed.<br />
+            <br />
+            If you do not wish to unsubscribe, simply click Cancel below.<br />
+            <br />
+            Thank you!</p>
+        <p>&nbsp;</p>
+
+        <form method="post" name="form" id="form" th:action="@{'/p/services/update/' + *{contextPath}}">
+            <input type="hidden" th:field="*{brand}" />
+            <input type="hidden" th:field="*{items['cusCustomerIdHash']}" />
+
+                <div class="pure-controls">
+                    <button class="button-go pure-button" type="submit">Unsubscribe</button>
+                    <button class="button-go pure-button" id="cancel" type="button" value="Cancel" onClick="window.location.href='https://www.boscovs.com';">Cancel</button>
+                </div>
+        </form>
+    </div>
+</div>
+
+</body>
+
+</html>
+

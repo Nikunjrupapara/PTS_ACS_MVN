@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ymnewsolutions Preference Centre</title>
+</head>
+<body th:object="${dynamicFormBean}">
+    <h1>Please check and update your details</h1>
+    <!-- <p>Path: <span th:text="${path}">&nbsp;</span></p> -->
+    <p>CustomerIdHash: <span th:text="*{items['cusCustomerIdHash']}">&nbsp;</span></p>
+    <p>Customer UUID: <span th:text="*{items['cusCustomerUUID']}"></span></p>
+    <p>Email: <span th:text="*{items['email']}">&nbsp;</span></p>
+    <p>First Name: <span th:text="*{items['firstName']}">&nbsp;</span></p>
+    <p>Last Name: <span th:text="*{items['lastName']}">&nbsp;</span></p>
+</body>
+</html>

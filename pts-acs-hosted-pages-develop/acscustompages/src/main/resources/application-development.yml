@@ -1,0 +1,300 @@
+config:
+  domains:
+    # Boscovs
+    -
+      name: test.boscovs.com
+      company: boscovs
+      brand: boscovs
+
+    # CFNA
+    -
+      name: test.cfna.com
+      company: cfna
+      brand: cfna
+      
+    # Dillards
+    -
+      name: test.dillards.com
+      company: dillards
+      brand: dillards
+
+    # Dollartree
+    -
+      name: mailing.dollartreetest.com
+      company: dollartree
+      brand: dollartree
+    -
+      name: test.mailing.dollartree.com
+      company: dollartree
+      brand: dollartree
+
+    # Kalmbach Media
+    -
+      name: test.kalmbachmedia.com
+      company: kalmbachmedia
+      brand: kalmbachmedia
+
+    # Yes Marketing Stage 3
+    -
+      name: test.ymnewsolutions.com
+      company: ymnewsolutions
+      brand: ymnewsolutions
+
+    # Kodak Moments
+    -
+      name: test.kodakmoments.com
+      company: kodakmoments
+      brand: kodakmoments
+
+    # MCREWARDS
+    -
+      name: test.mcrewardspoland.com
+      company: mcrewardspoland
+      brand: mcrewardspoland
+    -
+      name: test.mcrewardsbrazil.com
+      company: mcrewardsbrazil
+      brand: mcrewardsbrazil
+
+    # Resideo
+    -
+      name: test.honeywellhome.com
+      company: resideo
+      brand: honeywellhome
+    -
+      name: test.resideo.com
+      company: resideo
+      brand: resideo
+    -
+      name: resideo.testlocal.com
+      company: resideo
+      brand: resideo
+    -
+      name: honeywellhome.testlocal.com
+      company: resideo
+      brand: honeywellhome
+    # US Bank
+    -
+      name: test.creditcard.acg.aaa.com
+      company: usbank
+      brand: ACG
+    -
+      name: test.ameriprisecreditcard.com
+      company: usbank
+      brand: AMP
+    -
+      name: test.associatedbankcreditcard.com
+      company: usbank
+      brand: ASB
+    -
+      name: test.mybmwcreditcard.com
+      company: usbank
+      brand: BMW
+    -
+      name: test.edwardjonescreditcard.com
+      company: usbank
+      brand: EJ
+    -
+      name: test.myaccountaccess.com
+      company: usbank
+      brand: ELA
+    -
+      name: test.elalflycardpreferred.com
+      company: usbank
+      brand: ELL
+    -
+      name: test.fidelityrewards.com
+      company: usbank
+      brand: FID
+    -
+      name: test.myminicreditcard.com
+      company: usbank
+      brand: MNI
+    -
+      name: test.quickencard.com
+      company: usbank
+      brand: QKN
+    -
+      name: test.mybmwmotorradcard.com
+      company: usbank
+      brand: RAD
+# JWTs are stored in environment specific config temporarily, until the AppDetails API is implemented
+# The token definitions below are placeholders and should be replaced with your own locally generated tokens, using the
+# Microservices Admin UI.
+# Please do not commit changes to this file to GitHub, unless adding a placeholder for a new Hosted Pages Application
+jwts:
+  -
+    company: boscovs
+    context-path: coupon
+    token: place.holder.token
+  -
+    company: boscovs
+    context-path: fhf-registered
+    token: place.holder.token
+  -
+    company: boscovs
+    context-path: fhf-registration
+    token: place.holder.token
+  -
+    company: boscovs
+    context-path: unsubscribe
+    token: place.holder.token
+  -
+    company: cfna
+    context-path: unsubscribe
+    token: place.holder.token
+  -
+    company: dillards
+    context-path: unsubscribe
+    token: place.holder.token
+  -
+    company: dillards
+    context-path: unsubadhoc
+    token: place.holder.token
+  -
+    company: dollartree
+    context-path: signup
+    token: place.holder.token
+  -
+    company: dollartree
+    context-path: contest
+    token: place.holder.token
+  -
+    company: dollartree
+    context-path: preferences
+    token: place.holder.token
+  -
+    company: dollartree
+    context-path: unsubscribe
+    token: place.holder.token
+  -
+    company: dollartree
+    context-path: isignup
+    token: place.holder.token
+  -
+    company: kalmbachmedia
+    context-path: beginner/asy
+    token: place.holder.token
+  -
+    company: kalmbachmedia
+    context-path: beginner/ctt
+    token: place.holder.token
+  -
+    company: kalmbachmedia
+    context-path: beginner/fsm
+    token: place.holder.token
+  -
+    company: kalmbachmedia
+    context-path: beginner/mrr
+    token: place.holder.token
+  -
+    company: kalmbachmedia
+    context-path: category/discovery
+    token: place.holder.token
+  -
+    company: kalmbachmedia
+    context-path: category/science
+    token: place.holder.token
+  -
+    company: kalmbachmedia
+    context-path: discoverblog/optin
+    token: place.holder.token
+  -
+    company: kodakmoments
+    context-path: member-unsub
+    token: place.holder.token
+  -
+    company: mcrewardspoland
+    context-path: unsubscribe
+    token: place.holder.token
+  -
+    company: mcrewardsbrazil
+    context-path: unsubscribe
+    token: place.holder.token
+  -
+    company: resideo
+    context-path: buoySignup
+    token: place.holder.token
+  -
+    company: resideo
+    context-path: emailCheck
+    token: place.holder.token
+  -
+    company: resideo
+    context-path: energyReport
+    token: place.holder.token
+  -
+    company: resideo
+    context-path: freeFilter
+    token: place.holder.token
+  -
+    company: resideo
+    context-path: preferences
+    token: place.holder.token
+  -
+    company: resideo
+    context-path: productRegistration
+    token: place.holder.token
+  -
+    company: resideo
+    context-path: stormM5
+    token: place.holder.token
+  -
+    company: usbank
+    context-path: fidelity
+    token: place.holder.token
+  -
+    company: usbank
+    context-path: preferences
+    :token: place.holder.token
+  -
+    company: ymnewsolutions
+    context-path: authtest/expired
+    token: place.holder.token
+  -
+    company: ymnewsolutions
+    context-path: authtest/noteffective
+    token: place.holder.token
+  -
+    company: ymnewsolutions
+    context-path: authtest/notenabled
+    token: place.holder.token
+  -
+    company: ymnewsolutions
+    context-path: marketing/preferences
+    token: place.holder.token
+  -
+    company: ymnewsolutions
+    context-path: marketing/signup
+    token: place.holder.token
+  -
+    company: ymnewsolutions
+    context-path: register/retail
+    token: place.holder.token
+microservices:
+  base-url: http://localhost:8080/v1/services
+  #base-url: http://viryesamst001l.dmz.infousa.com:8080/v1/services
+  useStubbedServices:
+    appDetails: true
+    createProfile: false
+    customResource: false
+    domains: true
+    getCustomResourceId: false
+    getCustomResourceSecure: false
+    getProfileCustomerId: false
+    getProfileFilter: false
+    getProfileSecure: false
+    jwtService: true
+    listCustomResource: false
+    profileComposite: false
+    triggerEmail: false
+    updateServices: false
+    recaptchaService: false
+spring:
+  data:
+    mongodb:
+      database: pts-adobe
+      host: localhost
+      port: 27017
+server:
+  port: 8081

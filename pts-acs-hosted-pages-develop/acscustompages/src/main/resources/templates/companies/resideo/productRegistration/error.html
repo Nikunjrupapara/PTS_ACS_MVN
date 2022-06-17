@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:with="brand=${dynamicFormBean.getBrand()}">
+    <th:block th:replace="~{/companies/resideo/productRegistration/fragments :: getHead('__${dynamicFormBean.getBrand()}__')}" />
+</head>
+<body bgcolor="#FFFFFF">
+    <div id="container"  th:object="${dynamicFormBean}" th:with="brand=${dynamicFormBean.getBrand()}">
+        <div id="innerContainer">
+            <div id="header" th:include="~{/companies/resideo/productRegistration/fragments :: getLogoHeader('__${brand}__')}">
+                <div id="Honeywell_logo">
+                    <a href="https://www.resideo.com/us/en" target="_blank"><img th:src="@{/companies-static/resideo/images/HoneywellHomeLogo.png}" height="28" alt="Honeywell Home" border="0" /></a>
+                </div>
+            </div>
+            <div class="error top60">
+                <p><img th:src="@{/companies-static/resideo/images/icon_alertw.png}" alt=""></p>
+                <h2>IT LOOKS LIKE SOMETHING HAS GONE WRONG</h2>
+                <!--p>Please refresh the page and try again.</p-->
+                <p><a th:href="@{/p/profile/search/productRegistration/index}">Please click here to try again</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/companies-static/css/pages.css}" />
+</head>
+<body>
+<img class="logo" src="https://www.data-axle.com/wp-content/uploads/2020/09/data_axle_horizontal_black_blue_crop.svg" />
+    <div th:with="bean=${dynamicFormBean},error=${bean.isError()}">
+        <th:block th:switch="error">
+            <th:block th:case="true">
+                <p>Sorry, an error occurred!</p>
+            </th:block>
+            <th:block th:case="*" th:object="${dynamicFormBean}">
+                <p><span th:text="*{items['firstName']}">Firstname</span>, thank you for registering.  Here is what you entered:</p>
+                <p><span th:text="#{form.email}">Email:</span> <span th:text="*{items['email']}">email@domain.com</span></p>
+                <p><span th:text="#{form.firstName}">First Name:</span> <span th:text="*{items['firstName']}">first name</span></p>
+                <p><span th:text="#{form.lastName}">Last Name:</span> <span th:text="*{items['lastName']}">last name</span></p>
+                <p th:if="*{#maps.containsKey(items, 'gender')}">
+                    <span th:text="#{form.gender}">Gender:</span> <span th:text="#{*{'gender.' + items['gender']}}">gender</span>
+                </p>
+                <p th:if="*{#maps.containsKey(items, 'dateOfBirth')}">
+                    <span th:text="#{form.dateOfBirth}">Date of Birth:</span> <span th:text="*{items['dateOfBirth']}">dob</span>
+                </p>
+                <p>
+                    <span th:text="#{form.homePhoneNumber}">Home Phone:</span>
+                    <span
+                            th:text="*{#maps.containsKey(items, 'cusHomePhone') ? items['cusHomePhone'] : 'Not Specified'}"
+                    >
+                        home phone
+                    </span>
+                </p>
+                <p>
+                    Rewards Active:
+                    <span
+                            th:text="*{#maps.containsKey(items, 'cusRewardsActive') ? items['cusRewardsActive'] : 'Not Specified'}"
+                    >
+                        rewards active
+                    </span>
+                </p>
+            </th:block>
+        </th:block>
+    </div>
+<!--
+    <div>
+        <table>
+            <tr th:each="var : ${param.keySet()}">
+                <td th:text="${var}"></td>
+                <td th:text="${param.get(var)}"></td>
+            </tr>
+        </table>
+    </div>
+-->
+</body>
+</html>

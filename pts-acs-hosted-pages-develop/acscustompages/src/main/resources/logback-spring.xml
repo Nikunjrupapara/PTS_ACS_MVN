@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration debug="true">
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+    <!-- Console logger - disabled by default -->
+    <!-- set logging.appender.console.level in start.sh to override this -->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%d{dd-MM-yyyy HH:mm:ss.SSS} %-5level [%thread] %logger{40}.%M - %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>${logging.appender.console.level:-OFF}</level>
+        </filter>
+    </appender>
+    <!-- Main log file using a rolling file appender -->
+    <appender name="rolling-file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_PATH}/hostedpages.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                %d{dd-MM-yyyy HH:mm:ss.SSS} [%X{requestId}] %-5level [%thread] %logger{40}.%M - %msg%n
+            </Pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>
+                ${LOG_PATH}/hostedpages-%d{yyyy-MM-dd}.%i.log.gz
+            </fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <maxFileSize>100MB</maxFileSize>
+            <totalSizeCap>6750MB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+    <!-- Appender for Logstash -->
+    <appender name="logstash" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_PATH}/logstash/hostedpages-logstash.log</file>
+        <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+            <jsonFactoryDecorator class="com.dataaxle.pts.acscustompages.utils.logging.TimestampJsonFactoryDecorator" />
+            <providers>
+                <timestamp />
+                <sequence />
+                <version />
+                <message />
+                <loggerName />
+                <threadName />
+                <logLevel />
+                <logLevelValue />
+                <mdc />
+                <stackTrace>
+                    <throwableConverter class="net.logstash.logback.stacktrace.ShortenedThrowableConverter" />
+                </stackTrace>
+            </providers>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>
+                ${LOG_PATH}/logstash/hostedpages-logstash-%d{yyyy-MM-dd}.%i.log
+            </fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <maxFileSize>100MB</maxFileSize>
+            <totalSizeCap>2GB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+    <!-- Appender for Metrics to Logstash -->
+    <appender name="logstash-metrics" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_PATH}/logstash/hostedpages-metrics.log</file>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <jsonFactoryDecorator class="com.dataaxle.pts.acscustompages.utils.logging.TimestampJsonFactoryDecorator" />
+            <providers>
+                <timestamp />
+                <sequence />
+                <version />
+                <message />
+                <loggerName />
+                <threadName />
+                <logLevel />
+                <logLevelValue />
+                <mdc />
+            </providers>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>
+                ${LOG_PATH}/logstash/hostedpages-metrics-%d{yyyy-MM-dd}.%i.log
+            </fileNamePattern>
+            <maxHistory>30</maxHistory>
+            <maxFileSize>100MB</maxFileSize>
+            <totalSizeCap>2GB</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+    <logger name="com.dataaxle.pts.acscustompages.utils.logging.ElasticsearchAnalysisFilter" level="info" additivity="false">
+        <appender-ref ref="console" />
+        <appender-ref ref="logstash-metrics" />
+    </logger>
+    <root level="info">
+        <appender-ref ref="rolling-file" />
+        <appender-ref ref="console" />
+        <appender-ref ref="logstash" />
+    </root>
+</configuration>

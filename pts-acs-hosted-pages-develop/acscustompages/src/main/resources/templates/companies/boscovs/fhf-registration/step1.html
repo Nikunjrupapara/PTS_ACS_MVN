@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FHF - Step 1</title>
+    <th:block th:include="~{/companies/boscovs/fhf-registration/fragments :: head}" />
+    <style>
+		.full-width img{margin:0 auto; width:670px;}
+		html {height: 100%;}
+		body {height: 100%; margin-left: 0 auto; text-align: left; font-family: Roboto, sans-serif; letter-spacing: 1px;}
+		h1 {font-family: Roboto, sans-serif; font-size:32px; font-weight: Bold 700; color: #322384;}
+		.logo {display: block; margin-left: auto; margin-right: auto;}
+		.zipcode {position: relative; left: 100px; width: 900px; border-radius: 5px; background-color: #ffde0040; padding: 20px; }
+		.labeltxt {font-family: Roboto, sans-serif; font-size:20px; font-weight: 400; color: #322384;}
+		.odd { background-color: #ffde0040; }
+		.error { font-size: 12px; color: red; }
+		.paging-control { display: inline-block; }
+	</style>
+</head>
+<body>
+<th:block th:include="~{/companies/boscovs/fhf-registration/fragments :: logo}" />
+
+<!--Content-->
+<div style="padding-top: 30px; position: relative; left: 100px;">
+    <h1>Friends Helping Friends Registration Page (Step 1)</h1>
+</div>
+
+<div style="padding-top: 20px;" class="zipcode">
+    <form name="findOrgs" method="get" th:action="@{'/p/customResource/list/fhf-registration/step2'}">
+        <label style="padding-bottom: 5px;" class="labeltxt" th:for="zipcode">
+            Please Enter Your Organization Zip Code Below:
+        </label>
+        <br />
+        <br />
+        <input style="font-size: 20px; padding-top: 4px;" type="text" id="zipcode" name="zipcode" placeholder="Zip Code" maxlength=5
+               pattern="([0-9]{5})?" onkeypress='validate(event)'/>
+        <br />
+        <br />
+        <input type="hidden" id="pageNumber" name="page" value="1" />
+        <input style="font-size: 20px;" type="submit" value="Next">
+    </form>
+</div>
+<!--End Content-->
+<script th:src="@{/companies-static/boscovs/fhf-registration/js/fhf_registration.js}"></script>
+
+</body>
+</html>
