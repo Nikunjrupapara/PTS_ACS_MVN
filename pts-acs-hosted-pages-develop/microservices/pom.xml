@@ -265,6 +265,21 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin> 
+                             <groupId>org.apache.maven.plugins</groupId> 
+                             <artifactId>maven-war-plugin</artifactId> 
+                                     <configuration> 
+                                        <webResources> 
+                                        <resource> 
+                                           <directory>${project.build.directory}</directory> 
+                                           <targetPath>WEB-INF</targetPath> <!-- introduced in plugin v 2.1 -->
+                                           <includes> 
+                                              <include>release.txt</include> 
+                                           </includes> 
+                                        </resource> 
+                                        </webResources> 
+                                      </configuration> 
+                        </plugin>
 		</plugins>
 	</build>
 	<repositories>
